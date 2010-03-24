@@ -234,7 +234,7 @@ void *avahi_function(void *args) {
     if ( ! (sb = avahi_service_browser_new(client,
                                            AVAHI_IF_UNSPEC,
                                            AVAHI_PROTO_UNSPEC,
-                                           "_rfid._server._tcp",
+                                           "_rfid-srv._tcp",
                                            NULL,
                                            0,
                                            browse_callback,
@@ -277,7 +277,7 @@ int reader_handle_tag(const char *tag,
     char *target;
 	int size;
 
-    printf("tag: %s\n", tag);
+
 
 	pthread_mutex_lock(&(server_info->lock));
 
@@ -294,6 +294,8 @@ int reader_handle_tag(const char *tag,
 	  pthread_mutex_unlock(&(server_info->lock));
 	  return 0;
 	}
+
+	printf("tag: %s\n", tag);
 
 	// compose target url
 	size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
@@ -431,8 +433,9 @@ int main() {
 
 	struct rfid_server_info server_info;
 	pthread_mutex_init(&(server_info.lock), NULL);
-	server_info.url = NULL;
-
+	server_info.url      = NULL;
+	server_info.last_tag = NULL;
+	
     if (pthread_create(&reader_thread, NULL, &reader_function, &server_info)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;
