@@ -12,10 +12,7 @@
 #include <avahi-common/malloc.h>
 #include <avahi-common/error.h>
 
-struct avahi_browse_callback_params {
-    AvahiSimplePoll *poll;
-    AvahiClient     *client;
-};
+
 
 /**
  * Called whenever a service has been resolved successfully or timed out
@@ -35,7 +32,16 @@ static void resolve_callback(
     AvahiLookupResultFlags flags,
     void* userdata) {
 
+    AvahiClient     *c;
+    AvahiSimplePoll *simple_poll;
+	struct rfid_server_info *server_info;
+
     assert(r);
+
+    c           = ((struct avahi_callback_params*)userdata)->client;
+    simple_poll = ((struct avahi_callback_params*)userdata)->poll;
+	server_info = ((struct avahi_callback_params*)userdata)->server_info;
+
 
     switch (event) {
     case AVAHI_RESOLVER_FAILURE:
@@ -50,7 +56,7 @@ static void resolve_callback(
         break;
 
     case AVAHI_RESOLVER_FOUND: {
-        char a[AVAHI_ADDRESS_STR_MAX], *t;
+        char ip[AVAHI_ADDRESS_STR_MAX], *t;
 
         fprintf(stderr,
                 "Service '%s' of type '%s' in domain '%s':\n",
@@ -58,7 +64,7 @@ static void resolve_callback(
                 type,
                 domain);
 
-        avahi_address_snprint(a, sizeof(a), address);
+        avahi_address_snprint(ip, sizeof(ip), address);
         t = avahi_string_list_to_string(txt);
         fprintf(stderr,
                 "\t%s:%u (%s)\n"
@@ -69,7 +75,9 @@ static void resolve_callback(
                 "\twide_area: %i\n"
                 "\tmulticast: %i\n"
                 "\tcached: %i\n",
-                host_name, port, a,
+                host_name,
+				port,
+				ip,
                 t,
                 avahi_string_list_get_service_cookie(txt),
                 !!(flags & AVAHI_LOOKUP_RESULT_LOCAL),
@@ -78,9 +86,19 @@ static void resolve_callback(
                 !!(flags & AVAHI_LOOKUP_RESULT_MULTICAST),
                 !!(flags & AVAHI_LOOKUP_RESULT_CACHED));
 
+		pthread_mutex_lock(&(server_info->lock));
+		free(server_info->url);
+		server_info->url = strdup(ip);
+		if ( ! server_info->url) {
+		  printf("Memory exhausted.\n");
+		  // not much we can do...
+		}
+		pthread_mutex_unlock(&(server_info->lock));
+				
+
         avahi_free(t);
-    }
-    }
+    } // end case
+    } // end switch
 
     avahi_service_resolver_free(r);
 }
@@ -102,11 +120,13 @@ static void browse_callback(
 {
     AvahiClient     *c;
     AvahiSimplePoll *simple_poll;
+	struct rfid_server_info *server_info;
 
     assert(b);
 
-    c           = ((struct avahi_browse_callback_params *)userdata)->client;
-    simple_poll = ((struct avahi_browse_callback_params *)userdata)->poll;
+    c           = ((struct avahi_callback_params*)userdata)->client;
+    simple_poll = ((struct avahi_callback_params*)userdata)->poll;
+	server_info = ((struct avahi_callback_params*)userdata)->server_info;
 
     switch (event) {
     case AVAHI_BROWSER_FAILURE:
@@ -140,7 +160,7 @@ static void browse_callback(
 										   AVAHI_PROTO_UNSPEC,
 										   0,
 										   resolve_callback,
-										   c))) {
+										   userdata))) {
             fprintf(stderr,
 					"Failed to resolve service '%s': %s\n",
 					name,
@@ -149,6 +169,8 @@ static void browse_callback(
         break;
 
     case AVAHI_BROWSER_REMOVE:
+		// should remove url from server_info here.
+		// have to do some matching against name and type and domain
         fprintf(stderr,
 				"(Browser) REMOVE: service '%s' of type '%s' in domain '%s'\n",
 				name,
@@ -184,9 +206,10 @@ void *avahi_function(void *args) {
     AvahiSimplePoll *simple_poll = NULL;
     AvahiClient *client          = NULL;
     AvahiServiceBrowser *sb      = NULL;
+	struct rfid_server_info *server_info = args;
     int error;
     int ret = 1;
-    struct avahi_browse_callback_params abcp;
+    struct avahi_callback_params abcp;
 
     if (!(simple_poll = avahi_simple_poll_new())) {
         fprintf(stderr, "Failed to create simple poll object.\n");
@@ -206,6 +229,7 @@ void *avahi_function(void *args) {
 
     abcp.poll   = simple_poll;
     abcp.client = client;
+	abcp.server_info = server_info;
 
     if ( ! (sb = avahi_service_browser_new(client,
                                            AVAHI_IF_UNSPEC,
@@ -245,44 +269,77 @@ fail:
     //return 1;
 }
 
-int reader_handle_tag(const char *tag_id) {
+int reader_handle_tag(const char *tag,
+					  struct rfid_server_info *server_info) {
     CURL *curl;
     CURLcode res;
-    char *url    = "192.168.1.6";
     char *action = "/read?";
     char *target;
+	int size;
 
-    printf("tag: %s\n", tag_id);
+    printf("tag: %s\n", tag);
 
-    target = malloc(sizeof(char) *
-                    (strlen(url) + strlen(tag_id) + strlen(action) + 1));
+	pthread_mutex_lock(&(server_info->lock));
 
+	// if there is no destination
+	// do nothing and return failure (loop will reread)
+	if (server_info->url == NULL) {
+	  pthread_mutex_unlock(&(server_info->lock));
+	  return -2;
+	}
+
+	// if the tag has already been read
+	// dont do anything
+	if ( server_info->last_tag && strcmp(server_info->last_tag, tag) == 0) {
+	  pthread_mutex_unlock(&(server_info->lock));
+	  return 0;
+	}
+
+	// compose target url
+	size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
+    target = malloc(sizeof(char) * size );
     if ( ! target) {
         printf("Memory exhausted.\n");
+		pthread_mutex_unlock(&(server_info->lock));
         return ENOMEM;
     }
-    strcpy(target, url);
+    strcpy(target, server_info->url);
     strcat(target, action);
-    strcat(target, tag_id);
+    strcat(target, tag);
 
+	printf("query to %s\n", target);
+	fflush(stdout);
+
+	// make request
     curl = curl_easy_init();
     if ( ! curl) {
 		free(target);
+		pthread_mutex_unlock(&(server_info->lock));
         return -1;
     }
-
     curl_easy_setopt(curl, CURLOPT_URL, target);
     res = curl_easy_perform(curl);
     curl_easy_cleanup(curl);
     free(target);
 
+	// update last tag info
+	free(server_info->last_tag);
+	server_info->last_tag = strdup(tag);
+
+	if ( ! server_info->last_tag) {
+		printf("Memory exhausted.\n");
+		pthread_mutex_unlock(&(server_info->lock));
+		return ENOMEM;
+	}	
+
+	pthread_mutex_unlock(&(server_info->lock));
     return 0;
 }
 
-int reader_poll_loop(struct reader *reader) {
+int reader_poll_loop(struct reader *reader,
+					 struct rfid_server_info *server_info) {
 
     list *tags;
-    char *last_id = NULL;
     tags = list_create();
     if ( ! tags) {
         printf("Memory exhausted.\n");
@@ -305,22 +362,10 @@ int reader_poll_loop(struct reader *reader) {
             struct tag *t;
             t = list_pop(tags);
 
-            if ( ! last_id || strcmp(last_id, t->id) != 0) {
-                free(last_id);
-                last_id = strdup(t->id);
-                if ( ! last_id) {
-                    printf("Memory exhausted.\n");
-                    return ENOMEM;
-                }
-
-                if (reader_handle_tag(t->id)) {
-                    // maybe this should fail/return error?
-                    printf("Warning: tag handler failed.\n");
-                }
-            }
-            else {
-                // it might make sense to sleep extra here
-            }
+			if (reader_handle_tag(t->id, server_info)) {
+				// maybe this should fail/return error?
+				printf("Warning: tag handler failed.\n");
+			}
 
             free(t->id);
             free(t);
@@ -332,6 +377,7 @@ int reader_poll_loop(struct reader *reader) {
 void *reader_function(void *args) {
     list *readers;
     struct reader *reader;
+	struct rfid_server_info *server_info = args;
     readers = list_create();
     if ( ! readers) {
         printf("Memory exhausted.\n");
@@ -371,7 +417,7 @@ void *reader_function(void *args) {
     }
     list_destroy(readers);
 
-    reader_poll_loop(reader);
+    reader_poll_loop(reader, server_info);
     // only get here on error
 
     free(reader->ftdic);
@@ -383,11 +429,15 @@ int main() {
     pthread_t reader_thread;
     pthread_t avahi_thread;
 
-    if (pthread_create(&reader_thread, NULL, &reader_function, NULL)) {
+	struct rfid_server_info server_info;
+	pthread_mutex_init(&(server_info.lock), NULL);
+	server_info.url = NULL;
+
+    if (pthread_create(&reader_thread, NULL, &reader_function, &server_info)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;
     }
-    if (pthread_create(&avahi_thread, NULL, &avahi_function, NULL)) {
+    if (pthread_create(&avahi_thread, NULL, &avahi_function, &server_info)) {
         printf("Error: Creation of mDNS thread failed.\n");
         return -1;
     }
