@@ -169,6 +169,10 @@ void *avahi_function(void *args) {
 
     if (!client) {
         fprintf(stderr, "Failed to create client: %s\n", avahi_strerror(error));
+		if (sb)
+			avahi_service_browser_free(sb);
+		if (client)
+			avahi_client_free(client);
 		if (simple_poll)
 			avahi_simple_poll_free(simple_poll);
 		pthread_exit(NULL);
@@ -188,6 +192,8 @@ void *avahi_function(void *args) {
                                            &abcp))) {
         printf("Failed to create service browser: %s\n",
                 avahi_strerror(avahi_client_errno(client)));
+		if (sb)
+			avahi_service_browser_free(sb);
 		if (client)
 			avahi_client_free(client);
 		if (simple_poll)
@@ -208,6 +214,7 @@ int reader_handle_tag(const char *tag,
     char *action = "/read?";
     char *target;
 	int size;
+
 
 
 	pthread_mutex_lock(&(server_info->lock));
