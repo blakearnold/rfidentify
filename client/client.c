@@ -61,7 +61,7 @@ int poll_loop(struct reader *reader) {
 }
 
 
-void *reader_thread(void *args) {
+void *reader_function(void *args) {
   list *readers;
   struct reader *reader;
   readers = list_create();
@@ -104,50 +104,24 @@ void *reader_thread(void *args) {
   list_destroy(readers);
 
   poll_loop(reader);
-
   // only get here on error
   
   free(reader->ftdic);
   free(reader);
-  //pthread_exit(NULL);
-  return NULL;
+  pthread_exit(NULL);
 }
 
 
 
 
 int main() {
+  pthread_t reader_thread;
 
-  reader_thread(NULL);
-  
-  /*
-  list *ret = list_create();
-  find_all_readers(ret);
-  printf("rfid readers attached: %d\n", list_size(ret));
-
-  struct reader *reader = list_pop(ret);
-  if (reader_connect(reader, 1) == RC_SUCCESS)
-	printf("connected\n");
-  else
-	printf("not connected\n");
-
-  // Poll for tags (ISO15693)
-  list *tagList = list_create();
-  int tagCnt = reader_poll15693(reader, tagList);
-  if(tagCnt < 0){
-	printf("Error polling reader\n");
+  if (pthread_create(&reader_thread, NULL, &reader_function, NULL)) {
+	printf("Error: Creation of reader thread failed.\n");
 	return -1;
   }
-
-  // Iterate through TagList and print tag IDs.
-  if (list_size(tagList) == 0) {
-	printf("No tags found\n");
-  }
-  while (list_size(tagList) > 0) {
-	struct tag *t = list_pop(tagList);
-	printf("tag: %s\n", t->id);
-  }
-  */
+  pthread_join(reader_thread, NULL);
 
   return 1;
 }
