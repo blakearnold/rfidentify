@@ -1,7 +1,10 @@
 #include "list.h"
 #include <ftdi.h>
 
+#define EDEVERR -1
 
+#define BEEP 1
+#define NOBEEP 0
 
 typedef enum { RC_SUCCESS = 0,
 				RC_ERROR,
@@ -72,7 +75,7 @@ void tag_init(struct tag *tag,
 			  char *id,
 			  struct reader *parent);
 
-list *find_all_readers();
+list *find_all_readers(list* readers);
 
 ReturnCode reader_connect(struct reader *reader,
 						  int beep);

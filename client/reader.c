@@ -27,11 +27,13 @@ void tag_init(struct tag *tag,
 
 
 
-list *find_all_readers() {
+/**
+* @param readers Probably should be an empty list.
+*/
+list *find_all_readers(struct list *readers) {
     int rc;
     struct ftdi_device_list *devlist;
     struct ftdi_context ftdi;
-	struct list *readers = list_create();
 
     ftdi_init(&ftdi);
     rc = ftdi_usb_find_all(&ftdi, &devlist, RFID1_VID, RFID1_PID);
@@ -55,6 +57,8 @@ list *find_all_readers() {
 
         dp = dp->next;
     }
+
+    ftdi_list_free(&dp);
 
     return readers;
 }
@@ -292,11 +296,11 @@ int reader_txPacketRxReply(struct reader *reader,
 ReturnCode reader_txPacketCheckAck(struct reader *reader,
 								   char *tx_packet,
 								   int tx_packet_len) {
-	char *buf = malloc(100 * sizeof(char));
-	// something is not right here...
+	char buf[100];
 	int payload_index = 1;
     int rc = reader_txPacketRxReply(reader, tx_packet, tx_packet_len, buf, 100, &payload_index);
-    if(rc < 1) return RC_ERROR;
+    if(rc < 1)
+	  return RC_ERROR;
     return RC_SUCCESS;
 }
 
@@ -308,9 +312,6 @@ int reader_parse_poll_packet(struct reader *reader,
     const char *p = packetPayload;
     char idbuf[RFID_ID_LEN+1];
     int pos;
-
-//	list_destroy_deep(tagList);
-//    tagList.clear();
 
     for(;;){
         while(*p != '['){
@@ -331,9 +332,10 @@ int reader_parse_poll_packet(struct reader *reader,
 
         // Check it's a valid ID (must be followed by a ',' delimiter
         if(*p == ',' && pos > 0){
+			struct tag *tag;
             idbuf[pos] = '\0';
-			struct tag *tag = tag_create();
-			tag_init(tag, idbuf, reader);
+			tag = tag_create();
+			tag_init(tag, strdup(idbuf), reader);
             if(tag != NULL){
 				list_push(tagList, tag);
             }
@@ -347,8 +349,7 @@ int reader_parse_poll_packet(struct reader *reader,
 int reader_poll15693(struct reader *reader,
 					 list *tagList)
 {
-	char *buf = malloc(6000 * sizeof(char));
-    //string buf(6000, '\0');
+	char buf[6000];
     int payload_index;
     int rc;
     if(reader_txPacketCheckAck(reader, RFID1_PKT_MODEUID, strlen(RFID1_PKT_MODEUID)))
@@ -381,8 +382,7 @@ int reader_poll15693(struct reader *reader,
 int reader_pollTi(struct reader *reader,
 				  list *tagList)
 {
-	char *buf = malloc(6000 * sizeof(char));
-    //string buf(6000, '\0');
+	char buf[6000];
     int payload_index;
     int rc;
     if(reader_txPacketCheckAck(reader, RFID1_PKT_TAGIT, strlen(RFID1_PKT_TAGIT)))
@@ -392,7 +392,8 @@ int reader_pollTi(struct reader *reader,
     if(reader_txPacketCheckAck(reader, RFID1_PKT_AMPMTGL, strlen(RFID1_PKT_AMPMTGL)))
 	  return -1;
 
-    if(reader_purge(reader)) return -1;
+    if(reader_purge(reader))
+	  return -1;
 
     rc = reader_txPacketRxReply(reader,
 								RFID1_PKT_TISIDPOLL,
