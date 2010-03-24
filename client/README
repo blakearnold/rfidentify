@@ -4,3 +4,13 @@ pthreads
 libftdi
 libcurl
 libavahi-client
+
+use
+make all
+to build everything.
+
+avahi-publish is a sample avahi service advertiser, advertising the service
+_rfid-srv._tcp
+
+client is the rfid reader client.
+to access usb devices, it should probably be run as root.
