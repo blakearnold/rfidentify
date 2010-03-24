@@ -1,0 +1,5 @@
+The code in this directory depends on the following libraries:
+
+libftdi
+pthreads
+libcurl
