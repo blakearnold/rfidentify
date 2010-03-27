@@ -60,6 +60,7 @@ static void resolve_callback(
 		  printf("Memory exhausted.\n");
 		  // not much we can do...
 		}
+		server_info->port = port; 
 		pthread_mutex_unlock(&(server_info->lock));
 		
     } // end case
@@ -205,7 +206,7 @@ int reader_handle_tag(const char *tag,
 					  struct rfid_server_info *server_info) {
     CURL *curl;
     CURLcode res;
-    char *action = "/read?";
+    char *action = "/dev/gumstix?idTag=";
     char *target;
 	int size;
 
@@ -251,6 +252,7 @@ int reader_handle_tag(const char *tag,
         return -1;
     }
     curl_easy_setopt(curl, CURLOPT_URL, target);
+	curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
     res = curl_easy_perform(curl);
     curl_easy_cleanup(curl);
     free(target);
@@ -361,12 +363,11 @@ void *reader_function(void *args) {
 int main() {
     pthread_t reader_thread;
     pthread_t avahi_thread;
-
+	
 	struct rfid_server_info server_info;
 	pthread_mutex_init(&(server_info.lock), NULL);
 	server_info.url      = NULL;
 	server_info.last_tag = NULL;
-	
     if (pthread_create(&reader_thread, NULL, &reader_function, &server_info)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;

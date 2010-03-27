@@ -10,6 +10,7 @@ struct rfid_server_info {
   pthread_mutex_t lock;
   char           *url;
   char           *last_tag;
+  uint16_t 	     port;
 };
 
 struct avahi_callback_params {
