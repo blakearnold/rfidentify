@@ -1,0 +1,21 @@
+<html>
+<head><script type="text/javascript">function loadIdTag(){if (window.XMLHttpRequest)  {// code for IE7+, Firefox, Chrome, Opera, Safari  xmlhttp=new XMLHttpRequest();  }else  {// code for IE6, IE5  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");  }xmlhttp.open("GET","dev/kiosk?type=latest",false);xmlhttp.send(null);document.getElementById('idtag').value=xmlhttp.responseText;}</script></head>
+<body>
+<form name="input" action="/kiosk/register" method="post">
+Name*:
+<input type="text" name="name" />
+<br />
+ID Tag*:
+<input id="idtag" type="text" name="tag" /> 
+<button type="button" onclick="loadIdTag()">Update</button>
+<br />
+Cell Phone: 
+<input type="text" name="cell" />
+<br />
+Twitter Name:
+<input type="text" name="twitter" />
+<br />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>

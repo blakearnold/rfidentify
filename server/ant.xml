@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project RFidentifyServer with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer.jar">
+            <manifest>
+                <attribute name="Main-Class" value="edu.columbia.cs.irt.rfidentify.Startup"/>
+                <attribute name="Class-Path" value=". rfidentifyServer_lib/slf4j-api-1.5.11.jar rfidentifyServer_lib/slf4j-simple-1.5.11.jar rfidentifyServer_lib/sqlitejdbc-v056.jar"/>
+            </manifest>
+            <fileset dir="/Users/blaker/Dropbox/spring10/rfid/wspaces/mar23/RFidentifyServer/bin"/>
+            <fileset dir="/Users/blaker/Dropbox/spring10/rfid/wspaces/mar23/RFidentifyServer/properties"/>
+        </jar>
+        <delete dir="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer_lib"/>
+        <mkdir dir="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer_lib"/>
+        <copy file="/Users/blaker/Dropbox/spring10/rfid/wspaces/mar23/RFidentifyServer/lib/slf4j-api-1.5.11.jar" todir="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer_lib"/>
+        <copy file="/Users/blaker/Dropbox/spring10/rfid/wspaces/mar23/RFidentifyServer/lib/slf4j-simple-1.5.11.jar" todir="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer_lib"/>
+        <copy file="/Users/blaker/Dropbox/spring10/rfid/wspaces/mar23/RFidentifyServer/lib/sqlitejdbc-v056.jar" todir="/Users/blaker/Dropbox/spring10/rfid/rfidentify/server/rfidentifyServer_lib"/>
+    </target>
+</project>

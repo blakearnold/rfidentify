@@ -60,6 +60,7 @@ static void resolve_callback(
 		  printf("Memory exhausted.\n");
 		  // not much we can do...
 		}
+		server_info->port = port; 
 		pthread_mutex_unlock(&(server_info->lock));
 		
     } // end case
@@ -169,10 +170,6 @@ void *avahi_function(void *args) {
 
     if (!client) {
         fprintf(stderr, "Failed to create client: %s\n", avahi_strerror(error));
-		if (sb)
-			avahi_service_browser_free(sb);
-		if (client)
-			avahi_client_free(client);
 		if (simple_poll)
 			avahi_simple_poll_free(simple_poll);
 		pthread_exit(NULL);
@@ -192,8 +189,6 @@ void *avahi_function(void *args) {
                                            &abcp))) {
         printf("Failed to create service browser: %s\n",
                 avahi_strerror(avahi_client_errno(client)));
-		if (sb)
-			avahi_service_browser_free(sb);
 		if (client)
 			avahi_client_free(client);
 		if (simple_poll)
@@ -211,10 +206,9 @@ int reader_handle_tag(const char *tag,
 					  struct rfid_server_info *server_info) {
     CURL *curl;
     CURLcode res;
-    char *action = "/read?";
+    char *action = "/dev/kiosk?idTag=";
     char *target;
 	int size;
-
 
 
 	pthread_mutex_lock(&(server_info->lock));
@@ -258,6 +252,7 @@ int reader_handle_tag(const char *tag,
         return -1;
     }
     curl_easy_setopt(curl, CURLOPT_URL, target);
+	curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
     res = curl_easy_perform(curl);
     curl_easy_cleanup(curl);
     free(target);
@@ -368,12 +363,11 @@ void *reader_function(void *args) {
 int main() {
     pthread_t reader_thread;
     pthread_t avahi_thread;
-
+	
 	struct rfid_server_info server_info;
 	pthread_mutex_init(&(server_info.lock), NULL);
 	server_info.url      = NULL;
 	server_info.last_tag = NULL;
-	
     if (pthread_create(&reader_thread, NULL, &reader_function, &server_info)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;
