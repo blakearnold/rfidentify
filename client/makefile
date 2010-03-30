@@ -7,9 +7,11 @@ list.o: list.h list.c
 reader.o: reader.c reader.h
 
 
-client: client.c client.h list.o reader.o
-	gcc -g -Wall client.c list.o reader.o -o client \
-          -lftdi -lpthread -lcurl -lavahi-client
+client: client.c rfid_reader_handler.c avahi_dns_handler.c \
+         client.h list.o reader.o
+	gcc -g -Wall client.c rfid_reader_handler.c \
+                 avahi_dns_handler.c list.o reader.o -o client \
+                 -lftdi -lpthread -lcurl -lavahi-client
 
 
 avahi-publish: avahi-publish.c
