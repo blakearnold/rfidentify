@@ -1,3 +1,12 @@
+/**
+ * reader.c
+ *
+ * Device library for an RFID reader.
+ * Particularly the DLP-RFID1.
+ *
+ * @author Willi Ballenthin
+ * @date   Spring, 2010
+ */
 #include "reader.h"
 #include <string.h>
 #include <stdio.h>
@@ -24,8 +33,6 @@ void tag_init(struct tag *tag,
 	tag->id = id;
 	tag->parent = parent;
 }
-
-
 
 /**
 * @param readers Probably should be an empty list.
@@ -240,7 +247,6 @@ int reader_txPacketRxReply(struct reader *reader,
         if(rc < 0){
             return -2; // Receive error
         }
-
 
         // Check for echo of tx packet, if the received packet is shorter
         // than the transmitted packet then obviously it's not right

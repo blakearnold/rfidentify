@@ -1,3 +1,11 @@
+
+This code was developed for the DLP-RFID1 RFID tag reader.
+It targets the Linux operating system, but should be portable
+pending its dependencies.
+
+The application should likely be run as root, or rather,
+with access to USB devices.
+
 The code in this directory depends on the following libraries:
 
 pthreads
@@ -7,10 +15,8 @@ libavahi-client
 
 use
 make all
-to build everything.
+to build client and sample server.
 
-avahi-publish is a sample avahi service advertiser, advertising the service
+avahi-publish
+is a sample Avahi service advertiser, advertising the following service
 _rfid-srv._tcp
-
-client is the rfid reader client.
-to access usb devices, it should probably be run as root.

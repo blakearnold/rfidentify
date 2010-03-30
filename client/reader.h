@@ -1,3 +1,13 @@
+/**
+ * reader.h
+ *
+ * Device library for an RFID reader.
+ * Particularly the DLP-RFID1.
+ *
+ * @author Willi Ballenthin
+ * @date   Spring, 2010
+ */
+
 #include "list.h"
 #include <ftdi.h>
 
@@ -14,7 +24,6 @@ typedef enum { RC_SUCCESS = 0,
 				RC_NOT_CONNECTED
 			} ReturnCode;
 
-// from rfid_private.h
 #define RFID1_VID   0x0403
 #define RFID1_PID   0xfbfc
 #define RFID1_DESC   "DLP-RFID1"
@@ -22,7 +31,6 @@ typedef enum { RC_SUCCESS = 0,
 
 /*
   Inferred packet format:
-  (dunno if this is right or not)
 
   '01'      SOP (might signifiy something?)
   LEN       1 byte giving length in bytes
