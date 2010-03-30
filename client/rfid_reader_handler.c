@@ -6,7 +6,10 @@
 #include <stdlib.h>
 #include <curl/curl.h>
 
+/// Amount of time in seconds between polls to RFID reader.
 #define SLEEP_BTWN_POLL   1
+
+/// Amount of time in seconds between polls to USB for RFID reader.
 #define SLEEP_BTWN_SEARCH 1
 
 /**

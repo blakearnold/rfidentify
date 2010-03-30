@@ -4,19 +4,32 @@
 #include <pthread.h>
 
 
+/**
+ * Defines a relevant configuration of an RFID server.
+ */
 struct rfid_server_info {
-  pthread_mutex_t lock;
-  char           *url;
-  char           *last_tag;
-  uint16_t 	      port;
+	/**
+	 * As the url may be updated at any time, we must lock it
+	 * before modification or reading.
+	 */
+	pthread_mutex_t lock;
+	char           *url;       ///< RFID server url.
+	uint16_t 	    port;      ///< RFID server port.
+	char           *last_tag;  ///< ID of last tag read.
 };
 
+/**
+ * Defines a client configuration file.
+ */
 struct client_config {
-	char *config_file;
-	char *mode;
-	char *url_dev;
+	char *config_file;  ///< Location of configuration file.
+	char *mode;         ///< Current mode of client.
+	char *url_dev;      ///< Server REST action.
 };
 
+/**
+ * Aggregation of various parameters to Avahi callbacks.
+ */
 struct avahi_callback_params {
     AvahiSimplePoll *poll;
     AvahiClient     *client;
