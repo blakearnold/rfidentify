@@ -7,9 +7,6 @@
  *
  * @author Willi Ballenthin
  * @date   Spring, 2010
- *
- * @todo Nail down protocol for situations with no/changing
- *            server information.
  */
 
 #include "client.h"

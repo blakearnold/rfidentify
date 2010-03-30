@@ -7,9 +7,6 @@
  *
  * @author Willi Ballenthin
  * @date   Spring, 2010
- *
- * @todo Move initial server details to configuration file.
- * @todo Combine kiosk and client mode.
  */
 
 

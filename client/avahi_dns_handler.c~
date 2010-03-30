@@ -8,8 +8,6 @@
  *
  * @author Willi Ballenthin
  * @date   Spring, 2010
- *
- * @todo Multiple RFID servers are not handled correctly.
  */
 
 #include "client.h"
