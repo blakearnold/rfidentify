@@ -35,8 +35,7 @@ int reader_handle_tag(const char *tag,
 	  return -2;
 	}
 
-	// if the tag has already been read
-	// dont do anything
+	// if the tag has already been read, dont do anything
 	if ( server_info->last_tag && strcmp(server_info->last_tag, tag) == 0) {
 	  pthread_mutex_unlock(&(server_info->lock));
 	  return 0;
@@ -86,6 +85,13 @@ int reader_handle_tag(const char *tag,
     return 0;
 }
 
+/**
+ * Repeatedly queries the device for RFID tags.
+ * @see SLEEP_BTWN_POLL
+ * @param reader The RFID reading device.
+ * @param server_info Relevant server configuration details.
+ * @return Well it shouldnt. If it does, there's an error.
+ */
 int reader_poll_loop(struct reader *reader,
 					 struct rfid_server_info *server_info) {
 
@@ -124,6 +130,14 @@ int reader_poll_loop(struct reader *reader,
     }
 }
 
+/**
+ * PThread.
+ * Initializes an RFID device, if it exists, and begins a
+ * tag reading loop.
+ * @see SLEEP_BTWN_SEARCH
+ * @param args a struct rfid_server_info.
+ * @return Should  not return, if so, error.
+ */
 void *reader_function(void *args) {
     list *readers;
     struct reader *reader;

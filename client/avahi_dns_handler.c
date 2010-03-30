@@ -14,9 +14,13 @@
 
 
 /**
- * Called whenever a service has been resolved successfully or timed out
+ * Called whenever a service has been
+ * resolved successfully or timed out.
+ * @see simple_poll_reader.c in libavahi API
+ * @param userdata An avahi_callback_params pointer containing
+ *                     relevant data.
  */
-static void resolve_callback(
+void resolve_callback(
     AvahiServiceResolver *r,
     AvahiIfIndex interface,
     AvahiProtocol protocol,
@@ -29,7 +33,8 @@ static void resolve_callback(
     uint16_t port,
     AvahiStringList *txt,
     AvahiLookupResultFlags flags,
-    void* userdata) {
+    void* userdata)
+	{
 
     AvahiClient     *c;
     AvahiSimplePoll *simple_poll;
@@ -66,13 +71,17 @@ static void resolve_callback(
     } // end switch
 
     avahi_service_resolver_free(r);
+	return;
 }
 
 /**
  * Called whenever a new services becomes available
- * on the LAN or is removed from the LAN
+ * on the LAN or is removed from the LAN.
+ * @see simple_poll_reader.c in libavahi API
+ * @param userdata An avahi_callback_params pointer containing
+ *                     relevant data.
  */
-static void browse_callback(
+void browse_callback(
     AvahiServiceBrowser *b,
     AvahiIfIndex interface,
     AvahiProtocol protocol,
@@ -133,13 +142,16 @@ static void browse_callback(
     case AVAHI_BROWSER_CACHE_EXHAUSTED:
         break;
     }
+	return;
 }
 
 /**
  * Called whenever the client or server state changes.
  */
-static void client_callback(AvahiClient *c, AvahiClientState state, void *
-userdata) {
+void client_callback(AvahiClient *c,
+					 AvahiClientState state,
+					 void *userdata)
+{
     assert(c);
 
     if (state == AVAHI_CLIENT_FAILURE) {
@@ -147,8 +159,17 @@ userdata) {
 				avahi_strerror(avahi_client_errno(c)));
         avahi_simple_poll_quit((AvahiSimplePoll *)userdata);
     }
+
+	return;
 }
 
+/**
+ * PThread.
+ * Initializes an mDNS Avahi service, and listens for relevant services.
+ * Updates the server info configuration as necessary.
+ * @param args a struct rfid_server_info.
+ * @return Should  not return, if so, error.
+ */
 void *avahi_function(void *args) {
     AvahiSimplePoll *simple_poll = NULL;
     AvahiClient *client          = NULL;
