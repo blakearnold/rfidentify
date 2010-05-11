@@ -44,6 +44,7 @@ typedef struct list {
   void *car;
   void *cdr;
 } list;
+typedef list list_t;
 
 list  *list_create();
 void   list_atom_destroy(list *l);
@@ -64,6 +65,24 @@ list  *list_map(list *l, void *(*fn)(void *));
 list  *list_filter(list *l, int (*fn)(void *, void *), void *args);
 list  *list_copy(list *l);
 
+/**
+* list *l - the list to enumerate
+* list *t - a temporary list
+*/
+#define list_foreach(l, t) \
+ for (t = l; ! list_is_empty(t); t = list_cdr(t)) 
+
+/**
+* list *l - the list to enumerate
+* list *t - a temporary list
+* type    - the type of the entry
+* e       - entry of type TYPE
+*/
+#define list_foreach_entry(l, t, type, e) \
+ for (t = l, e = (type)list_car(t); \
+      ! list_is_empty(t); \
+      t = list_cdr(t), e = (type)list_car(t))
+   
 /**
 * Some destructive functions
 */
