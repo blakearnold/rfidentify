@@ -27,6 +27,8 @@ struct rfid_server_info {
 	char           *url;       ///< RFID server url.
 	uint16_t 	    port;      ///< RFID server port.
 	char           *last_tag;  ///< ID of last tag read.
+	int             stable;    ///< True if the URL will not change. Or false
+	                           ///   if it may be modified by mDNS.
 };
 
 /**
@@ -35,7 +37,7 @@ struct rfid_server_info {
 struct client_config {
 	char *config_file;  ///< Location of configuration file.
 	char *mode;         ///< Current mode of client.
-	char *url_dev;      ///< Server REST action.
+	char *action;       ///< Server REST action.
 };
 
 /**
