@@ -30,7 +30,7 @@ avahi-publish: avahi-publish.c
 
 
 clean:
-	rm -rf *~ client *.o avahi-publish
+	rm -rf *~ client *.o avahi-publish test 
 
 
 
