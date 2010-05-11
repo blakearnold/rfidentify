@@ -30,75 +30,81 @@
  * This function is invoked as a callback upon the reading
  * of a tag.
  * @param tag A string containing the tag id.
- * @param server_info Relevant server configuration details.
+ * @param servers A list of server configurations.
  * @param 0 on ok, negative integer otherwise.
- *        -1 CURL initialization failed.
- *        -2 No server specified.
  */
 int reader_handle_tag(const char *tag,
-					  struct rfid_server_info *server_info) {
+					  list *servers) {
     CURL *curl;
     CURLcode res;
+	//TODO get this from the config
     char *action = "/dev/gumstix?idTag=";
     char *target;
-	int size;
+	int   size;
+	list *temp;
+	struct rfid_server_info *server_info;
 	
-	pthread_mutex_lock(&(server_info->lock));
-
-	// if there is no destination
-	// do nothing and return failure (loop will reread)
-	if (server_info->url == NULL) {
-	  pthread_mutex_unlock(&(server_info->lock));
-	  return -2;
-	}
-
-	// if the tag has already been read, dont do anything
-	if ( server_info->last_tag && strcmp(server_info->last_tag, tag) == 0) {
-	  pthread_mutex_unlock(&(server_info->lock));
-	  return 0;
-	}
 
 	printf("tag: %s\n", tag);
 
-	// compose target url
-	size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
-    target = malloc(sizeof(char) * size );
-    if ( ! target) {
-        printf("Memory exhausted.\n");
+	
+	list_foreach_entry(servers, temp, struct rfid_server_info *, server_info) {
+
+	  pthread_mutex_lock(&(server_info->lock));
+
+	  // if there is no destination
+	  // do nothing and return failure (loop will reread)
+	  if (server_info->url == NULL) {
 		pthread_mutex_unlock(&(server_info->lock));
-        return ENOMEM;
-    }
-    strcpy(target, server_info->url);
-    strcat(target, action);
-    strcat(target, tag);
+		continue;
+	  }
 
-	printf("query to %s\n", target);
-	fflush(stdout);
-
-	// make request
-    curl = curl_easy_init();
-    if ( ! curl) {
-		free(target);
+	  // if the tag has already been read, dont do anything
+	  if ( server_info->last_tag && strcmp(server_info->last_tag, tag) == 0) {
 		pthread_mutex_unlock(&(server_info->lock));
-        return -1;
-    }
-    curl_easy_setopt(curl, CURLOPT_URL, target);
-	curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
-    res = curl_easy_perform(curl);
-    curl_easy_cleanup(curl);
-    free(target);
+		continue;
+	  }
 
-	// update last tag info
-	free(server_info->last_tag);
-	server_info->last_tag = strdup(tag);
+	  // compose target url
+	  size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
+	  target = malloc(sizeof(char) * size );
+	  if ( ! target) {
+		  printf("Memory exhausted.\n");
+		  pthread_mutex_unlock(&(server_info->lock));
+		  continue;
+	  }
+	  strcpy(target, server_info->url);
+	  strcat(target, action);
+	  strcat(target, tag);
 
-	if ( ! server_info->last_tag) {
-		printf("Memory exhausted.\n");
-		pthread_mutex_unlock(&(server_info->lock));
-		return ENOMEM;
+	  printf("query to %s\n", target);
+	  fflush(stdout);
+
+	  // make request
+	  curl = curl_easy_init();
+	  if ( ! curl) {
+		  free(target);
+		  pthread_mutex_unlock(&(server_info->lock));
+		  continue;
+	  }
+	  curl_easy_setopt(curl, CURLOPT_URL, target);
+	  curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
+	  res = curl_easy_perform(curl);
+	  curl_easy_cleanup(curl);
+	  free(target);
+
+	  // update last tag info
+	  free(server_info->last_tag);
+	  server_info->last_tag = strdup(tag);
+
+	  if ( ! server_info->last_tag) {
+		  printf("Memory exhausted.\n");
+		  pthread_mutex_unlock(&(server_info->lock));
+		  continue;
+	  }
+
+	  pthread_mutex_unlock(&(server_info->lock));
 	}
-
-	pthread_mutex_unlock(&(server_info->lock));
     return 0;
 }
 
@@ -106,11 +112,11 @@ int reader_handle_tag(const char *tag,
  * Repeatedly queries the device for RFID tags.
  * @see SLEEP_BTWN_POLL
  * @param reader The RFID reading device.
- * @param server_info Relevant server configuration details.
+ * @param servers A list of server configurations.
  * @return Well it shouldnt. If it does, there's an error.
  */
 int reader_poll_loop(struct reader *reader,
-					 struct rfid_server_info *server_info) {
+					 list *servers) {
 
     list *tags;
     tags = list_create();
@@ -135,7 +141,7 @@ int reader_poll_loop(struct reader *reader,
             struct tag *t;
             t = list_pop(tags);
 
-			if (reader_handle_tag(t->id, server_info)) {
+			if (reader_handle_tag(t->id, servers)) {
 				// maybe this should fail/return error?
 				printf("Warning: tag handler failed.\n");
 			}
@@ -152,13 +158,16 @@ int reader_poll_loop(struct reader *reader,
  * Initializes an RFID device, if it exists, and begins a
  * tag reading loop.
  * @see SLEEP_BTWN_SEARCH
- * @param args a struct rfid_server_info.
+ * @param args a list of struct rfid_server_info.
  * @return Should  not return, if so, error.
  */
 void *reader_function(void *args) {
     list *readers;
     struct reader *reader;
-	struct rfid_server_info *server_info = args;
+	list *servers;
+
+	servers = args;
+	
     readers = list_create();
     if ( ! readers) {
         printf("Memory exhausted.\n");
@@ -198,7 +207,7 @@ void *reader_function(void *args) {
     }
     list_destroy(readers);
 
-    reader_poll_loop(reader, server_info);
+    reader_poll_loop(reader, servers);
     // only get here on error
 
     free(reader->ftdic);

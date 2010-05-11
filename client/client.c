@@ -122,11 +122,11 @@ int main(int argc, char **argv) {
 	
 	
 	
-    if (pthread_create(&reader_thread, NULL, &reader_function, &server_info)) {
+    if (pthread_create(&reader_thread, NULL, &reader_function, servers)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;
     }
-    if (pthread_create(&avahi_thread, NULL, &avahi_function, &server_info)) {
+    if (pthread_create(&avahi_thread, NULL, &avahi_function, servers)) {
         printf("Error: Creation of mDNS thread failed.\n");
         return -1;
     }

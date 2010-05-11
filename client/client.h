@@ -27,8 +27,8 @@ struct rfid_server_info {
 	char           *url;       ///< RFID server url.
 	uint16_t 	    port;      ///< RFID server port.
 	char           *last_tag;  ///< ID of last tag read.
-	int             stable;    ///< True if the URL will not change. Or false
-	                           ///   if it may be modified by mDNS.
+	int             stable;    ///< True if the URL will not change. Or false if it may be modified by mDNS.
+    char           *name;      ///< Unique name of the given server. Provided by mDNS.
 };
 
 /**
@@ -46,7 +46,7 @@ struct client_config {
 struct avahi_callback_params {
     AvahiSimplePoll *poll;
     AvahiClient     *client;
-	struct rfid_server_info *server_info;
+    list            *servers;
 };
 
 void *reader_function(void *args);

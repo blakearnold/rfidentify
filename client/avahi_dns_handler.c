@@ -48,38 +48,61 @@ void resolve_callback(
     AvahiStringList *txt,
     AvahiLookupResultFlags flags,
     void* userdata)
-	{
-
-    AvahiClient     *c;
-    AvahiSimplePoll *simple_poll;
-	struct rfid_server_info *server_info;
+{
+	list *servers;
 
     assert(r);
 
-    c           = ((struct avahi_callback_params*)userdata)->client;
-    simple_poll = ((struct avahi_callback_params*)userdata)->poll;
-	server_info = ((struct avahi_callback_params*)userdata)->server_info;
+	servers = ((struct avahi_callback_params*)userdata)->servers;
 
 
     switch (event) {
     case AVAHI_RESOLVER_FAILURE:
-        break;
+	  break;
 
     case AVAHI_RESOLVER_FOUND: {
-        char ip[AVAHI_ADDRESS_STR_MAX];
+	  list *temp;
+	  struct rfid_server_info *info;
+	  int new_server = 1;
+	  
+	  char ip[AVAHI_ADDRESS_STR_MAX];
 
-        avahi_address_snprint(ip, sizeof(ip), address);
-		printf("Found RFID server at %s\n", ip);
+	  avahi_address_snprint(ip, sizeof(ip), address);
+	  printf("Found RFID server at %s\n", ip);
 
-		pthread_mutex_lock(&(server_info->lock));
-		free(server_info->url);
-		server_info->url = strdup(ip);
-		if ( ! server_info->url) {
-		  printf("Memory exhausted.\n");
+
+	  list_foreach_entry(servers, temp, struct rfid_server_info *, info) {
+		if (strcmp(name, info->name) == 0 && info->stable == 0) {
+		  new_server = 0;
+		}
+	  }
+
+	  if (new_server) {
+		info = malloc(1 * sizeof (struct rfid_server_info));
+		if ( ! info ) {
+		  printf("Error: memory exhausted.\n");
+		  avahi_service_resolver_free(r);
+		  return;
+		}
+		
+		pthread_mutex_lock(&(info->lock));
+		info->url = strdup(ip);
+		if ( ! info->url) {
+		  printf("Error: memory exhausted.\n");
 		  // not much we can do...
 		}
-		server_info->port = port;
-		pthread_mutex_unlock(&(server_info->lock));
+		info->name = strdup(name);
+		if ( ! info->name) {
+		  printf("Error: memory exhausted.\n");
+		  // not much we can do...
+		}
+		info->port   = port;
+		info->stable = 0;
+		pthread_mutex_unlock(&(info->lock));
+
+		//TODO lock servers before modifying...
+		list_push(servers, info);
+	  }
 
     } // end case
     } // end switch
@@ -106,15 +129,11 @@ void browse_callback(
     AvahiLookupResultFlags flags,
     void* userdata)
 {
-    AvahiClient     *c;
-    AvahiSimplePoll *simple_poll;
-	struct rfid_server_info *server_info;
-
     assert(b);
 
-    c           = ((struct avahi_callback_params*)userdata)->client;
-    simple_poll = ((struct avahi_callback_params*)userdata)->poll;
-	server_info = ((struct avahi_callback_params*)userdata)->server_info;
+	list *servers;
+
+	servers = ((struct avahi_callback_params*)userdata)->servers;
 
     switch (event) {
     case AVAHI_BROWSER_FAILURE:
@@ -123,11 +142,11 @@ void browse_callback(
 				avahi_strerror(avahi_client_errno(
 				                   avahi_service_browser_get_client(b))));
 
-        avahi_simple_poll_quit(simple_poll);
+        avahi_simple_poll_quit(((struct avahi_callback_params*)userdata)->poll);
         return;
 
     case AVAHI_BROWSER_NEW:
-        if ( ! (avahi_service_resolver_new(c,
+        if ( ! (avahi_service_resolver_new(((struct avahi_callback_params*)userdata)->client,
 										   interface,
 										   protocol,
 										   name,
@@ -139,18 +158,42 @@ void browse_callback(
 										   userdata))) {
             printf("Failed to resolve service '%s': %s\n",
 					name,
-					avahi_strerror(avahi_client_errno(c)));
+					avahi_strerror(
+					  avahi_client_errno(((struct avahi_callback_params*)userdata)->client)));
 		}
         break;
 
-    case AVAHI_BROWSER_REMOVE:
-		// should remove url from server_info here.
-		// have to do some matching against name and type and domain
+    case AVAHI_BROWSER_REMOVE: {
         printf("(Browser) REMOVE: service '%s' of type '%s' in domain '%s'\n",
 				name,
 				type,
 				domain);
+
+		list *temp;
+		struct rfid_server_info *info;
+		//TODO this is a hack, rather than coming up with a good loop
+		int new_server = 1; 
+		int index      = 0;
+
+
+		//TODO we just assume this can only match one. not ideal.
+		//TODO we only compare against the name, with no consideration of
+		//      domain, which is bad.
+		list_foreach_entry(servers, temp, struct rfid_server_info *, info) {
+		  if (strcmp(name, info->name) == 0 && info->stable == 0) {
+			new_server = 0;
+			break;
+		  }
+		  index++;
+		}
+
+		if ( ! new_server ) {
+		  list_remove(servers, index);
+		}
+
+				
         break;
+	}
 
     case AVAHI_BROWSER_ALL_FOR_NOW:
     case AVAHI_BROWSER_CACHE_EXHAUSTED:
@@ -188,9 +231,11 @@ void *avahi_function(void *args) {
     AvahiSimplePoll *simple_poll = NULL;
     AvahiClient *client          = NULL;
     AvahiServiceBrowser *sb      = NULL;
-	struct rfid_server_info *server_info = args;
+	list *servers;
     int error;
     struct avahi_callback_params abcp;
+
+	servers = args;
 
     if (!(simple_poll = avahi_simple_poll_new())) {
         fprintf(stderr, "Failed to create simple poll object.\n");
@@ -210,9 +255,9 @@ void *avahi_function(void *args) {
 		pthread_exit(NULL);
     }
 
-    abcp.poll   = simple_poll;
-    abcp.client = client;
-	abcp.server_info = server_info;
+    abcp.poll    = simple_poll;
+    abcp.client  = client;
+	abcp.servers = servers;
 
     if ( ! (sb = avahi_service_browser_new(client,
                                            AVAHI_IF_UNSPEC,
