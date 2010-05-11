@@ -62,6 +62,9 @@ list *config_get_all(const char* filename, const char* key) {
 
   while(!feof(fp)) {
     if(fgets(buffer, 1023, fp)) {
+	  if (buffer[0] == '#')
+		continue;
+	  
 	  if (strstr(buffer, key)) {
 		char *p;
 		char *value;
