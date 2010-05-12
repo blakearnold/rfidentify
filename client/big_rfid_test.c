@@ -56,42 +56,29 @@ uint16_t apsx_crc(uint8_t *data, int len) {
 
 
 int init_serial(const char *dev) {
+	int fd;
+	
+	fd = open(dev, O_RDWR | O_NOCTTY | O_NDELAY);
+	if (fd == -1) {
+		perror("open_port: Unable to open device.");
+		return 0;
+	} else {
+		fcntl(fd, F_SETFL, 0);
+	}
+  
+	struct termios options;
+	tcgetattr(fd, &options);
+	cfsetispeed(&options, B19200);
+	cfsetospeed(&options, B19200);
+	options.c_cflag |= (CLOCAL | CREAD);
 
-  const speed_t baud = B19200;
-  struct termios toptions;
-  int fd;
+	options.c_cflag &= ~PARENB;
+	options.c_cflag &= ~CSTOPB;
+	options.c_cflag &= ~CSIZE;
+	options.c_cflag |= CS8;
 
-  fd = open( dev, O_RDWR | O_NOCTTY /*| O_NDELAY*/ | O_NONBLOCK);
-  if (fd == -1)
-	  return 0;
-
-  if (tcgetattr(fd, &toptions) < 0)
-	  return 0;
-
-  cfsetispeed(&toptions, baud);
-  cfsetospeed(&toptions, baud);
-
-  // 8N1
-  toptions.c_cflag &= ~PARENB;
-  toptions.c_cflag &= ~CSTOPB;
-  toptions.c_cflag &= ~CSIZE;
-  toptions.c_cflag |= CS8;
-  // no flow control
-  toptions.c_cflag &= ~CRTSCTS;
-
-  toptions.c_cflag    |= CREAD | CLOCAL;  // turn on READ & ignore ctrl lines
-  toptions.c_iflag    &= ~(IXON | IXOFF | IXANY); // turn off s/w flow ctrl
-
-  toptions.c_lflag    &= ~(ICANON | ECHO | ECHOE | ISIG); // make raw
-  toptions.c_oflag    &= ~OPOST; // make raw
-
-  toptions.c_cc[VMIN]  = 26;
-  toptions.c_cc[VTIME] = 2;
-
-  if( tcsetattr(fd, TCSANOW, &toptions) < 0)
-	  return 0;
-
-  return fd;
+	tcsetattr(fd, TCSANOW, &options);
+	return fd;
 }
 
 int serial_write(int fd, uint8_t* buffer, size_t num)
@@ -143,34 +130,18 @@ void red_on(int fd) {
 
   uint16_t crc = apsx_crc(data, 5);
   
-  //printf("l: %X\n", crc % 256);
-  //printf("h: %X\n", (crc - (crc % 256)) / 256);
-  
   data[5] = crc % 256;
   data[6] = (crc - (crc % 256)) / 256;
 
   serial_write(fd, data, 7);
 }
 
-void rfid_read(int fd) {
 
-  uint8_t data[7] = { 0x06,  // six bytes sent
-					  0x07,  // 0 bytes expected
-					  0x03,  // flag
-					  0x20,  // red on
-					  0x00,  // block
-					  0x00,  // crc low
-					  0x00}; // crc high
+void rfid_fa(int fd) {
 
-  uint16_t crc = apsx_crc(data, 5);
+  uint8_t data[1] = { 0xFA };
 
-  //printf("l: %X\n", crc % 256);
-  //printf("h: %X\n", (crc - (crc % 256)) / 256);
-
-  data[5] = crc % 256;
-  data[6] = (crc - (crc % 256)) / 256;
-
-  serial_write(fd, data, 7);
+  serial_write(fd, data, 1);
 
 }
 
@@ -199,13 +170,11 @@ int main() {
   uint8_t buf[1024];
 
 
-  //serial_read(fd, buf, 1023);
-
   if (errno) {
 	printf("error: %s\n", strerror(errno));
   }
 
-  rfid_read(fd);
+  rfid_fa(fd);
 
   if (errno) {
 	printf("error: %s\n", strerror(errno));
@@ -214,17 +183,8 @@ int main() {
   serial_read(fd, buf, 1023);
 
   if (errno) {
-	printf("error: %s\n", strerror(errno));
+	printf("error: %d %s\n",errno,  strerror(errno));
   }
   
   return 1;
 }
-
-
-
-
-
-
-
-
-
