@@ -6,8 +6,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define DEBUG 0
-#define WARN 0
+#define DEBUG 1
+#define WARN 1
 
 void warn(const char *warning) {
   if (WARN) {

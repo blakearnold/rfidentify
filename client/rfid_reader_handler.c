@@ -77,7 +77,9 @@ int reader_handle_tag(const char *tag,
       pthread_mutex_unlock(&(server_info->lock));
       continue;
     }
+    target[0] = '\0';
     strcpy(target, server_info->url);
+    printf("to server url: %s\n", server_info->url);
     strcat(target, action);
     strcat(target, tag);
 

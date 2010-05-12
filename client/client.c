@@ -96,7 +96,8 @@ list *read_config_servers(struct client_config *client_config) {
 		int port;
 		char *aport;
 
-		server_info->url      = list_nth(fragments, 0);
+		server_info->url      = strdup(list_nth(fragments, 0));
+		printf("server: %s\n", server_info->url);
 		aport = list_nth(fragments, 1);
 		port  = atoi(aport);
 
@@ -117,7 +118,7 @@ list *read_config_servers(struct client_config *client_config) {
 		list_push(servers, server_info);
 	  }
 	  else if (list_size(fragments) == 1) {
-		server_info->url      = list_nth(fragments, 0);
+	    server_info->url      = strdup(list_nth(fragments, 0));
 		server_info->port     = 80;
 		server_info->stable   = 1;
 		server_info->last_tag = NULL;
@@ -136,14 +137,24 @@ list *read_config_servers(struct client_config *client_config) {
 	  }
 
 	  list_foreach_entry(fragments, a, char *, s) {
-		free(s);
+	    free(s);
 	  }
-	  list_destroy_deep(fragments);
-	  free(server_info);
+	  while ( ! list_is_empty(fragments)) {
+	    void *p = list_pop(fragments);
+	    // TODO memory error here
+	    //free(p);
+	  }
+	  list_destroy(fragments);
+
 	  
 	  free(ret);
 	}
-	list_destroy_deep(l);
+	while ( ! list_is_empty(l)) {
+	  void *p = list_pop(l);
+	  // TODO memory error here
+	  //free(p);
+	}
+	list_destroy(l);
 
 	return servers;
 }
