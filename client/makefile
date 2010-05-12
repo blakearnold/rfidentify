@@ -25,6 +25,10 @@ test: test.c config.o list.o
 	gcc -g -Wall test.c config.o list.o -o test
 
 
+test_rfid: big_rfid_test.c
+	gcc -g -Wall big_rfid_test.c -o rfid_test
+
+
 avahi-publish: avahi-publish.c
 	gcc -g -Wall avahi-publish.c -lavahi-client -o avahi-publish
 
