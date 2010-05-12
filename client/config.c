@@ -6,10 +6,14 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define DEBUG 1
+#define DEBUG 0
+#define WARN 0
 
 void warn(const char *warning) {
-  printf("Warning: %s\n", warning);
+  if (WARN) {
+    printf("Warning: %s\n", warning);
+
+  }
   return;
 }
 

@@ -28,45 +28,56 @@
 #include <avahi-client/client.h>
 #include <avahi-client/lookup.h>
 
-int main(int argc, char **argv) {
-	//int c;
-    pthread_t reader_thread;
-    pthread_t avahi_thread;
-	
 
+int read_config(struct client_config *client_config, const char *filename) {
+  char *ret;
+  
+  client_config->config_file = strdup(filename);
+  client_config->last_tag    = NULL;
 
-	//TODO move most of this to functions...
+  if ( ! client_config->config_file) {
+    printf("Error: memory exhausted.\n");
+    return -ENOMEM;
+  }
 	
+  ret = config_get(client_config->config_file, "mode");
+  if ( ret ) {
+    client_config->mode = ret;
+  }
+  else {
+    client_config->mode = strdup("client");
+  }
+  
+  ret = config_get(client_config->config_file, "action");
+  if ( ret ) {
+    client_config->action = ret;
+  }
+  else {
+    client_config->action = strdup("client");
+  }
+
+  client_config->servers = read_config_servers(client_config);
+  if ( ! client_config->servers) {
+    printf("Error: memory exhausted.\n");
+    return -ENOMEM;
+  }
+
+  return 0;
+}
+
+list *read_config_servers(struct client_config *client_config) {
+
 	list *servers;
-	struct client_config client_config;
-	char *ret;
 	list *l, *temp;
+	char *ret;
 
 	servers = list_create();
 	if ( ! servers ) {
 		printf("Error: Memory exhausted.\n");
-		return -ENOMEM;
-	}
-	
-	client_config.config_file = ".rfid_client_config";
-	
-	ret = config_get(client_config.config_file, "mode");
-	if ( ret ) {
-	  client_config.mode = ret;
-	}
-	else {
-	  client_config.mode = strdup("client");
+		return NULL;
 	}
 
-	ret = config_get(client_config.config_file, "action");
-	if ( ret ) {
-	  client_config.action = ret;
-	}
-	else {
-	  client_config.action = strdup("client");
-	}
-
-	l = config_get_all(client_config.config_file, "server");
+	l = config_get_all(client_config->config_file, "server");
 	list_foreach_entry(l, temp, char *, ret) {
 	  struct rfid_server_info *server_info;
 	  list *fragments;
@@ -76,7 +87,7 @@ int main(int argc, char **argv) {
 	  server_info = malloc(1 * sizeof(struct rfid_server_info));
 	  if ( ! server_info ) {
 		printf("Error: Memory exhausted.\n");
-		return -ENOMEM;
+		return NULL;		  
 	  }
 	  pthread_mutex_init(&(server_info->lock), NULL);
 	  
@@ -100,7 +111,7 @@ int main(int argc, char **argv) {
 		server_info->name     = strdup("server_from_config");
 		if ( ! server_info->name ) {
 		  printf("Error: Memory exhausted.\n");
-		  return -ENOMEM;
+		  return NULL;		  
 		}
 		
 		list_push(servers, server_info);
@@ -114,7 +125,7 @@ int main(int argc, char **argv) {
 		server_info->name     = strdup("server_from_config");
 		if ( ! server_info->name ) {
 		  printf("Error: Memory exhausted.\n");
-		  return -ENOMEM;
+		  return NULL;
 		}
 
 		list_push(servers, server_info);
@@ -133,23 +144,35 @@ int main(int argc, char **argv) {
 	  free(ret);
 	}
 	list_destroy_deep(l);
-	
-	
-	//TODO pass config here
-    if (pthread_create(&reader_thread, NULL, &reader_function, servers)) {
-        printf("Error: Creation of reader thread failed.\n");
-        return -1;
-    }
-    //TODO pass config here
-    if (pthread_create(&avahi_thread, NULL, &avahi_function, servers)) {
-        printf("Error: Creation of mDNS thread failed.\n");
-        return -1;
-    }
 
-    pthread_join(reader_thread, NULL);
-    pthread_join(avahi_thread,  NULL);
-	
-	return 0;
+	return servers;
+}
+
+
+int main(int argc, char **argv) {
+  pthread_t reader_thread;
+  pthread_t avahi_thread;
+  struct client_config client_config;
+  
+  if (  read_config(&client_config, ".rfid_client_config")) {
+    return -1;
+  }
+  
+
+  if (pthread_create(&reader_thread, NULL, &reader_function, &client_config)) {
+    printf("Error: Creation of reader thread failed.\n");
+    return -1;
+  }
+
+  if (pthread_create(&avahi_thread, NULL, &avahi_function, &client_config)) {
+    printf("Error: Creation of mDNS thread failed.\n");
+    return -1;
+  }
+  
+  pthread_join(reader_thread, NULL);
+  pthread_join(avahi_thread,  NULL);
+  
+  return 0;
 }
 
 

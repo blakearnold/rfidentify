@@ -8,8 +8,6 @@
  * @author Willi Ballenthin
  * @date   Spring, 2010
  *
- * @todo Nail down protocol for situations with no/changing
- *            server information.
  */
 
 #include "client.h"
@@ -34,78 +32,74 @@
  * @param 0 on ok, negative integer otherwise.
  */
 int reader_handle_tag(const char *tag,
-					  list *servers) {
-    CURL *curl;
-    CURLcode res;
-	//TODO get this from the config
-    char *action = "/dev/gumstix?idTag=";
-    char *target;
-	int   size;
-	list *temp;
-	struct rfid_server_info *server_info;
-	
+		      struct client_config *config) {
+  CURL    *curl;
+  CURLcode res;
+  char    *action;
+  char    *target;
+  int      size;
+  list    *temp;
+  struct rfid_server_info *server_info;
 
-	printf("tag: %s\n", tag);
+  action = config->action;
 
-	
-	list_foreach_entry(servers, temp, struct rfid_server_info *, server_info) {
-
-	  pthread_mutex_lock(&(server_info->lock));
-
-	  // if there is no destination
-	  // do nothing and return failure (loop will reread)
-	  if (server_info->url == NULL) {
-		pthread_mutex_unlock(&(server_info->lock));
-		continue;
-	  }
-
-	  // if the tag has already been read, dont do anything
-	  if ( server_info->last_tag && strcmp(server_info->last_tag, tag) == 0) {
-		pthread_mutex_unlock(&(server_info->lock));
-		continue;
-	  }
-
-	  // compose target url
-	  size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
-	  target = malloc(sizeof(char) * size );
-	  if ( ! target) {
-		  printf("Memory exhausted.\n");
-		  pthread_mutex_unlock(&(server_info->lock));
-		  continue;
-	  }
-	  strcpy(target, server_info->url);
-	  strcat(target, action);
-	  strcat(target, tag);
-
-	  printf("query to %s\n", target);
-	  fflush(stdout);
-
-	  // make request
-	  curl = curl_easy_init();
-	  if ( ! curl) {
-		  free(target);
-		  pthread_mutex_unlock(&(server_info->lock));
-		  continue;
-	  }
-	  curl_easy_setopt(curl, CURLOPT_URL, target);
-	  curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
-	  res = curl_easy_perform(curl);
-	  curl_easy_cleanup(curl);
-	  free(target);
-
-	  // update last tag info
-	  free(server_info->last_tag);
-	  server_info->last_tag = strdup(tag);
-
-	  if ( ! server_info->last_tag) {
-		  printf("Memory exhausted.\n");
-		  pthread_mutex_unlock(&(server_info->lock));
-		  continue;
-	  }
-
-	  pthread_mutex_unlock(&(server_info->lock));
-	}
+  // if the tag has already been read, dont do anything
+  if ( config->last_tag && strcmp(config->last_tag, tag) == 0) {
     return 0;
+  }
+  else {
+    free(config->last_tag);
+    config->last_tag = strdup(tag);
+    if ( ! config->last_tag) {
+      printf("Error: memory exhausted.\n");
+      return -ENOMEM;
+    }
+  }
+
+  printf("tag: %s\n", tag);
+
+  list_foreach_entry(config->servers, temp, struct rfid_server_info *, server_info) {
+
+    pthread_mutex_lock(&(server_info->lock));
+
+    // if there is no destination
+    // do nothing and return failure (loop will reread)
+    if (server_info->url == NULL) {
+      pthread_mutex_unlock(&(server_info->lock));
+      continue;
+    }
+
+    // compose target url
+    size   = strlen(server_info->url) + strlen(tag) + strlen(action) + 1;
+    target = malloc(sizeof(char) * size );
+    if ( ! target) {
+      printf("Memory exhausted.\n");
+      pthread_mutex_unlock(&(server_info->lock));
+      continue;
+    }
+    strcpy(target, server_info->url);
+    strcat(target, action);
+    strcat(target, tag);
+
+    printf("query to %s\n", target);
+    fflush(stdout);
+
+    // make request
+    curl = curl_easy_init();
+    if ( ! curl) {
+      free(target);
+      pthread_mutex_unlock(&(server_info->lock));
+      continue;
+    }
+    curl_easy_setopt(curl, CURLOPT_URL, target);
+    curl_easy_setopt(curl, CURLOPT_PORT, (long)server_info->port);
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+    free(target);
+
+    pthread_mutex_unlock(&(server_info->lock));
+  }
+  return 0;
 }
 
 /**
@@ -116,41 +110,39 @@ int reader_handle_tag(const char *tag,
  * @return Well it shouldnt. If it does, there's an error.
  */
 int reader_poll_loop(struct reader *reader,
-					 list *servers) {
+		     struct client_config *config) {
+  list *tags;
+  tags = list_create();
+  if ( ! tags) {
+    printf("Memory exhausted.\n");
+    return ENOMEM;
+  }
 
-    list *tags;
-    tags = list_create();
-    if ( ! tags) {
-        printf("Memory exhausted.\n");
-        return ENOMEM;
+  while (1) {
+    int num_tags = reader_poll15693(reader, tags);
+    if (num_tags < 0) {
+      printf("Error polling reader\n");
+      list_destroy(tags);
+      return EDEVERR;
     }
 
-    while (1) {
-        int num_tags = reader_poll15693(reader, tags);
-        if (num_tags < 0) {
-            printf("Error polling reader\n");
-            list_destroy(tags);
-            return EDEVERR;
-        }
-
-        if (list_size(tags) == 0) {
-            printf("No tags found\n");
-        }
-
-        while (list_size(tags) > 0) {
-            struct tag *t;
-            t = list_pop(tags);
-
-			if (reader_handle_tag(t->id, servers)) {
-				// maybe this should fail/return error?
-				printf("Warning: tag handler failed.\n");
-			}
-
-            free(t->id);
-            free(t);
-        }
-        sleep(SLEEP_BTWN_POLL);
+    if (list_size(tags) == 0) {
+      printf("No tags found\n");
     }
+
+    while (list_size(tags) > 0) {
+      struct tag *t;
+      t = list_pop(tags);
+
+      if (reader_handle_tag(t->id, config)) {
+	printf("Warning: tag handler failed.\n");
+      }
+
+      free(t->id);
+      free(t);
+    }
+    sleep(SLEEP_BTWN_POLL);
+  }
 }
 
 /**
@@ -163,55 +155,54 @@ int reader_poll_loop(struct reader *reader,
  * TODO abstract RFID differences from this implementation
  */
 void *reader_function(void *args) {
-    list *readers;
-    struct reader *reader;
-	list *servers;
+  list *readers;
+  struct reader *reader;
+  struct client_config *config;
 
-	servers = args;
+  config = args;
 	
-    readers = list_create();
-    if ( ! readers) {
-        printf("Memory exhausted.\n");
-        pthread_exit(NULL);
-        // out of memory. that sucks
-    }
+  readers = list_create();
+  if ( ! readers) {
+    printf("Memory exhausted.\n");
+    pthread_exit(NULL);
+  }
 
-    while (list_size(find_all_readers(readers)) == 0 ) {
-        // spin
-        sleep(SLEEP_BTWN_SEARCH);
-    }
+  while (list_size(find_all_readers(readers)) == 0 ) {
+    // spin
+    sleep(SLEEP_BTWN_SEARCH);
+  }
 
-    if (list_size(readers) > 1) {
-        printf("Warning: Found more than one reader. Found %d readers.\n",
-               list_size(readers));
-    }
+  if (list_size(readers) > 1) {
+    printf("Warning: Found more than one reader. Found %d readers.\n",
+	   list_size(readers));
+  }
 
-    reader = list_pop(readers);
-    while (reader_connect(reader, BEEP) != RC_SUCCESS) {
-        printf("Unable to connect to reader.\n");
-        free(reader->ftdic);
-        free(reader);
-
-        if (list_size(readers) == 0) {
-            printf("List of readers exhausted.\n");
-            // this is bad
-            pthread_exit(NULL);
-        }
-        reader = list_pop(readers);
-    }
-    printf("Connected to reader.\n");
-
-    while (list_size(readers) > 0) {
-        struct reader *r = list_pop(readers);
-        free(r->ftdic);
-        free(r);
-    }
-    list_destroy(readers);
-
-    reader_poll_loop(reader, servers);
-    // only get here on error
-
+  reader = list_pop(readers);
+  while (reader_connect(reader, BEEP) != RC_SUCCESS) {
+    printf("Unable to connect to reader.\n");
     free(reader->ftdic);
     free(reader);
-    pthread_exit(NULL);
+
+    if (list_size(readers) == 0) {
+      printf("List of readers exhausted.\n");
+      // this is bad
+      pthread_exit(NULL);
+    }
+    reader = list_pop(readers);
+  }
+  printf("Connected to reader.\n");
+
+  while (list_size(readers) > 0) {
+    struct reader *r = list_pop(readers);
+    free(r->ftdic);
+    free(r);
+  }
+  list_destroy(readers);
+
+  reader_poll_loop(reader, config);
+  // only get here on error
+
+  free(reader->ftdic);
+  free(reader);
+  pthread_exit(NULL);
 }
