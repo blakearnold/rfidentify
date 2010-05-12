@@ -63,7 +63,7 @@ void resolve_callback(
     case AVAHI_RESOLVER_FOUND: {
 	  list *temp;
 	  struct rfid_server_info *info;
-	  int new_server = 1;
+	  int new_server = 1; // this is a hack, it makes the loop easier...
 	  
 	  char ip[AVAHI_ADDRESS_STR_MAX];
 
@@ -178,7 +178,7 @@ void browse_callback(
 
 		//TODO we just assume this can only match one. not ideal.
 		//TODO we only compare against the name, with no consideration of
-		//      domain, which is bad.
+		//      domain, which is bad. should come up with a hash.
 		list_foreach_entry(servers, temp, struct rfid_server_info *, info) {
 		  if (strcmp(name, info->name) == 0 && info->stable == 0) {
 			new_server = 0;

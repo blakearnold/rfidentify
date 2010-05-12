@@ -149,8 +149,6 @@ void rfid_fa(int fd) {
 
 
 int main() {
-
-
   uint8_t data[3] = { 0x27, 0x01, 0x00 };
 
   calc_crc(data, 3);

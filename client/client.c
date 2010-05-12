@@ -34,6 +34,8 @@ int main(int argc, char **argv) {
     pthread_t avahi_thread;
 	
 
+
+	//TODO move most of this to functions...
 	
 	list *servers;
 	struct client_config client_config;
@@ -95,6 +97,12 @@ int main(int argc, char **argv) {
 		server_info->stable   = 1;
 		server_info->last_tag = NULL;
 
+		server_info->name     = strdup("server_from_config");
+		if ( ! server_info->name ) {
+		  printf("Error: Memory exhausted.\n");
+		  return -ENOMEM;
+		}
+		
 		list_push(servers, server_info);
 	  }
 	  else if (list_size(fragments) == 1) {
@@ -102,6 +110,12 @@ int main(int argc, char **argv) {
 		server_info->port     = 80;
 		server_info->stable   = 1;
 		server_info->last_tag = NULL;
+		
+		server_info->name     = strdup("server_from_config");
+		if ( ! server_info->name ) {
+		  printf("Error: Memory exhausted.\n");
+		  return -ENOMEM;
+		}
 
 		list_push(servers, server_info);
 	  }
@@ -121,11 +135,12 @@ int main(int argc, char **argv) {
 	list_destroy_deep(l);
 	
 	
-	
+	//TODO pass config here
     if (pthread_create(&reader_thread, NULL, &reader_function, servers)) {
         printf("Error: Creation of reader thread failed.\n");
         return -1;
     }
+    //TODO pass config here
     if (pthread_create(&avahi_thread, NULL, &avahi_function, servers)) {
         printf("Error: Creation of mDNS thread failed.\n");
         return -1;

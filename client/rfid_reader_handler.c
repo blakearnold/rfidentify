@@ -160,6 +160,7 @@ int reader_poll_loop(struct reader *reader,
  * @see SLEEP_BTWN_SEARCH
  * @param args a list of struct rfid_server_info.
  * @return Should  not return, if so, error.
+ * TODO abstract RFID differences from this implementation
  */
 void *reader_function(void *args) {
     list *readers;
