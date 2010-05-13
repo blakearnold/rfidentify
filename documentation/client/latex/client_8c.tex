@@ -1,0 +1,131 @@
+\hypertarget{client_8c}{
+\section{client/client.c File Reference}
+\label{client_8c}\index{client/client.c@{client/client.c}}
+}
+{\ttfamily \#include \char`\"{}client.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}config.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}list.h\char`\"{}}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$pthread.h$>$}\par
+{\ttfamily \#include $<$errno.h$>$}\par
+{\ttfamily \#include $<$avahi-\/client/client.h$>$}\par
+{\ttfamily \#include $<$avahi-\/client/lookup.h$>$}\par
+Include dependency graph for client.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=387pt]{client_8c__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=68pt]{client_8c__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{client_8c_aeb76476d4872310249ea0634068eff67}{read\_\-config} (struct \hyperlink{structclient__config}{client\_\-config} $\ast$\hyperlink{structclient__config}{client\_\-config}, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Configures a client given a configuration file. \item\end{DoxyCompactList}\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{client_8c_abafd8197d150530827f5ab09c47c28c3}{read\_\-config\_\-servers} (struct \hyperlink{structclient__config}{client\_\-config} $\ast$\hyperlink{structclient__config}{client\_\-config})
+\begin{DoxyCompactList}\small\item\em Configures static servers from a configuration file. \item\end{DoxyCompactList}\item 
+\hypertarget{client_8c_a3c04138a5bfe5d72780bb7e82a18e627}{
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)}
+\label{client_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This application reads RFID tags and queries a server with the tag ID. The server is discovered using Avahi/mDNS.
+
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{client_8c_source}{client.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{client_8c_aeb76476d4872310249ea0634068eff67}{
+\index{client.c@{client.c}!read\_\-config@{read\_\-config}}
+\index{read\_\-config@{read\_\-config}!client.c@{client.c}}
+\subsubsection[{read\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}int read\_\-config (struct {\bf client\_\-config} $\ast$ {\em client\_\-config}, \/  const char $\ast$ {\em filename})}}
+\label{client_8c_aeb76476d4872310249ea0634068eff67}
+
+
+Configures a client given a configuration file. 
+
+Configures a client given a configuration file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{structclient__config}{client\_\-config}}]The destination configuration. \item[{\em filename}]The file from which to read the config. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file client.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=411pt]{client_8c_aeb76476d4872310249ea0634068eff67_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{client_8c_abafd8197d150530827f5ab09c47c28c3}{
+\index{client.c@{client.c}!read\_\-config\_\-servers@{read\_\-config\_\-servers}}
+\index{read\_\-config\_\-servers@{read\_\-config\_\-servers}!client.c@{client.c}}
+\subsubsection[{read\_\-config\_\-servers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ read\_\-config\_\-servers (struct {\bf client\_\-config} $\ast$ {\em client\_\-config})}}
+\label{client_8c_abafd8197d150530827f5ab09c47c28c3}
+
+
+Configures static servers from a configuration file. 
+
+Configures static servers from a configuration file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{structclient__config}{client\_\-config}}]The config, including filename, from which to determine the servers. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of servers, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file client.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{client_8c_abafd8197d150530827f5ab09c47c28c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{client_8c_abafd8197d150530827f5ab09c47c28c3_icgraph}
+\end{center}
+\end{figure}
+
+

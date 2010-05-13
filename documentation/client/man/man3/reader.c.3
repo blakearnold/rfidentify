@@ -1,0 +1,123 @@
+.TH "client/reader.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/reader.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'reader.h'\fP
+.br
+\fC#include <string.h>\fP
+.br
+\fC#include <stdio.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBreader\fP * \fBreader_create\fP ()"
+.br
+.RI "\fIReturn a newly allocated reader. \fP"
+.ti -1c
+.RI "void \fBreader_init\fP (struct \fBreader\fP *\fBreader\fP, struct ftdi_context *ftdic, struct usb_device *dev)"
+.br
+.RI "\fIInitialize a newly allocated reader. \fP"
+.ti -1c
+.RI "struct \fBtag\fP * \fBtag_create\fP ()"
+.br
+.RI "\fIReturns a newly allocated tag. \fP"
+.ti -1c
+.RI "void \fBtag_init\fP (struct \fBtag\fP *\fBtag\fP, char *id, struct \fBreader\fP *parent)"
+.br
+.RI "\fIInitializes a newly allocated tag. \fP"
+.ti -1c
+.RI "\fBlist\fP * \fBfind_all_readers\fP (struct \fBlist\fP *readers)"
+.br
+.RI "\fIReturns a list of all connected readers. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_connect\fP (struct \fBreader\fP *\fBreader\fP, int beep)"
+.br
+.RI "\fIConnects to a given reader. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_disconnect\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fIDisconnects from a given reader. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_reset\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fIResets a given reader. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_pass_beep\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fICauses the reader to emit the PASS beep. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_fail_beep\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fICauses the reader to emit the FAIL beep. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_ping\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fIPings a given reader. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_purge\fP (struct \fBreader\fP *\fBreader\fP)"
+.br
+.RI "\fIPurges a given reader. \fP"
+.ti -1c
+.RI "int \fBreader_read_packet\fP (struct \fBreader\fP *\fBreader\fP, char *buf, int maxlen)"
+.br
+.RI "\fIReads a packet from a reader into a buffer. \fP"
+.ti -1c
+.RI "int \fBreader_txPacketRxReply\fP (struct \fBreader\fP *\fBreader\fP, char *tx_packet, int tx_packet_len, char *rx_buf, int rx_buf_len, int *payload_index)"
+.br
+.RI "\fITODO. \fP"
+.ti -1c
+.RI "\fBReturnCode\fP \fBreader_txPacketCheckAck\fP (struct \fBreader\fP *\fBreader\fP, char *tx_packet, int tx_packet_len)"
+.br
+.RI "\fIReturns if successfully acknowledged. \fP"
+.ti -1c
+.RI "int \fBreader_parse_poll_packet\fP (struct \fBreader\fP *\fBreader\fP, struct \fBlist\fP *tagList, char *packetPayload, int packetPayload_len)"
+.br
+.RI "\fIParses a packet returned from a reader poll. \fP"
+.ti -1c
+.RI "int \fBreader_poll15693\fP (struct \fBreader\fP *\fBreader\fP, \fBlist\fP *tagList)"
+.br
+.RI "\fICauses the reader to poll for and ISO15693 tag. \fP"
+.ti -1c
+.RI "int \fBreader_pollTi\fP (struct \fBreader\fP *\fBreader\fP, \fBlist\fP *tagList)"
+.br
+.RI "\fIAttempts to poll the reader for various tags. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Device library for an RFID reader. Particularly the DLP-RFID1.
+.PP
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Spring, 2010 
+.RE
+.PP
+
+.PP
+Definition in file \fBreader.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "\fBlist\fP* find_all_readers (struct \fBlist\fP * readers)"
+.PP
+Returns a list of all connected readers. \fBParameters:\fP
+.RS 4
+\fIreaders\fP Probably should be an empty list. 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file reader.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

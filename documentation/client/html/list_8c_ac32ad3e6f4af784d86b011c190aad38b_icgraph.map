@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" href="$config_8h.html#a54a4b949509d289e47841a725146ce4e" title="Get a value from a configuration file identified by a filename." alt="" coords="307,5,387,35"/>
+<area shape="rect" href="$list_8h.html#ac32ad3e6f4af784d86b011c190aad38b" title="list_destroy" alt="" coords="141,123,229,152"/>
+<area shape="rect" href="$list_8h.html#a663fd068ed01140f77770b580258d271" title="list_filter" alt="" coords="312,171,381,200"/>
+<area shape="rect" href="$client_8h.html#abafd8197d150530827f5ab09c47c28c3" title="Configures static servers from a configuration file." alt="" coords="277,59,416,88"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#a2fe5f2e559b4f539c687ab4121a4a7be" title="RFID reading loop which polls for identifications. Look for rfid_reader_handler.c..." alt="" coords="465,224,575,253"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#ad7e398d96716aecafb8fdad3c4d64f32" title="reader_poll_loop" alt="" coords="289,224,404,253"/>
+<area shape="rect" href="$client_8h.html#aeb76476d4872310249ea0634068eff67" title="Configures a client given a configuration file." alt="" coords="476,32,564,61"/>
+</map>

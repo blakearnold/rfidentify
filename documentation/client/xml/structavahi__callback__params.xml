@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structavahi__callback__params" kind="struct" prot="public">
+    <compoundname>avahi_callback_params</compoundname>
+    <includes refid="client_8h" local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" prot="public" static="no" mutable="no">
+        <type>AvahiSimplePoll *</type>
+        <definition>AvahiSimplePoll* poll</definition>
+        <argsstring></argsstring>
+        <name>poll</name>
+        <briefdescription>
+<para>Current poll object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="45" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" compoundref="avahi__dns__handler_8c" startline="225" endline="275">avahi_function</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" prot="public" static="no" mutable="no">
+        <type>AvahiClient *</type>
+        <definition>AvahiClient* client</definition>
+        <argsstring></argsstring>
+        <name>client</name>
+        <briefdescription>
+<para>Currently working client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="46" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" compoundref="avahi__dns__handler_8c" startline="225" endline="275">avahi_function</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structavahi__callback__params_1abb59d3961e7409275a1cefae9915dc23" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structclient__config" kindref="compound">client_config</ref> *</type>
+        <definition>struct client_config* config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+<para>Client configuration status. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="47" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" compoundref="avahi__dns__handler_8c" startline="225" endline="275">avahi_function</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Aggregation of various parameters to Avahi callbacks. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="13">
+        <label>list</label>
+        <link refid="structlist"/>
+      </node>
+      <node id="11">
+        <label>avahi_callback_params</label>
+        <link refid="structavahi__callback__params"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>client_config</label>
+        <link refid="structclient__config"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>servers</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="44" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="44" bodyend="48"/>
+    <listofallmembers>
+      <member refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" prot="public" virt="non-virtual"><scope>avahi_callback_params</scope><name>client</name></member>
+      <member refid="structavahi__callback__params_1abb59d3961e7409275a1cefae9915dc23" prot="public" virt="non-virtual"><scope>avahi_callback_params</scope><name>config</name></member>
+      <member refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" prot="public" virt="non-virtual"><scope>avahi_callback_params</scope><name>poll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,132 @@
+\contentsline {chapter}{\numberline {1}Todo List}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Data Structure Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Data Structures}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Data Structure Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}avahi\_\discretionary {-}{}{}callback\_\discretionary {-}{}{}params Struct Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}client\_\discretionary {-}{}{}config Struct Reference}{9}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{9}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}list Struct Reference}{10}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{10}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}reader Struct Reference}{11}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{11}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info Struct Reference}{12}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{12}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Field Documentation}{12}{subsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2.1}lock}{12}{subsubsection.4.5.2.1}
+\contentsline {section}{\numberline {4.6}tag Struct Reference}{13}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{13}{subsection.4.6.1}
+\contentsline {chapter}{\numberline {5}File Documentation}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}client/avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c File Reference}{15}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{16}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{16}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}avahi\_\discretionary {-}{}{}function}{16}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}browse\_\discretionary {-}{}{}callback}{17}{subsubsection.5.1.2.2}
+\contentsline {subsubsection}{\numberline {5.1.2.3}client\_\discretionary {-}{}{}callback}{18}{subsubsection.5.1.2.3}
+\contentsline {subsubsection}{\numberline {5.1.2.4}resolve\_\discretionary {-}{}{}callback}{19}{subsubsection.5.1.2.4}
+\contentsline {section}{\numberline {5.2}client/client.c File Reference}{20}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{21}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Function Documentation}{21}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}read\_\discretionary {-}{}{}config}{21}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}{22}{subsubsection.5.2.2.2}
+\contentsline {section}{\numberline {5.3}client/client.h File Reference}{25}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{26}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{26}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}avahi\_\discretionary {-}{}{}function}{26}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}read\_\discretionary {-}{}{}config}{27}{subsubsection.5.3.2.2}
+\contentsline {subsubsection}{\numberline {5.3.2.3}read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}{28}{subsubsection.5.3.2.3}
+\contentsline {subsubsection}{\numberline {5.3.2.4}reader\_\discretionary {-}{}{}function}{30}{subsubsection.5.3.2.4}
+\contentsline {section}{\numberline {5.4}client/config.c File Reference}{31}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{31}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Function Documentation}{32}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}config\_\discretionary {-}{}{}get}{32}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}{32}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}debug}{33}{subsubsection.5.4.2.3}
+\contentsline {subsubsection}{\numberline {5.4.2.4}warn}{33}{subsubsection.5.4.2.4}
+\contentsline {section}{\numberline {5.5}client/config.h File Reference}{35}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{35}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Function Documentation}{36}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}config\_\discretionary {-}{}{}get}{36}{subsubsection.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.2.2}config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}{36}{subsubsection.5.5.2.2}
+\contentsline {section}{\numberline {5.6}client/list.c File Reference}{38}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{39}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Function Documentation}{39}{subsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.2.1}list\_\discretionary {-}{}{}append}{39}{subsubsection.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.2.2}list\_\discretionary {-}{}{}array}{40}{subsubsection.5.6.2.2}
+\contentsline {subsubsection}{\numberline {5.6.2.3}list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}{40}{subsubsection.5.6.2.3}
+\contentsline {subsubsection}{\numberline {5.6.2.4}list\_\discretionary {-}{}{}car}{40}{subsubsection.5.6.2.4}
+\contentsline {subsubsection}{\numberline {5.6.2.5}list\_\discretionary {-}{}{}cdr}{41}{subsubsection.5.6.2.5}
+\contentsline {subsubsection}{\numberline {5.6.2.6}list\_\discretionary {-}{}{}cons}{43}{subsubsection.5.6.2.6}
+\contentsline {subsubsection}{\numberline {5.6.2.7}list\_\discretionary {-}{}{}create}{43}{subsubsection.5.6.2.7}
+\contentsline {subsubsection}{\numberline {5.6.2.8}list\_\discretionary {-}{}{}destroy}{44}{subsubsection.5.6.2.8}
+\contentsline {subsubsection}{\numberline {5.6.2.9}list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}{45}{subsubsection.5.6.2.9}
+\contentsline {subsubsection}{\numberline {5.6.2.10}list\_\discretionary {-}{}{}filter}{45}{subsubsection.5.6.2.10}
+\contentsline {subsubsection}{\numberline {5.6.2.11}list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}{46}{subsubsection.5.6.2.11}
+\contentsline {subsubsection}{\numberline {5.6.2.12}list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}{46}{subsubsection.5.6.2.12}
+\contentsline {subsubsection}{\numberline {5.6.2.13}list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}{47}{subsubsection.5.6.2.13}
+\contentsline {subsubsection}{\numberline {5.6.2.14}list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null}{48}{subsubsection.5.6.2.14}
+\contentsline {subsubsection}{\numberline {5.6.2.15}list\_\discretionary {-}{}{}map}{48}{subsubsection.5.6.2.15}
+\contentsline {subsubsection}{\numberline {5.6.2.16}list\_\discretionary {-}{}{}nth}{49}{subsubsection.5.6.2.16}
+\contentsline {subsubsection}{\numberline {5.6.2.17}list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom}{49}{subsubsection.5.6.2.17}
+\contentsline {subsubsection}{\numberline {5.6.2.18}list\_\discretionary {-}{}{}pop}{50}{subsubsection.5.6.2.18}
+\contentsline {subsubsection}{\numberline {5.6.2.19}list\_\discretionary {-}{}{}push}{51}{subsubsection.5.6.2.19}
+\contentsline {subsubsection}{\numberline {5.6.2.20}list\_\discretionary {-}{}{}remove}{52}{subsubsection.5.6.2.20}
+\contentsline {subsubsection}{\numberline {5.6.2.21}list\_\discretionary {-}{}{}reverse}{53}{subsubsection.5.6.2.21}
+\contentsline {subsubsection}{\numberline {5.6.2.22}list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}{53}{subsubsection.5.6.2.22}
+\contentsline {subsubsection}{\numberline {5.6.2.23}list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}{54}{subsubsection.5.6.2.23}
+\contentsline {subsubsection}{\numberline {5.6.2.24}list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}{55}{subsubsection.5.6.2.24}
+\contentsline {subsubsection}{\numberline {5.6.2.25}list\_\discretionary {-}{}{}size}{55}{subsubsection.5.6.2.25}
+\contentsline {subsubsection}{\numberline {5.6.2.26}null\_\discretionary {-}{}{}list}{55}{subsubsection.5.6.2.26}
+\contentsline {section}{\numberline {5.7}client/list.h File Reference}{57}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{58}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Define Documentation}{58}{subsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.2.1}list\_\discretionary {-}{}{}foreach}{58}{subsubsection.5.7.2.1}
+\contentsline {subsubsection}{\numberline {5.7.2.2}list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry}{58}{subsubsection.5.7.2.2}
+\contentsline {subsection}{\numberline {5.7.3}Typedef Documentation}{59}{subsection.5.7.3}
+\contentsline {subsubsection}{\numberline {5.7.3.1}list}{59}{subsubsection.5.7.3.1}
+\contentsline {subsection}{\numberline {5.7.4}Function Documentation}{59}{subsection.5.7.4}
+\contentsline {subsubsection}{\numberline {5.7.4.1}list\_\discretionary {-}{}{}append}{59}{subsubsection.5.7.4.1}
+\contentsline {subsubsection}{\numberline {5.7.4.2}list\_\discretionary {-}{}{}array}{60}{subsubsection.5.7.4.2}
+\contentsline {subsubsection}{\numberline {5.7.4.3}list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}{60}{subsubsection.5.7.4.3}
+\contentsline {subsubsection}{\numberline {5.7.4.4}list\_\discretionary {-}{}{}car}{61}{subsubsection.5.7.4.4}
+\contentsline {subsubsection}{\numberline {5.7.4.5}list\_\discretionary {-}{}{}cdr}{62}{subsubsection.5.7.4.5}
+\contentsline {subsubsection}{\numberline {5.7.4.6}list\_\discretionary {-}{}{}cons}{64}{subsubsection.5.7.4.6}
+\contentsline {subsubsection}{\numberline {5.7.4.7}list\_\discretionary {-}{}{}create}{64}{subsubsection.5.7.4.7}
+\contentsline {subsubsection}{\numberline {5.7.4.8}list\_\discretionary {-}{}{}destroy}{65}{subsubsection.5.7.4.8}
+\contentsline {subsubsection}{\numberline {5.7.4.9}list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}{66}{subsubsection.5.7.4.9}
+\contentsline {subsubsection}{\numberline {5.7.4.10}list\_\discretionary {-}{}{}filter}{66}{subsubsection.5.7.4.10}
+\contentsline {subsubsection}{\numberline {5.7.4.11}list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}{67}{subsubsection.5.7.4.11}
+\contentsline {subsubsection}{\numberline {5.7.4.12}list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}{67}{subsubsection.5.7.4.12}
+\contentsline {subsubsection}{\numberline {5.7.4.13}list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}{68}{subsubsection.5.7.4.13}
+\contentsline {subsubsection}{\numberline {5.7.4.14}list\_\discretionary {-}{}{}map}{69}{subsubsection.5.7.4.14}
+\contentsline {subsubsection}{\numberline {5.7.4.15}list\_\discretionary {-}{}{}nth}{69}{subsubsection.5.7.4.15}
+\contentsline {subsubsection}{\numberline {5.7.4.16}list\_\discretionary {-}{}{}pop}{69}{subsubsection.5.7.4.16}
+\contentsline {subsubsection}{\numberline {5.7.4.17}list\_\discretionary {-}{}{}push}{70}{subsubsection.5.7.4.17}
+\contentsline {subsubsection}{\numberline {5.7.4.18}list\_\discretionary {-}{}{}remove}{71}{subsubsection.5.7.4.18}
+\contentsline {subsubsection}{\numberline {5.7.4.19}list\_\discretionary {-}{}{}reverse}{72}{subsubsection.5.7.4.19}
+\contentsline {subsubsection}{\numberline {5.7.4.20}list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}{73}{subsubsection.5.7.4.20}
+\contentsline {subsubsection}{\numberline {5.7.4.21}list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}{73}{subsubsection.5.7.4.21}
+\contentsline {subsubsection}{\numberline {5.7.4.22}list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}{74}{subsubsection.5.7.4.22}
+\contentsline {subsubsection}{\numberline {5.7.4.23}list\_\discretionary {-}{}{}size}{74}{subsubsection.5.7.4.23}
+\contentsline {subsubsection}{\numberline {5.7.4.24}null\_\discretionary {-}{}{}list}{75}{subsubsection.5.7.4.24}
+\contentsline {section}{\numberline {5.8}client/reader.c File Reference}{76}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{77}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Function Documentation}{77}{subsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.2.1}find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}{77}{subsubsection.5.8.2.1}
+\contentsline {section}{\numberline {5.9}client/reader.h File Reference}{79}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{81}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Function Documentation}{81}{subsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.2.1}find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}{81}{subsubsection.5.9.2.1}
+\contentsline {section}{\numberline {5.10}client/rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c File Reference}{83}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{83}{subsection.5.10.1}
+\contentsline {subsection}{\numberline {5.10.2}Function Documentation}{84}{subsection.5.10.2}
+\contentsline {subsubsection}{\numberline {5.10.2.1}reader\_\discretionary {-}{}{}function}{84}{subsubsection.5.10.2.1}
+\contentsline {subsubsection}{\numberline {5.10.2.2}reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag}{85}{subsubsection.5.10.2.2}
+\contentsline {subsubsection}{\numberline {5.10.2.3}reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop}{85}{subsubsection.5.10.2.3}
+\contentsline {section}{\numberline {5.11}client/string\_\discretionary {-}{}{}utils.c File Reference}{87}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{87}{subsection.5.11.1}
+\contentsline {subsection}{\numberline {5.11.2}Function Documentation}{87}{subsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.2.1}string\_\discretionary {-}{}{}join}{87}{subsubsection.5.11.2.1}
+\contentsline {subsubsection}{\numberline {5.11.2.2}string\_\discretionary {-}{}{}split}{88}{subsubsection.5.11.2.2}

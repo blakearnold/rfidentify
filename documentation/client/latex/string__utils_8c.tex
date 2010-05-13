@@ -1,0 +1,102 @@
+\hypertarget{string__utils_8c}{
+\section{client/string\_\-utils.c File Reference}
+\label{string__utils_8c}\index{client/string\_\-utils.c@{client/string\_\-utils.c}}
+}
+{\ttfamily \#include \char`\"{}string\_\-utils.h\char`\"{}}\par
+Include dependency graph for string\_\-utils.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=106pt]{string__utils_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{string__utils_8c_a97015c4a9a9434c30072270f322b48ec}{string\_\-join} (\hyperlink{structlist}{list} $\ast$strings, char $\ast$glue)
+\begin{DoxyCompactList}\small\item\em Given a list of strings, return a string glued together by GLUE. \item\end{DoxyCompactList}\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{string__utils_8c_ad53f748f94f536ae4e1290a3ff1ac501}{string\_\-split} (char $\ast$line, char $\ast$delim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{string__utils_8c_source}{string\_\-utils.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{string__utils_8c_a97015c4a9a9434c30072270f322b48ec}{
+\index{string\_\-utils.c@{string\_\-utils.c}!string\_\-join@{string\_\-join}}
+\index{string\_\-join@{string\_\-join}!string_utils.c@{string\_\-utils.c}}
+\subsubsection[{string\_\-join}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ string\_\-join ({\bf list} $\ast$ {\em strings}, \/  char $\ast$ {\em glue})}}
+\label{string__utils_8c_a97015c4a9a9434c30072270f322b48ec}
+
+
+Given a list of strings, return a string glued together by GLUE. 
+
+Given a string an set of delimiting characters, return a list of string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em strings}]A list of strings to join. \item[{\em glue}]A string to be used as glue. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new string composed of the parts provided in the list glued together by the join string, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file string\_\-utils.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{string__utils_8c_a97015c4a9a9434c30072270f322b48ec_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{string__utils_8c_ad53f748f94f536ae4e1290a3ff1ac501}{
+\index{string\_\-utils.c@{string\_\-utils.c}!string\_\-split@{string\_\-split}}
+\index{string\_\-split@{string\_\-split}!string_utils.c@{string\_\-utils.c}}
+\subsubsection[{string\_\-split}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ string\_\-split (char $\ast$ {\em line}, \/  char $\ast$ {\em delim})}}
+\label{string__utils_8c_ad53f748f94f536ae4e1290a3ff1ac501}
+split a string into a list of new substrings delimited by some set of characters the resulting list should be deep freed. 
+\begin{DoxyParams}{Parameters}
+\item[{\em line}]The string to split. \item[{\em delim}]A set of characters, each of which should cause a split. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New list containing the fragments, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file string\_\-utils.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{string__utils_8c_ad53f748f94f536ae4e1290a3ff1ac501_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{string__utils_8c_ad53f748f94f536ae4e1290a3ff1ac501_icgraph}
+\end{center}
+\end{figure}
+
+

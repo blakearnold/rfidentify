@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="client_8c" kind="file">
+    <compoundname>client.c</compoundname>
+    <includes refid="client_8h" local="yes">client.h</includes>
+    <includes refid="client_8c" local="yes">config.h</includes>
+    <includes refid="list_8h" local="yes">list.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">avahi-client/client.h</includes>
+    <includes local="no">avahi-client/lookup.h</includes>
+    <includedby refid="client_8c" local="yes">client/client.c</includedby>
+    <incdepgraph>
+      <node id="144">
+        <label>reader.h</label>
+        <link refid="reader_8h"/>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>avahi-common/simple-watch.h</label>
+      </node>
+      <node id="150">
+        <label>stdlib.h</label>
+      </node>
+      <node id="155">
+        <label>errno.h</label>
+      </node>
+      <node id="147">
+        <label>avahi-client/client.h</label>
+      </node>
+      <node id="142">
+        <label>client/client.c</label>
+        <link refid="client.c"/>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>client.h</label>
+        <link refid="client_8h"/>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>pthread.h</label>
+      </node>
+      <node id="145">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="151">
+        <label>string.h</label>
+      </node>
+      <node id="146">
+        <label>ftdi.h</label>
+      </node>
+      <node id="153">
+        <label>unistd.h</label>
+      </node>
+      <node id="156">
+        <label>avahi-client/lookup.h</label>
+      </node>
+      <node id="152">
+        <label>ctype.h</label>
+      </node>
+      <node id="154">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="157">
+        <label>client/client.c</label>
+        <link refid="client.c"/>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="client_8c_1aeb76476d4872310249ea0634068eff67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int read_config</definition>
+        <argsstring>(struct client_config *client_config, const char *filename)</argsstring>
+        <name>read_config</name>
+        <param>
+          <type>struct <ref refid="structclient__config" kindref="compound">client_config</ref> *</type>
+          <declname>client_config</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Configures a client given a configuration file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Configures a client given a configuration file. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structclient__config" kindref="compound">client_config</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination configuration. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file from which to read the config. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success. non-zero otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" line="35" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" bodystart="35" bodyend="71"/>
+        <references refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" compoundref="client_8h" startline="36">client_config::action</references>
+        <references refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" compoundref="client_8h" startline="34">client_config::config_file</references>
+        <references refid="config_8c_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</references>
+        <references refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" compoundref="client_8h" startline="37">client_config::last_tag</references>
+        <references refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" compoundref="client_8h" startline="39">client_config::lock</references>
+        <references refid="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" compoundref="client_8h" startline="35">client_config::mode</references>
+        <references refid="client_8c_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</references>
+        <references refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" compoundref="client_8h" startline="38">client_config::servers</references>
+      </memberdef>
+      <memberdef kind="function" id="client_8c_1abafd8197d150530827f5ab09c47c28c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* read_config_servers</definition>
+        <argsstring>(struct client_config *client_config)</argsstring>
+        <name>read_config_servers</name>
+        <param>
+          <type>struct <ref refid="structclient__config" kindref="compound">client_config</ref> *</type>
+          <declname>client_config</declname>
+        </param>
+        <briefdescription>
+<para>Configures static servers from a configuration file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Configures static servers from a configuration file. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structclient__config" kindref="compound">client_config</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The config, including filename, from which to determine the servers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of servers, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" line="79" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" bodystart="79" bodyend="172"/>
+        <references refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" compoundref="client_8h" startline="34">client_config::config_file</references>
+        <references refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" compoundref="list_8h" startline="91">list_foreach_entry</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <references refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" compoundref="client_8h" startline="25">rfid_server_info::lock</references>
+        <references refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" compoundref="client_8h" startline="29">rfid_server_info::name</references>
+        <references refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" compoundref="client_8h" startline="27">rfid_server_info::port</references>
+        <references refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" compoundref="client_8h" startline="28">rfid_server_info::stable</references>
+        <references refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</references>
+        <references refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" compoundref="client_8h" startline="26">rfid_server_info::url</references>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="client_8c_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" line="175" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c" bodystart="175" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This application reads RFID tags and queries a server with the tag ID. The server is discovered using Avahi/mDNS.</para><para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="14"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="config_8h" kindref="compound">config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;string_utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-client/client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-client/lookup.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="client_8h_1aeb76476d4872310249ea0634068eff67" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="client_8c_1aeb76476d4872310249ea0634068eff67" kindref="member" tooltip="Configures a client given a configuration file.">read_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*<ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ret;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kindref="member" tooltip="Location of configuration file.">config_file</ref><sp/>=<sp/>strdup(filename);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>pthread_mutex_init(&amp;(client_config.<ref refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications, especially last_tag.">lock</ref>),<sp/>NULL);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>client_config-&gt;<ref refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kindref="member" tooltip="Location of configuration file.">config_file</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-ENOMEM;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/><ref refid="config_8c_1a54a4b949509d289e47841a725146ce4e" kindref="member" tooltip="Get a value from a configuration file identified by a filename.">config_get</ref>(client_config-&gt;<ref refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kindref="member" tooltip="Location of configuration file.">config_file</ref>,<sp/></highlight><highlight class="stringliteral">&quot;mode&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ret<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" kindref="member" tooltip="Current mode of client.">mode</ref><sp/>=<sp/>ret;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" kindref="member" tooltip="Current mode of client.">mode</ref><sp/>=<sp/>strdup(</highlight><highlight class="stringliteral">&quot;client&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/><ref refid="config_8c_1a54a4b949509d289e47841a725146ce4e" kindref="member" tooltip="Get a value from a configuration file identified by a filename.">config_get</ref>(client_config-&gt;<ref refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kindref="member" tooltip="Location of configuration file.">config_file</ref>,<sp/></highlight><highlight class="stringliteral">&quot;action&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>ret<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" kindref="member" tooltip="Server REST action.">action</ref><sp/>=<sp/>ret;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" kindref="member" tooltip="Server REST action.">action</ref><sp/>=<sp/>strdup(</highlight><highlight class="stringliteral">&quot;client&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>client_config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref><sp/>=<sp/><ref refid="client_8c_1abafd8197d150530827f5ab09c47c28c3" kindref="member" tooltip="Configures static servers from a configuration file.">read_config_servers</ref>(client_config);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>client_config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-ENOMEM;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="client_8c_1abafd8197d150530827f5ab09c47c28c3" kindref="member" tooltip="Configures static servers from a configuration file.">read_config_servers</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*<ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*servers;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/>*temp;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ret;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>servers<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>servers<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>l<sp/>=<sp/><ref refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" kindref="member" tooltip="Gets all relevant values from a configuration file identifed by a filename.">config_get_all</ref>(client_config-&gt;<ref refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kindref="member" tooltip="Location of configuration file.">config_file</ref>,<sp/></highlight><highlight class="stringliteral">&quot;server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><ref refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kindref="member">list_foreach_entry</ref>(l,<sp/>temp,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>ret)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*server_info;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*fragments;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*a;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>server_info<sp/>=<sp/>malloc(1<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref>));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>server_info<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_init(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>),<sp/>NULL);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>fragments<sp/>=<sp/><ref refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" kindref="member">string_split</ref>(ret,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(fragments)<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kindref="member" tooltip="RFID server port.">port</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*aport;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>strdup(<ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(fragments,<sp/>0));</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;server:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aport<sp/>=<sp/><ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(fragments,<sp/>1);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/><sp/>=<sp/>atoi(aport);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(port<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>invalid<sp/>port<sp/>in<sp/>config<sp/>file.<sp/>Assuming<sp/>port<sp/>80.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>80;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kindref="member" tooltip="RFID server port.">port</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kindref="member" tooltip="True if the URL will not change. Eg. false if it may be modified by mDNS.">stable</ref><sp/><sp/><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;last_tag<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>strdup(</highlight><highlight class="stringliteral">&quot;server_from_config&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>server_info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(servers,<sp/>server_info);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(fragments)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>strdup(<ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(fragments,<sp/>0));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kindref="member" tooltip="RFID server port.">port</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>80;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kindref="member" tooltip="True if the URL will not change. Eg. false if it may be modified by mDNS.">stable</ref><sp/><sp/><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;last_tag<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>server_info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>strdup(</highlight><highlight class="stringliteral">&quot;server_from_config&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>server_info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(servers,<sp/>server_info);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>junk<sp/>in<sp/>config<sp/>file.<sp/>Ignoring.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(server_info);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kindref="member">list_foreach_entry</ref>(fragments,<sp/>a,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>s)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(s);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(fragments))<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>memory<sp/>error<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>*p<sp/>=<sp/>list_pop(fragments);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//free(p);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(fragments);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(fragments);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>free(ret);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>memory<sp/>error<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>*p<sp/>=<sp/>list_pop(fragments);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//free(p);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(fragments);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>servers;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>pthread_t<sp/>reader_thread;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>pthread_t<sp/>avahi_thread;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><sp/><ref refid="client_8c_1aeb76476d4872310249ea0634068eff67" kindref="member" tooltip="Configures a client given a configuration file.">read_config</ref>(&amp;<ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>,<sp/></highlight><highlight class="stringliteral">&quot;.rfid_client.conf&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pthread_create(&amp;reader_thread,<sp/>NULL,<sp/>&amp;<ref refid="client_8h_1a2fe5f2e559b4f539c687ab4121a4a7be" kindref="member" tooltip="RFID reading loop which polls for identifications. Look for rfid_reader_handler.c...">reader_function</ref>,<sp/>&amp;<ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Creation<sp/>of<sp/>reader<sp/>thread<sp/>failed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pthread_create(&amp;avahi_thread,<sp/>NULL,<sp/>&amp;<ref refid="avahi__dns__handler_8c_1a0631c3c52c14996e91db6a5618d3d2b8" kindref="member" tooltip="mDNS handling loop which looks for RFIDentify servers. Look for avahi_dns_handler...">avahi_function</ref>,<sp/>&amp;<ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Creation<sp/>of<sp/>mDNS<sp/>thread<sp/>failed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>pthread_join(reader_thread,<sp/>NULL);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>pthread_join(avahi_thread,<sp/><sp/>NULL);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.c"/>
+  </compounddef>
+</doxygen>

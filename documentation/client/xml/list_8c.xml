@@ -1,0 +1,1423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="list_8c" kind="file">
+    <compoundname>list.c</compoundname>
+    <includes refid="list_8h" local="yes">list.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="182">
+        <label>stdlib.h</label>
+      </node>
+      <node id="180">
+        <label>client/list.c</label>
+        <link refid="list.c"/>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="184">
+        <label>string.h</label>
+      </node>
+      <node id="183">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="list_8c_1a8f0035a68b57201cc8c350ec72928325" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TRUE</definition>
+        <argsstring></argsstring>
+        <name>TRUE</name>
+        <initializer> 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="18" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_create</definition>
+        <argsstring>()</argsstring>
+        <name>list_create</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A newly allocated list, or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="23" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="23" bodyend="35"/>
+        <referencedby refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_car</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_car</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The car of the list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="41" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="41" bodyend="45"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_cdr</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_cdr</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The cdr of the list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="50" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="50" bodyend="54"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="list_8c_1a9c0551e214815c70b539e212e3c329da" compoundref="list_8c" startline="599" endline="605">list_nth_atom</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_set_car</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_set_car</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the car of a list. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="61" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="61" bodyend="68"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1aebe3f912f605d2c6e84ec312338ab102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_set_cdr</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_set_cdr</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the cdr of a list. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="75" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="75" bodyend="82"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_is_null</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_is_null</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the parameter is null. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="88" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="88" bodyend="90"/>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_is_empty</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_is_empty</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the parameter is empty </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="96" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="96" bodyend="99"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_size</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_size</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>size of list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="104" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="104" bodyend="124"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a4503901beb6a19b5ec8249906355e5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_cons</definition>
+        <argsstring>(void *v, list *l)</argsstring>
+        <name>list_cons</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a list formed of the given value cons-ed with the given list. Allocates memory. Returns NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="131" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="131" bodyend="154"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a07588b386f603af6db91bedcfb338a4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_reverse</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_reverse</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>destructively modifies the current list. note, you must assign the result back in place, for this method is unable to modify in place, at the current time. <simplesect kind="return"><para>the list reversed. pointer to new head. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="163" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="163" bodyend="216"/>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a363af69e462d10ad15b4631ec828e571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_atom_destroy</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_atom_destroy</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>inverse of <ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create()</ref> does not free contents </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="228" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="228" bodyend="232"/>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_destroy</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_destroy</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy()</ref> chained together across an entire list. currently recursive, so probs not a good function for large lists... although i heard GCC can optimize tail recursion, so this may be fine </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="242" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="242" bodyend="257"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1aa3b494560b4f94df133d4604265235db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_destroy_deep</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_destroy_deep</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>like <ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy()</ref> but calls free on each car. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="263" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="263" bodyend="277"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a45cebb558b04d38ca7adc2ba3987fd1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_map</definition>
+        <argsstring>(list *l, void *(*fn)(void *))</argsstring>
+        <name>list_map</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *(*)(void *)</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps a function across all elements of a list <simplesect kind="return"><para>a new list of the results, or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="290" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="290" bodyend="314"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a663fd068ed01140f77770b580258d271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_filter</definition>
+        <argsstring>(list *l, int(*fn)(void *, void *), void *args)</argsstring>
+        <name>list_filter</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int(*)(void *, void *)</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Given a filtering function, <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list to filter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function to apply to each element in the list. If the application is TRUE, then the element is retained, else it is not included in the new list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments to be passed to the filtering function. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new list consisting of elements of the old list that pass the test or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="326" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="326" bodyend="351"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1acaba2f033d4240acfa943b276125f92e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_simple_free_fn</definition>
+        <argsstring>(void *v)</argsstring>
+        <name>list_simple_free_fn</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the following 3 functions conform to the function signatures accepted by list_map and list_filter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="365" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="365" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a8a6d04f858480f36fdc1581983483c43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_str_print_fn</definition>
+        <argsstring>(void *v)</argsstring>
+        <name>list_str_print_fn</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="370" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="370" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1af0b6b1330fc879171da31397fd2f8665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_int_print_fn</definition>
+        <argsstring>(void *v)</argsstring>
+        <name>list_int_print_fn</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="376" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="376" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a3df67921d322130b2827da2e541a1387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* null_list</definition>
+        <argsstring>()</argsstring>
+        <name>null_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a new empty list, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="385" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="385" bodyend="387"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_nth</definition>
+        <argsstring>(list *l, int i)</argsstring>
+        <name>list_nth</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the value at the nth position of the list. NULL on failure, however accessing past the end of the list is undefined. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="394" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="394" bodyend="402"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</references>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a11d855375347172f2c165f1c86f27853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void **</type>
+        <definition>void** list_array</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_array</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a new array, filled with the contents of the provided list the list is NULL terminated, but since the values of the array may be NULL, this should not be used to determine the length of the array. rather, <ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size()</ref> should be used. NULL on failure or empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="410" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="410" bodyend="440"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_index_of_int</definition>
+        <argsstring>(list *haystack, int needle)</argsstring>
+        <name>list_index_of_int</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>haystack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>needle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of first eleemnt encountered matching needle, ENOTFND otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="446" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="446" bodyend="461"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_index_of_str</definition>
+        <argsstring>(list *haystack, const char *needle)</argsstring>
+        <name>list_index_of_str</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>haystack</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>needle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of first eleemnt encountered matching needle, ENOTFND otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="467" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="467" bodyend="482"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_append</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_append</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructive. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value to insert at the last position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The last element of the list now points to a new node containing v. </para></simplesect>
+<simplesect kind="return"><para>The newly created end node, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="497" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="497" bodyend="518"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+        <referencedby refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_push</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_push</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Alias of: l = list_cons(v, l); <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list to become the cdr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value to become the car. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list composed of v and l or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="535" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="535" bodyend="559"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" compoundref="reader_8c" startline="40" endline="71">find_all_readers</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a35885fd30f031789e0844bb693b0b8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_pop</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_pop</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructive. Convenience function. Opposite of <ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The car of the old list. </para></simplesect>
+<simplesect kind="post"><para>The list is now the cdr of the original list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="569" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="569" bodyend="593"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a9c0551e214815c70b539e212e3c329da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_nth_atom</definition>
+        <argsstring>(list *l, int i)</argsstring>
+        <name>list_nth_atom</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Private <simplesect kind="return"><para>nth atom in list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="599" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="599" bodyend="605"/>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_remove</definition>
+        <argsstring>(list *l, int index)</argsstring>
+        <name>list_remove</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the element at the given index <simplesect kind="return"><para>the value of the element removed, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" line="611" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="611" bodyend="650"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a9c0551e214815c70b539e212e3c329da" compoundref="list_8c" startline="599" endline="605">list_nth_atom</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Willi Ballenthin</para></simplesect>
+This file contains the definition of a singly-linked list data structure. It was developed as I learned and explored LISP. The influence of LISP is clear in the API. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="list_8h" kindref="compound">list.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TRUE<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="list_8h_1a3dc5b8dea5507c3b0a37fde8c1fcae54" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*s;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(<sp/>s<sp/>=<sp/>(<ref refid="structlist" kindref="compound">list</ref><sp/>*)malloc(1<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structlist" kindref="compound">list</ref>))))</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>s-&gt;car<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>s-&gt;cdr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>free(s);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="list_8h_1a0ab7b4e1a37506b807bf20ae6698c533" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!l<sp/>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l-&gt;car;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50" refid="list_8h_1a22e64ee163ef21c6d59de59f83f8b269" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!l<sp/>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l-&gt;cdr;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="list_8h_1a7165db61812c8aa20f8eb5de98cd0e36" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!l<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>Set<sp/>Car:<sp/>null<sp/>list.\n.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>l-&gt;car<sp/>=<sp/>v;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="list_8h_1aebe3f912f605d2c6e84ec312338ab102" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!l<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>Set<sp/>Cdr:<sp/>null<sp/>list.\n.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>l-&gt;cdr<sp/>=<sp/>v;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l<sp/>==<sp/>NULL;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l)<sp/>||<sp/>(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l)<sp/>==<sp/>NULL<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l)<sp/>==<sp/>NULL);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*p;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>count<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>p<sp/><sp/><sp/><sp/><sp/>=<sp/>l;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(p))<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(p);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kindref="member">list_cons</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v,<sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*k;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(k<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>()))</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(k,<sp/>v);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>k;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/>v);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(k<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>()))</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(k,<sp/>v);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(k,<sp/>l);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>k;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>free(k);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" kindref="member">list_reverse</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*p,<sp/>*q,<sp/>*r;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l)<sp/>&lt;=<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>special<sp/>cases,<sp/>because<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>pointers<sp/>to<sp/>3<sp/>nodes<sp/>otherwise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l)<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>l;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(p);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(q))<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(p,<sp/>NULL);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(q,<sp/>p);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>q;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l)<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>l;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(q);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(p,<sp/>NULL);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(q,<sp/>p);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(r,<sp/>q);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>p<sp/>=<sp/>l;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>q<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>r<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(q);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(p,<sp/>NULL);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(q,<sp/>p);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>p<sp/>=<sp/>q;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>q<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>r<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(r);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(r)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(q,<sp/>p);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>q;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(r);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(q,<sp/>p);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(r,<sp/>q);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment">/*****************************************************</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>DEALLOCATION<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/>*****************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="list_8h_1a363af69e462d10ad15b4631ec828e571" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>its<sp/>ok<sp/>to<sp/>free<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>free(l);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>this<sp/>is<sp/>recursive,<sp/>which<sp/>is<sp/>bad<sp/>for<sp/>huge<sp/>lists...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>next<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(next);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="list_8h_1aa3b494560b4f94df133d4604265235db" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="list_8c_1aa3b494560b4f94df133d4604265235db" kindref="member">list_destroy_deep</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>this<sp/>is<sp/>recursive,<sp/>which<sp/>is<sp/>bad<sp/>for<sp/>huge<sp/>lists...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*n<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>free(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1aa3b494560b4f94df133d4604265235db" kindref="member">list_destroy_deep</ref>(n);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="comment">/**********************************************************</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>HIGHER<sp/>ORDER<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="282"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/>**********************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a45cebb558b04d38ca7adc2ba3987fd1f" kindref="member">list_map</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*fn)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*))<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*acc;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>();<sp/></highlight><highlight class="comment">//<sp/>may<sp/>return<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(acc<sp/>=<sp/><ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>()))</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*new_value<sp/>=<sp/>fn(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(acc<sp/>=<sp/><ref refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kindref="member">list_cons</ref>(new_value,<sp/>acc)))</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>acc;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>memory<sp/>fails,<sp/>it<sp/>is<sp/>troubling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>since<sp/>the<sp/>user<sp/>may<sp/>allocate<sp/>(or<sp/>not)<sp/>within<sp/>fn.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>return<sp/>NULL<sp/>and<sp/>leak<sp/>memory<sp/>until<sp/>I<sp/>can<sp/>think<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>something<sp/>better</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326" refid="list_8h_1a663fd068ed01140f77770b580258d271" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a663fd068ed01140f77770b580258d271" kindref="member">list_filter</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*fn)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args)<sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*acc<sp/>=<sp/>NULL,<sp/>*old_acc<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>();<sp/></highlight><highlight class="comment">//<sp/>may<sp/>return<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(acc<sp/>=<sp/><ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>()))</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/>old_acc<sp/>=<sp/>acc;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fn(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l),<sp/>args))<sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>old_acc<sp/>=<sp/>acc;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(acc<sp/>=<sp/><ref refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kindref="member">list_cons</ref>(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l),<sp/>acc)))</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>acc;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/>free(acc);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(old_acc);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="comment">/************************************************************</highlight></codeline>
+<codeline lineno="354"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="355"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>UTILITY<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="356"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="357"><highlight class="comment"><sp/>************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365" refid="list_8h_1acaba2f033d4240acfa943b276125f92e" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1acaba2f033d4240acfa943b276125f92e" kindref="member">list_simple_free_fn</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>free(v);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;TRUE;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*list_str_print_fn(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[%s]\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)v);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;TRUE;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*list_int_print_fn(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[%d]\n&quot;</highlight><highlight class="normal">,<sp/>*((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)v));</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;TRUE;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385" refid="list_8h_1a3df67921d322130b2827da2e541a1387" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="387"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394" refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>l)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l);</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>GCC<sp/>optimizes<sp/>tail<sp/>recursion.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l),<sp/>--i);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410" refid="list_8h_1a11d855375347172f2c165f1c86f27853" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<ref refid="list_8c_1a11d855375347172f2c165f1c86f27853" kindref="member">list_array</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**ar;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**ap;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*p;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(ar<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>*<sp/>1)))</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/>*ar<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ar;</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(ar<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>*<sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l)<sp/>+<sp/>1))))</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/>ap<sp/>=<sp/>ar;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/>p<sp/>=<sp/>l;</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(p))<sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/>*ap<sp/>=<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(p);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/>ap++;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(p);</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/>*ap<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ar;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/>free(ar);</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446" refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" kindref="member">list_index_of_int</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*haystack,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>needle)<sp/>{</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(haystack))</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ENOTFND;</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(haystack))<sp/>{</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*)<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(haystack)<sp/>==<sp/>needle)<sp/>{</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>haystack<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(haystack);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ENOTFND;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467" refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" kindref="member">list_index_of_str</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*haystack,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*needle)<sp/>{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(haystack))</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ENOTFND;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(haystack))<sp/>{</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(haystack),<sp/>needle)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>haystack<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(haystack);</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ENOTFND;</highlight></codeline>
+<codeline lineno="482"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight><highlight class="comment">/********************************************************</highlight></codeline>
+<codeline lineno="485"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="486"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>DESTRUCTIVE<sp/>LIST<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="487"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="488"><highlight class="comment"><sp/>********************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497" refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" kindref="member">list_append</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*end<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l)<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/>v);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(end<sp/>=<sp/><ref refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kindref="member">list_cons</ref>(v,<sp/><ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>())))</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(l,<sp/>end);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>end;</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/>free(end);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="518"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight><highlight class="comment">/********************************************************</highlight></codeline>
+<codeline lineno="523"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="524"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>DESTRUCTIVE<sp/>UTILITY<sp/>LIST<sp/>FUNCTIONS</highlight></codeline>
+<codeline lineno="525"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="526"><highlight class="comment"><sp/>********************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="535" refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v)<sp/>{</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*n;</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>pushing<sp/>to<sp/>null<sp/>list.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/>v);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>(n<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>()))</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(n,<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(n,<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l));</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/>v);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(l,<sp/>n);</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/>emem:</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/>free(n);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="559"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"></highlight></codeline>
+<codeline lineno="569" refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l)<sp/>{</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*n;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kindref="member">list_is_null</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l)<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>v<sp/>=<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/>NULL);</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/>v<sp/>=<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/>n<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(l,<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(n));</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(l,<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(n));</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(n);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v;</highlight></codeline>
+<codeline lineno="593"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599" refid="list_8c_1a9c0551e214815c70b539e212e3c329da" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="list_8c_1a9c0551e214815c70b539e212e3c329da" kindref="member">list_nth_atom</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>tail<sp/>recursion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a9c0551e214815c70b539e212e3c329da" kindref="member">list_nth_atom</ref>(<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l),<sp/>--i);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611" refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" kindref="member">list_remove</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/>size<sp/>=<sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(l);</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"></highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&lt;<sp/>0<sp/>||</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>&gt;<sp/>size)</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(l);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>==<sp/>size<sp/>-<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*penultimate;</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*last;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/>penultimate<sp/>=<sp/><ref refid="list_8c_1a9c0551e214815c70b539e212e3c329da" kindref="member">list_nth_atom</ref>(l,<sp/>size<sp/>-<sp/>2);</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>last<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(penultimate);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"></highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(penultimate,<sp/>NULL);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>=<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(last);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(last);</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*prev;</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*target;</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"></highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/>prev<sp/><sp/><sp/>=<sp/><ref refid="list_8c_1a9c0551e214815c70b539e212e3c329da" kindref="member">list_nth_atom</ref>(l,<sp/>index<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/>target<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(prev);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/>next<sp/><sp/><sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(target);</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"></highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(prev,<sp/>next);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/>value<sp/>=<sp/><ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(target);</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(target);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="650"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c"/>
+  </compounddef>
+</doxygen>

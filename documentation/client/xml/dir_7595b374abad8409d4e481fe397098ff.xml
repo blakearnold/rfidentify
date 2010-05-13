@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="dir_7595b374abad8409d4e481fe397098ff" kind="dir">
+    <compoundname>client/</compoundname>
+    <innerfile refid="avahi-publish_8c">avahi-publish.c</innerfile>
+    <innerfile refid="avahi__dns__handler_8c">avahi_dns_handler.c</innerfile>
+    <innerfile refid="big__rfid__test_8c">big_rfid_test.c</innerfile>
+    <innerfile refid="client_8c">client.c</innerfile>
+    <innerfile refid="client_8h">client.h</innerfile>
+    <innerfile refid="config_8c">config.c</innerfile>
+    <innerfile refid="config_8h">config.h</innerfile>
+    <innerfile refid="list_8c">list.c</innerfile>
+    <innerfile refid="list_8h">list.h</innerfile>
+    <innerfile refid="reader_8c">reader.c</innerfile>
+    <innerfile refid="reader_8h">reader.h</innerfile>
+    <innerfile refid="rfid__reader__handler_8c">rfid_reader_handler.c</innerfile>
+    <innerfile refid="string__utils_8c">string_utils.c</innerfile>
+    <innerfile refid="string__utils_8h">string_utils.h</innerfile>
+    <innerfile refid="test_8c">test.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/"/>
+  </compounddef>
+</doxygen>

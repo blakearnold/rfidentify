@@ -1,0 +1,106 @@
+.TH "client/client.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/client.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'client.h'\fP
+.br
+\fC#include 'config.h'\fP
+.br
+\fC#include 'list.h'\fP
+.br
+\fC#include <stdlib.h>\fP
+.br
+\fC#include <string.h>\fP
+.br
+\fC#include <ctype.h>\fP
+.br
+\fC#include <unistd.h>\fP
+.br
+\fC#include <stdio.h>\fP
+.br
+\fC#include <pthread.h>\fP
+.br
+\fC#include <errno.h>\fP
+.br
+\fC#include <avahi-client/client.h>\fP
+.br
+\fC#include <avahi-client/lookup.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBread_config\fP (struct \fBclient_config\fP *\fBclient_config\fP, const char *filename)"
+.br
+.RI "\fIConfigures a client given a configuration file. \fP"
+.ti -1c
+.RI "\fBlist\fP * \fBread_config_servers\fP (struct \fBclient_config\fP *\fBclient_config\fP)"
+.br
+.RI "\fIConfigures static servers from a configuration file. \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This application reads RFID tags and queries a server with the tag ID. The server is discovered using Avahi/mDNS.
+.PP
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Spring, 2010 
+.RE
+.PP
+
+.PP
+Definition in file \fBclient.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "int read_config (struct \fBclient_config\fP * client_config, const char * filename)"
+.PP
+Configures a client given a configuration file. Configures a client given a configuration file. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBclient_config\fP\fP The destination configuration. 
+.br
+\fIfilename\fP The file from which to read the config. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success. non-zero otherwise. 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file client.c.
+.SS "\fBlist\fP* read_config_servers (struct \fBclient_config\fP * client_config)"
+.PP
+Configures static servers from a configuration file. Configures static servers from a configuration file. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBclient_config\fP\fP The config, including filename, from which to determine the servers. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A list of servers, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file client.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

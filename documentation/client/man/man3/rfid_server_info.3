@@ -1,0 +1,53 @@
+.TH "rfid_server_info" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rfid_server_info \- 
+.PP
+Defines a relevant configuration of an RFID server.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <client.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBlock\fP"
+.br
+.RI "\fIProtects modifications across threads. \fP"
+.ti -1c
+.RI "char * \fBurl\fP"
+.br
+.RI "\fIRFID server url. \fP"
+.ti -1c
+.RI "uint16_t \fBport\fP"
+.br
+.RI "\fIRFID server port. \fP"
+.ti -1c
+.RI "int \fBstable\fP"
+.br
+.RI "\fITrue if the URL will not change. Eg. false if it may be modified by mDNS. \fP"
+.ti -1c
+.RI "char * \fBname\fP"
+.br
+.RI "\fIUnique name of the given server. Provided by mDNS. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a relevant configuration of an RFID server. 
+.PP
+Definition at line 20 of file client.h.
+.SH "Field Documentation"
+.PP 
+.SS "pthread_mutex_t \fBlock\fP"
+.PP
+Protects modifications across threads. As the url may be updated at any time, we must lock it before modification or reading. 
+.PP
+Definition at line 25 of file client.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

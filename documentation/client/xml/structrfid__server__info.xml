@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structrfid__server__info" kind="struct" prot="public">
+    <compoundname>rfid_server_info</compoundname>
+    <includes refid="client_8h" local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>Protects modifications across threads. </para>        </briefdescription>
+        <detaileddescription>
+<para>As the url may be updated at any time, we must lock it before modification or reading. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="25" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+<para>RFID server url. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="26" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+<para>RFID server port. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="27" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int stable</definition>
+        <argsstring></argsstring>
+        <name>stable</name>
+        <briefdescription>
+<para>True if the URL will not change. Eg. false if it may be modified by mDNS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="28" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Unique name of the given server. Provided by mDNS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="29" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a relevant configuration of an RFID server. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="20" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="20" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" prot="public" virt="non-virtual"><scope>rfid_server_info</scope><name>lock</name></member>
+      <member refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" prot="public" virt="non-virtual"><scope>rfid_server_info</scope><name>name</name></member>
+      <member refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" prot="public" virt="non-virtual"><scope>rfid_server_info</scope><name>port</name></member>
+      <member refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" prot="public" virt="non-virtual"><scope>rfid_server_info</scope><name>stable</name></member>
+      <member refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" prot="public" virt="non-virtual"><scope>rfid_server_info</scope><name>url</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

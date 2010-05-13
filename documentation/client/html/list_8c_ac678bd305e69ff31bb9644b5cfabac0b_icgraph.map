@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" href="$reader_8h.html#a29c9b16ecae4e8e1c1a87ef2bdff0e3d" title="Returns a list of all connected readers." alt="" coords="536,5,648,35"/>
+<area shape="rect" href="$client_8h.html#abafd8197d150530827f5ab09c47c28c3" title="Configures static servers from a configuration file." alt="" coords="347,59,485,88"/>
+<area shape="rect" href="$reader_8h.html#ab599da4f016082f958512f55ea775bd8" title="Parses a packet returned from a reader poll." alt="" coords="129,163,297,192"/>
+<area shape="rect" href="$avahi__dns__handler_8c.html#a9c1f95b206f4fe188f24471c4dbb2e2b" title="resolve_callback" alt="" coords="155,217,272,247"/>
+<area shape="rect" href="$string__utils_8c.html#ad53f748f94f536ae4e1290a3ff1ac501" title="string_split" alt="" coords="172,109,255,139"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#a2fe5f2e559b4f539c687ab4121a4a7be" title="RFID reading loop which polls for identifications. Look for rfid_reader_handler.c..." alt="" coords="700,59,809,88"/>
+<area shape="rect" href="$client_8h.html#aeb76476d4872310249ea0634068eff67" title="Configures a client given a configuration file." alt="" coords="548,59,636,88"/>
+<area shape="rect" href="$reader_8h.html#acb4c72f1fe61a87135140e51d12e5b43" title="Causes the reader to poll for and ISO15693 tag." alt="" coords="356,112,476,141"/>
+<area shape="rect" href="$reader_8h.html#a8849ebe57eadac17ff0d1882a1c0bcdf" title="Attempts to poll the reader for various tags." alt="" coords="368,165,464,195"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#ad7e398d96716aecafb8fdad3c4d64f32" title="reader_poll_loop" alt="" coords="535,112,649,141"/>
+<area shape="rect" href="$avahi__dns__handler_8c.html#a0a5dcec1ec57a60846e370d34a003a4a" title="browse_callback" alt="" coords="357,219,475,248"/>
+<area shape="rect" href="$client_8h.html#a0631c3c52c14996e91db6a5618d3d2b8" title="mDNS handling loop which looks for RFIDentify servers. Look for avahi_dns_handler..." alt="" coords="540,219,644,248"/>
+</map>

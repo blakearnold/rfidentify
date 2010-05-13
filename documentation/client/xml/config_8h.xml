@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="config_8h" kind="file">
+    <compoundname>config.h</compoundname>
+    <includes refid="list_8h" local="yes">list.h</includes>
+    <includedby refid="config_8c" local="yes">client/config.c</includedby>
+    <includedby refid="test_8c" local="yes">client/test.c</includedby>
+    <incdepgraph>
+      <node id="175">
+        <label>client/config.h</label>
+        <link refid="config.h"/>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="176">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="178">
+        <label>client/config.c</label>
+        <link refid="config_8c"/>
+      </node>
+      <node id="177">
+        <label>client/config.h</label>
+        <link refid="config.h"/>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>client/test.c</label>
+        <link refid="test_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="config_8h_1a54a4b949509d289e47841a725146ce4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* config_get</definition>
+        <argsstring>(const char *filename, const char *key)</argsstring>
+        <name>config_get</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Get a value from a configuration file identified by a filename. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a file, and key, return the first matching config value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The config file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of which the value to find. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A newly allocated string, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.h" line="38" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="50" bodyend="69"/>
+        <references refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" compoundref="config_8c" startline="25" endline="31">warn</references>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* config_get_all</definition>
+        <argsstring>(const char *filename, const char *key)</argsstring>
+        <name>config_get_all</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Gets all relevant values from a configuration file identifed by a filename. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a filename and key, return all matching config values. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filename of the configuration file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to which to match configuration definitions. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A newly allocated list of newly allocated values, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.h" line="41" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="78" bodyend="144"/>
+        <references refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" compoundref="config_8c" startline="25" endline="31">warn</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A config file looks something like this:</para><para>a LINE is less than 1023 characters</para><para><programlisting><codeline><highlight class="normal"><sp/>STRING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;<sp/>any<sp/>stream<sp/>of<sp/>characters,<sp/>including<sp/>nil</highlight></codeline>
+<codeline><highlight class="normal"><sp/>COMMENT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;<sp/>#<sp/>STRING</highlight></codeline>
+<codeline><highlight class="normal"><sp/>KEY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;<sp/>WORD</highlight></codeline>
+<codeline><highlight class="normal"><sp/>VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;<sp/>STRING</highlight></codeline>
+<codeline><highlight class="normal"><sp/>DEFINITION<sp/><sp/><sp/><sp/>--&gt;<sp/>KEY=VALUE</highlight></codeline>
+<codeline><highlight class="normal"><sp/>LINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;<sp/>(<sp/>COMMENT<sp/>|<sp/>DEFINITON<sp/>|<sp/>nil<sp/>)\n</highlight></codeline>
+<codeline><highlight class="normal"><sp/>CONFIGURATION<sp/>--&gt;<sp/>LINE*</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>ACTION<sp/>--&gt;<sp/>(<sp/></highlight><highlight class="stringliteral">&quot;/dev/kiosk?idTag=&quot;</highlight><highlight class="normal"><sp/>|<sp/></highlight><highlight class="stringliteral">&quot;/dev/gumstix?idTag=&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>SERVER<sp/>--&gt;<sp/>URL:PORT</highlight></codeline>
+<codeline><highlight class="normal"><sp/>MODE<sp/><sp/><sp/>--&gt;<sp/>(<sp/></highlight><highlight class="stringliteral">&quot;client&quot;</highlight><highlight class="normal"><sp/>|<sp/></highlight><highlight class="stringliteral">&quot;kiosk&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+</programlisting></para><para>There should only be one ACTION. There should only be one MODE. There may be multiple SERVERs specified. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="32"><highlight class="preprocessor">#ifndef<sp/>_config_h_</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_config_h_</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="list_8h" kindref="compound">list.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="config_8c_1a54a4b949509d289e47841a725146ce4e" kindref="member" tooltip="Get a value from a configuration file identified by a filename.">config_get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" kindref="member" tooltip="Gets all relevant values from a configuration file identifed by a filename.">config_get_all</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.h"/>
+  </compounddef>
+</doxygen>

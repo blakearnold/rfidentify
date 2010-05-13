@@ -1,5 +1,5 @@
 /**
- * reader.h
+ * @file reader.h
  *
  * Device library for an RFID reader.
  * Particularly the DLP-RFID1.
@@ -11,18 +11,23 @@
 #include "list.h"
 #include <ftdi.h>
 
+/// Device error.
 #define EDEVERR -1
 
+/// True.
 #define BEEP 1
+
+/// False.
 #define NOBEEP 0
 
+/// Possible return codes from reader.
 typedef enum { RC_SUCCESS = 0,
-				RC_ERROR,
-				RC_NULL_ERROR,
-				RC_IO_ERROR,
-				RC_NO_PING,
-				RC_NOT_CONNECTED
-			} ReturnCode;
+	       RC_ERROR,
+	       RC_NULL_ERROR,
+	       RC_IO_ERROR,
+	       RC_NO_PING,
+	       RC_NOT_CONNECTED
+} ReturnCode;
 
 #define RFID1_VID   0x0403
 #define RFID1_PID   0xfbfc
@@ -41,7 +46,7 @@ typedef enum { RC_SUCCESS = 0,
   DATA      (LEN-7) bytes of data to write I think
 
   '0000'    EOP
-  */
+*/
 #define RFID1_PKT_PING          "0108000304FF0000"
 #define RFID1_PKT_AGCTGL        "0109000304F0000000"
 #define RFID1_PKT_AMPMTGL       "0109000304F1FF0000"
@@ -58,71 +63,88 @@ typedef enum { RC_SUCCESS = 0,
 
 #define RFID_ID_LEN 20  //??
 
-
+/// Completely identifies a currently connected RFID reader.
 struct reader {
-	int connected;
-	struct ftdi_context *ftdic;
-	struct usb_device *dev;
+  int connected;
+  struct ftdi_context *ftdic;
+  struct usb_device *dev;
 };
 
+/// Return a newly allocated reader.
 struct reader *reader_create();
 
+/// Initialize a newly allocated reader.
 void reader_init(struct reader *reader,
-				 struct ftdi_context *ftdic,
-				 struct usb_device *dev);
+		 struct ftdi_context *ftdic,
+		 struct usb_device *dev);
 
-
+/// An RFID identification.
 struct tag {
-	char *id;
-	struct reader *parent;
+  char *id;              /// Unique ID.
+  struct reader *parent; /// The reader who identified the tag.
 };
 
+/// Returns a newly allocated tag.
 struct tag *tag_create();
 
+/// Initializes a newly allocated tag.
 void tag_init(struct tag *tag,
-			  char *id,
-			  struct reader *parent);
+	      char *id,
+	      struct reader *parent);
 
+/// Returns a list of all connected readers.
 list *find_all_readers(list* readers);
 
+/// Connects to a given reader.
 ReturnCode reader_connect(struct reader *reader,
-						  int beep);
+			  int beep);
 
+/// Disconnects from a given reader.
 ReturnCode reader_disconnect(struct reader *reader);
 
+/// Resets a given reader.
 ReturnCode reader_reset(struct reader *reader);
 
+/// Causes the reader to emit the PASS beep.
 ReturnCode reader_pass_beep(struct reader *reader);
 
+/// Causes the reader to emit the FAIL beep.
 ReturnCode reader_fail_beep(struct reader *reader);
 
+/// Pings a given reader.
 ReturnCode reader_ping(struct reader *reader);
 
+/// Purges a given reader.
 ReturnCode reader_purge(struct reader *reader);
 
+/// Reads a packet from a reader into a buffer.
 int reader_read_packet(struct reader *r,
-					   char *buf,
-					   int maxlen);
+		       char *buf,
+		       int maxlen);
 
+/// TODO.
 int reader_txPacketRxReply(struct reader *reader,
-						   char *tx_packet,
-						   int tx_packet_len,
-						   char *rx_buf,
-						   int rx_buf_len,
-						   int *payload_index);
+			   char *tx_packet,
+			   int tx_packet_len,
+			   char *rx_buf,
+			   int rx_buf_len,
+			   int *payload_index);
 
-
+/// Returns if successfully acknowledged.
 ReturnCode reader_txPacketCheckAck(struct reader *reader,
-								   char *tx_packet,
-								   int tx_packet_len);
+				   char *tx_packet,
+				   int tx_packet_len);
 
+/// Parses a packet returned from a reader poll.
 int reader_parse_poll_packet(struct reader *reader,
-							 struct list *tagList,
-							 char *packetPayload,
-							 int packetPayload_len);
+			     struct list *tagList,
+			     char *packetPayload,
+			     int packetPayload_len);
 
+/// Causes the reader to poll for and ISO15693 tag.
 int reader_poll15693(struct reader *reader,
-					 list *tagList);
+		     list *tagList);
 
+/// Attempts to poll the reader for various tags.
 int reader_pollTi(struct reader *reader,
-				  list *tagList);		
+		  list *tagList);		

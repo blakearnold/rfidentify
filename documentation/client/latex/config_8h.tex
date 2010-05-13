@@ -1,0 +1,140 @@
+\hypertarget{config_8h}{
+\section{client/config.h File Reference}
+\label{config_8h}\index{client/config.h@{client/config.h}}
+}
+{\ttfamily \#include \char`\"{}list.h\char`\"{}}\par
+Include dependency graph for config.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=60pt]{config_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=102pt]{config_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{config_8h_a54a4b949509d289e47841a725146ce4e}{config\_\-get} (const char $\ast$filename, const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Get a value from a configuration file identified by a filename. \item\end{DoxyCompactList}\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{config_8h_a52d0c5748deeda66a4f4fceb3ce34bbe}{config\_\-get\_\-all} (const char $\ast$filename, const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Gets all relevant values from a configuration file identifed by a filename. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A config file looks something like this:
+
+a LINE is less than 1023 characters
+
+
+\begin{DoxyCode}
+ STRING        --> any stream of characters, including nil
+ COMMENT       --> # STRING
+ KEY           --> WORD
+ VALUE         --> STRING
+ DEFINITION    --> KEY=VALUE
+ LINE          --> ( COMMENT | DEFINITON | nil )\n
+ CONFIGURATION --> LINE*
+
+
+
+ ACTION --> ( "/dev/kiosk?idTag=" | "/dev/gumstix?idTag=" )
+ SERVER --> URL:PORT
+ MODE   --> ( "client" | "kiosk" )
+\end{DoxyCode}
+
+
+There should only be one ACTION. There should only be one MODE. There may be multiple SERVERs specified. 
+
+Definition in file \hyperlink{config_8h_source}{config.h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{config_8h_a54a4b949509d289e47841a725146ce4e}{
+\index{config.h@{config.h}!config\_\-get@{config\_\-get}}
+\index{config\_\-get@{config\_\-get}!config.h@{config.h}}
+\subsubsection[{config\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ config\_\-get (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em key})}}
+\label{config_8h_a54a4b949509d289e47841a725146ce4e}
+
+
+Get a value from a configuration file identified by a filename. 
+
+Given a file, and key, return the first matching config value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]The config file. \item[{\em key}]The key of which the value to find. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated string, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file config.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{config_8h_a54a4b949509d289e47841a725146ce4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=104pt]{config_8h_a54a4b949509d289e47841a725146ce4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{config_8h_a52d0c5748deeda66a4f4fceb3ce34bbe}{
+\index{config.h@{config.h}!config\_\-get\_\-all@{config\_\-get\_\-all}}
+\index{config\_\-get\_\-all@{config\_\-get\_\-all}!config.h@{config.h}}
+\subsubsection[{config\_\-get\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ config\_\-get\_\-all (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em key})}}
+\label{config_8h_a52d0c5748deeda66a4f4fceb3ce34bbe}
+
+
+Gets all relevant values from a configuration file identifed by a filename. 
+
+Given a filename and key, return all matching config values. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]The filename of the configuration file. \item[{\em key}]The key to which to match configuration definitions. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated list of newly allocated values, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file config.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{config_8h_a52d0c5748deeda66a4f4fceb3ce34bbe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{config_8h_a52d0c5748deeda66a4f4fceb3ce34bbe_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$list_8c.html#a22e64ee163ef21c6d59de59f83f8b269" title="list_cdr" alt="" coords="433,5,497,35"/>
+<area shape="rect" href="$list_8c.html#aeeb96d95e199da5b6816f6eb7c49d0f0" title="list_is_empty" alt="" coords="277,60,376,89"/>
+<area shape="rect" href="$list_8c.html#aebe3f912f605d2c6e84ec312338ab102" title="list_set_cdr" alt="" coords="141,113,229,143"/>
+<area shape="rect" href="$list_8c.html#a6b2f0bae5223fb66771708236b2a99ef" title="list_size" alt="" coords="151,60,220,89"/>
+<area shape="rect" href="$list_8c.html#a0ab7b4e1a37506b807bf20ae6698c533" title="list_car" alt="" coords="433,112,497,141"/>
+<area shape="rect" href="$list_8c.html#a5d9afb6ba37d5493fe3780b6ba8e586b" title="list_is_null" alt="" coords="424,59,507,88"/>
+</map>

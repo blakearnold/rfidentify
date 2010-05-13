@@ -1,0 +1,31 @@
+<map id="G" name="G">
+<area shape="rect" href="$reader_8c.html#a44b115e0bf4e92f6bfe2dcff067e49f5" title="Returns a list of all connected readers." alt="" coords="168,199,280,228"/>
+<area shape="rect" href="$list_8c.html#a3dc5b8dea5507c3b0a37fde8c1fcae54" title="list_create" alt="" coords="972,600,1052,629"/>
+<area shape="rect" href="$list_8c.html#ac32ad3e6f4af784d86b011c190aad38b" title="list_destroy" alt="" coords="769,68,857,97"/>
+<area shape="rect" href="$list_8c.html#a35885fd30f031789e0844bb693b0b8fc" title="list_pop" alt="" coords="780,276,847,305"/>
+<area shape="rect" href="$list_8c.html#a6b2f0bae5223fb66771708236b2a99ef" title="list_size" alt="" coords="779,533,848,563"/>
+<area shape="rect" href="$reader_8c.html#a439267aa086867cfa328252e98372fff" title="Connects to a given reader." alt="" coords="169,847,279,876"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#ad7e398d96716aecafb8fdad3c4d64f32" title="reader_poll_loop" alt="" coords="167,456,281,485"/>
+<area shape="rect" href="$list_8c.html#ac678bd305e69ff31bb9644b5cfabac0b" title="list_push" alt="" coords="777,429,849,459"/>
+<area shape="rect" href="$reader_8c.html#a89a5395890ec54ed2e9abd98d28c3fd6" title="Return a newly allocated reader." alt="" coords="345,120,444,149"/>
+<area shape="rect" href="$reader_8c.html#a00e4d9bb3baf9af2bb00a0abf960f528" title="Initialize a newly allocated reader." alt="" coords="355,173,435,203"/>
+<area shape="rect" href="$list_8c.html#a0ab7b4e1a37506b807bf20ae6698c533" title="list_car" alt="" coords="1137,524,1201,553"/>
+<area shape="rect" href="$list_8c.html#a22e64ee163ef21c6d59de59f83f8b269" title="list_cdr" alt="" coords="1137,445,1201,475"/>
+<area shape="rect" href="$list_8c.html#aeeb96d95e199da5b6816f6eb7c49d0f0" title="list_is_empty" alt="" coords="963,445,1061,475"/>
+<area shape="rect" href="$list_8c.html#a5d9afb6ba37d5493fe3780b6ba8e586b" title="list_is_null" alt="" coords="1128,264,1211,293"/>
+<area shape="rect" href="$list_8c.html#a7165db61812c8aa20f8eb5de98cd0e36" title="list_set_car" alt="" coords="968,288,1056,317"/>
+<area shape="rect" href="$list_8c.html#aebe3f912f605d2c6e84ec312338ab102" title="list_set_cdr" alt="" coords="968,341,1056,371"/>
+<area shape="rect" href="$list_8c.html#a363af69e462d10ad15b4631ec828e571" title="list_atom_destroy" alt="" coords="951,83,1073,112"/>
+<area shape="rect" href="$reader_8c.html#a16a8be4c849758cd6bf56dbb98bbb397" title="Causes the reader to emit the PASS beep." alt="" coords="331,900,459,929"/>
+<area shape="rect" href="$reader_8c.html#ad473a49314c30853ea1504c24a90a781" title="Pings a given reader." alt="" coords="351,793,439,823"/>
+<area shape="rect" href="$reader_8c.html#a1872bfeb60bff7467120b3488199c2c4" title="Purges a given reader." alt="" coords="547,899,643,928"/>
+<area shape="rect" href="$reader_8c.html#a0ca9c7c3b46619215a5c62c215c0be26" title="Resets a given reader." alt="" coords="348,847,441,876"/>
+<area shape="rect" href="$reader_8c.html#ada25a7e053335f1d9c2c4e05043a47e4" title="Returns if successfully acknowledged." alt="" coords="507,793,683,823"/>
+<area shape="rect" href="$reader_8c.html#a35ce5c55ac2b57fc38173270a14a33b0" title="TODO." alt="" coords="732,767,895,796"/>
+<area shape="rect" href="$reader_8c.html#a77f69048a63c0140760e8478ed65b442" title="Reads a packet from a reader into a buffer." alt="" coords="944,767,1080,796"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#ad9624ed15307fa324f34f6a06bf11751" title="reader_handle_tag" alt="" coords="331,429,459,459"/>
+<area shape="rect" href="$reader_8c.html#acb4c72f1fe61a87135140e51d12e5b43" title="Causes the reader to poll for and ISO15693 tag." alt="" coords="335,740,455,769"/>
+<area shape="rect" href="$reader_8c.html#ab599da4f016082f958512f55ea775bd8" title="Parses a packet returned from a reader poll." alt="" coords="511,635,679,664"/>
+<area shape="rect" href="$reader_8c.html#a1f6a26bc58a13b3a6518a0e376aeb761" title="Returns a newly allocated tag." alt="" coords="772,587,855,616"/>
+<area shape="rect" href="$reader_8c.html#a0f161b5da6c8c55afe84fce625db9a2f" title="Initializes a newly allocated tag." alt="" coords="781,640,845,669"/>
+</map>

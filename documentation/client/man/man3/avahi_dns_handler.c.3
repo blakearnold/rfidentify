@@ -1,0 +1,142 @@
+.TH "client/avahi_dns_handler.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/avahi_dns_handler.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'client.h'\fP
+.br
+\fC#include <ftdi.h>\fP
+.br
+\fC#include <avahi-client/client.h>\fP
+.br
+\fC#include <avahi-common/simple-watch.h>\fP
+.br
+\fC#include <pthread.h>\fP
+.br
+\fC#include <string.h>\fP
+.br
+\fC#include <errno.h>\fP
+.br
+\fC#include <stdio.h>\fP
+.br
+\fC#include <stdlib.h>\fP
+.br
+\fC#include <avahi-client/lookup.h>\fP
+.br
+\fC#include <avahi-common/malloc.h>\fP
+.br
+\fC#include <avahi-common/error.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBresolve_callback\fP (AvahiServiceResolver *r, AvahiIfIndex interface, AvahiProtocol protocol, AvahiResolverEvent event, const char *name, const char *type, const char *domain, const char *host_name, const AvahiAddress *address, uint16_t port, AvahiStringList *txt, AvahiLookupResultFlags flags, void *userdata)"
+.br
+.ti -1c
+.RI "void \fBbrowse_callback\fP (AvahiServiceBrowser *b, AvahiIfIndex interface, AvahiProtocol protocol, AvahiBrowserEvent event, const char *name, const char *type, const char *domain, AvahiLookupResultFlags flags, void *userdata)"
+.br
+.ti -1c
+.RI "void \fBclient_callback\fP (AvahiClient *c, AvahiClientState state, void *userdata)"
+.br
+.ti -1c
+.RI "void * \fBavahi_function\fP (void *args)"
+.br
+.RI "\fImDNS handling loop which looks for RFIDentify servers. Look for \fBavahi_dns_handler.c\fP \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The Avahi mDNS service discovery system is initialized and listens for RFID servers. Upon recieving an updated, the server configuration information is similarly updated.
+.PP
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Spring, 2010
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+Multiple RFID servers are not handled correctly. 
+.RE
+.PP
+
+.PP
+Definition in file \fBavahi_dns_handler.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "void* avahi_function (void * args)"
+.PP
+mDNS handling loop which looks for RFIDentify servers. Look for \fBavahi_dns_handler.c\fP PThread. Initializes an mDNS Avahi service, and listens for relevant services. Updates the server info configuration as necessary. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargs\fP struct \fBclient_config\fP, Relevant configuration settings. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Should not return, if so, error. 
+.RE
+.PP
+
+.PP
+Definition at line 225 of file avahi_dns_handler.c.
+.SS "void browse_callback (AvahiServiceBrowser * b, AvahiIfIndex interface, AvahiProtocol protocol, AvahiBrowserEvent event, const char * name, const char * type, const char * domain, AvahiLookupResultFlags flags, void * userdata)"Called whenever a new services becomes available on the LAN or is removed from the LAN. 
+.PP
+\fBSee also:\fP
+.RS 4
+simple_poll_reader.c in libavahi API 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuserdata\fP An \fBavahi_callback_params\fP pointer containing relevant data. 
+.RE
+.PP
+
+.PP
+this is a hack, rather than coming up with a good loop
+.PP
+we just assume this can only match one. not ideal.  we only compare against the name, with no consideration of domain, which is bad. should come up with a hash. 
+.PP
+Definition at line 118 of file avahi_dns_handler.c.
+.SS "void client_callback (AvahiClient * c, AvahiClientState state, void * userdata)"Called whenever the client or server state changes. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP The current client. 
+.br
+\fIstate\fP The current state. 
+.br
+\fIuserdata\fP Relevant data, including configuration settings. 
+.RE
+.PP
+
+.PP
+Definition at line 203 of file avahi_dns_handler.c.
+.SS "void resolve_callback (AvahiServiceResolver * r, AvahiIfIndex interface, AvahiProtocol protocol, AvahiResolverEvent event, const char * name, const char * type, const char * domain, const char * host_name, const AvahiAddress * address, uint16_t port, AvahiStringList * txt, AvahiLookupResultFlags flags, void * userdata)"Called whenever a service has been resolved successfully or timed out. 
+.PP
+\fBSee also:\fP
+.RS 4
+simple_poll_reader.c in libavahi API 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuserdata\fP An \fBavahi_callback_params\fP pointer containing relevant data. 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file avahi_dns_handler.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

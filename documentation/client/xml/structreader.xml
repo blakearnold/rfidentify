@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structreader" kind="struct" prot="public">
+    <compoundname>reader</compoundname>
+    <includes refid="reader_8h" local="no">reader.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structreader_1a9709aefe4930807392898aecb0cb8a79" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="68" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structreader_1a747e6b771bacb9a327fdbc1572918592" prot="public" static="no" mutable="no">
+        <type>struct ftdi_context *</type>
+        <definition>struct ftdi_context* ftdic</definition>
+        <argsstring></argsstring>
+        <name>ftdic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="69" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structreader_1ace407b2e3206b162c83427d88fc62201" prot="public" static="no" mutable="no">
+        <type>struct usb_device *</type>
+        <definition>struct usb_device* dev</definition>
+        <argsstring></argsstring>
+        <name>dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="70" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Completely identifies a currently connected RFID reader. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="67" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="67" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structreader_1a9709aefe4930807392898aecb0cb8a79" prot="public" virt="non-virtual"><scope>reader</scope><name>connected</name></member>
+      <member refid="structreader_1ace407b2e3206b162c83427d88fc62201" prot="public" virt="non-virtual"><scope>reader</scope><name>dev</name></member>
+      <member refid="structreader_1a747e6b771bacb9a327fdbc1572918592" prot="public" virt="non-virtual"><scope>reader</scope><name>ftdic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

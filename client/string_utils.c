@@ -1,11 +1,20 @@
+/**
+ * @file string_utils.c
+ * 
+ * @author Willi Ballenthin
+ * @date Spring, 2010
+ */
+
 #include "string_utils.h"
 
 /**
-* @param strings A list of strings to join.
-* @param glue A string to be used as glue.
-* @return A new string composed of the parts provided in the list glued
-*   together by the join string, or NULL on failure.
-*/
+ * Given a string an set of delimiting characters, return a list
+ * of string.
+ * @param strings A list of strings to join.
+ * @param glue A string to be used as glue.
+ * @return A new string composed of the parts provided in the list glued
+ *   together by the join string, or NULL on failure.
+ */
 char *string_join(list *strings, char *glue) {
   list *l = strings;
   int i;
@@ -47,11 +56,13 @@ emem:
 }
 
 /**
-* split a string into a list of new substrings
-* delimited by some set of characters
-* the resulting list should be deep freed.
-* @return New list containing the fragments, or NULL on failure.
-*/
+ * split a string into a list of new substrings
+ * delimited by some set of characters
+ * the resulting list should be deep freed.
+ * @param line The string to split.
+ * @param delim A set of characters, each of which should cause a split.
+ * @return New list containing the fragments, or NULL on failure.
+ */
 list *string_split(char *line, char *delim) {
   list *l;
   char *working_copy;

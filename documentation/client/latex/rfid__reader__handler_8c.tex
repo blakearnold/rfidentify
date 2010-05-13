@@ -1,0 +1,153 @@
+\hypertarget{rfid__reader__handler_8c}{
+\section{client/rfid\_\-reader\_\-handler.c File Reference}
+\label{rfid__reader__handler_8c}\index{client/rfid\_\-reader\_\-handler.c@{client/rfid\_\-reader\_\-handler.c}}
+}
+{\ttfamily \#include \char`\"{}client.h\char`\"{}}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$errno.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$curl/curl.h$>$}\par
+Include dependency graph for rfid\_\-reader\_\-handler.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{rfid__reader__handler_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{rfid__reader__handler_8c_a4d68e50d06ddc5319c4978a0dd35fa82}{
+\#define \hyperlink{rfid__reader__handler_8c_a4d68e50d06ddc5319c4978a0dd35fa82}{SLEEP\_\-BTWN\_\-POLL}~1}
+\label{rfid__reader__handler_8c_a4d68e50d06ddc5319c4978a0dd35fa82}
+
+\begin{DoxyCompactList}\small\item\em Amount of time in seconds between polls to RFID reader. \item\end{DoxyCompactList}\item 
+\hypertarget{rfid__reader__handler_8c_a82be151f29c7660d364ab0cc5f97a3af}{
+\#define \hyperlink{rfid__reader__handler_8c_a82be151f29c7660d364ab0cc5f97a3af}{SLEEP\_\-BTWN\_\-SEARCH}~1}
+\label{rfid__reader__handler_8c_a82be151f29c7660d364ab0cc5f97a3af}
+
+\begin{DoxyCompactList}\small\item\em Amount of time in seconds between polls to USB for RFID reader. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rfid__reader__handler_8c_ad9624ed15307fa324f34f6a06bf11751}{reader\_\-handle\_\-tag} (const char $\ast$\hyperlink{structtag}{tag}, struct \hyperlink{structclient__config}{client\_\-config} $\ast$config)
+\item 
+int \hyperlink{rfid__reader__handler_8c_ad7e398d96716aecafb8fdad3c4d64f32}{reader\_\-poll\_\-loop} (struct \hyperlink{structreader}{reader} $\ast$\hyperlink{structreader}{reader}, struct \hyperlink{structclient__config}{client\_\-config} $\ast$config)
+\item 
+void $\ast$ \hyperlink{rfid__reader__handler_8c_a2fe5f2e559b4f539c687ab4121a4a7be}{reader\_\-function} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em RFID reading loop which polls for identifications. Look for \hyperlink{rfid__reader__handler_8c}{rfid\_\-reader\_\-handler.c}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The RFID reader is discovered, initialized, and polled every few seconds. Upon reading a tag, a query is made to a server.
+
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{rfid__reader__handler_8c_source}{rfid\_\-reader\_\-handler.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rfid__reader__handler_8c_a2fe5f2e559b4f539c687ab4121a4a7be}{
+\index{rfid\_\-reader\_\-handler.c@{rfid\_\-reader\_\-handler.c}!reader\_\-function@{reader\_\-function}}
+\index{reader\_\-function@{reader\_\-function}!rfid_reader_handler.c@{rfid\_\-reader\_\-handler.c}}
+\subsubsection[{reader\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ reader\_\-function (void $\ast$ {\em args})}}
+\label{rfid__reader__handler_8c_a2fe5f2e559b4f539c687ab4121a4a7be}
+
+
+RFID reading loop which polls for identifications. Look for \hyperlink{rfid__reader__handler_8c}{rfid\_\-reader\_\-handler.c}. 
+
+PThread. Initializes an RFID device, if it exists, and begins a tag reading loop. \begin{DoxySeeAlso}{See also}
+\hyperlink{rfid__reader__handler_8c_a82be151f29c7660d364ab0cc5f97a3af}{SLEEP\_\-BTWN\_\-SEARCH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]struct \hyperlink{structclient__config}{client\_\-config} -\/ The current configuration of the client. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should not return, if so, error.  abstract RFID differences from this implementation 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file rfid\_\-reader\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{rfid__reader__handler_8c_a2fe5f2e559b4f539c687ab4121a4a7be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rfid__reader__handler_8c_ad9624ed15307fa324f34f6a06bf11751}{
+\index{rfid\_\-reader\_\-handler.c@{rfid\_\-reader\_\-handler.c}!reader\_\-handle\_\-tag@{reader\_\-handle\_\-tag}}
+\index{reader\_\-handle\_\-tag@{reader\_\-handle\_\-tag}!rfid_reader_handler.c@{rfid\_\-reader\_\-handler.c}}
+\subsubsection[{reader\_\-handle\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}int reader\_\-handle\_\-tag (const char $\ast$ {\em tag}, \/  struct {\bf client\_\-config} $\ast$ {\em config})}}
+\label{rfid__reader__handler_8c_ad9624ed15307fa324f34f6a06bf11751}
+This function is invoked as a callback upon the reading of a tag. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]A string containing the tag id. \item[{\em config}]The current configuration of the client. \item[{\em 0}]on ok, negative integer otherwise. \end{DoxyParams}
+
+
+Definition at line 34 of file rfid\_\-reader\_\-handler.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{rfid__reader__handler_8c_ad9624ed15307fa324f34f6a06bf11751_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{rfid__reader__handler_8c_ad7e398d96716aecafb8fdad3c4d64f32}{
+\index{rfid\_\-reader\_\-handler.c@{rfid\_\-reader\_\-handler.c}!reader\_\-poll\_\-loop@{reader\_\-poll\_\-loop}}
+\index{reader\_\-poll\_\-loop@{reader\_\-poll\_\-loop}!rfid_reader_handler.c@{rfid\_\-reader\_\-handler.c}}
+\subsubsection[{reader\_\-poll\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}int reader\_\-poll\_\-loop (struct {\bf reader} $\ast$ {\em reader}, \/  struct {\bf client\_\-config} $\ast$ {\em config})}}
+\label{rfid__reader__handler_8c_ad7e398d96716aecafb8fdad3c4d64f32}
+Repeatedly queries the device for RFID tags. \begin{DoxySeeAlso}{See also}
+\hyperlink{rfid__reader__handler_8c_a4d68e50d06ddc5319c4978a0dd35fa82}{SLEEP\_\-BTWN\_\-POLL} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reader}]The RFID reading device. \item[{\em config}]The current configuration of the client. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Well it shouldnt. If it does, there's an error. 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file rfid\_\-reader\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=414pt]{rfid__reader__handler_8c_ad7e398d96716aecafb8fdad3c4d64f32_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{rfid__reader__handler_8c_ad7e398d96716aecafb8fdad3c4d64f32_icgraph}
+\end{center}
+\end{figure}
+
+

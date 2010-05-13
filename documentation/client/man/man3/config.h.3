@@ -1,0 +1,93 @@
+.TH "client/config.h" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/config.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'list.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBconfig_get\fP (const char *filename, const char *key)"
+.br
+.RI "\fIGet a value from a configuration file identified by a filename. \fP"
+.ti -1c
+.RI "\fBlist\fP * \fBconfig_get_all\fP (const char *filename, const char *key)"
+.br
+.RI "\fIGets all relevant values from a configuration file identifed by a filename. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A config file looks something like this:
+.PP
+a LINE is less than 1023 characters
+.PP
+.PP
+.nf
+ STRING        --> any stream of characters, including nil
+ COMMENT       --> # STRING
+ KEY           --> WORD
+ VALUE         --> STRING
+ DEFINITION    --> KEY=VALUE
+ LINE          --> ( COMMENT | DEFINITON | nil )\n
+ CONFIGURATION --> LINE*
+
+
+
+ ACTION --> ( '/dev/kiosk?idTag=' | '/dev/gumstix?idTag=' )
+ SERVER --> URL:PORT
+ MODE   --> ( 'client' | 'kiosk' )
+.fi
+.PP
+.PP
+There should only be one ACTION. There should only be one MODE. There may be multiple SERVERs specified. 
+.PP
+Definition in file \fBconfig.h\fP.
+.SH "Function Documentation"
+.PP 
+.SS "char* config_get (const char * filename, const char * key)"
+.PP
+Get a value from a configuration file identified by a filename. Given a file, and key, return the first matching config value. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP The config file. 
+.br
+\fIkey\fP The key of which the value to find. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A newly allocated string, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file config.c.
+.SS "\fBlist\fP* config_get_all (const char * filename, const char * key)"
+.PP
+Gets all relevant values from a configuration file identifed by a filename. Given a filename and key, return all matching config values. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP The filename of the configuration file. 
+.br
+\fIkey\fP The key to which to match configuration definitions. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A newly allocated list of newly allocated values, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file config.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

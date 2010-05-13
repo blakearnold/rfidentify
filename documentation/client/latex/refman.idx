@@ -1,0 +1,171 @@
+\indexentry{avahi\_\discretionary {-}{}{}callback\_\discretionary {-}{}{}params@{avahi\_\discretionary {-}{}{}callback\_\discretionary {-}{}{}params}|hyperpage}{7}
+\indexentry{client\_\discretionary {-}{}{}config@{client\_\discretionary {-}{}{}config}|hyperpage}{9}
+\indexentry{list@{list}|hyperpage}{10}
+\indexentry{reader@{reader}|hyperpage}{11}
+\indexentry{rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info@{rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info}|hyperpage}{12}
+\indexentry{rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info@{rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info}!lock@{lock}|hyperpage}{12}
+\indexentry{lock@{lock}!rfid_server_info@{rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info}|hyperpage}{12}
+\indexentry{tag@{tag}|hyperpage}{13}
+\indexentry{client/avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c@{client/avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}|hyperpage}{15}
+\indexentry{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}!avahi\_\discretionary {-}{}{}function@{avahi\_\discretionary {-}{}{}function}|hyperpage}{16}
+\indexentry{avahi\_\discretionary {-}{}{}function@{avahi\_\discretionary {-}{}{}function}!avahi_dns_handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}|hyperpage}{16}
+\indexentry{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}!browse\_\discretionary {-}{}{}callback@{browse\_\discretionary {-}{}{}callback}|hyperpage}{17}
+\indexentry{browse\_\discretionary {-}{}{}callback@{browse\_\discretionary {-}{}{}callback}!avahi_dns_handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}|hyperpage}{17}
+\indexentry{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}!client\_\discretionary {-}{}{}callback@{client\_\discretionary {-}{}{}callback}|hyperpage}{18}
+\indexentry{client\_\discretionary {-}{}{}callback@{client\_\discretionary {-}{}{}callback}!avahi_dns_handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}|hyperpage}{18}
+\indexentry{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}!resolve\_\discretionary {-}{}{}callback@{resolve\_\discretionary {-}{}{}callback}|hyperpage}{18}
+\indexentry{resolve\_\discretionary {-}{}{}callback@{resolve\_\discretionary {-}{}{}callback}!avahi_dns_handler.c@{avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}|hyperpage}{18}
+\indexentry{client/client.c@{client/client.c}|hyperpage}{20}
+\indexentry{client.c@{client.c}!read\_\discretionary {-}{}{}config@{read\_\discretionary {-}{}{}config}|hyperpage}{21}
+\indexentry{read\_\discretionary {-}{}{}config@{read\_\discretionary {-}{}{}config}!client.c@{client.c}|hyperpage}{21}
+\indexentry{client.c@{client.c}!read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers@{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}|hyperpage}{22}
+\indexentry{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers@{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}!client.c@{client.c}|hyperpage}{22}
+\indexentry{client/client.h@{client/client.h}|hyperpage}{25}
+\indexentry{client.h@{client.h}!avahi\_\discretionary {-}{}{}function@{avahi\_\discretionary {-}{}{}function}|hyperpage}{26}
+\indexentry{avahi\_\discretionary {-}{}{}function@{avahi\_\discretionary {-}{}{}function}!client.h@{client.h}|hyperpage}{26}
+\indexentry{client.h@{client.h}!read\_\discretionary {-}{}{}config@{read\_\discretionary {-}{}{}config}|hyperpage}{27}
+\indexentry{read\_\discretionary {-}{}{}config@{read\_\discretionary {-}{}{}config}!client.h@{client.h}|hyperpage}{27}
+\indexentry{client.h@{client.h}!read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers@{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}|hyperpage}{28}
+\indexentry{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers@{read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}!client.h@{client.h}|hyperpage}{28}
+\indexentry{client.h@{client.h}!reader\_\discretionary {-}{}{}function@{reader\_\discretionary {-}{}{}function}|hyperpage}{30}
+\indexentry{reader\_\discretionary {-}{}{}function@{reader\_\discretionary {-}{}{}function}!client.h@{client.h}|hyperpage}{30}
+\indexentry{client/config.c@{client/config.c}|hyperpage}{31}
+\indexentry{config.c@{config.c}!config\_\discretionary {-}{}{}get@{config\_\discretionary {-}{}{}get}|hyperpage}{32}
+\indexentry{config\_\discretionary {-}{}{}get@{config\_\discretionary {-}{}{}get}!config.c@{config.c}|hyperpage}{32}
+\indexentry{config.c@{config.c}!config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all@{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}|hyperpage}{32}
+\indexentry{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all@{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}!config.c@{config.c}|hyperpage}{32}
+\indexentry{config.c@{config.c}!debug@{debug}|hyperpage}{33}
+\indexentry{debug@{debug}!config.c@{config.c}|hyperpage}{33}
+\indexentry{config.c@{config.c}!warn@{warn}|hyperpage}{33}
+\indexentry{warn@{warn}!config.c@{config.c}|hyperpage}{33}
+\indexentry{client/config.h@{client/config.h}|hyperpage}{35}
+\indexentry{config.h@{config.h}!config\_\discretionary {-}{}{}get@{config\_\discretionary {-}{}{}get}|hyperpage}{36}
+\indexentry{config\_\discretionary {-}{}{}get@{config\_\discretionary {-}{}{}get}!config.h@{config.h}|hyperpage}{36}
+\indexentry{config.h@{config.h}!config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all@{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}|hyperpage}{36}
+\indexentry{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all@{config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}!config.h@{config.h}|hyperpage}{36}
+\indexentry{client/list.c@{client/list.c}|hyperpage}{38}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}append@{list\_\discretionary {-}{}{}append}|hyperpage}{39}
+\indexentry{list\_\discretionary {-}{}{}append@{list\_\discretionary {-}{}{}append}!list.c@{list.c}|hyperpage}{39}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}array@{list\_\discretionary {-}{}{}array}|hyperpage}{39}
+\indexentry{list\_\discretionary {-}{}{}array@{list\_\discretionary {-}{}{}array}!list.c@{list.c}|hyperpage}{39}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}|hyperpage}{40}
+\indexentry{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}!list.c@{list.c}|hyperpage}{40}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}car}|hyperpage}{40}
+\indexentry{list\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}car}!list.c@{list.c}|hyperpage}{40}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}cdr}|hyperpage}{41}
+\indexentry{list\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}cdr}!list.c@{list.c}|hyperpage}{41}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}cons@{list\_\discretionary {-}{}{}cons}|hyperpage}{42}
+\indexentry{list\_\discretionary {-}{}{}cons@{list\_\discretionary {-}{}{}cons}!list.c@{list.c}|hyperpage}{42}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}create@{list\_\discretionary {-}{}{}create}|hyperpage}{43}
+\indexentry{list\_\discretionary {-}{}{}create@{list\_\discretionary {-}{}{}create}!list.c@{list.c}|hyperpage}{43}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}destroy}|hyperpage}{44}
+\indexentry{list\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}destroy}!list.c@{list.c}|hyperpage}{44}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep@{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}|hyperpage}{45}
+\indexentry{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep@{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}!list.c@{list.c}|hyperpage}{45}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}filter@{list\_\discretionary {-}{}{}filter}|hyperpage}{45}
+\indexentry{list\_\discretionary {-}{}{}filter@{list\_\discretionary {-}{}{}filter}!list.c@{list.c}|hyperpage}{45}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}|hyperpage}{46}
+\indexentry{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}!list.c@{list.c}|hyperpage}{46}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}|hyperpage}{46}
+\indexentry{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}!list.c@{list.c}|hyperpage}{46}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}|hyperpage}{46}
+\indexentry{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}!list.c@{list.c}|hyperpage}{46}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null}|hyperpage}{47}
+\indexentry{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null}!list.c@{list.c}|hyperpage}{47}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}map@{list\_\discretionary {-}{}{}map}|hyperpage}{48}
+\indexentry{list\_\discretionary {-}{}{}map@{list\_\discretionary {-}{}{}map}!list.c@{list.c}|hyperpage}{48}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}nth@{list\_\discretionary {-}{}{}nth}|hyperpage}{49}
+\indexentry{list\_\discretionary {-}{}{}nth@{list\_\discretionary {-}{}{}nth}!list.c@{list.c}|hyperpage}{49}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom@{list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom}|hyperpage}{49}
+\indexentry{list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom@{list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom}!list.c@{list.c}|hyperpage}{49}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}pop@{list\_\discretionary {-}{}{}pop}|hyperpage}{50}
+\indexentry{list\_\discretionary {-}{}{}pop@{list\_\discretionary {-}{}{}pop}!list.c@{list.c}|hyperpage}{50}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}push@{list\_\discretionary {-}{}{}push}|hyperpage}{51}
+\indexentry{list\_\discretionary {-}{}{}push@{list\_\discretionary {-}{}{}push}!list.c@{list.c}|hyperpage}{51}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}remove@{list\_\discretionary {-}{}{}remove}|hyperpage}{52}
+\indexentry{list\_\discretionary {-}{}{}remove@{list\_\discretionary {-}{}{}remove}!list.c@{list.c}|hyperpage}{52}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}reverse@{list\_\discretionary {-}{}{}reverse}|hyperpage}{52}
+\indexentry{list\_\discretionary {-}{}{}reverse@{list\_\discretionary {-}{}{}reverse}!list.c@{list.c}|hyperpage}{52}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}|hyperpage}{53}
+\indexentry{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}!list.c@{list.c}|hyperpage}{53}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}|hyperpage}{54}
+\indexentry{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}!list.c@{list.c}|hyperpage}{54}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn@{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}|hyperpage}{54}
+\indexentry{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn@{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}!list.c@{list.c}|hyperpage}{54}
+\indexentry{list.c@{list.c}!list\_\discretionary {-}{}{}size@{list\_\discretionary {-}{}{}size}|hyperpage}{55}
+\indexentry{list\_\discretionary {-}{}{}size@{list\_\discretionary {-}{}{}size}!list.c@{list.c}|hyperpage}{55}
+\indexentry{list.c@{list.c}!null\_\discretionary {-}{}{}list@{null\_\discretionary {-}{}{}list}|hyperpage}{55}
+\indexentry{null\_\discretionary {-}{}{}list@{null\_\discretionary {-}{}{}list}!list.c@{list.c}|hyperpage}{55}
+\indexentry{client/list.h@{client/list.h}|hyperpage}{57}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}foreach@{list\_\discretionary {-}{}{}foreach}|hyperpage}{58}
+\indexentry{list\_\discretionary {-}{}{}foreach@{list\_\discretionary {-}{}{}foreach}!list.h@{list.h}|hyperpage}{58}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry@{list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry}|hyperpage}{58}
+\indexentry{list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry@{list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry}!list.h@{list.h}|hyperpage}{58}
+\indexentry{list.h@{list.h}!list@{list}|hyperpage}{59}
+\indexentry{list@{list}!list.h@{list.h}|hyperpage}{59}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}append@{list\_\discretionary {-}{}{}append}|hyperpage}{59}
+\indexentry{list\_\discretionary {-}{}{}append@{list\_\discretionary {-}{}{}append}!list.h@{list.h}|hyperpage}{59}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}array@{list\_\discretionary {-}{}{}array}|hyperpage}{60}
+\indexentry{list\_\discretionary {-}{}{}array@{list\_\discretionary {-}{}{}array}!list.h@{list.h}|hyperpage}{60}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}|hyperpage}{60}
+\indexentry{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}!list.h@{list.h}|hyperpage}{60}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}car}|hyperpage}{61}
+\indexentry{list\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}car}!list.h@{list.h}|hyperpage}{61}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}cdr}|hyperpage}{62}
+\indexentry{list\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}cdr}!list.h@{list.h}|hyperpage}{62}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}cons@{list\_\discretionary {-}{}{}cons}|hyperpage}{63}
+\indexentry{list\_\discretionary {-}{}{}cons@{list\_\discretionary {-}{}{}cons}!list.h@{list.h}|hyperpage}{63}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}create@{list\_\discretionary {-}{}{}create}|hyperpage}{64}
+\indexentry{list\_\discretionary {-}{}{}create@{list\_\discretionary {-}{}{}create}!list.h@{list.h}|hyperpage}{64}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}destroy}|hyperpage}{65}
+\indexentry{list\_\discretionary {-}{}{}destroy@{list\_\discretionary {-}{}{}destroy}!list.h@{list.h}|hyperpage}{65}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep@{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}|hyperpage}{66}
+\indexentry{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep@{list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}!list.h@{list.h}|hyperpage}{66}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}filter@{list\_\discretionary {-}{}{}filter}|hyperpage}{66}
+\indexentry{list\_\discretionary {-}{}{}filter@{list\_\discretionary {-}{}{}filter}!list.h@{list.h}|hyperpage}{66}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}|hyperpage}{67}
+\indexentry{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}!list.h@{list.h}|hyperpage}{67}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}|hyperpage}{67}
+\indexentry{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str@{list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}!list.h@{list.h}|hyperpage}{67}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}|hyperpage}{67}
+\indexentry{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty@{list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}!list.h@{list.h}|hyperpage}{67}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}map@{list\_\discretionary {-}{}{}map}|hyperpage}{68}
+\indexentry{list\_\discretionary {-}{}{}map@{list\_\discretionary {-}{}{}map}!list.h@{list.h}|hyperpage}{68}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}nth@{list\_\discretionary {-}{}{}nth}|hyperpage}{69}
+\indexentry{list\_\discretionary {-}{}{}nth@{list\_\discretionary {-}{}{}nth}!list.h@{list.h}|hyperpage}{69}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}pop@{list\_\discretionary {-}{}{}pop}|hyperpage}{69}
+\indexentry{list\_\discretionary {-}{}{}pop@{list\_\discretionary {-}{}{}pop}!list.h@{list.h}|hyperpage}{69}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}push@{list\_\discretionary {-}{}{}push}|hyperpage}{70}
+\indexentry{list\_\discretionary {-}{}{}push@{list\_\discretionary {-}{}{}push}!list.h@{list.h}|hyperpage}{70}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}remove@{list\_\discretionary {-}{}{}remove}|hyperpage}{71}
+\indexentry{list\_\discretionary {-}{}{}remove@{list\_\discretionary {-}{}{}remove}!list.h@{list.h}|hyperpage}{71}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}reverse@{list\_\discretionary {-}{}{}reverse}|hyperpage}{72}
+\indexentry{list\_\discretionary {-}{}{}reverse@{list\_\discretionary {-}{}{}reverse}!list.h@{list.h}|hyperpage}{72}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}|hyperpage}{72}
+\indexentry{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}!list.h@{list.h}|hyperpage}{72}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}|hyperpage}{73}
+\indexentry{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr@{list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}!list.h@{list.h}|hyperpage}{73}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn@{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}|hyperpage}{74}
+\indexentry{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn@{list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}!list.h@{list.h}|hyperpage}{74}
+\indexentry{list.h@{list.h}!list\_\discretionary {-}{}{}size@{list\_\discretionary {-}{}{}size}|hyperpage}{74}
+\indexentry{list\_\discretionary {-}{}{}size@{list\_\discretionary {-}{}{}size}!list.h@{list.h}|hyperpage}{74}
+\indexentry{list.h@{list.h}!null\_\discretionary {-}{}{}list@{null\_\discretionary {-}{}{}list}|hyperpage}{75}
+\indexentry{null\_\discretionary {-}{}{}list@{null\_\discretionary {-}{}{}list}!list.h@{list.h}|hyperpage}{75}
+\indexentry{client/reader.c@{client/reader.c}|hyperpage}{76}
+\indexentry{reader.c@{reader.c}!find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers@{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}|hyperpage}{77}
+\indexentry{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers@{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}!reader.c@{reader.c}|hyperpage}{77}
+\indexentry{client/reader.h@{client/reader.h}|hyperpage}{79}
+\indexentry{reader.h@{reader.h}!find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers@{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}|hyperpage}{81}
+\indexentry{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers@{find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}!reader.h@{reader.h}|hyperpage}{81}
+\indexentry{client/rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c@{client/rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}|hyperpage}{83}
+\indexentry{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}!reader\_\discretionary {-}{}{}function@{reader\_\discretionary {-}{}{}function}|hyperpage}{84}
+\indexentry{reader\_\discretionary {-}{}{}function@{reader\_\discretionary {-}{}{}function}!rfid_reader_handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}|hyperpage}{84}
+\indexentry{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}!reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag@{reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag}|hyperpage}{85}
+\indexentry{reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag@{reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag}!rfid_reader_handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}|hyperpage}{85}
+\indexentry{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}!reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop@{reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop}|hyperpage}{85}
+\indexentry{reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop@{reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop}!rfid_reader_handler.c@{rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}|hyperpage}{85}
+\indexentry{client/string\_\discretionary {-}{}{}utils.c@{client/string\_\discretionary {-}{}{}utils.c}|hyperpage}{87}
+\indexentry{string\_\discretionary {-}{}{}utils.c@{string\_\discretionary {-}{}{}utils.c}!string\_\discretionary {-}{}{}join@{string\_\discretionary {-}{}{}join}|hyperpage}{87}
+\indexentry{string\_\discretionary {-}{}{}join@{string\_\discretionary {-}{}{}join}!string_utils.c@{string\_\discretionary {-}{}{}utils.c}|hyperpage}{87}
+\indexentry{string\_\discretionary {-}{}{}utils.c@{string\_\discretionary {-}{}{}utils.c}!string\_\discretionary {-}{}{}split@{string\_\discretionary {-}{}{}split}|hyperpage}{88}
+\indexentry{string\_\discretionary {-}{}{}split@{string\_\discretionary {-}{}{}split}!string_utils.c@{string\_\discretionary {-}{}{}utils.c}|hyperpage}{88}

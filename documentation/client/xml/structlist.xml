@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structlist" kind="struct" prot="public">
+    <compoundname>list</compoundname>
+    <includes refid="list_8h" local="no">list.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlist_1a670d4dd718e4fd0fbb7dfbab5c72dcfb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* car</definition>
+        <argsstring></argsstring>
+        <name>car</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="54" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlist_1abb8280ac99531815a51430b637495ee7" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cdr</definition>
+        <argsstring></argsstring>
+        <name>cdr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="55" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>standardization:</para><para>a list ends with a cell that looks like:</para><para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>+---+---+<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">---&gt;<sp/>|<sp/>v<sp/>|<sp/>0<sp/>|<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>+---+---+<sp/><sp/><sp/></highlight></codeline>
+</programlisting></para><para>and empty list then looks like:</para><para><programlisting><codeline><highlight class="normal">+---+---+<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">|<sp/>0<sp/>|<sp/>0<sp/>|<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">+---+---+<sp/><sp/><sp/></highlight></codeline>
+</programlisting></para><para>it should look like this:</para><para><programlisting><codeline><highlight class="normal">0</highlight></codeline>
+</programlisting></para><para>but this doesnt work, because we would need to be able to modify the pointers but of course they are passed by value...</para><para>so this implementation needs to be careful on edge cases, checking when there are fewer than 2 elements and whatnot </para>    </detaileddescription>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="53" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="53" bodyend="56"/>
+    <listofallmembers>
+      <member refid="structlist_1a670d4dd718e4fd0fbb7dfbab5c72dcfb" prot="public" virt="non-virtual"><scope>list</scope><name>car</name></member>
+      <member refid="structlist_1abb8280ac99531815a51430b637495ee7" prot="public" virt="non-virtual"><scope>list</scope><name>cdr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

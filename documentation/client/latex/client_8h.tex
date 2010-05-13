@@ -1,0 +1,194 @@
+\hypertarget{client_8h}{
+\section{client/client.h File Reference}
+\label{client_8h}\index{client/client.h@{client/client.h}}
+}
+{\ttfamily \#include \char`\"{}reader.h\char`\"{}}\par
+{\ttfamily \#include $<$avahi-\/client/client.h$>$}\par
+{\ttfamily \#include $<$avahi-\/common/simple-\/watch.h$>$}\par
+{\ttfamily \#include $<$pthread.h$>$}\par
+Include dependency graph for client.h:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{client_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{client_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrfid__server__info}{rfid\_\-server\_\-info}
+\begin{DoxyCompactList}\small\item\em Defines a relevant configuration of an RFID server. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structclient__config}{client\_\-config}
+\begin{DoxyCompactList}\small\item\em Defines a client configuration context. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structavahi__callback__params}{avahi\_\-callback\_\-params}
+\begin{DoxyCompactList}\small\item\em Aggregation of various parameters to Avahi callbacks. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{client_8h_a2fe5f2e559b4f539c687ab4121a4a7be}{reader\_\-function} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em RFID reading loop which polls for identifications. Look for \hyperlink{rfid__reader__handler_8c}{rfid\_\-reader\_\-handler.c}. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{client_8h_a0631c3c52c14996e91db6a5618d3d2b8}{avahi\_\-function} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em mDNS handling loop which looks for RFIDentify servers. Look for \hyperlink{avahi__dns__handler_8c}{avahi\_\-dns\_\-handler.c} \item\end{DoxyCompactList}\item 
+int \hyperlink{client_8h_aeb76476d4872310249ea0634068eff67}{read\_\-config} (struct \hyperlink{structclient__config}{client\_\-config} $\ast$\hyperlink{structclient__config}{client\_\-config}, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Configures a client given a configuration file. \item\end{DoxyCompactList}\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{client_8h_abafd8197d150530827f5ab09c47c28c3}{read\_\-config\_\-servers} (struct \hyperlink{structclient__config}{client\_\-config} $\ast$\hyperlink{structclient__config}{client\_\-config})
+\begin{DoxyCompactList}\small\item\em Configures static servers from a configuration file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This application reads RFID tags and queries a server with the tag ID. The server is discovered using Avahi/mDNS.
+
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{client_8h_source}{client.h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{client_8h_a0631c3c52c14996e91db6a5618d3d2b8}{
+\index{client.h@{client.h}!avahi\_\-function@{avahi\_\-function}}
+\index{avahi\_\-function@{avahi\_\-function}!client.h@{client.h}}
+\subsubsection[{avahi\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ avahi\_\-function (void $\ast$ {\em args})}}
+\label{client_8h_a0631c3c52c14996e91db6a5618d3d2b8}
+
+
+mDNS handling loop which looks for RFIDentify servers. Look for \hyperlink{avahi__dns__handler_8c}{avahi\_\-dns\_\-handler.c} 
+
+PThread. Initializes an mDNS Avahi service, and listens for relevant services. Updates the server info configuration as necessary. 
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]struct \hyperlink{structclient__config}{client\_\-config}, Relevant configuration settings. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should not return, if so, error. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file avahi\_\-dns\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=357pt]{client_8h_a0631c3c52c14996e91db6a5618d3d2b8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{client_8h_aeb76476d4872310249ea0634068eff67}{
+\index{client.h@{client.h}!read\_\-config@{read\_\-config}}
+\index{read\_\-config@{read\_\-config}!client.h@{client.h}}
+\subsubsection[{read\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}int read\_\-config (struct {\bf client\_\-config} $\ast$ {\em client\_\-config}, \/  const char $\ast$ {\em filename})}}
+\label{client_8h_aeb76476d4872310249ea0634068eff67}
+
+
+Configures a client given a configuration file. 
+
+Configures a client given a configuration file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{structclient__config}{client\_\-config}}]The destination configuration. \item[{\em filename}]The file from which to read the config. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file client.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=411pt]{client_8h_aeb76476d4872310249ea0634068eff67_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{client_8h_abafd8197d150530827f5ab09c47c28c3}{
+\index{client.h@{client.h}!read\_\-config\_\-servers@{read\_\-config\_\-servers}}
+\index{read\_\-config\_\-servers@{read\_\-config\_\-servers}!client.h@{client.h}}
+\subsubsection[{read\_\-config\_\-servers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ read\_\-config\_\-servers (struct {\bf client\_\-config} $\ast$ {\em client\_\-config})}}
+\label{client_8h_abafd8197d150530827f5ab09c47c28c3}
+
+
+Configures static servers from a configuration file. 
+
+Configures static servers from a configuration file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{structclient__config}{client\_\-config}}]The config, including filename, from which to determine the servers. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of servers, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file client.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{client_8h_abafd8197d150530827f5ab09c47c28c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{client_8h_abafd8197d150530827f5ab09c47c28c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{client_8h_a2fe5f2e559b4f539c687ab4121a4a7be}{
+\index{client.h@{client.h}!reader\_\-function@{reader\_\-function}}
+\index{reader\_\-function@{reader\_\-function}!client.h@{client.h}}
+\subsubsection[{reader\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ reader\_\-function (void $\ast$ {\em args})}}
+\label{client_8h_a2fe5f2e559b4f539c687ab4121a4a7be}
+
+
+RFID reading loop which polls for identifications. Look for \hyperlink{rfid__reader__handler_8c}{rfid\_\-reader\_\-handler.c}. 
+
+PThread. Initializes an RFID device, if it exists, and begins a tag reading loop. \begin{DoxySeeAlso}{See also}
+\hyperlink{rfid__reader__handler_8c_a82be151f29c7660d364ab0cc5f97a3af}{SLEEP\_\-BTWN\_\-SEARCH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]struct \hyperlink{structclient__config}{client\_\-config} -\/ The current configuration of the client. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should not return, if so, error.  abstract RFID differences from this implementation 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file rfid\_\-reader\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{client_8h_a2fe5f2e559b4f539c687ab4121a4a7be_cgraph}
+\end{center}
+\end{figure}
+
+

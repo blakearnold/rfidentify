@@ -1,0 +1,892 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="reader_8c" kind="file">
+    <compoundname>reader.c</compoundname>
+    <includes refid="reader_8h" local="yes">reader.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <incdepgraph>
+      <node id="199">
+        <label>client/reader.c</label>
+        <link refid="reader.c"/>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>reader.h</label>
+        <link refid="reader_8h"/>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="203">
+        <label>string.h</label>
+      </node>
+      <node id="202">
+        <label>ftdi.h</label>
+      </node>
+      <node id="204">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="reader_8c_1a89a5395890ec54ed2e9abd98d28c3fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+        <definition>struct reader* reader_create</definition>
+        <argsstring>()</argsstring>
+        <name>reader_create</name>
+        <briefdescription>
+<para>Return a newly allocated reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="14" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="14" bodyend="16"/>
+        <referencedby refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" compoundref="reader_8c" startline="40" endline="71">find_all_readers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a00e4d9bb3baf9af2bb00a0abf960f528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void reader_init</definition>
+        <argsstring>(struct reader *reader, struct ftdi_context *ftdic, struct usb_device *dev)</argsstring>
+        <name>reader_init</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>struct ftdi_context *</type>
+          <declname>ftdic</declname>
+        </param>
+        <param>
+          <type>struct usb_device *</type>
+          <declname>dev</declname>
+        </param>
+        <briefdescription>
+<para>Initialize a newly allocated reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="20" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="18" bodyend="24"/>
+        <referencedby refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" compoundref="reader_8c" startline="40" endline="71">find_all_readers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a1f6a26bc58a13b3a6518a0e376aeb761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structtag" kindref="compound">tag</ref> *</type>
+        <definition>struct tag* tag_create</definition>
+        <argsstring>()</argsstring>
+        <name>tag_create</name>
+        <briefdescription>
+<para>Returns a newly allocated tag. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="26" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="26" bodyend="28"/>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a0f161b5da6c8c55afe84fce625db9a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tag_init</definition>
+        <argsstring>(struct tag *tag, char *id, struct reader *parent)</argsstring>
+        <name>tag_init</name>
+        <param>
+          <type>struct <ref refid="structtag" kindref="compound">tag</ref> *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a newly allocated tag. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="32" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="30" bodyend="35"/>
+        <references refid="structtag_1a049b05dbb9640019aa443230bdf84fa4" compoundref="reader_8h" startline="84">tag::parent</references>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a44b115e0bf4e92f6bfe2dcff067e49f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* find_all_readers</definition>
+        <argsstring>(struct list *readers)</argsstring>
+        <name>find_all_readers</name>
+        <param>
+          <type>struct <ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>readers</declname>
+        </param>
+        <briefdescription>
+<para>Returns a list of all connected readers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>readers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Probably should be an empty list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="40" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="40" bodyend="71"/>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="reader_8c_1a89a5395890ec54ed2e9abd98d28c3fd6" compoundref="reader_8c" startline="14" endline="16">reader_create</references>
+        <references refid="reader_8c_1a00e4d9bb3baf9af2bb00a0abf960f528" compoundref="reader_8c" startline="18" endline="24">reader_init</references>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a439267aa086867cfa328252e98372fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_connect</definition>
+        <argsstring>(struct reader *reader, int beep)</argsstring>
+        <name>reader_connect</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>beep</declname>
+        </param>
+        <briefdescription>
+<para>Connects to a given reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="74" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="73" bodyend="121"/>
+        <references refid="reader_8c_1a16a8be4c849758cd6bf56dbb98bbb397" compoundref="reader_8c" startline="141" endline="147">reader_pass_beep</references>
+        <references refid="reader_8c_1ad473a49314c30853ea1504c24a90a781" compoundref="reader_8c" startline="158" endline="169">reader_ping</references>
+        <references refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" compoundref="reader_8c" startline="171" endline="178">reader_purge</references>
+        <references refid="reader_8c_1a0ca9c7c3b46619215a5c62c215c0be26" compoundref="reader_8c" startline="132" endline="139">reader_reset</references>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1aa7cbb7fa2c4518fdd92604405f3432ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_disconnect</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_disconnect</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Disconnects from a given reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="123" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="123" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a0ca9c7c3b46619215a5c62c215c0be26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_reset</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_reset</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Resets a given reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="133" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="132" bodyend="139"/>
+        <referencedby refid="reader_8h_1a439267aa086867cfa328252e98372fff" compoundref="reader_8c" startline="73" endline="121">reader_connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a16a8be4c849758cd6bf56dbb98bbb397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_pass_beep</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_pass_beep</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Causes the reader to emit the PASS beep. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="142" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="141" bodyend="147"/>
+        <references refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</references>
+        <referencedby refid="reader_8h_1a439267aa086867cfa328252e98372fff" compoundref="reader_8c" startline="73" endline="121">reader_connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1adb993593046e74f8861dca1e36fe59f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_fail_beep</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_fail_beep</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Causes the reader to emit the FAIL beep. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="150" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="149" bodyend="156"/>
+        <references refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</references>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1ad473a49314c30853ea1504c24a90a781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_ping</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_ping</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Pings a given reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="159" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="158" bodyend="169"/>
+        <references refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</references>
+        <referencedby refid="reader_8h_1a439267aa086867cfa328252e98372fff" compoundref="reader_8c" startline="73" endline="121">reader_connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_purge</definition>
+        <argsstring>(struct reader *reader)</argsstring>
+        <name>reader_purge</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+<para>Purges a given reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="172" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="171" bodyend="178"/>
+        <referencedby refid="reader_8h_1a439267aa086867cfa328252e98372fff" compoundref="reader_8c" startline="73" endline="121">reader_connect</referencedby>
+        <referencedby refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" compoundref="reader_8c" startline="355" endline="386">reader_poll15693</referencedby>
+        <referencedby refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" compoundref="reader_8c" startline="388" endline="419">reader_pollTi</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a77f69048a63c0140760e8478ed65b442" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_read_packet</definition>
+        <argsstring>(struct reader *reader, char *buf, int maxlen)</argsstring>
+        <name>reader_read_packet</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxlen</declname>
+        </param>
+        <briefdescription>
+<para>Reads a packet from a reader into a buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="183" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="180" bodyend="224"/>
+        <referencedby refid="reader_8h_1a35ce5c55ac2b57fc38173270a14a33b0" compoundref="reader_8c" startline="226" endline="299">reader_txPacketRxReply</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_txPacketRxReply</definition>
+        <argsstring>(struct reader *reader, char *tx_packet, int tx_packet_len, char *rx_buf, int rx_buf_len, int *payload_index)</argsstring>
+        <name>reader_txPacketRxReply</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>tx_packet</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tx_packet_len</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>rx_buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rx_buf_len</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>payload_index</declname>
+        </param>
+        <briefdescription>
+<para>TODO. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="232" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="226" bodyend="299"/>
+        <references refid="reader_8c_1a77f69048a63c0140760e8478ed65b442" compoundref="reader_8c" startline="180" endline="224">reader_read_packet</references>
+        <referencedby refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" compoundref="reader_8c" startline="355" endline="386">reader_poll15693</referencedby>
+        <referencedby refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" compoundref="reader_8c" startline="388" endline="419">reader_pollTi</referencedby>
+        <referencedby refid="reader_8h_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member">ReturnCode</ref></type>
+        <definition>ReturnCode reader_txPacketCheckAck</definition>
+        <argsstring>(struct reader *reader, char *tx_packet, int tx_packet_len)</argsstring>
+        <name>reader_txPacketCheckAck</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>tx_packet</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tx_packet_len</declname>
+        </param>
+        <briefdescription>
+<para>Returns if successfully acknowledged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="304" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="302" bodyend="311"/>
+        <references refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" compoundref="reader_8c" startline="226" endline="299">reader_txPacketRxReply</references>
+        <referencedby refid="reader_8h_1adb993593046e74f8861dca1e36fe59f7" compoundref="reader_8c" startline="149" endline="156">reader_fail_beep</referencedby>
+        <referencedby refid="reader_8h_1a16a8be4c849758cd6bf56dbb98bbb397" compoundref="reader_8c" startline="141" endline="147">reader_pass_beep</referencedby>
+        <referencedby refid="reader_8h_1ad473a49314c30853ea1504c24a90a781" compoundref="reader_8c" startline="158" endline="169">reader_ping</referencedby>
+        <referencedby refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" compoundref="reader_8c" startline="355" endline="386">reader_poll15693</referencedby>
+        <referencedby refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" compoundref="reader_8c" startline="388" endline="419">reader_pollTi</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1ab599da4f016082f958512f55ea775bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_parse_poll_packet</definition>
+        <argsstring>(struct reader *reader, struct list *tagList, char *packetPayload, int packetPayload_len)</argsstring>
+        <name>reader_parse_poll_packet</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>tagList</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>packetPayload</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>packetPayload_len</declname>
+        </param>
+        <briefdescription>
+<para>Parses a packet returned from a reader poll. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="317" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="313" bodyend="353"/>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <references refid="reader_8c_1a1f6a26bc58a13b3a6518a0e376aeb761" compoundref="reader_8c" startline="26" endline="28">tag_create</references>
+        <references refid="reader_8c_1a0f161b5da6c8c55afe84fce625db9a2f" compoundref="reader_8c" startline="30" endline="35">tag_init</references>
+        <referencedby refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" compoundref="reader_8c" startline="355" endline="386">reader_poll15693</referencedby>
+        <referencedby refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" compoundref="reader_8c" startline="388" endline="419">reader_pollTi</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1acb4c72f1fe61a87135140e51d12e5b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_poll15693</definition>
+        <argsstring>(struct reader *reader, list *tagList)</argsstring>
+        <name>reader_poll15693</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>tagList</declname>
+        </param>
+        <briefdescription>
+<para>Causes the reader to poll for and ISO15693 tag. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="357" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="355" bodyend="386"/>
+        <references refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</references>
+        <references refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" compoundref="reader_8c" startline="171" endline="178">reader_purge</references>
+        <references refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</references>
+        <references refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" compoundref="reader_8c" startline="226" endline="299">reader_txPacketRxReply</references>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="reader_8c_1a8849ebe57eadac17ff0d1882a1c0bcdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_pollTi</definition>
+        <argsstring>(struct reader *reader, list *tagList)</argsstring>
+        <name>reader_pollTi</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>tagList</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to poll the reader for various tags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" line="390" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c" bodystart="388" bodyend="419"/>
+        <references refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</references>
+        <references refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" compoundref="reader_8c" startline="171" endline="178">reader_purge</references>
+        <references refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" compoundref="reader_8c" startline="302" endline="311">reader_txPacketCheckAck</references>
+        <references refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" compoundref="reader_8c" startline="226" endline="299">reader_txPacketRxReply</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Device library for an RFID reader. Particularly the DLP-RFID1.</para><para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reader_8h" kindref="compound">reader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="reader_8h_1a89a5395890ec54ed2e9abd98d28c3fd6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="reader_8c_1a89a5395890ec54ed2e9abd98d28c3fd6" kindref="member" tooltip="Return a newly allocated reader.">reader_create</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>malloc(1<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>));</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="reader_8h_1a00e4d9bb3baf9af2bb00a0abf960f528" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1a00e4d9bb3baf9af2bb00a0abf960f528" kindref="member" tooltip="Initialize a newly allocated reader.">reader_init</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>ftdi_context<sp/>*ftdic,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>usb_device<sp/>*dev)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>reader-&gt;connected<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>reader-&gt;ftdic<sp/>=<sp/>ftdic;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>reader-&gt;dev<sp/><sp/><sp/>=<sp/>dev;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="reader_8h_1a1f6a26bc58a13b3a6518a0e376aeb761" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref><sp/>*<ref refid="reader_8c_1a1f6a26bc58a13b3a6518a0e376aeb761" kindref="member" tooltip="Returns a newly allocated tag.">tag_create</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>malloc(1<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref>));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="reader_8h_1a0f161b5da6c8c55afe84fce625db9a2f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1a0f161b5da6c8c55afe84fce625db9a2f" kindref="member" tooltip="Initializes a newly allocated tag.">tag_init</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref><sp/>*<ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref>,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structtag_1a049b05dbb9640019aa443230bdf84fa4" kindref="member" tooltip="Unique ID.">parent</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>tag-&gt;id<sp/>=<sp/>id;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>tag-&gt;<ref refid="structtag_1a049b05dbb9640019aa443230bdf84fa4" kindref="member" tooltip="Unique ID.">parent</ref><sp/>=<sp/>parent;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="reader_8c_1a44b115e0bf4e92f6bfe2dcff067e49f5" kindref="member" tooltip="Returns a list of all connected readers.">find_all_readers</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*readers)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ftdi_device_list<sp/>*devlist;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ftdi_context<sp/>ftdi;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>ftdi_init(&amp;ftdi);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>rc<sp/>=<sp/>ftdi_usb_find_all(&amp;ftdi,<sp/>&amp;devlist,<sp/>RFID1_VID,<sp/>RFID1_PID);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>ftdi_deinit(&amp;ftdi);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ftdi_device_list<sp/>*dp<sp/>=<sp/>devlist;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(dp){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ftdi_context<sp/>*c<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>ftdi_context));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(c<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Out<sp/>of<sp/>memory<sp/>!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Clean<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>ftdi_init(c);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*r<sp/>=<sp/><ref refid="reader_8c_1a89a5395890ec54ed2e9abd98d28c3fd6" kindref="member" tooltip="Return a newly allocated reader.">reader_create</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reader_8c_1a00e4d9bb3baf9af2bb00a0abf960f528" kindref="member" tooltip="Initialize a newly allocated reader.">reader_init</ref>(r,<sp/>c,<sp/>dp-&gt;dev);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(readers,<sp/>r);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>dp<sp/>=<sp/>dp-&gt;next;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>ftdi_list_free(&amp;dp);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>readers;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="reader_8h_1a439267aa086867cfa328252e98372fff" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1a439267aa086867cfa328252e98372fff" kindref="member" tooltip="Connects to a given reader.">reader_connect</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>beep)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/>rc;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(reader-&gt;ftdic<sp/>==<sp/>NULL<sp/>||<sp/>reader-&gt;dev<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;reader<sp/>entry<sp/>null\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_NULL_ERROR;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_usb_open_dev(reader-&gt;ftdic,<sp/>reader-&gt;dev)<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;ftdi<sp/>usb<sp/>open<sp/>dev<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((rc<sp/>=<sp/><ref refid="reader_8c_1a0ca9c7c3b46619215a5c62c215c0be26" kindref="member" tooltip="Resets a given reader.">reader_reset</ref>(reader))<sp/>!=<sp/>RC_SUCCESS){</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;reset<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>ftdi_usb_close(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((rc<sp/>=<sp/><ref refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" kindref="member" tooltip="Purges a given reader.">reader_purge</ref>(reader))<sp/>!=<sp/>RC_SUCCESS){</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;purge<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>ftdi_usb_close(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_set_baudrate(reader-&gt;ftdic,<sp/>RFID1_BAUDRATE)<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;setbaudrate<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>ftdi_usb_close(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>usleep(10000);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((rc<sp/>=<sp/><ref refid="reader_8c_1ad473a49314c30853ea1504c24a90a781" kindref="member" tooltip="Pings a given reader.">reader_ping</ref>(reader))<sp/>!=<sp/>RC_SUCCESS){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>ftdi_usb_close(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>reader-&gt;connected<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(beep)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="reader_8c_1a16a8be4c849758cd6bf56dbb98bbb397" kindref="member" tooltip="Causes the reader to emit the PASS beep.">reader_pass_beep</ref>(reader);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="reader_8h_1aa7cbb7fa2c4518fdd92604405f3432ca" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1aa7cbb7fa2c4518fdd92604405f3432ca" kindref="member" tooltip="Disconnects from a given reader.">reader_disconnect</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!reader-&gt;connected)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_NOT_CONNECTED;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>reader-&gt;connected<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_usb_close(reader-&gt;ftdic)<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="reader_8h_1a0ca9c7c3b46619215a5c62c215c0be26" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1a0ca9c7c3b46619215a5c62c215c0be26" kindref="member" tooltip="Resets a given reader.">reader_reset</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_setdtr(reader-&gt;ftdic,<sp/>1)<sp/>&lt;<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>usleep(20000);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_setdtr(reader-&gt;ftdic,<sp/>0)<sp/>&lt;<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>usleep(110000);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="reader_8h_1a16a8be4c849758cd6bf56dbb98bbb397" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1a16a8be4c849758cd6bf56dbb98bbb397" kindref="member" tooltip="Causes the reader to emit the PASS beep.">reader_pass_beep</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!reader-&gt;connected)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_NOT_CONNECTED;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RFID1_PKT_PASSBEEP,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strlen(RFID1_PKT_PASSBEEP));</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="reader_8h_1adb993593046e74f8861dca1e36fe59f7" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1adb993593046e74f8861dca1e36fe59f7" kindref="member" tooltip="Causes the reader to emit the FAIL beep.">reader_fail_beep</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!reader-&gt;connected)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_NOT_CONNECTED;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RFID1_PKT_FAILBEEP,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strlen(RFID1_PKT_FAILBEEP));</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="reader_8h_1ad473a49314c30853ea1504c24a90a781" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1ad473a49314c30853ea1504c24a90a781" kindref="member" tooltip="Pings a given reader.">reader_ping</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;5;<sp/>i++){</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RFID1_PKT_PING,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strlen(RFID1_PKT_PING));</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_NO_PING;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="reader_8h_1a1872bfeb60bff7467120b3488199c2c4" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" kindref="member" tooltip="Purges a given reader.">reader_purge</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ftdi_usb_purge_buffers(reader-&gt;ftdic)<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_IO_ERROR;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="reader_8h_1a29341552afcc96cdb1adc305c0e0c54e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1a77f69048a63c0140760e8478ed65b442" kindref="member" tooltip="Reads a packet from a reader into a buffer.">reader_read_packet</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxlen)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(maxlen<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>buf[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>of<sp/>fail<sp/>nul<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(cnt<sp/>=<sp/>0;<sp/>cnt<sp/>&lt;<sp/>maxlen-1;<sp/>cnt++){</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_cnt<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>why<sp/>1?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>rc<sp/>=<sp/>ftdi_read_data(reader-&gt;ftdic,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)buf,<sp/>1);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error,<sp/>return<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>rc<sp/>&gt;<sp/>0){</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Process<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>usleep(1000);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>timeout_cnt--;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(timeout_cnt);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ftdi_usb_purge_rx_buffer(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>EOP<sp/>char<sp/>reached,<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*buf<sp/>==<sp/>RFID1_EOP_CHAR){</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*buf<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cnt;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>buf++;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Reached<sp/>maxlen,<sp/>purge<sp/>buffers<sp/>and<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>buf[maxlen-1]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>ftdi_usb_purge_rx_buffer(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>maxlen;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="reader_8h_1a35ce5c55ac2b57fc38173270a14a33b0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" kindref="member" tooltip="TODO.">reader_txPacketRxReply</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tx_packet,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tx_packet_len,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rx_buf,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rx_buf_len,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*payload_index)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tx_pktlen<sp/>=<sp/>tx_packet_len;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ftdi_write_data(reader-&gt;ftdic,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)tx_packet,<sp/>tx_pktlen);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;<sp/></highlight><highlight class="comment">//<sp/>Transmit<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>tx_pktlen){</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;<sp/></highlight><highlight class="comment">//<sp/>Didn&apos;t<sp/>transmit<sp/>complete<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(should<sp/>this<sp/>be<sp/>a<sp/>different<sp/>error<sp/>or<sp/>ignored?)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Have<sp/>3<sp/>goes<sp/>at<sp/>receiving<sp/>the<sp/>right<sp/>packet<sp/>then<sp/>give<sp/>up.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;10;<sp/>i++){</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>rc<sp/>=<sp/><ref refid="reader_8c_1a77f69048a63c0140760e8478ed65b442" kindref="member" tooltip="Reads a packet from a reader into a buffer.">reader_read_packet</ref>(reader,<sp/>rx_buf,<sp/>rx_buf_len);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-2;<sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>echo<sp/>of<sp/>tx<sp/>packet,<sp/>if<sp/>the<sp/>received<sp/>packet<sp/>is<sp/>shorter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>transmitted<sp/>packet<sp/>then<sp/>obviously<sp/>it&apos;s<sp/>not<sp/>right</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(but<sp/>first<sp/>we<sp/>have<sp/>to<sp/>check<sp/>the<sp/>rx<sp/>buffer<sp/>was<sp/>big<sp/>enough,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>if<sp/>it<sp/>wasn&apos;t<sp/>we<sp/>don&apos;t<sp/>bother<sp/>checking<sp/>for<sp/>a<sp/>match<sp/>and<sp/>just</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>return<sp/>&apos;no<sp/>echo<sp/>received&apos;.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rx_buf_len<sp/>&lt;<sp/>tx_pktlen)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>tx_pktlen){</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>usleep(1000);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Look<sp/>for<sp/>the<sp/>echo<sp/>of<sp/>the<sp/>transmitted<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p<sp/>=<sp/>strstr(rx_buf,<sp/>tx_packet);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>pos<sp/>=<sp/>rx_buf.find(tx_packet);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(pos<sp/>==<sp/>string::npos)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>usleep(1000);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>p<sp/>-<sp/>rx_buf;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>put<sp/>return<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>payload<sp/>if<sp/>rx_payload<sp/>is<sp/>non-null.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload_index<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Move<sp/>to<sp/>the<sp/>end<sp/>of<sp/>the<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>+=<sp/>tx_pktlen;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pos<sp/>+<sp/>3<sp/>&gt;=<sp/>rc<sp/>||<sp/>pos<sp/>+<sp/>3<sp/>&gt;<sp/>rx_buf_len){</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*payload_index)<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Echo<sp/>should<sp/>be<sp/>terminated<sp/>by<sp/>cr,<sp/>nl</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rx_buf[pos]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal"><sp/>||<sp/>rx_buf[pos+1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*payload_index)<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Skip<sp/>over<sp/>the<sp/>cr/nl<sp/>and<sp/>set<sp/>that<sp/>value<sp/>for<sp/>rx_payload</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(*payload_index)<sp/>=<sp/>pos<sp/>+<sp/>2;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>&apos;no<sp/>echo<sp/>received&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302" refid="reader_8h_1ada25a7e053335f1d9c2c4e05043a47e4" refkind="member"><highlight class="normal"><ref refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kindref="member" tooltip="Possible return codes from reader.">ReturnCode</ref><sp/><ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tx_packet,</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tx_packet_len)<sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[100];</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>payload_index<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc<sp/>=<sp/><ref refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" kindref="member" tooltip="TODO.">reader_txPacketRxReply</ref>(reader,<sp/>tx_packet,<sp/>tx_packet_len,<sp/>buf,<sp/>100,<sp/>&amp;payload_index);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_ERROR;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RC_SUCCESS;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313" refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" kindref="member" tooltip="Parses a packet returned from a reader poll.">reader_parse_poll_packet</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*tagList,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*packetPayload,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>packetPayload_len)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p<sp/>=<sp/>packetPayload;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>idbuf[RFID_ID_LEN+1];</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*p<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(tagList);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p++;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>p++;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>While<sp/>we<sp/>have<sp/>a<sp/>valid<sp/>ID<sp/>character,<sp/>construct<sp/>the<sp/>ID.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((*p<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>*p<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)<sp/>||</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*p<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>*p<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal">)<sp/>||</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*p<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>*p<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;f&apos;</highlight><highlight class="normal">)){</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pos<sp/>&gt;=<sp/>RFID_ID_LEN)<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>idbuf[pos++]<sp/>=<sp/>*p++;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>it&apos;s<sp/>a<sp/>valid<sp/>ID<sp/>(must<sp/>be<sp/>followed<sp/>by<sp/>a<sp/>&apos;,&apos;<sp/>delimiter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*p<sp/>==<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>pos<sp/>&gt;<sp/>0){</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref><sp/>*<ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref>;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>idbuf[pos]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tag<sp/>=<sp/><ref refid="reader_8c_1a1f6a26bc58a13b3a6518a0e376aeb761" kindref="member" tooltip="Returns a newly allocated tag.">tag_create</ref>();</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="reader_8c_1a0f161b5da6c8c55afe84fce625db9a2f" kindref="member" tooltip="Initializes a newly allocated tag.">tag_init</ref>(tag,<sp/>strdup(idbuf),<sp/>reader);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tag<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(tagList,<sp/>tag);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*p<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(tagList);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1acb4c72f1fe61a87135140e51d12e5b43" kindref="member" tooltip="Causes the reader to poll for and ISO15693 tag.">reader_poll15693</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*tagList)</highlight></codeline>
+<codeline lineno="357"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[6000];</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>payload_index;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_MODEUID,<sp/>strlen(RFID1_PKT_MODEUID)))</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_AGCTGL,<sp/>strlen(RFID1_PKT_AGCTGL)))</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_AMPMTGL,<sp/>strlen(RFID1_PKT_AMPMTGL)))</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" kindref="member" tooltip="Purges a given reader.">reader_purge</ref>(reader))</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/>rc<sp/>=<sp/><ref refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" kindref="member" tooltip="TODO.">reader_txPacketRxReply</ref>(reader,</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RFID1_PKT_15693INVRQ,</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strlen(RFID1_PKT_15693INVRQ),</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf,</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6000,</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;payload_index);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload_index<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>may<sp/>not<sp/>be<sp/>good.<sp/>destructive<sp/>on<sp/>buf?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*payload<sp/>=<sp/>buf<sp/>+<sp/>payload_index;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" kindref="member" tooltip="Parses a packet returned from a reader poll.">reader_parse_poll_packet</ref>(reader,<sp/>tagList,<sp/>payload,<sp/>strlen(payload));</highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388" refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1a8849ebe57eadac17ff0d1882a1c0bcdf" kindref="member" tooltip="Attempts to poll the reader for various tags.">reader_pollTi</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*tagList)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[6000];</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>payload_index;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rc;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_TAGIT,<sp/>strlen(RFID1_PKT_TAGIT)))</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_AGCTGL,<sp/>strlen(RFID1_PKT_AGCTGL)))</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kindref="member" tooltip="Returns if successfully acknowledged.">reader_txPacketCheckAck</ref>(reader,<sp/>RFID1_PKT_AMPMTGL,<sp/>strlen(RFID1_PKT_AMPMTGL)))</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" kindref="member" tooltip="Purges a given reader.">reader_purge</ref>(reader))</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/>rc<sp/>=<sp/><ref refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" kindref="member" tooltip="TODO.">reader_txPacketRxReply</ref>(reader,</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RFID1_PKT_TISIDPOLL,</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strlen(RFID1_PKT_TISIDPOLL),</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf,</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6000,</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;payload_index);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rc<sp/>&lt;<sp/>1)</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload_index<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>may<sp/>not<sp/>be<sp/>good.<sp/>destructive<sp/>on<sp/>buf?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*payload<sp/>=<sp/>buf<sp/>+<sp/>payload_index;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" kindref="member" tooltip="Parses a packet returned from a reader poll.">reader_parse_poll_packet</ref>(reader,<sp/>tagList,<sp/>payload,<sp/>strlen(payload));</highlight></codeline>
+<codeline lineno="419"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.c"/>
+  </compounddef>
+</doxygen>

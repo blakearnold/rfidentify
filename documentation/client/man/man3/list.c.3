@@ -1,0 +1,397 @@
+.TH "client/list.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/list.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'list.h'\fP
+.br
+\fC#include <stdlib.h>\fP
+.br
+\fC#include <stdio.h>\fP
+.br
+\fC#include <string.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlist\fP * \fBlist_create\fP ()"
+.br
+.ti -1c
+.RI "void * \fBlist_car\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void * \fBlist_cdr\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void \fBlist_set_car\fP (\fBlist\fP *l, void *v)"
+.br
+.ti -1c
+.RI "void \fBlist_set_cdr\fP (\fBlist\fP *l, void *v)"
+.br
+.ti -1c
+.RI "int \fBlist_is_null\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "int \fBlist_is_empty\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "int \fBlist_size\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_cons\fP (void *v, \fBlist\fP *l)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_reverse\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void \fBlist_atom_destroy\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void \fBlist_destroy\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void \fBlist_destroy_deep\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_map\fP (\fBlist\fP *l, void *(*fn)(void *))"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_filter\fP (\fBlist\fP *l, int(*fn)(void *, void *), void *args)"
+.br
+.ti -1c
+.RI "void * \fBlist_simple_free_fn\fP (void *v)"
+.br
+.ti -1c
+.RI "void * \fBlist_str_print_fn\fP (void *v)"
+.br
+.ti -1c
+.RI "void * \fBlist_int_print_fn\fP (void *v)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBnull_list\fP ()"
+.br
+.ti -1c
+.RI "void * \fBlist_nth\fP (\fBlist\fP *l, int i)"
+.br
+.ti -1c
+.RI "void ** \fBlist_array\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "int \fBlist_index_of_int\fP (\fBlist\fP *haystack, int needle)"
+.br
+.ti -1c
+.RI "int \fBlist_index_of_str\fP (\fBlist\fP *haystack, const char *needle)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_append\fP (\fBlist\fP *l, void *v)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_push\fP (\fBlist\fP *l, void *v)"
+.br
+.ti -1c
+.RI "void * \fBlist_pop\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBlist_nth_atom\fP (\fBlist\fP *l, int i)"
+.br
+.ti -1c
+.RI "void * \fBlist_remove\fP (\fBlist\fP *l, int index)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBTRUE\fP = 1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin
+.RE
+.PP
+This file contains the definition of a singly-linked list data structure. It was developed as I learned and explored LISP. The influence of LISP is clear in the API. 
+.PP
+Definition in file \fBlist.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "\fBlist\fP* list_append (\fBlist\fP * l, void * v)"Destructive. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP A list. 
+.br
+\fIv\fP A value to insert at the last position. 
+.RE
+.PP
+\fBPostcondition:\fP
+.RS 4
+The last element of the list now points to a new node containing v. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The newly created end node, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 497 of file list.c.
+.SS "void** list_array (\fBlist\fP * l)"\fBReturns:\fP
+.RS 4
+a new array, filled with the contents of the provided list the list is NULL terminated, but since the values of the array may be NULL, this should not be used to determine the length of the array. rather, \fBlist_size()\fP should be used. NULL on failure or empty list. 
+.RE
+.PP
+
+.PP
+Definition at line 410 of file list.c.
+.SS "void list_atom_destroy (\fBlist\fP * l)"inverse of \fBlist_create()\fP does not free contents 
+.PP
+Definition at line 228 of file list.c.
+.SS "void* list_car (\fBlist\fP * l)"\fBParameters:\fP
+.RS 4
+\fIl\fP a list. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The car of the list. 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file list.c.
+.SS "void* list_cdr (\fBlist\fP * l)"\fBParameters:\fP
+.RS 4
+\fIa\fP list 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The cdr of the list. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file list.c.
+.SS "\fBlist\fP* list_cons (void * v, \fBlist\fP * l)"\fBReturns:\fP
+.RS 4
+a list formed of the given value cons-ed with the given list. Allocates memory. Returns NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file list.c.
+.SS "\fBlist\fP* list_create ()"\fBReturns:\fP
+.RS 4
+A newly allocated list, or NULL on failure 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file list.c.
+.SS "void list_destroy (\fBlist\fP * l)"\fBlist_atom_destroy()\fP chained together across an entire list. currently recursive, so probs not a good function for large lists... although i heard GCC can optimize tail recursion, so this may be fine 
+.PP
+Definition at line 242 of file list.c.
+.SS "void list_destroy_deep (\fBlist\fP * l)"like \fBlist_destroy()\fP but calls free on each car. 
+.PP
+Definition at line 263 of file list.c.
+.SS "\fBlist\fP* list_filter (\fBlist\fP * l, int(*)(void *, void *) fn, void * args)"Given a filtering function, 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP The list to filter. 
+.br
+\fIfn\fP A function to apply to each element in the list. If the application is TRUE, then the element is retained, else it is not included in the new list. 
+.br
+\fIargs\fP Arguments to be passed to the filtering function. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a new list consisting of elements of the old list that pass the test or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 326 of file list.c.
+.SS "int list_index_of_int (\fBlist\fP * haystack, int needle)"\fBReturns:\fP
+.RS 4
+index of first eleemnt encountered matching needle, ENOTFND otherwise. 
+.RE
+.PP
+
+.PP
+Definition at line 446 of file list.c.
+.SS "int list_index_of_str (\fBlist\fP * haystack, const char * needle)"\fBReturns:\fP
+.RS 4
+index of first eleemnt encountered matching needle, ENOTFND otherwise. 
+.RE
+.PP
+
+.PP
+Definition at line 467 of file list.c.
+.SS "int list_is_empty (\fBlist\fP * l)"\fBParameters:\fP
+.RS 4
+\fIl\fP a list. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the parameter is empty 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file list.c.
+.SS "int list_is_null (\fBlist\fP * l)"\fBParameters:\fP
+.RS 4
+\fIl\fP a list. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the parameter is null. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file list.c.
+.SS "\fBlist\fP* list_map (\fBlist\fP * l, void *(*)(void *) fn)"Maps a function across all elements of a list 
+.PP
+\fBReturns:\fP
+.RS 4
+a new list of the results, or NULL on failure 
+.RE
+.PP
+
+.PP
+Definition at line 290 of file list.c.
+.SS "void* list_nth (\fBlist\fP * l, int i)"\fBReturns:\fP
+.RS 4
+the value at the nth position of the list. NULL on failure, however accessing past the end of the list is undefined. 
+.RE
+.PP
+
+.PP
+Definition at line 394 of file list.c.
+.SS "\fBlist\fP* list_nth_atom (\fBlist\fP * l, int i)"Private 
+.PP
+\fBReturns:\fP
+.RS 4
+nth atom in list. 
+.RE
+.PP
+
+.PP
+Definition at line 599 of file list.c.
+.SS "void* list_pop (\fBlist\fP * l)"Destructive. Convenience function. Opposite of \fBlist_push()\fP. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP A list. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The car of the old list. 
+.RE
+.PP
+\fBPostcondition:\fP
+.RS 4
+The list is now the cdr of the original list. 
+.RE
+.PP
+
+.PP
+Definition at line 569 of file list.c.
+.SS "\fBlist\fP* list_push (\fBlist\fP * l, void * v)"Alias of: l = list_cons(v, l); 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP A list to become the cdr. 
+.br
+\fIv\fP A value to become the car. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A list composed of v and l or NULL on failure 
+.RE
+.PP
+
+.PP
+Definition at line 535 of file list.c.
+.SS "void* list_remove (\fBlist\fP * l, int index)"Removes the element at the given index 
+.PP
+\fBReturns:\fP
+.RS 4
+the value of the element removed, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 611 of file list.c.
+.SS "\fBlist\fP* list_reverse (\fBlist\fP * l)"destructively modifies the current list. note, you must assign the result back in place, for this method is unable to modify in place, at the current time. 
+.PP
+\fBReturns:\fP
+.RS 4
+the list reversed. pointer to new head. 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file list.c.
+.SS "void list_set_car (\fBlist\fP * l, void * v)"Sets the car of a list. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP list. 
+.br
+\fIv\fP the value. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file list.c.
+.SS "void list_set_cdr (\fBlist\fP * l, void * v)"Sets the cdr of a list. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIl\fP list. 
+.br
+\fIv\fP the value. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file list.c.
+.SS "void* list_simple_free_fn (void * v)"the following 3 functions conform to the function signatures accepted by list_map and list_filter 
+.PP
+Definition at line 365 of file list.c.
+.SS "int list_size (\fBlist\fP * l)"\fBReturns:\fP
+.RS 4
+size of list. 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file list.c.
+.SS "\fBlist\fP* null_list ()"\fBReturns:\fP
+.RS 4
+a new empty list, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 385 of file list.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

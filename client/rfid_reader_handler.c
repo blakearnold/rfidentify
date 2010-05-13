@@ -1,5 +1,5 @@
 /**
- * rfid_reader_handler.c
+ * @file rfid_reader_handler.c
  *
  * The RFID reader is discovered, initialized, and
  * polled every few seconds.
@@ -28,7 +28,7 @@
  * This function is invoked as a callback upon the reading
  * of a tag.
  * @param tag A string containing the tag id.
- * @param servers A list of server configurations.
+ * @param config The current configuration of the client.
  * @param 0 on ok, negative integer otherwise.
  */
 int reader_handle_tag(const char *tag,
@@ -44,7 +44,9 @@ int reader_handle_tag(const char *tag,
   action = config->action;
 
   // if the tag has already been read, dont do anything
+  pthread_mutex_lock(&(config->lock));
   if ( config->last_tag && strcmp(config->last_tag, tag) == 0) {
+    pthread_mutex_unlock(&(config->lock));
     return 0;
   }
   else {
@@ -52,18 +54,20 @@ int reader_handle_tag(const char *tag,
     config->last_tag = strdup(tag);
     if ( ! config->last_tag) {
       printf("Error: memory exhausted.\n");
+      pthread_mutex_unlock(&(config->lock));
       return -ENOMEM;
     }
   }
+  pthread_mutex_unlock(&(config->lock));
 
   printf("tag: %s\n", tag);
 
+  // otherwise notify each server
   list_foreach_entry(config->servers, temp, struct rfid_server_info *, server_info) {
 
     pthread_mutex_lock(&(server_info->lock));
 
-    // if there is no destination
-    // do nothing and return failure (loop will reread)
+    // if there is no destination, we cant do anything
     if (server_info->url == NULL) {
       pthread_mutex_unlock(&(server_info->lock));
       continue;
@@ -100,7 +104,8 @@ int reader_handle_tag(const char *tag,
     free(target);
 
     pthread_mutex_unlock(&(server_info->lock));
-  }
+  } // end foreach server
+
   return 0;
 }
 
@@ -108,7 +113,7 @@ int reader_handle_tag(const char *tag,
  * Repeatedly queries the device for RFID tags.
  * @see SLEEP_BTWN_POLL
  * @param reader The RFID reading device.
- * @param servers A list of server configurations.
+ * @param config The current configuration of the client.
  * @return Well it shouldnt. If it does, there's an error.
  */
 int reader_poll_loop(struct reader *reader,
@@ -152,9 +157,9 @@ int reader_poll_loop(struct reader *reader,
  * Initializes an RFID device, if it exists, and begins a
  * tag reading loop.
  * @see SLEEP_BTWN_SEARCH
- * @param args a list of struct rfid_server_info.
+ * @param args  struct client_config - The current configuration of the client.
  * @return Should  not return, if so, error.
- * TODO abstract RFID differences from this implementation
+ * @TODO abstract RFID differences from this implementation
  */
 void *reader_function(void *args) {
   list *readers;

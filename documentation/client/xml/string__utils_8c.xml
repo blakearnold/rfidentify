@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="string__utils_8c" kind="file">
+    <compoundname>string_utils.c</compoundname>
+    <includes refid="string__utils_8h" local="yes">string_utils.h</includes>
+    <incdepgraph>
+      <node id="231">
+        <label>stdlib.h</label>
+      </node>
+      <node id="228">
+        <label>client/string_utils.c</label>
+        <link refid="string_utils.c"/>
+        <childnode refid="229" relation="include">
+        </childnode>
+      </node>
+      <node id="229">
+        <label>string_utils.h</label>
+        <link refid="string__utils_8h_source"/>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="232">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* string_join</definition>
+        <argsstring>(list *strings, char *glue)</argsstring>
+        <name>string_join</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>strings</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>glue</declname>
+        </param>
+        <briefdescription>
+<para>Given a list of strings, return a string glued together by GLUE. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a string an set of delimiting characters, return a list of string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of strings to join. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>glue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string to be used as glue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new string composed of the parts provided in the list glued together by the join string, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" line="18" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" bodystart="18" bodyend="56"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* string_split</definition>
+        <argsstring>(char *line, char *delim)</argsstring>
+        <name>string_split</name>
+        <param>
+          <type>char *</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>split a string into a list of new substrings delimited by some set of characters the resulting list should be deep freed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to split. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A set of characters, each of which should cause a split. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New list containing the fragments, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" line="66" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" bodystart="66" bodyend="93"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</references>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</references>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&quot;string_utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" refkind="member"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" kindref="member" tooltip="Given a list of strings, return a string glued together by GLUE.">string_join</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*strings,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*glue)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l<sp/>=<sp/>strings;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buflen<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>strings_length<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>list_length<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strings_length<sp/>+=<sp/>strlen((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_length++;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>buflen<sp/><sp/>=<sp/>strings_length<sp/>+<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>length<sp/>+<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>buflen<sp/>+=<sp/>strlen(glue)<sp/>*<sp/>list_length;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(text<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<sp/>*<sp/>buflen)))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>*text<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>l<sp/>=<sp/>strings;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(list_length<sp/>&gt;=<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(text,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>list_length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(text,<sp/>glue);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(text,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(l));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(l);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>text;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">emem:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>free(text);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" kindref="member">string_split</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delim)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*working_copy;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fragment<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(l<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>()))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(working_copy<sp/>=<sp/>strdup(line)))</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>fragment<sp/>=<sp/>strtok(working_copy,<sp/>delim);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(fragment)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>fragment<sp/>=<sp/>strdup(fragment);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(<ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(l,<sp/>fragment)))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>emem;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>fragment<sp/>=<sp/>strtok(NULL,<sp/>delim);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" kindref="member">list_reverse</ref>(l);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>free(working_copy);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">emem:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1aa3b494560b4f94df133d4604265235db" kindref="member">list_destroy_deep</ref>(l);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>free(working_copy);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>free(fragment);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c"/>
+  </compounddef>
+</doxygen>

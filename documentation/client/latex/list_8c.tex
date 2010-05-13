@@ -1,0 +1,849 @@
+\hypertarget{list_8c}{
+\section{client/list.c File Reference}
+\label{list_8c}\index{client/list.c@{client/list.c}}
+}
+{\ttfamily \#include \char`\"{}list.h\char`\"{}}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+Include dependency graph for list.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{list_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a3dc5b8dea5507c3b0a37fde8c1fcae54}{list\_\-create} ()
+\item 
+void $\ast$ \hyperlink{list_8c_a0ab7b4e1a37506b807bf20ae6698c533}{list\_\-car} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+void $\ast$ \hyperlink{list_8c_a22e64ee163ef21c6d59de59f83f8b269}{list\_\-cdr} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+void \hyperlink{list_8c_a7165db61812c8aa20f8eb5de98cd0e36}{list\_\-set\_\-car} (\hyperlink{structlist}{list} $\ast$l, void $\ast$v)
+\item 
+void \hyperlink{list_8c_aebe3f912f605d2c6e84ec312338ab102}{list\_\-set\_\-cdr} (\hyperlink{structlist}{list} $\ast$l, void $\ast$v)
+\item 
+int \hyperlink{list_8c_a5d9afb6ba37d5493fe3780b6ba8e586b}{list\_\-is\_\-null} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+int \hyperlink{list_8c_aeeb96d95e199da5b6816f6eb7c49d0f0}{list\_\-is\_\-empty} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+int \hyperlink{list_8c_a6b2f0bae5223fb66771708236b2a99ef}{list\_\-size} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a4503901beb6a19b5ec8249906355e5ed}{list\_\-cons} (void $\ast$v, \hyperlink{structlist}{list} $\ast$l)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a07588b386f603af6db91bedcfb338a4b}{list\_\-reverse} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+void \hyperlink{list_8c_a363af69e462d10ad15b4631ec828e571}{list\_\-atom\_\-destroy} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+void \hyperlink{list_8c_ac32ad3e6f4af784d86b011c190aad38b}{list\_\-destroy} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+void \hyperlink{list_8c_aa3b494560b4f94df133d4604265235db}{list\_\-destroy\_\-deep} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a45cebb558b04d38ca7adc2ba3987fd1f}{list\_\-map} (\hyperlink{structlist}{list} $\ast$l, void $\ast$($\ast$fn)(void $\ast$))
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a663fd068ed01140f77770b580258d271}{list\_\-filter} (\hyperlink{structlist}{list} $\ast$l, int($\ast$fn)(void $\ast$, void $\ast$), void $\ast$args)
+\item 
+void $\ast$ \hyperlink{list_8c_acaba2f033d4240acfa943b276125f92e}{list\_\-simple\_\-free\_\-fn} (void $\ast$v)
+\item 
+\hypertarget{list_8c_a8a6d04f858480f36fdc1581983483c43}{
+void $\ast$ {\bfseries list\_\-str\_\-print\_\-fn} (void $\ast$v)}
+\label{list_8c_a8a6d04f858480f36fdc1581983483c43}
+
+\item 
+\hypertarget{list_8c_af0b6b1330fc879171da31397fd2f8665}{
+void $\ast$ {\bfseries list\_\-int\_\-print\_\-fn} (void $\ast$v)}
+\label{list_8c_af0b6b1330fc879171da31397fd2f8665}
+
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a3df67921d322130b2827da2e541a1387}{null\_\-list} ()
+\item 
+void $\ast$ \hyperlink{list_8c_acdcbb59aa0ed0829f03fefa7553f80d2}{list\_\-nth} (\hyperlink{structlist}{list} $\ast$l, int i)
+\item 
+void $\ast$$\ast$ \hyperlink{list_8c_a11d855375347172f2c165f1c86f27853}{list\_\-array} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+int \hyperlink{list_8c_a3b2c3a6f1c6f7f5947247ea3b32b1de2}{list\_\-index\_\-of\_\-int} (\hyperlink{structlist}{list} $\ast$haystack, int needle)
+\item 
+int \hyperlink{list_8c_a8ea8c0428db1f9f4d18203cdb7b9e3dd}{list\_\-index\_\-of\_\-str} (\hyperlink{structlist}{list} $\ast$haystack, const char $\ast$needle)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a850cbe26f09f8f3f8e090cdd7aa5a6a2}{list\_\-append} (\hyperlink{structlist}{list} $\ast$l, void $\ast$v)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_ac678bd305e69ff31bb9644b5cfabac0b}{list\_\-push} (\hyperlink{structlist}{list} $\ast$l, void $\ast$v)
+\item 
+void $\ast$ \hyperlink{list_8c_a35885fd30f031789e0844bb693b0b8fc}{list\_\-pop} (\hyperlink{structlist}{list} $\ast$l)
+\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{list_8c_a9c0551e214815c70b539e212e3c329da}{list\_\-nth\_\-atom} (\hyperlink{structlist}{list} $\ast$l, int i)
+\item 
+void $\ast$ \hyperlink{list_8c_aedae6ef5cd2d980ca049ea112eba1f2b}{list\_\-remove} (\hyperlink{structlist}{list} $\ast$l, int index)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{list_8c_a8f0035a68b57201cc8c350ec72928325}{
+int {\bfseries TRUE} = 1}
+\label{list_8c_a8f0035a68b57201cc8c350ec72928325}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin
+\end{DoxyAuthor}
+This file contains the definition of a singly-\/linked list data structure. It was developed as I learned and explored LISP. The influence of LISP is clear in the API. 
+
+Definition in file \hyperlink{list_8c_source}{list.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{list_8c_a850cbe26f09f8f3f8e090cdd7aa5a6a2}{
+\index{list.c@{list.c}!list\_\-append@{list\_\-append}}
+\index{list\_\-append@{list\_\-append}!list.c@{list.c}}
+\subsubsection[{list\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-append ({\bf list} $\ast$ {\em l}, \/  void $\ast$ {\em v})}}
+\label{list_8c_a850cbe26f09f8f3f8e090cdd7aa5a6a2}
+Destructive. 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]A list. \item[{\em v}]A value to insert at the last position. \end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The last element of the list now points to a new node containing v. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+The newly created end node, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 497 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{list_8c_a850cbe26f09f8f3f8e090cdd7aa5a6a2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{list_8c_a850cbe26f09f8f3f8e090cdd7aa5a6a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a11d855375347172f2c165f1c86f27853}{
+\index{list.c@{list.c}!list\_\-array@{list\_\-array}}
+\index{list\_\-array@{list\_\-array}!list.c@{list.c}}
+\subsubsection[{list\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ list\_\-array ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a11d855375347172f2c165f1c86f27853}
+\begin{DoxyReturn}{Returns}
+a new array, filled with the contents of the provided list the list is NULL terminated, but since the values of the array may be NULL, this should not be used to determine the length of the array. rather, \hyperlink{list_8c_a6b2f0bae5223fb66771708236b2a99ef}{list\_\-size()} should be used. NULL on failure or empty list. 
+\end{DoxyReturn}
+
+
+Definition at line 410 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{list_8c_a11d855375347172f2c165f1c86f27853_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a363af69e462d10ad15b4631ec828e571}{
+\index{list.c@{list.c}!list\_\-atom\_\-destroy@{list\_\-atom\_\-destroy}}
+\index{list\_\-atom\_\-destroy@{list\_\-atom\_\-destroy}!list.c@{list.c}}
+\subsubsection[{list\_\-atom\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void list\_\-atom\_\-destroy ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a363af69e462d10ad15b4631ec828e571}
+inverse of \hyperlink{list_8c_a3dc5b8dea5507c3b0a37fde8c1fcae54}{list\_\-create()} does not free contents 
+
+Definition at line 228 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{list_8c_a363af69e462d10ad15b4631ec828e571_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a0ab7b4e1a37506b807bf20ae6698c533}{
+\index{list.c@{list.c}!list\_\-car@{list\_\-car}}
+\index{list\_\-car@{list\_\-car}!list.c@{list.c}}
+\subsubsection[{list\_\-car}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-car ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a0ab7b4e1a37506b807bf20ae6698c533}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]a list. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The car of the list. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_a0ab7b4e1a37506b807bf20ae6698c533_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a22e64ee163ef21c6d59de59f83f8b269}{
+\index{list.c@{list.c}!list\_\-cdr@{list\_\-cdr}}
+\index{list\_\-cdr@{list\_\-cdr}!list.c@{list.c}}
+\subsubsection[{list\_\-cdr}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-cdr ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a22e64ee163ef21c6d59de59f83f8b269}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]list \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cdr of the list. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_a22e64ee163ef21c6d59de59f83f8b269_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a4503901beb6a19b5ec8249906355e5ed}{
+\index{list.c@{list.c}!list\_\-cons@{list\_\-cons}}
+\index{list\_\-cons@{list\_\-cons}!list.c@{list.c}}
+\subsubsection[{list\_\-cons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-cons (void $\ast$ {\em v}, \/  {\bf list} $\ast$ {\em l})}}
+\label{list_8c_a4503901beb6a19b5ec8249906355e5ed}
+\begin{DoxyReturn}{Returns}
+a list formed of the given value cons-\/ed with the given list. Allocates memory. Returns NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{list_8c_a4503901beb6a19b5ec8249906355e5ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{list_8c_a4503901beb6a19b5ec8249906355e5ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a3dc5b8dea5507c3b0a37fde8c1fcae54}{
+\index{list.c@{list.c}!list\_\-create@{list\_\-create}}
+\index{list\_\-create@{list\_\-create}!list.c@{list.c}}
+\subsubsection[{list\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-create ()}}
+\label{list_8c_a3dc5b8dea5507c3b0a37fde8c1fcae54}
+\begin{DoxyReturn}{Returns}
+A newly allocated list, or NULL on failure 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{list_8c_a3dc5b8dea5507c3b0a37fde8c1fcae54_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_ac32ad3e6f4af784d86b011c190aad38b}{
+\index{list.c@{list.c}!list\_\-destroy@{list\_\-destroy}}
+\index{list\_\-destroy@{list\_\-destroy}!list.c@{list.c}}
+\subsubsection[{list\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void list\_\-destroy ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_ac32ad3e6f4af784d86b011c190aad38b}
+\hyperlink{list_8c_a363af69e462d10ad15b4631ec828e571}{list\_\-atom\_\-destroy()} chained together across an entire list. currently recursive, so probs not a good function for large lists... although i heard GCC can optimize tail recursion, so this may be fine 
+
+Definition at line 242 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{list_8c_ac32ad3e6f4af784d86b011c190aad38b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{list_8c_ac32ad3e6f4af784d86b011c190aad38b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_aa3b494560b4f94df133d4604265235db}{
+\index{list.c@{list.c}!list\_\-destroy\_\-deep@{list\_\-destroy\_\-deep}}
+\index{list\_\-destroy\_\-deep@{list\_\-destroy\_\-deep}!list.c@{list.c}}
+\subsubsection[{list\_\-destroy\_\-deep}]{\setlength{\rightskip}{0pt plus 5cm}void list\_\-destroy\_\-deep ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_aa3b494560b4f94df133d4604265235db}
+like \hyperlink{list_8c_ac32ad3e6f4af784d86b011c190aad38b}{list\_\-destroy()} but calls free on each car. 
+
+Definition at line 263 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{list_8c_aa3b494560b4f94df133d4604265235db_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{list_8c_aa3b494560b4f94df133d4604265235db_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a663fd068ed01140f77770b580258d271}{
+\index{list.c@{list.c}!list\_\-filter@{list\_\-filter}}
+\index{list\_\-filter@{list\_\-filter}!list.c@{list.c}}
+\subsubsection[{list\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-filter ({\bf list} $\ast$ {\em l}, \/  int($\ast$)(void $\ast$, void $\ast$) {\em fn}, \/  void $\ast$ {\em args})}}
+\label{list_8c_a663fd068ed01140f77770b580258d271}
+Given a filtering function, 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]The list to filter. \item[{\em fn}]A function to apply to each element in the list. If the application is TRUE, then the element is retained, else it is not included in the new list. \item[{\em args}]Arguments to be passed to the filtering function. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new list consisting of elements of the old list that pass the test or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{list_8c_a663fd068ed01140f77770b580258d271_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a3b2c3a6f1c6f7f5947247ea3b32b1de2}{
+\index{list.c@{list.c}!list\_\-index\_\-of\_\-int@{list\_\-index\_\-of\_\-int}}
+\index{list\_\-index\_\-of\_\-int@{list\_\-index\_\-of\_\-int}!list.c@{list.c}}
+\subsubsection[{list\_\-index\_\-of\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int list\_\-index\_\-of\_\-int ({\bf list} $\ast$ {\em haystack}, \/  int {\em needle})}}
+\label{list_8c_a3b2c3a6f1c6f7f5947247ea3b32b1de2}
+\begin{DoxyReturn}{Returns}
+index of first eleemnt encountered matching needle, ENOTFND otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{list_8c_a3b2c3a6f1c6f7f5947247ea3b32b1de2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a8ea8c0428db1f9f4d18203cdb7b9e3dd}{
+\index{list.c@{list.c}!list\_\-index\_\-of\_\-str@{list\_\-index\_\-of\_\-str}}
+\index{list\_\-index\_\-of\_\-str@{list\_\-index\_\-of\_\-str}!list.c@{list.c}}
+\subsubsection[{list\_\-index\_\-of\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}int list\_\-index\_\-of\_\-str ({\bf list} $\ast$ {\em haystack}, \/  const char $\ast$ {\em needle})}}
+\label{list_8c_a8ea8c0428db1f9f4d18203cdb7b9e3dd}
+\begin{DoxyReturn}{Returns}
+index of first eleemnt encountered matching needle, ENOTFND otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 467 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{list_8c_a8ea8c0428db1f9f4d18203cdb7b9e3dd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_aeeb96d95e199da5b6816f6eb7c49d0f0}{
+\index{list.c@{list.c}!list\_\-is\_\-empty@{list\_\-is\_\-empty}}
+\index{list\_\-is\_\-empty@{list\_\-is\_\-empty}!list.c@{list.c}}
+\subsubsection[{list\_\-is\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}int list\_\-is\_\-empty ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_aeeb96d95e199da5b6816f6eb7c49d0f0}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]a list. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the parameter is empty 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=108pt]{list_8c_aeeb96d95e199da5b6816f6eb7c49d0f0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_aeeb96d95e199da5b6816f6eb7c49d0f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a5d9afb6ba37d5493fe3780b6ba8e586b}{
+\index{list.c@{list.c}!list\_\-is\_\-null@{list\_\-is\_\-null}}
+\index{list\_\-is\_\-null@{list\_\-is\_\-null}!list.c@{list.c}}
+\subsubsection[{list\_\-is\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}int list\_\-is\_\-null ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a5d9afb6ba37d5493fe3780b6ba8e586b}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]a list. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the parameter is null. 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_a5d9afb6ba37d5493fe3780b6ba8e586b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a45cebb558b04d38ca7adc2ba3987fd1f}{
+\index{list.c@{list.c}!list\_\-map@{list\_\-map}}
+\index{list\_\-map@{list\_\-map}!list.c@{list.c}}
+\subsubsection[{list\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-map ({\bf list} $\ast$ {\em l}, \/  void $\ast$($\ast$)(void $\ast$) {\em fn})}}
+\label{list_8c_a45cebb558b04d38ca7adc2ba3987fd1f}
+Maps a function across all elements of a list \begin{DoxyReturn}{Returns}
+a new list of the results, or NULL on failure 
+\end{DoxyReturn}
+
+
+Definition at line 290 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{list_8c_a45cebb558b04d38ca7adc2ba3987fd1f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_acdcbb59aa0ed0829f03fefa7553f80d2}{
+\index{list.c@{list.c}!list\_\-nth@{list\_\-nth}}
+\index{list\_\-nth@{list\_\-nth}!list.c@{list.c}}
+\subsubsection[{list\_\-nth}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-nth ({\bf list} $\ast$ {\em l}, \/  int {\em i})}}
+\label{list_8c_acdcbb59aa0ed0829f03fefa7553f80d2}
+\begin{DoxyReturn}{Returns}
+the value at the nth position of the list. NULL on failure, however accessing past the end of the list is undefined. 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=88pt]{list_8c_acdcbb59aa0ed0829f03fefa7553f80d2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{list_8c_acdcbb59aa0ed0829f03fefa7553f80d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a9c0551e214815c70b539e212e3c329da}{
+\index{list.c@{list.c}!list\_\-nth\_\-atom@{list\_\-nth\_\-atom}}
+\index{list\_\-nth\_\-atom@{list\_\-nth\_\-atom}!list.c@{list.c}}
+\subsubsection[{list\_\-nth\_\-atom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-nth\_\-atom ({\bf list} $\ast$ {\em l}, \/  int {\em i})}}
+\label{list_8c_a9c0551e214815c70b539e212e3c329da}
+Private \begin{DoxyReturn}{Returns}
+nth atom in list. 
+\end{DoxyReturn}
+
+
+Definition at line 599 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=102pt]{list_8c_a9c0551e214815c70b539e212e3c329da_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{list_8c_a9c0551e214815c70b539e212e3c329da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a35885fd30f031789e0844bb693b0b8fc}{
+\index{list.c@{list.c}!list\_\-pop@{list\_\-pop}}
+\index{list\_\-pop@{list\_\-pop}!list.c@{list.c}}
+\subsubsection[{list\_\-pop}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-pop ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a35885fd30f031789e0844bb693b0b8fc}
+Destructive. Convenience function. Opposite of \hyperlink{list_8c_ac678bd305e69ff31bb9644b5cfabac0b}{list\_\-push()}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]A list. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The car of the old list. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+The list is now the cdr of the original list. 
+\end{DoxyPostcond}
+
+
+Definition at line 569 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{list_8c_a35885fd30f031789e0844bb693b0b8fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{list_8c_a35885fd30f031789e0844bb693b0b8fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_ac678bd305e69ff31bb9644b5cfabac0b}{
+\index{list.c@{list.c}!list\_\-push@{list\_\-push}}
+\index{list\_\-push@{list\_\-push}!list.c@{list.c}}
+\subsubsection[{list\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-push ({\bf list} $\ast$ {\em l}, \/  void $\ast$ {\em v})}}
+\label{list_8c_ac678bd305e69ff31bb9644b5cfabac0b}
+Alias of: l = list\_\-cons(v, l); 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]A list to become the cdr. \item[{\em v}]A value to become the car. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list composed of v and l or NULL on failure 
+\end{DoxyReturn}
+
+
+Definition at line 535 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{list_8c_ac678bd305e69ff31bb9644b5cfabac0b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{list_8c_ac678bd305e69ff31bb9644b5cfabac0b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_aedae6ef5cd2d980ca049ea112eba1f2b}{
+\index{list.c@{list.c}!list\_\-remove@{list\_\-remove}}
+\index{list\_\-remove@{list\_\-remove}!list.c@{list.c}}
+\subsubsection[{list\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-remove ({\bf list} $\ast$ {\em l}, \/  int {\em index})}}
+\label{list_8c_aedae6ef5cd2d980ca049ea112eba1f2b}
+Removes the element at the given index \begin{DoxyReturn}{Returns}
+the value of the element removed, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 611 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{list_8c_aedae6ef5cd2d980ca049ea112eba1f2b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{list_8c_aedae6ef5cd2d980ca049ea112eba1f2b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a07588b386f603af6db91bedcfb338a4b}{
+\index{list.c@{list.c}!list\_\-reverse@{list\_\-reverse}}
+\index{list\_\-reverse@{list\_\-reverse}!list.c@{list.c}}
+\subsubsection[{list\_\-reverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ list\_\-reverse ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a07588b386f603af6db91bedcfb338a4b}
+destructively modifies the current list. note, you must assign the result back in place, for this method is unable to modify in place, at the current time. \begin{DoxyReturn}{Returns}
+the list reversed. pointer to new head. 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{list_8c_a07588b386f603af6db91bedcfb338a4b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{list_8c_a07588b386f603af6db91bedcfb338a4b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a7165db61812c8aa20f8eb5de98cd0e36}{
+\index{list.c@{list.c}!list\_\-set\_\-car@{list\_\-set\_\-car}}
+\index{list\_\-set\_\-car@{list\_\-set\_\-car}!list.c@{list.c}}
+\subsubsection[{list\_\-set\_\-car}]{\setlength{\rightskip}{0pt plus 5cm}void list\_\-set\_\-car ({\bf list} $\ast$ {\em l}, \/  void $\ast$ {\em v})}}
+\label{list_8c_a7165db61812c8aa20f8eb5de98cd0e36}
+Sets the car of a list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]list. \item[{\em v}]the value. \end{DoxyParams}
+
+
+Definition at line 61 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_a7165db61812c8aa20f8eb5de98cd0e36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_aebe3f912f605d2c6e84ec312338ab102}{
+\index{list.c@{list.c}!list\_\-set\_\-cdr@{list\_\-set\_\-cdr}}
+\index{list\_\-set\_\-cdr@{list\_\-set\_\-cdr}!list.c@{list.c}}
+\subsubsection[{list\_\-set\_\-cdr}]{\setlength{\rightskip}{0pt plus 5cm}void list\_\-set\_\-cdr ({\bf list} $\ast$ {\em l}, \/  void $\ast$ {\em v})}}
+\label{list_8c_aebe3f912f605d2c6e84ec312338ab102}
+Sets the cdr of a list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em l}]list. \item[{\em v}]the value. \end{DoxyParams}
+
+
+Definition at line 75 of file list.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{list_8c_aebe3f912f605d2c6e84ec312338ab102_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_acaba2f033d4240acfa943b276125f92e}{
+\index{list.c@{list.c}!list\_\-simple\_\-free\_\-fn@{list\_\-simple\_\-free\_\-fn}}
+\index{list\_\-simple\_\-free\_\-fn@{list\_\-simple\_\-free\_\-fn}!list.c@{list.c}}
+\subsubsection[{list\_\-simple\_\-free\_\-fn}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ list\_\-simple\_\-free\_\-fn (void $\ast$ {\em v})}}
+\label{list_8c_acaba2f033d4240acfa943b276125f92e}
+the following 3 functions conform to the function signatures accepted by list\_\-map and list\_\-filter 
+
+Definition at line 365 of file list.c.
+
+\hypertarget{list_8c_a6b2f0bae5223fb66771708236b2a99ef}{
+\index{list.c@{list.c}!list\_\-size@{list\_\-size}}
+\index{list\_\-size@{list\_\-size}!list.c@{list.c}}
+\subsubsection[{list\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int list\_\-size ({\bf list} $\ast$ {\em l})}}
+\label{list_8c_a6b2f0bae5223fb66771708236b2a99ef}
+\begin{DoxyReturn}{Returns}
+size of list. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{list_8c_a6b2f0bae5223fb66771708236b2a99ef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{list_8c_a6b2f0bae5223fb66771708236b2a99ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{list_8c_a3df67921d322130b2827da2e541a1387}{
+\index{list.c@{list.c}!null\_\-list@{null\_\-list}}
+\index{null\_\-list@{null\_\-list}!list.c@{list.c}}
+\subsubsection[{null\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ null\_\-list ()}}
+\label{list_8c_a3df67921d322130b2827da2e541a1387}
+\begin{DoxyReturn}{Returns}
+a new empty list, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 385 of file list.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=96pt]{list_8c_a3df67921d322130b2827da2e541a1387_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{list_8c_a3df67921d322130b2827da2e541a1387_icgraph}
+\end{center}
+\end{figure}
+
+

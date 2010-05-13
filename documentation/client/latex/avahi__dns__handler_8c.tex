@@ -1,0 +1,194 @@
+\hypertarget{avahi__dns__handler_8c}{
+\section{client/avahi\_\-dns\_\-handler.c File Reference}
+\label{avahi__dns__handler_8c}\index{client/avahi\_\-dns\_\-handler.c@{client/avahi\_\-dns\_\-handler.c}}
+}
+{\ttfamily \#include \char`\"{}client.h\char`\"{}}\par
+{\ttfamily \#include $<$ftdi.h$>$}\par
+{\ttfamily \#include $<$avahi-\/client/client.h$>$}\par
+{\ttfamily \#include $<$avahi-\/common/simple-\/watch.h$>$}\par
+{\ttfamily \#include $<$pthread.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$errno.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$avahi-\/client/lookup.h$>$}\par
+{\ttfamily \#include $<$avahi-\/common/malloc.h$>$}\par
+{\ttfamily \#include $<$avahi-\/common/error.h$>$}\par
+Include dependency graph for avahi\_\-dns\_\-handler.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{avahi__dns__handler_8c__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=97pt]{avahi__dns__handler_8c__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{avahi__dns__handler_8c_a9c1f95b206f4fe188f24471c4dbb2e2b}{resolve\_\-callback} (AvahiServiceResolver $\ast$r, AvahiIfIndex interface, AvahiProtocol protocol, AvahiResolverEvent event, const char $\ast$name, const char $\ast$type, const char $\ast$domain, const char $\ast$host\_\-name, const AvahiAddress $\ast$address, uint16\_\-t port, AvahiStringList $\ast$txt, AvahiLookupResultFlags flags, void $\ast$userdata)
+\item 
+void \hyperlink{avahi__dns__handler_8c_a0a5dcec1ec57a60846e370d34a003a4a}{browse\_\-callback} (AvahiServiceBrowser $\ast$b, AvahiIfIndex interface, AvahiProtocol protocol, AvahiBrowserEvent event, const char $\ast$name, const char $\ast$type, const char $\ast$domain, AvahiLookupResultFlags flags, void $\ast$userdata)
+\item 
+void \hyperlink{avahi__dns__handler_8c_a8abc8d2d0f6f9a171d8c02d6d9285fbf}{client\_\-callback} (AvahiClient $\ast$c, AvahiClientState state, void $\ast$userdata)
+\item 
+void $\ast$ \hyperlink{avahi__dns__handler_8c_a0631c3c52c14996e91db6a5618d3d2b8}{avahi\_\-function} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em mDNS handling loop which looks for RFIDentify servers. Look for \hyperlink{avahi__dns__handler_8c}{avahi\_\-dns\_\-handler.c} \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Avahi mDNS service discovery system is initialized and listens for RFID servers. Upon recieving an updated, the server configuration information is similarly updated.
+
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010
+\end{DoxyDate}
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]Multiple RFID servers are not handled correctly. \end{Desc}
+
+
+Definition in file \hyperlink{avahi__dns__handler_8c_source}{avahi\_\-dns\_\-handler.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{avahi__dns__handler_8c_a0631c3c52c14996e91db6a5618d3d2b8}{
+\index{avahi\_\-dns\_\-handler.c@{avahi\_\-dns\_\-handler.c}!avahi\_\-function@{avahi\_\-function}}
+\index{avahi\_\-function@{avahi\_\-function}!avahi_dns_handler.c@{avahi\_\-dns\_\-handler.c}}
+\subsubsection[{avahi\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ avahi\_\-function (void $\ast$ {\em args})}}
+\label{avahi__dns__handler_8c_a0631c3c52c14996e91db6a5618d3d2b8}
+
+
+mDNS handling loop which looks for RFIDentify servers. Look for \hyperlink{avahi__dns__handler_8c}{avahi\_\-dns\_\-handler.c} 
+
+PThread. Initializes an mDNS Avahi service, and listens for relevant services. Updates the server info configuration as necessary. 
+\begin{DoxyParams}{Parameters}
+\item[{\em args}]struct \hyperlink{structclient__config}{client\_\-config}, Relevant configuration settings. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should not return, if so, error. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file avahi\_\-dns\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=357pt]{avahi__dns__handler_8c_a0631c3c52c14996e91db6a5618d3d2b8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{avahi__dns__handler_8c_a0a5dcec1ec57a60846e370d34a003a4a}{
+\index{avahi\_\-dns\_\-handler.c@{avahi\_\-dns\_\-handler.c}!browse\_\-callback@{browse\_\-callback}}
+\index{browse\_\-callback@{browse\_\-callback}!avahi_dns_handler.c@{avahi\_\-dns\_\-handler.c}}
+\subsubsection[{browse\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void browse\_\-callback (AvahiServiceBrowser $\ast$ {\em b}, \/  AvahiIfIndex {\em interface}, \/  AvahiProtocol {\em protocol}, \/  AvahiBrowserEvent {\em event}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em type}, \/  const char $\ast$ {\em domain}, \/  AvahiLookupResultFlags {\em flags}, \/  void $\ast$ {\em userdata})}}
+\label{avahi__dns__handler_8c_a0a5dcec1ec57a60846e370d34a003a4a}
+Called whenever a new services becomes available on the LAN or is removed from the LAN. \begin{DoxySeeAlso}{See also}
+simple\_\-poll\_\-reader.c in libavahi API 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em userdata}]An \hyperlink{structavahi__callback__params}{avahi\_\-callback\_\-params} pointer containing relevant data. \end{DoxyParams}
+
+
+this is a hack, rather than coming up with a good loop
+
+we just assume this can only match one. not ideal.  we only compare against the name, with no consideration of domain, which is bad. should come up with a hash. 
+
+
+
+Definition at line 118 of file avahi\_\-dns\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{avahi__dns__handler_8c_a0a5dcec1ec57a60846e370d34a003a4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{avahi__dns__handler_8c_a0a5dcec1ec57a60846e370d34a003a4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{avahi__dns__handler_8c_a8abc8d2d0f6f9a171d8c02d6d9285fbf}{
+\index{avahi\_\-dns\_\-handler.c@{avahi\_\-dns\_\-handler.c}!client\_\-callback@{client\_\-callback}}
+\index{client\_\-callback@{client\_\-callback}!avahi_dns_handler.c@{avahi\_\-dns\_\-handler.c}}
+\subsubsection[{client\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void client\_\-callback (AvahiClient $\ast$ {\em c}, \/  AvahiClientState {\em state}, \/  void $\ast$ {\em userdata})}}
+\label{avahi__dns__handler_8c_a8abc8d2d0f6f9a171d8c02d6d9285fbf}
+Called whenever the client or server state changes. 
+\begin{DoxyParams}{Parameters}
+\item[{\em c}]The current client. \item[{\em state}]The current state. \item[{\em userdata}]Relevant data, including configuration settings. \end{DoxyParams}
+
+
+Definition at line 203 of file avahi\_\-dns\_\-handler.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{avahi__dns__handler_8c_a8abc8d2d0f6f9a171d8c02d6d9285fbf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{avahi__dns__handler_8c_a9c1f95b206f4fe188f24471c4dbb2e2b}{
+\index{avahi\_\-dns\_\-handler.c@{avahi\_\-dns\_\-handler.c}!resolve\_\-callback@{resolve\_\-callback}}
+\index{resolve\_\-callback@{resolve\_\-callback}!avahi_dns_handler.c@{avahi\_\-dns\_\-handler.c}}
+\subsubsection[{resolve\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void resolve\_\-callback (AvahiServiceResolver $\ast$ {\em r}, \/  AvahiIfIndex {\em interface}, \/  AvahiProtocol {\em protocol}, \/  AvahiResolverEvent {\em event}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em type}, \/  const char $\ast$ {\em domain}, \/  const char $\ast$ {\em host\_\-name}, \/  const AvahiAddress $\ast$ {\em address}, \/  uint16\_\-t {\em port}, \/  AvahiStringList $\ast$ {\em txt}, \/  AvahiLookupResultFlags {\em flags}, \/  void $\ast$ {\em userdata})}}
+\label{avahi__dns__handler_8c_a9c1f95b206f4fe188f24471c4dbb2e2b}
+Called whenever a service has been resolved successfully or timed out. \begin{DoxySeeAlso}{See also}
+simple\_\-poll\_\-reader.c in libavahi API 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em userdata}]An \hyperlink{structavahi__callback__params}{avahi\_\-callback\_\-params} pointer containing relevant data. \end{DoxyParams}
+
+
+Definition at line 37 of file avahi\_\-dns\_\-handler.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{avahi__dns__handler_8c_a9c1f95b206f4fe188f24471c4dbb2e2b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{avahi__dns__handler_8c_a9c1f95b206f4fe188f24471c4dbb2e2b_icgraph}
+\end{center}
+\end{figure}
+
+

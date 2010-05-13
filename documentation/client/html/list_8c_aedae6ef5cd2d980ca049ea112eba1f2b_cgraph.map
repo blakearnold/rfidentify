@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" href="$list_8c.html#a363af69e462d10ad15b4631ec828e571" title="list_atom_destroy" alt="" coords="292,44,415,73"/>
+<area shape="rect" href="$list_8c.html#a0ab7b4e1a37506b807bf20ae6698c533" title="list_car" alt="" coords="473,304,537,333"/>
+<area shape="rect" href="$list_8c.html#a22e64ee163ef21c6d59de59f83f8b269" title="list_cdr" alt="" coords="473,459,537,488"/>
+<area shape="rect" href="$list_8c.html#a9c0551e214815c70b539e212e3c329da" title="list_nth_atom" alt="" coords="143,459,241,488"/>
+<area shape="rect" href="$list_8c.html#a35885fd30f031789e0844bb693b0b8fc" title="list_pop" alt="" coords="159,225,225,255"/>
+<area shape="rect" href="$list_8c.html#aebe3f912f605d2c6e84ec312338ab102" title="list_set_cdr" alt="" coords="309,303,397,332"/>
+<area shape="rect" href="$list_8c.html#a6b2f0bae5223fb66771708236b2a99ef" title="list_size" alt="" coords="157,383,227,412"/>
+<area shape="rect" href="$list_8c.html#aeeb96d95e199da5b6816f6eb7c49d0f0" title="list_is_empty" alt="" coords="304,356,403,385"/>
+<area shape="rect" href="$list_8c.html#a5d9afb6ba37d5493fe3780b6ba8e586b" title="list_is_null" alt="" coords="464,148,547,177"/>
+<area shape="rect" href="$list_8c.html#a7165db61812c8aa20f8eb5de98cd0e36" title="list_set_car" alt="" coords="309,199,397,228"/>
+</map>

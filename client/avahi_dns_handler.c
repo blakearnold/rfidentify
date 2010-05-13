@@ -1,5 +1,5 @@
 /**
- * avahi_dns_handler.c
+ * @file avahi_dns_handler.c
  *
  * The Avahi mDNS service discovery system is initialized
  * and listens for RFID servers.
@@ -163,14 +163,14 @@ void browse_callback(
 
     list *temp;
     struct rfid_server_info *info;
-    //TODO this is a hack, rather than coming up with a good loop
+    /// @TODO this is a hack, rather than coming up with a good loop
     int new_server = 1; 
     int index      = 0;
 
 
-    //TODO we just assume this can only match one. not ideal.
-    //TODO we only compare against the name, with no consideration of
-    //      domain, which is bad. should come up with a hash.
+    /// @TODO we just assume this can only match one. not ideal.
+    /// @TODO we only compare against the name, with no consideration of
+    ///      domain, which is bad. should come up with a hash.
     list_foreach_entry(config->servers, temp, struct rfid_server_info *, info) {
       if (strcmp(name, info->name) == 0 && info->stable == 0) {
 	new_server = 0;
@@ -196,6 +196,9 @@ void browse_callback(
 
 /**
  * Called whenever the client or server state changes.
+ * @param c The current client.
+ * @param state The current state.
+ * @param userdata Relevant data, including configuration settings.
  */
 void client_callback(AvahiClient *c,
 		     AvahiClientState state,
@@ -216,7 +219,7 @@ void client_callback(AvahiClient *c,
  * PThread.
  * Initializes an mDNS Avahi service, and listens for relevant services.
  * Updates the server info configuration as necessary.
-
+ * @param args struct client_config, Relevant configuration settings.
  * @return Should  not return, if so, error.
  */
 void *avahi_function(void *args) {

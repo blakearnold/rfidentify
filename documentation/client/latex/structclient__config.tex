@@ -1,0 +1,67 @@
+\hypertarget{structclient__config}{
+\section{client\_\-config Struct Reference}
+\label{structclient__config}\index{client\_\-config@{client\_\-config}}
+}
+
+
+Defines a client configuration context.  
+
+
+
+
+{\ttfamily \#include $<$client.h$>$}
+
+
+
+Collaboration diagram for client\_\-config:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=114pt]{structclient__config__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structclient__config_ac269be8b91ae4b24df48de5d8ad7e7a7}{
+char $\ast$ \hyperlink{structclient__config_ac269be8b91ae4b24df48de5d8ad7e7a7}{config\_\-file}}
+\label{structclient__config_ac269be8b91ae4b24df48de5d8ad7e7a7}
+
+\begin{DoxyCompactList}\small\item\em Location of configuration file. \item\end{DoxyCompactList}\item 
+\hypertarget{structclient__config_a66f5677d5f62c2f750d8fe40411d4139}{
+char $\ast$ \hyperlink{structclient__config_a66f5677d5f62c2f750d8fe40411d4139}{mode}}
+\label{structclient__config_a66f5677d5f62c2f750d8fe40411d4139}
+
+\begin{DoxyCompactList}\small\item\em Current mode of client. \item\end{DoxyCompactList}\item 
+\hypertarget{structclient__config_ab84ac38acfafb6eeb2246cd64935348d}{
+char $\ast$ \hyperlink{structclient__config_ab84ac38acfafb6eeb2246cd64935348d}{action}}
+\label{structclient__config_ab84ac38acfafb6eeb2246cd64935348d}
+
+\begin{DoxyCompactList}\small\item\em Server REST action. \item\end{DoxyCompactList}\item 
+\hypertarget{structclient__config_a2963f5361ea992a1320576a9690b85e1}{
+char $\ast$ \hyperlink{structclient__config_a2963f5361ea992a1320576a9690b85e1}{last\_\-tag}}
+\label{structclient__config_a2963f5361ea992a1320576a9690b85e1}
+
+\begin{DoxyCompactList}\small\item\em Last tag encountered by reader. \item\end{DoxyCompactList}\item 
+\hypertarget{structclient__config_a868bc61b634e17a030f7adf4723a8052}{
+\hyperlink{structlist}{list} $\ast$ \hyperlink{structclient__config_a868bc61b634e17a030f7adf4723a8052}{servers}}
+\label{structclient__config_a868bc61b634e17a030f7adf4723a8052}
+
+\begin{DoxyCompactList}\small\item\em List of \hyperlink{structrfid__server__info}{rfid\_\-server\_\-info} structures. \item\end{DoxyCompactList}\item 
+\hypertarget{structclient__config_a0abaf4b5d42c4e5d19190035fade3599}{
+pthread\_\-mutex\_\-t \hyperlink{structclient__config_a0abaf4b5d42c4e5d19190035fade3599}{lock}}
+\label{structclient__config_a0abaf4b5d42c4e5d19190035fade3599}
+
+\begin{DoxyCompactList}\small\item\em Protects modifications, especially last\_\-tag. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a client configuration context. 
+
+Definition at line 33 of file client.h.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+client/\hyperlink{client_8h}{client.h}\end{DoxyCompactItemize}

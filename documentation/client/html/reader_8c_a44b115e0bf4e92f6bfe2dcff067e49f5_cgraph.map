@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" href="$list_8c.html#ac678bd305e69ff31bb9644b5cfabac0b" title="list_push" alt="" coords="180,153,252,183"/>
+<area shape="rect" href="$reader_8c.html#a89a5395890ec54ed2e9abd98d28c3fd6" title="Return a newly allocated reader." alt="" coords="167,207,265,236"/>
+<area shape="rect" href="$reader_8c.html#a00e4d9bb3baf9af2bb00a0abf960f528" title="Initialize a newly allocated reader." alt="" coords="176,260,256,289"/>
+<area shape="rect" href="$list_8c.html#a0ab7b4e1a37506b807bf20ae6698c533" title="list_car" alt="" coords="471,5,535,35"/>
+<area shape="rect" href="$list_8c.html#a22e64ee163ef21c6d59de59f83f8b269" title="list_cdr" alt="" coords="471,64,535,93"/>
+<area shape="rect" href="$list_8c.html#a3dc5b8dea5507c3b0a37fde8c1fcae54" title="list_create" alt="" coords="324,205,404,235"/>
+<area shape="rect" href="$list_8c.html#aeeb96d95e199da5b6816f6eb7c49d0f0" title="list_is_empty" alt="" coords="315,101,413,131"/>
+<area shape="rect" href="$list_8c.html#a5d9afb6ba37d5493fe3780b6ba8e586b" title="list_is_null" alt="" coords="461,129,544,159"/>
+<area shape="rect" href="$list_8c.html#a7165db61812c8aa20f8eb5de98cd0e36" title="list_set_car" alt="" coords="320,259,408,288"/>
+<area shape="rect" href="$list_8c.html#aebe3f912f605d2c6e84ec312338ab102" title="list_set_cdr" alt="" coords="320,312,408,341"/>
+</map>

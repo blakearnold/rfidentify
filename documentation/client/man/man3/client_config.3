@@ -1,0 +1,50 @@
+.TH "client_config" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client_config \- 
+.PP
+Defines a client configuration context.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <client.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "char * \fBconfig_file\fP"
+.br
+.RI "\fILocation of configuration file. \fP"
+.ti -1c
+.RI "char * \fBmode\fP"
+.br
+.RI "\fICurrent mode of client. \fP"
+.ti -1c
+.RI "char * \fBaction\fP"
+.br
+.RI "\fIServer REST action. \fP"
+.ti -1c
+.RI "char * \fBlast_tag\fP"
+.br
+.RI "\fILast tag encountered by reader. \fP"
+.ti -1c
+.RI "\fBlist\fP * \fBservers\fP"
+.br
+.RI "\fIList of \fBrfid_server_info\fP structures. \fP"
+.ti -1c
+.RI "pthread_mutex_t \fBlock\fP"
+.br
+.RI "\fIProtects modifications, especially last_tag. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a client configuration context. 
+.PP
+Definition at line 33 of file client.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

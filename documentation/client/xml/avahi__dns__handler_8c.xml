@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="avahi__dns__handler_8c" kind="file">
+    <compoundname>avahi_dns_handler.c</compoundname>
+    <includes refid="avahi__dns__handler_8c" local="yes">client.h</includes>
+    <includes local="no">ftdi.h</includes>
+    <includes local="no">avahi-client/client.h</includes>
+    <includes local="no">avahi-common/simple-watch.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">avahi-client/lookup.h</includes>
+    <includes local="no">avahi-common/malloc.h</includes>
+    <includes local="no">avahi-common/error.h</includes>
+    <includedby refid="avahi__dns__handler_8c" local="yes">client/avahi_dns_handler.c</includedby>
+    <incdepgraph>
+      <node id="128">
+        <label>avahi-common/malloc.h</label>
+      </node>
+      <node id="121">
+        <label>avahi-common/simple-watch.h</label>
+      </node>
+      <node id="126">
+        <label>stdlib.h</label>
+      </node>
+      <node id="118">
+        <label>client/avahi_dns_handler.c</label>
+        <link refid="avahi_dns_handler.c"/>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>errno.h</label>
+      </node>
+      <node id="129">
+        <label>avahi-common/error.h</label>
+      </node>
+      <node id="120">
+        <label>avahi-client/client.h</label>
+      </node>
+      <node id="122">
+        <label>pthread.h</label>
+      </node>
+      <node id="123">
+        <label>string.h</label>
+      </node>
+      <node id="119">
+        <label>ftdi.h</label>
+      </node>
+      <node id="127">
+        <label>avahi-client/lookup.h</label>
+      </node>
+      <node id="125">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="130">
+        <label>client/avahi_dns_handler.c</label>
+        <link refid="avahi_dns_handler.c"/>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void resolve_callback</definition>
+        <argsstring>(AvahiServiceResolver *r, AvahiIfIndex interface, AvahiProtocol protocol, AvahiResolverEvent event, const char *name, const char *type, const char *domain, const char *host_name, const AvahiAddress *address, uint16_t port, AvahiStringList *txt, AvahiLookupResultFlags flags, void *userdata)</argsstring>
+        <name>resolve_callback</name>
+        <param>
+          <type>AvahiServiceResolver *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>AvahiIfIndex</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>AvahiProtocol</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>AvahiResolverEvent</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>host_name</declname>
+        </param>
+        <param>
+          <type>const AvahiAddress *</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>AvahiStringList *</type>
+          <declname>txt</declname>
+        </param>
+        <param>
+          <type>AvahiLookupResultFlags</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called whenever a service has been resolved successfully or timed out. <simplesect kind="see"><para>simple_poll_reader.c in libavahi API </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="structavahi__callback__params" kindref="compound">avahi_callback_params</ref> pointer containing relevant data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" line="51" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" bodystart="37" bodyend="109"/>
+        <references refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" compoundref="list_8h" startline="91">list_foreach_entry</references>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" compoundref="client_8h" startline="25">rfid_server_info::lock</references>
+        <references refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" compoundref="client_8h" startline="29">rfid_server_info::name</references>
+        <references refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" compoundref="client_8h" startline="27">rfid_server_info::port</references>
+        <references refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" compoundref="client_8h" startline="38">client_config::servers</references>
+        <references refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" compoundref="client_8h" startline="28">rfid_server_info::stable</references>
+        <references refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" compoundref="client_8h" startline="26">rfid_server_info::url</references>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void browse_callback</definition>
+        <argsstring>(AvahiServiceBrowser *b, AvahiIfIndex interface, AvahiProtocol protocol, AvahiBrowserEvent event, const char *name, const char *type, const char *domain, AvahiLookupResultFlags flags, void *userdata)</argsstring>
+        <name>browse_callback</name>
+        <param>
+          <type>AvahiServiceBrowser *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>AvahiIfIndex</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>AvahiProtocol</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>AvahiBrowserEvent</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>AvahiLookupResultFlags</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called whenever a new services becomes available on the LAN or is removed from the LAN. <simplesect kind="see"><para>simple_poll_reader.c in libavahi API </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="structavahi__callback__params" kindref="compound">avahi_callback_params</ref> pointer containing relevant data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>this is a hack, rather than coming up with a good loop</para><para>we just assume this can only match one. not ideal.  we only compare against the name, with no consideration of domain, which is bad. should come up with a hash. </para>        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" line="128" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" bodystart="118" bodyend="195"/>
+        <references refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" compoundref="client_8h" startline="46">avahi_callback_params::client</references>
+        <references refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" compoundref="list_8h" startline="91">list_foreach_entry</references>
+        <references refid="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</references>
+        <references refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" compoundref="client_8h" startline="29">rfid_server_info::name</references>
+        <references refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" compoundref="client_8h" startline="45">avahi_callback_params::poll</references>
+        <references refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</references>
+        <references refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" compoundref="client_8h" startline="38">client_config::servers</references>
+        <references refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" compoundref="client_8h" startline="28">rfid_server_info::stable</references>
+        <referencedby refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" compoundref="avahi__dns__handler_8c" startline="225" endline="275">avahi_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void client_callback</definition>
+        <argsstring>(AvahiClient *c, AvahiClientState state, void *userdata)</argsstring>
+        <name>client_callback</name>
+        <param>
+          <type>AvahiClient *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>AvahiClientState</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called whenever the client or server state changes. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current client. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relevant data, including configuration settings. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" line="206" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" bodystart="203" bodyend="216"/>
+        <referencedby refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" compoundref="avahi__dns__handler_8c" startline="225" endline="275">avahi_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="avahi__dns__handler_8c_1a0631c3c52c14996e91db6a5618d3d2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* avahi_function</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>avahi_function</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>mDNS handling loop which looks for RFIDentify servers. Look for <ref refid="avahi__dns__handler_8c" kindref="compound">avahi_dns_handler.c</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para>PThread. Initializes an mDNS Avahi service, and listens for relevant services. Updates the server info configuration as necessary. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct <ref refid="structclient__config" kindref="compound">client_config</ref>, Relevant configuration settings. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Should not return, if so, error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" line="225" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c" bodystart="225" bodyend="275"/>
+        <references refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</references>
+        <references refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" compoundref="client_8h" startline="46">avahi_callback_params::client</references>
+        <references refid="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" compoundref="avahi__dns__handler_8c" startline="203" endline="216">client_callback</references>
+        <references refid="structavahi__callback__params_1abb59d3961e7409275a1cefae9915dc23" compoundref="client_8h" startline="47">avahi_callback_params::config</references>
+        <references refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" compoundref="client_8h" startline="45">avahi_callback_params::poll</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The Avahi mDNS service discovery system is initialized and listens for RFID servers. Upon recieving an updated, the server configuration information is similarly updated.</para><para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010</para></simplesect>
+<xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Multiple RFID servers are not handled correctly. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="15"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-client/client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-client/lookup.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-common/simple-watch.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-common/malloc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avahi-common/error.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" kindref="member">resolve_callback</ref>(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiServiceResolver<sp/>*r,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiIfIndex<sp/>interface,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiProtocol<sp/>protocol,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiResolverEvent<sp/>event,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*domain,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host_name,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AvahiAddress<sp/>*address,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>port,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiStringList<sp/>*txt,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiLookupResultFlags<sp/>flags,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*config;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>config<sp/>=<sp/>((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref>*)userdata)-&gt;config;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(event)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_RESOLVER_FAILURE:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_RESOLVER_FOUND:<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*temp;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*info;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_server<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>a<sp/>hack,<sp/>it<sp/>makes<sp/>the<sp/>loop<sp/>easier...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ip[AVAHI_ADDRESS_STR_MAX];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>avahi_address_snprint(ip,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ip),<sp/>address);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Found<sp/>RFID<sp/>server<sp/>at<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>ip);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kindref="member">list_foreach_entry</ref>(config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>,<sp/>temp,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*,<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(name,<sp/>info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref>)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>info-&gt;<ref refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kindref="member" tooltip="True if the URL will not change. Eg. false if it may be modified by mDNS.">stable</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_server<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_server)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>info<sp/>=<sp/>malloc(1<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref>));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>info<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avahi_service_resolver_free(r);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_init(&amp;(info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>),<sp/>NULL);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>info-&gt;<ref refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kindref="member" tooltip="RFID server port.">port</ref><sp/><sp/><sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>info-&gt;<ref refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kindref="member" tooltip="True if the URL will not change. Eg. false if it may be modified by mDNS.">stable</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref><sp/>=<sp/>strdup(ip);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref><sp/>=<sp/>strdup(name);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>lock<sp/>servers<sp/>before<sp/>modifying...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>,<sp/>info);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>switch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>avahi_service_resolver_free(r);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" kindref="member">browse_callback</ref>(</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiServiceBrowser<sp/>*b,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiIfIndex<sp/>interface,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiProtocol<sp/>protocol,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiBrowserEvent<sp/>event,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref>,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*domain,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiLookupResultFlags<sp/>flags,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*config;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>config<sp/>=<sp/>((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref>*)userdata)-&gt;config;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(event)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_BROWSER_FAILURE:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;(Browser)<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avahi_strerror(avahi_client_errno(avahi_service_browser_get_client(b))));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>avahi_simple_poll_quit(((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref>*)userdata)-&gt;<ref refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" kindref="member" tooltip="Current poll object.">poll</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_BROWSER_NEW:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(avahi_service_resolver_new(((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref>*)userdata)-&gt;<ref refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" kindref="member" tooltip="Currently working client.">client</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interface,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>protocol,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>domain,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AVAHI_PROTO_UNSPEC,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" kindref="member">resolve_callback</ref>,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>userdata)))<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>resolve<sp/>service<sp/>&apos;%s&apos;:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avahi_strerror(avahi_client_errno(((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref>*)userdata)-&gt;<ref refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" kindref="member" tooltip="Currently working client.">client</ref>)));</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_BROWSER_REMOVE:<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;(Browser)<sp/>REMOVE:<sp/>service<sp/>&apos;%s&apos;<sp/>of<sp/>type<sp/>&apos;%s&apos;<sp/>in<sp/>domain<sp/>&apos;%s&apos;\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>domain);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*temp;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*info;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_server<sp/>=<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kindref="member">list_foreach_entry</ref>(config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>,<sp/>temp,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*,<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(name,<sp/>info-&gt;<ref refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kindref="member" tooltip="Unique name of the given server. Provided by mDNS.">name</ref>)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>info-&gt;<ref refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kindref="member" tooltip="True if the URL will not change. Eg. false if it may be modified by mDNS.">stable</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_server<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>index++;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>new_server<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" kindref="member">list_remove</ref>(config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>,<sp/>index);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_BROWSER_ALL_FOR_NOW:</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AVAHI_BROWSER_CACHE_EXHAUSTED:</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" kindref="member">client_callback</ref>(AvahiClient<sp/>*c,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AvahiClientState<sp/>state,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>assert(c);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>AVAHI_CLIENT_FAILURE)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Server<sp/>connection<sp/>failure:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avahi_strerror(avahi_client_errno(c)));</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>avahi_simple_poll_quit((AvahiSimplePoll<sp/>*)userdata);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="avahi__dns__handler_8c_1a0631c3c52c14996e91db6a5618d3d2b8" kindref="member" tooltip="mDNS handling loop which looks for RFIDentify servers. Look for avahi_dns_handler...">avahi_function</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args)<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>AvahiSimplePoll<sp/>*simple_poll<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>AvahiClient<sp/>*client<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>AvahiServiceBrowser<sp/>*sb<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structavahi__callback__params" kindref="compound" tooltip="Aggregation of various parameters to Avahi callbacks.">avahi_callback_params</ref><sp/>abcp;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(simple_poll<sp/>=<sp/>avahi_simple_poll_new()))<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>simple<sp/>poll<sp/>object.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>client<sp/>=<sp/>avahi_client_new(avahi_simple_poll_get(simple_poll),</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" kindref="member">client_callback</ref>,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simple_poll,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;error);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!client)<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>client:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>avahi_strerror(error));</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simple_poll)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>avahi_simple_poll_free(simple_poll);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>abcp.<ref refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" kindref="member" tooltip="Current poll object.">poll</ref><sp/><sp/><sp/><sp/>=<sp/>simple_poll;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>abcp.<ref refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" kindref="member" tooltip="Currently working client.">client</ref><sp/><sp/>=<sp/>client;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>abcp.<ref refid="structavahi__callback__params_1abb59d3961e7409275a1cefae9915dc23" kindref="member" tooltip="Client configuration status.">config</ref><sp/><sp/>=<sp/>args;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>(sb<sp/>=<sp/>avahi_service_browser_new(client,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AVAHI_IF_UNSPEC,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AVAHI_PROTO_UNSPEC,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_rfid-srv._tcp&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" kindref="member">browse_callback</ref>,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;abcp)))<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>service<sp/>browser:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>avahi_strerror(avahi_client_errno(client)));</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(client)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>avahi_client_free(client);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simple_poll)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>avahi_simple_poll_free(simple_poll);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>main<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>avahi_simple_poll_loop(simple_poll);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/avahi_dns_handler.c"/>
+  </compounddef>
+</doxygen>

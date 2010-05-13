@@ -1,0 +1,1099 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="list_8h" kind="file">
+    <compoundname>list.h</compoundname>
+    <includedby refid="client_8c" local="yes">client/client.c</includedby>
+    <includedby refid="config_8h" local="yes">client/config.h</includedby>
+    <includedby refid="list_8c" local="yes">client/list.c</includedby>
+    <includedby refid="reader_8h" local="yes">client/reader.h</includedby>
+    <includedby refid="string__utils_8h" local="yes">client/string_utils.h</includedby>
+    <includedby refid="test_8c" local="yes">client/test.c</includedby>
+    <invincdepgraph>
+      <node id="196">
+        <label>client/reader.c</label>
+        <link refid="reader_8c"/>
+      </node>
+      <node id="193">
+        <label>client/reader.h</label>
+        <link refid="reader_8h"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>client/rfid_reader_handler.c</label>
+        <link refid="rfid__reader__handler_8c"/>
+      </node>
+      <node id="190">
+        <label>client/config.c</label>
+        <link refid="config_8c"/>
+      </node>
+      <node id="189">
+        <label>client/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>client/client.c</label>
+        <link refid="client_8c"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>client/client.h</label>
+        <link refid="client_8h"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>client/string_utils.c</label>
+        <link refid="string__utils_8c"/>
+      </node>
+      <node id="197">
+        <label>client/string_utils.h</label>
+        <link refid="string__utils_8h_source"/>
+        <childnode refid="198" relation="include">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>client/list.c</label>
+        <link refid="list_8c"/>
+      </node>
+      <node id="187">
+        <label>client/list.h</label>
+        <link refid="list.h"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>client/test.c</label>
+        <link refid="test_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlist" prot="public">list</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="list_8h_1afdbd94af234d3f07a8d73324a7587e7f" prot="public" static="no">
+        <name>list_foreach</name>
+        <param><defname>l</defname></param>
+        <param><defname>t</defname></param>
+        <initializer>for (t = l; ! list_is_empty(t); t = list_cdr(t))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list *, the list to enumerate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list *, a temporary list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="83" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" prot="public" static="no">
+        <name>list_foreach_entry</name>
+        <param><defname>l</defname></param>
+        <param><defname>t</defname></param>
+        <param><defname>type</defname></param>
+        <param><defname>e</defname></param>
+        <initializer>for (t = l, e = (type)list_car(t); \
+      ! list_is_empty(t); \
+      t = list_cdr(t), e = (type)list_car(t))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list *l - the list to enumerate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list *t - a temporary list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of the entry </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- entry of type TYPE </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="94" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="list_8h_1afc930ff44d34f0e7b83a64511dcc3861" prot="public" static="no">
+        <name>ENOTFND</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="115" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="list_8h_1a64b7067460a74ef44e8bbb9c65ce6a37" prot="public" static="no">
+        <type>struct <ref refid="structlist" kindref="compound">list</ref></type>
+        <definition>typedef struct list  list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>standardization:</para><para>a list ends with a cell that looks like:</para><para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>+---+---+<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">---&gt;<sp/>|<sp/>v<sp/>|<sp/>0<sp/>|<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>+---+---+<sp/><sp/><sp/></highlight></codeline>
+</programlisting></para><para>and empty list then looks like:</para><para><programlisting><codeline><highlight class="normal">+---+---+<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">|<sp/>0<sp/>|<sp/>0<sp/>|<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">+---+---+<sp/><sp/><sp/></highlight></codeline>
+</programlisting></para><para>it should look like this:</para><para><programlisting><codeline><highlight class="normal">0</highlight></codeline>
+</programlisting></para><para>but this doesnt work, because we would need to be able to modify the pointers but of course they are passed by value...</para><para>so this implementation needs to be careful on edge cases, checking when there are fewer than 2 elements and whatnot </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="56"/>
+      </memberdef>
+      <memberdef kind="typedef" id="list_8h_1a34f059ff468f5153f4a0c1300b21aae1" prot="public" static="no">
+        <type><ref refid="structlist" kindref="compound">list</ref></type>
+        <definition>typedef list list_t</definition>
+        <argsstring></argsstring>
+        <name>list_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="57" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="list_8h_1a3dc5b8dea5507c3b0a37fde8c1fcae54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_create</definition>
+        <argsstring>()</argsstring>
+        <name>list_create</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A newly allocated list, or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="59" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="23" bodyend="35"/>
+        <referencedby refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a363af69e462d10ad15b4631ec828e571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_atom_destroy</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_atom_destroy</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>inverse of <ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create()</ref> does not free contents </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="60" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="228" bodyend="232"/>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_destroy</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_destroy</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy()</ref> chained together across an entire list. currently recursive, so probs not a good function for large lists... although i heard GCC can optimize tail recursion, so this may be fine </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="61" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="242" bodyend="257"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1aa3b494560b4f94df133d4604265235db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_destroy_deep</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_destroy_deep</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>like <ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy()</ref> but calls free on each car. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="62" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="263" bodyend="277"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a0ab7b4e1a37506b807bf20ae6698c533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_car</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_car</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The car of the list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="63" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="41" bodyend="45"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a22e64ee163ef21c6d59de59f83f8b269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_cdr</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_cdr</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The cdr of the list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="64" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="50" bodyend="54"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="list_8c_1a9c0551e214815c70b539e212e3c329da" compoundref="list_8c" startline="599" endline="605">list_nth_atom</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a7165db61812c8aa20f8eb5de98cd0e36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_set_car</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_set_car</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the car of a list. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="65" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="61" bodyend="68"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1aebe3f912f605d2c6e84ec312338ab102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_set_cdr</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_set_cdr</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the cdr of a list. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="66" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="75" bodyend="82"/>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_is_empty</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_is_empty</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the parameter is empty </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="67" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="96" bodyend="99"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</referencedby>
+        <referencedby refid="list_8h_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" compoundref="list_8c" startline="446" endline="461">list_index_of_int</referencedby>
+        <referencedby refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" compoundref="list_8c" startline="467" endline="482">list_index_of_str</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+        <referencedby refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</referencedby>
+        <referencedby refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" compoundref="string__utils_8c" startline="18" endline="56">string_join</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_size</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_size</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>size of list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="68" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="104" bodyend="124"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <referencedby refid="list_8h_1a11d855375347172f2c165f1c86f27853" compoundref="list_8c" startline="410" endline="440">list_array</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a4503901beb6a19b5ec8249906355e5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_cons</definition>
+        <argsstring>(void *v, list *l)</argsstring>
+        <name>list_cons</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a list formed of the given value cons-ed with the given list. Allocates memory. Returns NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="69" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="131" bodyend="154"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_map</definition>
+        <argsstring>(list *l, void *(*fn)(void *))</argsstring>
+        <name>list_map</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *(*)(void *)</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps a function across all elements of a list <simplesect kind="return"><para>a new list of the results, or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="74" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="290" bodyend="314"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a663fd068ed01140f77770b580258d271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_filter</definition>
+        <argsstring>(list *l, int(*fn)(void *, void *), void *args)</argsstring>
+        <name>list_filter</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int(*)(void *, void *)</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Given a filtering function, <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list to filter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function to apply to each element in the list. If the application is TRUE, then the element is retained, else it is not included in the new list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments to be passed to the filtering function. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new list consisting of elements of the old list that pass the test or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="75" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="326" bodyend="351"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1ad63ac19c91e382b72caff84cb9ae8be7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_copy</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_copy</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="76"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a07588b386f603af6db91bedcfb338a4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_reverse</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_reverse</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>destructively modifies the current list. note, you must assign the result back in place, for this method is unable to modify in place, at the current time. <simplesect kind="return"><para>the list reversed. pointer to new head. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="99" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="163" bodyend="216"/>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_append</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_append</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructive. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value to insert at the last position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="post"><para>The last element of the list now points to a new node containing v. </para></simplesect>
+<simplesect kind="return"><para>The newly created end node, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="100" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="497" bodyend="518"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" compoundref="list_8c" startline="131" endline="154">list_cons</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a3df67921d322130b2827da2e541a1387" compoundref="list_8c" startline="385" endline="387">null_list</references>
+        <referencedby refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_remove</definition>
+        <argsstring>(list *l, int index)</argsstring>
+        <name>list_remove</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the element at the given index <simplesect kind="return"><para>the value of the element removed, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="101" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="611" bodyend="650"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a9c0551e214815c70b539e212e3c329da" compoundref="list_8c" startline="599" endline="605">list_nth_atom</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1acaba2f033d4240acfa943b276125f92e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_simple_free_fn</definition>
+        <argsstring>(void *v)</argsstring>
+        <name>list_simple_free_fn</name>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the following 3 functions conform to the function signatures accepted by list_map and list_filter </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="106" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="365" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1abea32053f95fe91a4f24ea36331989b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_str_print_fn</definition>
+        <argsstring>(void *)</argsstring>
+        <name>list_str_print_fn</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="107" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="370" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a8ef634e4b0fd1d55d8a9fc3364406dd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_int_print_fn</definition>
+        <argsstring>(void *)</argsstring>
+        <name>list_int_print_fn</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="108" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="376" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a3df67921d322130b2827da2e541a1387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* null_list</definition>
+        <argsstring>()</argsstring>
+        <name>null_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a new empty list, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="109" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="385" bodyend="387"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <referencedby refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</referencedby>
+        <referencedby refid="list_8h_1a663fd068ed01140f77770b580258d271" compoundref="list_8c" startline="326" endline="351">list_filter</referencedby>
+        <referencedby refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" compoundref="list_8c" startline="290" endline="314">list_map</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* list_push</definition>
+        <argsstring>(list *l, void *v)</argsstring>
+        <name>list_push</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Alias of: l = list_cons(v, l); <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list to become the cdr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value to become the car. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list composed of v and l or NULL on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="110" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="535" bodyend="559"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" compoundref="reader_8c" startline="40" endline="71">find_all_readers</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" compoundref="reader_8c" startline="313" endline="353">reader_parse_poll_packet</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+        <referencedby refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" compoundref="string__utils_8c" startline="66" endline="93">string_split</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a35885fd30f031789e0844bb693b0b8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_pop</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_pop</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructive. Convenience function. Opposite of <ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The car of the old list. </para></simplesect>
+<simplesect kind="post"><para>The list is now the cdr of the original list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="111" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="569" bodyend="593"/>
+        <references refid="list_8c_1a363af69e462d10ad15b4631ec828e571" compoundref="list_8c" startline="228" endline="232">list_atom_destroy</references>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" compoundref="list_8c" startline="88" endline="90">list_is_null</references>
+        <references refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" compoundref="list_8c" startline="61" endline="68">list_set_car</references>
+        <references refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" compoundref="list_8c" startline="75" endline="82">list_set_cdr</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" compoundref="list_8c" startline="611" endline="650">list_remove</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* list_nth</definition>
+        <argsstring>(list *l, int i)</argsstring>
+        <name>list_nth</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the value at the nth position of the list. NULL on failure, however accessing past the end of the list is undefined. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="112" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="394" bodyend="402"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</references>
+        <referencedby refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" compoundref="list_8c" startline="394" endline="402">list_nth</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a11d855375347172f2c165f1c86f27853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void **</type>
+        <definition>void** list_array</definition>
+        <argsstring>(list *l)</argsstring>
+        <name>list_array</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a new array, filled with the contents of the provided list the list is NULL terminated, but since the values of the array may be NULL, this should not be used to determine the length of the array. rather, <ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size()</ref> should be used. NULL on failure or empty list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="113" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="410" bodyend="440"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_index_of_int</definition>
+        <argsstring>(list *haystack, int needle)</argsstring>
+        <name>list_index_of_int</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>haystack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>needle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of first eleemnt encountered matching needle, ENOTFND otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="116" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="446" bodyend="461"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_index_of_str</definition>
+        <argsstring>(list *haystack, const char *needle)</argsstring>
+        <name>list_index_of_str</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>haystack</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>needle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>index of first eleemnt encountered matching needle, ENOTFND otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h" line="117" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.c" bodystart="467" bodyend="482"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Willi Ballenthin</para></simplesect>
+This file contains the declaration of a singly-linked list data structure. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_LIST_H_</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_LIST_H_</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="53" refid="structlist" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*car;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*cdr;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}<sp/><ref refid="structlist" kindref="compound">list</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structlist" kindref="compound">list</ref><sp/><ref refid="structlist" kindref="compound">list_t</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kindref="member">list_atom_destroy</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="list_8c_1aa3b494560b4f94df133d4604265235db" kindref="member">list_destroy_deep</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kindref="member">list_car</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kindref="member">list_cdr</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kindref="member">list_set_car</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kindref="member">list_set_cdr</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kindref="member">list_cons</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v,<sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">*<sp/>Higher<sp/>order<sp/>functions</highlight></codeline>
+<codeline lineno="73"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a45cebb558b04d38ca7adc2ba3987fd1f" kindref="member">list_map</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*fn)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a663fd068ed01140f77770b580258d271" kindref="member">list_filter</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(*fn)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*list_copy(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="list_8h_1afdbd94af234d3f07a8d73324a7587e7f" refkind="member"><highlight class="preprocessor">#define<sp/>list_foreach(l,<sp/>t)<sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/>for<sp/>(t<sp/>=<sp/>l;<sp/>!<sp/>list_is_empty(t);<sp/>t<sp/>=<sp/>list_cdr(t))<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="91" refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" refkind="member"><highlight class="preprocessor">#define<sp/>list_foreach_entry(l,<sp/>t,<sp/>type,<sp/>e)<sp/>\</highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor"><sp/>for<sp/>(t<sp/>=<sp/>l,<sp/>e<sp/>=<sp/>(type)list_car(t);<sp/>\</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>list_is_empty(t);<sp/>\</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>list_cdr(t),<sp/>e<sp/>=<sp/>(type)list_car(t))</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment">*<sp/>Some<sp/>destructive<sp/>functions</highlight></codeline>
+<codeline lineno="98"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" kindref="member">list_reverse</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" kindref="member">list_append</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" kindref="member">list_remove</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">*<sp/>Utilities</highlight></codeline>
+<codeline lineno="105"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1acaba2f033d4240acfa943b276125f92e" kindref="member">list_simple_free_fn</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*list_str_print_fn(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*list_int_print_fn(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1a3df67921d322130b2827da2e541a1387" kindref="member">null_list</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/><sp/>*<ref refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kindref="member">list_push</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*v);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kindref="member">list_nth</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<ref refid="list_8c_1a11d855375347172f2c165f1c86f27853" kindref="member">list_array</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*l);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENOTFND<sp/>-1</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" kindref="member">list_index_of_int</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*haystack,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>needle);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" kindref="member">list_index_of_str</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*haystack,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*needle);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/list.h"/>
+  </compounddef>
+</doxygen>

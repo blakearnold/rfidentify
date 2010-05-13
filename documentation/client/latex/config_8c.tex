@@ -1,0 +1,172 @@
+\hypertarget{config_8c}{
+\section{client/config.c File Reference}
+\label{config_8c}\index{client/config.c@{client/config.c}}
+}
+{\ttfamily \#include \char`\"{}config.h\char`\"{}}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+Include dependency graph for config.c:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{config_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{config_8c_ad72dbcf6d0153db1b8d8a58001feed83}{
+\#define \hyperlink{config_8c_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}~1}
+\label{config_8c_ad72dbcf6d0153db1b8d8a58001feed83}
+
+\begin{DoxyCompactList}\small\item\em Whether to print out debug messages to STDOUT. \item\end{DoxyCompactList}\item 
+\hypertarget{config_8c_a271d8f7f52be750e5c744a394ec71344}{
+\#define \hyperlink{config_8c_a271d8f7f52be750e5c744a394ec71344}{WARN}~1}
+\label{config_8c_a271d8f7f52be750e5c744a394ec71344}
+
+\begin{DoxyCompactList}\small\item\em Whether to print out warning messages to STDOUT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{config_8c_ad79878a80cca3cda8edf3032bb2f1791}{warn} (const char $\ast$warning)
+\item 
+void \hyperlink{config_8c_ae2c8e182ea3feb9d9a5525a2fc8a24ff}{debug} (const char $\ast$debug)
+\item 
+char $\ast$ \hyperlink{config_8c_a54a4b949509d289e47841a725146ce4e}{config\_\-get} (const char $\ast$filename, const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Get a value from a configuration file identified by a filename. \item\end{DoxyCompactList}\item 
+\hyperlink{structlist}{list} $\ast$ \hyperlink{config_8c_a52d0c5748deeda66a4f4fceb3ce34bbe}{config\_\-get\_\-all} (const char $\ast$filename, const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Gets all relevant values from a configuration file identifed by a filename. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Willi Ballenthin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Spring, 2010 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{config_8c_source}{config.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{config_8c_a54a4b949509d289e47841a725146ce4e}{
+\index{config.c@{config.c}!config\_\-get@{config\_\-get}}
+\index{config\_\-get@{config\_\-get}!config.c@{config.c}}
+\subsubsection[{config\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ config\_\-get (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em key})}}
+\label{config_8c_a54a4b949509d289e47841a725146ce4e}
+
+
+Get a value from a configuration file identified by a filename. 
+
+Given a file, and key, return the first matching config value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]The config file. \item[{\em key}]The key of which the value to find. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated string, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file config.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{config_8c_a54a4b949509d289e47841a725146ce4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=104pt]{config_8c_a54a4b949509d289e47841a725146ce4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{config_8c_a52d0c5748deeda66a4f4fceb3ce34bbe}{
+\index{config.c@{config.c}!config\_\-get\_\-all@{config\_\-get\_\-all}}
+\index{config\_\-get\_\-all@{config\_\-get\_\-all}!config.c@{config.c}}
+\subsubsection[{config\_\-get\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list}$\ast$ config\_\-get\_\-all (const char $\ast$ {\em filename}, \/  const char $\ast$ {\em key})}}
+\label{config_8c_a52d0c5748deeda66a4f4fceb3ce34bbe}
+
+
+Gets all relevant values from a configuration file identifed by a filename. 
+
+Given a filename and key, return all matching config values. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]The filename of the configuration file. \item[{\em key}]The key to which to match configuration definitions. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly allocated list of newly allocated values, or NULL on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file config.c.
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{config_8c_a52d0c5748deeda66a4f4fceb3ce34bbe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{config_8c_a52d0c5748deeda66a4f4fceb3ce34bbe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{config_8c_ae2c8e182ea3feb9d9a5525a2fc8a24ff}{
+\index{config.c@{config.c}!debug@{debug}}
+\index{debug@{debug}!config.c@{config.c}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}void debug (const char $\ast$ {\em debug})}}
+\label{config_8c_ae2c8e182ea3feb9d9a5525a2fc8a24ff}
+Prints the given debug message to STDOUT if defined. 
+\begin{DoxyParams}{Parameters}
+\item[{\em debug}]The message to print. \end{DoxyParams}
+
+
+Definition at line 37 of file config.c.
+
+\hypertarget{config_8c_ad79878a80cca3cda8edf3032bb2f1791}{
+\index{config.c@{config.c}!warn@{warn}}
+\index{warn@{warn}!config.c@{config.c}}
+\subsubsection[{warn}]{\setlength{\rightskip}{0pt plus 5cm}void warn (const char $\ast$ {\em warning})}}
+\label{config_8c_ad79878a80cca3cda8edf3032bb2f1791}
+Prints the given warning message to STDOUT if defined. 
+\begin{DoxyParams}{Parameters}
+\item[{\em warning}]The message to print. \end{DoxyParams}
+
+
+Definition at line 25 of file config.c.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{config_8c_ad79878a80cca3cda8edf3032bb2f1791_icgraph}
+\end{center}
+\end{figure}
+
+

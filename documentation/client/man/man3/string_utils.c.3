@@ -1,0 +1,78 @@
+.TH "client/string_utils.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/string_utils.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'string_utils.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBstring_join\fP (\fBlist\fP *strings, char *glue)"
+.br
+.RI "\fIGiven a list of strings, return a string glued together by GLUE. \fP"
+.ti -1c
+.RI "\fBlist\fP * \fBstring_split\fP (char *line, char *delim)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Spring, 2010 
+.RE
+.PP
+
+.PP
+Definition in file \fBstring_utils.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "char* string_join (\fBlist\fP * strings, char * glue)"
+.PP
+Given a list of strings, return a string glued together by GLUE. Given a string an set of delimiting characters, return a list of string. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrings\fP A list of strings to join. 
+.br
+\fIglue\fP A string to be used as glue. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new string composed of the parts provided in the list glued together by the join string, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file string_utils.c.
+.SS "\fBlist\fP* string_split (char * line, char * delim)"split a string into a list of new substrings delimited by some set of characters the resulting list should be deep freed. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIline\fP The string to split. 
+.br
+\fIdelim\fP A set of characters, each of which should cause a split. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New list containing the fragments, or NULL on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file string_utils.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

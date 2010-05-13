@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$rfid__reader__handler_8c.html#ad7e398d96716aecafb8fdad3c4d64f32" title="reader_poll_loop" alt="" coords="183,5,297,35"/>
+<area shape="rect" href="$rfid__reader__handler_8c.html#a2fe5f2e559b4f539c687ab4121a4a7be" title="RFID reading loop which polls for identifications. Look for rfid_reader_handler.c..." alt="" coords="348,5,457,35"/>
+</map>

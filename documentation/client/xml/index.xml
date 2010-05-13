@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.6.3">
+  <compound refid="structavahi__callback__params" kind="struct"><name>avahi_callback_params</name>
+    <member refid="structavahi__callback__params_1a0a7dd205aeb2879ac6e618c6da3b7477" kind="variable"><name>poll</name></member>
+    <member refid="structavahi__callback__params_1aa13ccffa23fd1cfe24c33471fbc1f57f" kind="variable"><name>client</name></member>
+    <member refid="structavahi__callback__params_1abb59d3961e7409275a1cefae9915dc23" kind="variable"><name>config</name></member>
+  </compound>
+  <compound refid="structclient__config" kind="struct"><name>client_config</name>
+    <member refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" kind="variable"><name>config_file</name></member>
+    <member refid="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" kind="variable"><name>mode</name></member>
+    <member refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" kind="variable"><name>action</name></member>
+    <member refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kind="variable"><name>last_tag</name></member>
+    <member refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kind="variable"><name>servers</name></member>
+    <member refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kind="variable"><name>lock</name></member>
+  </compound>
+  <compound refid="structlist" kind="struct"><name>list</name>
+    <member refid="structlist_1a670d4dd718e4fd0fbb7dfbab5c72dcfb" kind="variable"><name>car</name></member>
+    <member refid="structlist_1abb8280ac99531815a51430b637495ee7" kind="variable"><name>cdr</name></member>
+  </compound>
+  <compound refid="structreader" kind="struct"><name>reader</name>
+    <member refid="structreader_1a9709aefe4930807392898aecb0cb8a79" kind="variable"><name>connected</name></member>
+    <member refid="structreader_1a747e6b771bacb9a327fdbc1572918592" kind="variable"><name>ftdic</name></member>
+    <member refid="structreader_1ace407b2e3206b162c83427d88fc62201" kind="variable"><name>dev</name></member>
+  </compound>
+  <compound refid="structrfid__server__info" kind="struct"><name>rfid_server_info</name>
+    <member refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kind="variable"><name>lock</name></member>
+    <member refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kind="variable"><name>url</name></member>
+    <member refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kind="variable"><name>port</name></member>
+    <member refid="structrfid__server__info_1a546501ce6bc6047dd53694411b4aa185" kind="variable"><name>stable</name></member>
+    <member refid="structrfid__server__info_1a5ac083a645d964373f022d03df4849c8" kind="variable"><name>name</name></member>
+  </compound>
+  <compound refid="structtag" kind="struct"><name>tag</name>
+    <member refid="structtag_1aecb3b0d045ada529257a2fbf8f829599" kind="variable"><name>id</name></member>
+    <member refid="structtag_1a049b05dbb9640019aa443230bdf84fa4" kind="variable"><name>parent</name></member>
+  </compound>
+  <compound refid="avahi-publish_8c" kind="file"><name>avahi-publish.c</name>
+    <member refid="avahi-publish_8c_1a119e28fc15e5a79e06fcb294b9424e53" kind="variable"><name>group</name></member>
+    <member refid="avahi-publish_8c_1a505865f8a6ca7490d5fabae8699a59fc" kind="variable"><name>simple_poll</name></member>
+    <member refid="avahi-publish_8c_1a5ac083a645d964373f022d03df4849c8" kind="variable"><name>name</name></member>
+    <member refid="avahi-publish_8c_1a004d38b5ab0f4ff8a7db97c5663b7b44" kind="function"><name>create_services</name></member>
+    <member refid="avahi-publish_8c_1ad6240417db1f24ce4e3feb5a8d0177bc" kind="function"><name>entry_group_callback</name></member>
+    <member refid="avahi-publish_8c_1a0650d85102e9937babc80fa92315e128" kind="function"><name>client_callback</name></member>
+    <member refid="avahi-publish_8c_1aa97d606adc8779259ee06b577e3abdde" kind="function"><name>modify_callback</name></member>
+    <member refid="avahi-publish_8c_1acdbb548523aea3bed72f135695a6c3dd" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="avahi__dns__handler_8c" kind="file"><name>avahi_dns_handler.c</name>
+    <member refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" kind="function"><name>resolve_callback</name></member>
+    <member refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" kind="function"><name>browse_callback</name></member>
+    <member refid="avahi__dns__handler_8c_1a8abc8d2d0f6f9a171d8c02d6d9285fbf" kind="function"><name>client_callback</name></member>
+    <member refid="avahi__dns__handler_8c_1a0631c3c52c14996e91db6a5618d3d2b8" kind="function"><name>avahi_function</name></member>
+  </compound>
+  <compound refid="big__rfid__test_8c" kind="file"><name>big_rfid_test.c</name>
+    <member refid="big__rfid__test_8c_1a4863c6af54a813ee7c10a0d0d098e57d" kind="define"><name>WRITE_DEBUG</name></member>
+    <member refid="big__rfid__test_8c_1a5e0a7e710138136020c1614624faf0a1" kind="define"><name>READ_DEBUG</name></member>
+    <member refid="big__rfid__test_8c_1a1b8ba6c7e7d5b6100cedb4d2296476df" kind="function"><name>calc_crc</name></member>
+    <member refid="big__rfid__test_8c_1a7e1c27e9a4638707104cbf331d38315a" kind="function"><name>apsx_crc</name></member>
+    <member refid="big__rfid__test_8c_1a00680450f0de0b19b5ff5386bb1a61d3" kind="function"><name>init_serial</name></member>
+    <member refid="big__rfid__test_8c_1a7f61459f577778ea3d330407b83311a3" kind="function"><name>serial_write</name></member>
+    <member refid="big__rfid__test_8c_1a79b3ea600ea80a7266b28ee303cdbf78" kind="function"><name>serial_read</name></member>
+    <member refid="big__rfid__test_8c_1a5ba511ceeacd6db75d8750fd8c64e2eb" kind="function"><name>red_on</name></member>
+    <member refid="big__rfid__test_8c_1a5a50da085c049142bc2d93b2c8c3f50d" kind="function"><name>rfid_fa</name></member>
+    <member refid="big__rfid__test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="client_8c" kind="file"><name>client.c</name>
+    <member refid="client_8c_1aeb76476d4872310249ea0634068eff67" kind="function"><name>read_config</name></member>
+    <member refid="client_8c_1abafd8197d150530827f5ab09c47c28c3" kind="function"><name>read_config_servers</name></member>
+    <member refid="client_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="client_8h" kind="file"><name>client.h</name>
+    <member refid="client_8h_1a2fe5f2e559b4f539c687ab4121a4a7be" kind="function"><name>reader_function</name></member>
+    <member refid="client_8h_1a0631c3c52c14996e91db6a5618d3d2b8" kind="function"><name>avahi_function</name></member>
+    <member refid="client_8h_1aeb76476d4872310249ea0634068eff67" kind="function"><name>read_config</name></member>
+    <member refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" kind="function"><name>read_config_servers</name></member>
+  </compound>
+  <compound refid="config_8c" kind="file"><name>config.c</name>
+    <member refid="config_8c_1ad72dbcf6d0153db1b8d8a58001feed83" kind="define"><name>DEBUG</name></member>
+    <member refid="config_8c_1a271d8f7f52be750e5c744a394ec71344" kind="define"><name>WARN</name></member>
+    <member refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kind="function"><name>warn</name></member>
+    <member refid="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" kind="function"><name>debug</name></member>
+    <member refid="config_8c_1a54a4b949509d289e47841a725146ce4e" kind="function"><name>config_get</name></member>
+    <member refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" kind="function"><name>config_get_all</name></member>
+  </compound>
+  <compound refid="config_8h" kind="file"><name>config.h</name>
+    <member refid="config_8h_1a54a4b949509d289e47841a725146ce4e" kind="function"><name>config_get</name></member>
+    <member refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" kind="function"><name>config_get_all</name></member>
+  </compound>
+  <compound refid="list_8c" kind="file"><name>list.c</name>
+    <member refid="list_8c_1a8f0035a68b57201cc8c350ec72928325" kind="variable"><name>TRUE</name></member>
+    <member refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kind="function"><name>list_create</name></member>
+    <member refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" kind="function"><name>list_car</name></member>
+    <member refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" kind="function"><name>list_cdr</name></member>
+    <member refid="list_8c_1a7165db61812c8aa20f8eb5de98cd0e36" kind="function"><name>list_set_car</name></member>
+    <member refid="list_8c_1aebe3f912f605d2c6e84ec312338ab102" kind="function"><name>list_set_cdr</name></member>
+    <member refid="list_8c_1a5d9afb6ba37d5493fe3780b6ba8e586b" kind="function"><name>list_is_null</name></member>
+    <member refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kind="function"><name>list_is_empty</name></member>
+    <member refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kind="function"><name>list_size</name></member>
+    <member refid="list_8c_1a4503901beb6a19b5ec8249906355e5ed" kind="function"><name>list_cons</name></member>
+    <member refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" kind="function"><name>list_reverse</name></member>
+    <member refid="list_8c_1a363af69e462d10ad15b4631ec828e571" kind="function"><name>list_atom_destroy</name></member>
+    <member refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kind="function"><name>list_destroy</name></member>
+    <member refid="list_8c_1aa3b494560b4f94df133d4604265235db" kind="function"><name>list_destroy_deep</name></member>
+    <member refid="list_8c_1a45cebb558b04d38ca7adc2ba3987fd1f" kind="function"><name>list_map</name></member>
+    <member refid="list_8c_1a663fd068ed01140f77770b580258d271" kind="function"><name>list_filter</name></member>
+    <member refid="list_8c_1acaba2f033d4240acfa943b276125f92e" kind="function"><name>list_simple_free_fn</name></member>
+    <member refid="list_8c_1a8a6d04f858480f36fdc1581983483c43" kind="function"><name>list_str_print_fn</name></member>
+    <member refid="list_8c_1af0b6b1330fc879171da31397fd2f8665" kind="function"><name>list_int_print_fn</name></member>
+    <member refid="list_8c_1a3df67921d322130b2827da2e541a1387" kind="function"><name>null_list</name></member>
+    <member refid="list_8c_1acdcbb59aa0ed0829f03fefa7553f80d2" kind="function"><name>list_nth</name></member>
+    <member refid="list_8c_1a11d855375347172f2c165f1c86f27853" kind="function"><name>list_array</name></member>
+    <member refid="list_8c_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" kind="function"><name>list_index_of_int</name></member>
+    <member refid="list_8c_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" kind="function"><name>list_index_of_str</name></member>
+    <member refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" kind="function"><name>list_append</name></member>
+    <member refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" kind="function"><name>list_push</name></member>
+    <member refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kind="function"><name>list_pop</name></member>
+    <member refid="list_8c_1a9c0551e214815c70b539e212e3c329da" kind="function"><name>list_nth_atom</name></member>
+    <member refid="list_8c_1aedae6ef5cd2d980ca049ea112eba1f2b" kind="function"><name>list_remove</name></member>
+  </compound>
+  <compound refid="list_8h" kind="file"><name>list.h</name>
+    <member refid="list_8h_1afdbd94af234d3f07a8d73324a7587e7f" kind="define"><name>list_foreach</name></member>
+    <member refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kind="define"><name>list_foreach_entry</name></member>
+    <member refid="list_8h_1afc930ff44d34f0e7b83a64511dcc3861" kind="define"><name>ENOTFND</name></member>
+    <member refid="list_8h_1a64b7067460a74ef44e8bbb9c65ce6a37" kind="typedef"><name>list</name></member>
+    <member refid="list_8h_1a34f059ff468f5153f4a0c1300b21aae1" kind="typedef"><name>list_t</name></member>
+    <member refid="list_8h_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kind="function"><name>list_create</name></member>
+    <member refid="list_8h_1a363af69e462d10ad15b4631ec828e571" kind="function"><name>list_atom_destroy</name></member>
+    <member refid="list_8h_1ac32ad3e6f4af784d86b011c190aad38b" kind="function"><name>list_destroy</name></member>
+    <member refid="list_8h_1aa3b494560b4f94df133d4604265235db" kind="function"><name>list_destroy_deep</name></member>
+    <member refid="list_8h_1a0ab7b4e1a37506b807bf20ae6698c533" kind="function"><name>list_car</name></member>
+    <member refid="list_8h_1a22e64ee163ef21c6d59de59f83f8b269" kind="function"><name>list_cdr</name></member>
+    <member refid="list_8h_1a7165db61812c8aa20f8eb5de98cd0e36" kind="function"><name>list_set_car</name></member>
+    <member refid="list_8h_1aebe3f912f605d2c6e84ec312338ab102" kind="function"><name>list_set_cdr</name></member>
+    <member refid="list_8h_1aeeb96d95e199da5b6816f6eb7c49d0f0" kind="function"><name>list_is_empty</name></member>
+    <member refid="list_8h_1a6b2f0bae5223fb66771708236b2a99ef" kind="function"><name>list_size</name></member>
+    <member refid="list_8h_1a4503901beb6a19b5ec8249906355e5ed" kind="function"><name>list_cons</name></member>
+    <member refid="list_8h_1a45cebb558b04d38ca7adc2ba3987fd1f" kind="function"><name>list_map</name></member>
+    <member refid="list_8h_1a663fd068ed01140f77770b580258d271" kind="function"><name>list_filter</name></member>
+    <member refid="list_8h_1ad63ac19c91e382b72caff84cb9ae8be7" kind="function"><name>list_copy</name></member>
+    <member refid="list_8h_1a07588b386f603af6db91bedcfb338a4b" kind="function"><name>list_reverse</name></member>
+    <member refid="list_8h_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" kind="function"><name>list_append</name></member>
+    <member refid="list_8h_1aedae6ef5cd2d980ca049ea112eba1f2b" kind="function"><name>list_remove</name></member>
+    <member refid="list_8h_1acaba2f033d4240acfa943b276125f92e" kind="function"><name>list_simple_free_fn</name></member>
+    <member refid="list_8h_1abea32053f95fe91a4f24ea36331989b6" kind="function"><name>list_str_print_fn</name></member>
+    <member refid="list_8h_1a8ef634e4b0fd1d55d8a9fc3364406dd3" kind="function"><name>list_int_print_fn</name></member>
+    <member refid="list_8h_1a3df67921d322130b2827da2e541a1387" kind="function"><name>null_list</name></member>
+    <member refid="list_8h_1ac678bd305e69ff31bb9644b5cfabac0b" kind="function"><name>list_push</name></member>
+    <member refid="list_8h_1a35885fd30f031789e0844bb693b0b8fc" kind="function"><name>list_pop</name></member>
+    <member refid="list_8h_1acdcbb59aa0ed0829f03fefa7553f80d2" kind="function"><name>list_nth</name></member>
+    <member refid="list_8h_1a11d855375347172f2c165f1c86f27853" kind="function"><name>list_array</name></member>
+    <member refid="list_8h_1a3b2c3a6f1c6f7f5947247ea3b32b1de2" kind="function"><name>list_index_of_int</name></member>
+    <member refid="list_8h_1a8ea8c0428db1f9f4d18203cdb7b9e3dd" kind="function"><name>list_index_of_str</name></member>
+  </compound>
+  <compound refid="reader_8c" kind="file"><name>reader.c</name>
+    <member refid="reader_8c_1a89a5395890ec54ed2e9abd98d28c3fd6" kind="function"><name>reader_create</name></member>
+    <member refid="reader_8c_1a00e4d9bb3baf9af2bb00a0abf960f528" kind="function"><name>reader_init</name></member>
+    <member refid="reader_8c_1a1f6a26bc58a13b3a6518a0e376aeb761" kind="function"><name>tag_create</name></member>
+    <member refid="reader_8c_1a0f161b5da6c8c55afe84fce625db9a2f" kind="function"><name>tag_init</name></member>
+    <member refid="reader_8c_1a44b115e0bf4e92f6bfe2dcff067e49f5" kind="function"><name>find_all_readers</name></member>
+    <member refid="reader_8c_1a439267aa086867cfa328252e98372fff" kind="function"><name>reader_connect</name></member>
+    <member refid="reader_8c_1aa7cbb7fa2c4518fdd92604405f3432ca" kind="function"><name>reader_disconnect</name></member>
+    <member refid="reader_8c_1a0ca9c7c3b46619215a5c62c215c0be26" kind="function"><name>reader_reset</name></member>
+    <member refid="reader_8c_1a16a8be4c849758cd6bf56dbb98bbb397" kind="function"><name>reader_pass_beep</name></member>
+    <member refid="reader_8c_1adb993593046e74f8861dca1e36fe59f7" kind="function"><name>reader_fail_beep</name></member>
+    <member refid="reader_8c_1ad473a49314c30853ea1504c24a90a781" kind="function"><name>reader_ping</name></member>
+    <member refid="reader_8c_1a1872bfeb60bff7467120b3488199c2c4" kind="function"><name>reader_purge</name></member>
+    <member refid="reader_8c_1a77f69048a63c0140760e8478ed65b442" kind="function"><name>reader_read_packet</name></member>
+    <member refid="reader_8c_1a35ce5c55ac2b57fc38173270a14a33b0" kind="function"><name>reader_txPacketRxReply</name></member>
+    <member refid="reader_8c_1ada25a7e053335f1d9c2c4e05043a47e4" kind="function"><name>reader_txPacketCheckAck</name></member>
+    <member refid="reader_8c_1ab599da4f016082f958512f55ea775bd8" kind="function"><name>reader_parse_poll_packet</name></member>
+    <member refid="reader_8c_1acb4c72f1fe61a87135140e51d12e5b43" kind="function"><name>reader_poll15693</name></member>
+    <member refid="reader_8c_1a8849ebe57eadac17ff0d1882a1c0bcdf" kind="function"><name>reader_pollTi</name></member>
+  </compound>
+  <compound refid="reader_8h" kind="file"><name>reader.h</name>
+    <member refid="reader_8h_1ab2577f390f8e87c4d6c16d9fb5854d2f" kind="define"><name>EDEVERR</name></member>
+    <member refid="reader_8h_1a1ceb0e81b845fdcd1b8371e92229a13b" kind="define"><name>BEEP</name></member>
+    <member refid="reader_8h_1aebf1b898760455eec6543e79e6c42b73" kind="define"><name>NOBEEP</name></member>
+    <member refid="reader_8h_1a80591b5e63669a2648116a7672d858e7" kind="define"><name>RFID1_VID</name></member>
+    <member refid="reader_8h_1ab4602149aec6ab8d21dcc5dab705d7e8" kind="define"><name>RFID1_PID</name></member>
+    <member refid="reader_8h_1a9b66c7076d2844d870ca627d40ffa810" kind="define"><name>RFID1_DESC</name></member>
+    <member refid="reader_8h_1a0f0248c20aae1fa252f625257971ca80" kind="define"><name>RFID1_BAUDRATE</name></member>
+    <member refid="reader_8h_1a36cb35d72e8a7095cbeff96ca30b5355" kind="define"><name>RFID1_PKT_PING</name></member>
+    <member refid="reader_8h_1a66902d1a267b7807322ce9cc4630ec0b" kind="define"><name>RFID1_PKT_AGCTGL</name></member>
+    <member refid="reader_8h_1ac24164ea5c944c8b4d783ee3f22d8470" kind="define"><name>RFID1_PKT_AMPMTGL</name></member>
+    <member refid="reader_8h_1a836050b7b583dfe933e257370dfc8313" kind="define"><name>RFID1_PKT_PASSBEEP</name></member>
+    <member refid="reader_8h_1ad7a6feb9a38d6cc2c048fc6a91dee55c" kind="define"><name>RFID1_PKT_FAILBEEP</name></member>
+    <member refid="reader_8h_1afe909b579eaafcbe02f2fbed2ebd9817" kind="define"><name>RFID1_PKT_15693INVRQ</name></member>
+    <member refid="reader_8h_1aa0873f85674ea390dec2d2f10c59acf0" kind="define"><name>RFID1_PKT_TISIDPOLL</name></member>
+    <member refid="reader_8h_1a50e4d0b184788b1c2e4300adf669afb9" kind="define"><name>RFID1_PKT_MODEMEM</name></member>
+    <member refid="reader_8h_1a2a3cf1e5fbd4f54c3d291df6a57aaf0b" kind="define"><name>RFID1_PKT_MODEUID</name></member>
+    <member refid="reader_8h_1a38c2dcdedaed7967bc58b6563d6389dd" kind="define"><name>RFID1_PKT_TAGIT</name></member>
+    <member refid="reader_8h_1a2a188f51c84aa62c0760c1129ba193e8" kind="define"><name>RFID1_EOP_CHAR</name></member>
+    <member refid="reader_8h_1ad80877070735977f9a618595f3624ca4" kind="define"><name>RFID_ID_LEN</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ec" kind="enum"><name>ReturnCode</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144eca7834a46e385d8eb279f597b5cee9a2ea" kind="enumvalue"><name>RC_SUCCESS</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144ecaae4a23b560d56fcf0981a9636f58edeb" kind="enumvalue"><name>RC_ERROR</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144eca53cea67f4bc8af2d470b81699934dbce" kind="enumvalue"><name>RC_NULL_ERROR</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144eca7664b76e43055e59b21cd5da135a94a2" kind="enumvalue"><name>RC_IO_ERROR</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144eca81f785c80118cb5445913c929cf2d910" kind="enumvalue"><name>RC_NO_PING</name></member>
+    <member refid="reader_8h_1a5a2236a3693e3930b2c9fbe1fe7144eca0fdf59031cc34fbeb6a0a4eb8f4b7582" kind="enumvalue"><name>RC_NOT_CONNECTED</name></member>
+    <member refid="reader_8h_1a89a5395890ec54ed2e9abd98d28c3fd6" kind="function"><name>reader_create</name></member>
+    <member refid="reader_8h_1a00e4d9bb3baf9af2bb00a0abf960f528" kind="function"><name>reader_init</name></member>
+    <member refid="reader_8h_1a1f6a26bc58a13b3a6518a0e376aeb761" kind="function"><name>tag_create</name></member>
+    <member refid="reader_8h_1a0f161b5da6c8c55afe84fce625db9a2f" kind="function"><name>tag_init</name></member>
+    <member refid="reader_8h_1a29c9b16ecae4e8e1c1a87ef2bdff0e3d" kind="function"><name>find_all_readers</name></member>
+    <member refid="reader_8h_1a439267aa086867cfa328252e98372fff" kind="function"><name>reader_connect</name></member>
+    <member refid="reader_8h_1aa7cbb7fa2c4518fdd92604405f3432ca" kind="function"><name>reader_disconnect</name></member>
+    <member refid="reader_8h_1a0ca9c7c3b46619215a5c62c215c0be26" kind="function"><name>reader_reset</name></member>
+    <member refid="reader_8h_1a16a8be4c849758cd6bf56dbb98bbb397" kind="function"><name>reader_pass_beep</name></member>
+    <member refid="reader_8h_1adb993593046e74f8861dca1e36fe59f7" kind="function"><name>reader_fail_beep</name></member>
+    <member refid="reader_8h_1ad473a49314c30853ea1504c24a90a781" kind="function"><name>reader_ping</name></member>
+    <member refid="reader_8h_1a1872bfeb60bff7467120b3488199c2c4" kind="function"><name>reader_purge</name></member>
+    <member refid="reader_8h_1a29341552afcc96cdb1adc305c0e0c54e" kind="function"><name>reader_read_packet</name></member>
+    <member refid="reader_8h_1a35ce5c55ac2b57fc38173270a14a33b0" kind="function"><name>reader_txPacketRxReply</name></member>
+    <member refid="reader_8h_1ada25a7e053335f1d9c2c4e05043a47e4" kind="function"><name>reader_txPacketCheckAck</name></member>
+    <member refid="reader_8h_1ab599da4f016082f958512f55ea775bd8" kind="function"><name>reader_parse_poll_packet</name></member>
+    <member refid="reader_8h_1acb4c72f1fe61a87135140e51d12e5b43" kind="function"><name>reader_poll15693</name></member>
+    <member refid="reader_8h_1a8849ebe57eadac17ff0d1882a1c0bcdf" kind="function"><name>reader_pollTi</name></member>
+  </compound>
+  <compound refid="rfid__reader__handler_8c" kind="file"><name>rfid_reader_handler.c</name>
+    <member refid="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" kind="define"><name>SLEEP_BTWN_POLL</name></member>
+    <member refid="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" kind="define"><name>SLEEP_BTWN_SEARCH</name></member>
+    <member refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" kind="function"><name>reader_handle_tag</name></member>
+    <member refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" kind="function"><name>reader_poll_loop</name></member>
+    <member refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" kind="function"><name>reader_function</name></member>
+  </compound>
+  <compound refid="string__utils_8c" kind="file"><name>string_utils.c</name>
+    <member refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" kind="function"><name>string_join</name></member>
+    <member refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" kind="function"><name>string_split</name></member>
+  </compound>
+  <compound refid="string__utils_8h" kind="file"><name>string_utils.h</name>
+    <member refid="string__utils_8h_1a19468c87f5110a5ec489664a7344d443" kind="function"><name>string_split</name></member>
+    <member refid="string__utils_8h_1a97015c4a9a9434c30072270f322b48ec" kind="function"><name>string_join</name></member>
+  </compound>
+  <compound refid="test_8c" kind="file"><name>test.c</name>
+    <member refid="test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="todo" kind="page"><name>todo</name>
+  </compound>
+  <compound refid="dir_7595b374abad8409d4e481fe397098ff" kind="dir"><name>client/</name>
+  </compound>
+</doxygenindex>

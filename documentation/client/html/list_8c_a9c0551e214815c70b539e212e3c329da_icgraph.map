@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$list_8h.html#aedae6ef5cd2d980ca049ea112eba1f2b" title="list_remove" alt="" coords="155,5,243,35"/>
+<area shape="rect" href="$avahi__dns__handler_8c.html#a0a5dcec1ec57a60846e370d34a003a4a" title="browse_callback" alt="" coords="291,5,408,35"/>
+<area shape="rect" href="$client_8h.html#a0631c3c52c14996e91db6a5618d3d2b8" title="mDNS handling loop which looks for RFIDentify servers. Look for avahi_dns_handler..." alt="" coords="457,5,561,35"/>
+</map>

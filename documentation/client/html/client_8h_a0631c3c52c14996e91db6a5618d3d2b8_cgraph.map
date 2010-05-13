@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" href="$avahi__dns__handler_8c.html#a0a5dcec1ec57a60846e370d34a003a4a" title="browse_callback" alt="" coords="160,264,277,293"/>
+<area shape="rect" href="$avahi__dns__handler_8c.html#a8abc8d2d0f6f9a171d8c02d6d9285fbf" title="client_callback" alt="" coords="165,317,272,347"/>
+<area shape="rect" href="$list_8c.html#aedae6ef5cd2d980ca049ea112eba1f2b" title="list_remove" alt="" coords="341,173,429,203"/>
+<area shape="rect" href="$avahi__dns__handler_8c.html#a9c1f95b206f4fe188f24471c4dbb2e2b" title="resolve_callback" alt="" coords="327,356,444,385"/>
+<area shape="rect" href="$list_8c.html#a363af69e462d10ad15b4631ec828e571" title="list_atom_destroy" alt="" coords="644,199,767,228"/>
+<area shape="rect" href="$list_8c.html#a0ab7b4e1a37506b807bf20ae6698c533" title="list_car" alt="" coords="825,303,889,332"/>
+<area shape="rect" href="$list_8c.html#a22e64ee163ef21c6d59de59f83f8b269" title="list_cdr" alt="" coords="825,148,889,177"/>
+<area shape="rect" href="$list_8c.html#a9c0551e214815c70b539e212e3c329da" title="list_nth_atom" alt="" coords="495,19,593,48"/>
+<area shape="rect" href="$list_8c.html#a35885fd30f031789e0844bb693b0b8fc" title="list_pop" alt="" coords="511,329,577,359"/>
+<area shape="rect" href="$list_8c.html#aebe3f912f605d2c6e84ec312338ab102" title="list_set_cdr" alt="" coords="661,457,749,487"/>
+<area shape="rect" href="$list_8c.html#a6b2f0bae5223fb66771708236b2a99ef" title="list_size" alt="" coords="509,95,579,124"/>
+<area shape="rect" href="$list_8c.html#aeeb96d95e199da5b6816f6eb7c49d0f0" title="list_is_empty" alt="" coords="656,303,755,332"/>
+<area shape="rect" href="$list_8c.html#a5d9afb6ba37d5493fe3780b6ba8e586b" title="list_is_null" alt="" coords="816,405,899,435"/>
+<area shape="rect" href="$list_8c.html#a7165db61812c8aa20f8eb5de98cd0e36" title="list_set_car" alt="" coords="661,511,749,540"/>
+<area shape="rect" href="$list_8c.html#ac678bd305e69ff31bb9644b5cfabac0b" title="list_push" alt="" coords="508,536,580,565"/>
+<area shape="rect" href="$list_8c.html#a3dc5b8dea5507c3b0a37fde8c1fcae54" title="list_create" alt="" coords="665,665,745,695"/>
+</map>

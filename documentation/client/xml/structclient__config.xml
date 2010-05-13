@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structclient__config" kind="struct" prot="public">
+    <compoundname>client_config</compoundname>
+    <includes refid="client_8h" local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* config_file</definition>
+        <argsstring></argsstring>
+        <name>config_file</name>
+        <briefdescription>
+<para>Location of configuration file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="34" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+<para>Current mode of client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="35" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <briefdescription>
+<para>Server REST action. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="36" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclient__config_1a2963f5361ea992a1320576a9690b85e1" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* last_tag</definition>
+        <argsstring></argsstring>
+        <name>last_tag</name>
+        <briefdescription>
+<para>Last tag encountered by reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="37" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclient__config_1a868bc61b634e17a030f7adf4723a8052" prot="public" static="no" mutable="no">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* servers</definition>
+        <argsstring></argsstring>
+        <name>servers</name>
+        <briefdescription>
+<para>List of <ref refid="structrfid__server__info" kindref="compound">rfid_server_info</ref> structures. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="38" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="avahi__dns__handler_8c_1a0a5dcec1ec57a60846e370d34a003a4a" compoundref="avahi__dns__handler_8c" startline="118" endline="195">browse_callback</referencedby>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+        <referencedby refid="avahi__dns__handler_8c_1a9c1f95b206f4fe188f24471c4dbb2e2b" compoundref="avahi__dns__handler_8c" startline="37" endline="109">resolve_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>Protects modifications, especially last_tag. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="39" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+        <referencedby refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a client configuration context. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="16">
+        <label>list</label>
+        <link refid="structlist"/>
+      </node>
+      <node id="15">
+        <label>client_config</label>
+        <link refid="structclient__config"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>servers</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" line="33" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/client.h" bodystart="33" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" prot="public" virt="non-virtual"><scope>client_config</scope><name>action</name></member>
+      <member refid="structclient__config_1ac269be8b91ae4b24df48de5d8ad7e7a7" prot="public" virt="non-virtual"><scope>client_config</scope><name>config_file</name></member>
+      <member refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" prot="public" virt="non-virtual"><scope>client_config</scope><name>last_tag</name></member>
+      <member refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" prot="public" virt="non-virtual"><scope>client_config</scope><name>lock</name></member>
+      <member refid="structclient__config_1a66f5677d5f62c2f750d8fe40411d4139" prot="public" virt="non-virtual"><scope>client_config</scope><name>mode</name></member>
+      <member refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" prot="public" virt="non-virtual"><scope>client_config</scope><name>servers</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

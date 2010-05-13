@@ -17,19 +17,29 @@ standardization:
 
 a list ends with a cell that looks like:
 
-     +---+---+
----> | v | 0 |
-     +---+---+
+\code
+     +---+---+   
+---> | v | 0 |   
+     +---+---+   
+\endcode
 
 and empty list then looks like:
 
-+---+---+
-| 0 | 0 |
-+---+---+
+\code
+
++---+---+   
+| 0 | 0 |   
++---+---+   
+
+\endcode
 
 it should look like this:
 
+\code
+
 0
+
+\endcode
 
 but this doesnt work,
 because we would need to be able to modify the pointers
@@ -58,7 +68,7 @@ int    list_is_empty(list *l);
 int    list_size(list *l);
 list  *list_cons(void *v, list *l);
 
-/**
+/*
 * Higher order functions
 */
 list  *list_map(list *l, void *(*fn)(void *));
@@ -66,31 +76,31 @@ list  *list_filter(list *l, int (*fn)(void *, void *), void *args);
 list  *list_copy(list *l);
 
 /**
-* list *l - the list to enumerate
-* list *t - a temporary list
+* @param l  list *, the list to enumerate
+* @param t  list *, a temporary list
 */
 #define list_foreach(l, t) \
  for (t = l; ! list_is_empty(t); t = list_cdr(t)) 
 
 /**
-* list *l - the list to enumerate
-* list *t - a temporary list
-* type    - the type of the entry
-* e       - entry of type TYPE
+* @param l list *l - the list to enumerate
+* @param t list *t - a temporary list
+* @param type the type of the entry
+* @param e       - entry of type TYPE
 */
 #define list_foreach_entry(l, t, type, e) \
  for (t = l, e = (type)list_car(t); \
       ! list_is_empty(t); \
       t = list_cdr(t), e = (type)list_car(t))
    
-/**
+/*
 * Some destructive functions
 */
 list  *list_reverse(list *l);
 list  *list_append(list *l, void *v);
 void  *list_remove(list *l, int index);
 
-/**
+/*
 * Utilities
 */
 void  *list_simple_free_fn(void *v);

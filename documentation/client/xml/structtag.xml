@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="structtag" kind="struct" prot="public">
+    <compoundname>tag</compoundname>
+    <includes refid="reader_8h" local="no">reader.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtag_1aecb3b0d045ada529257a2fbf8f829599" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="83" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtag_1a049b05dbb9640019aa443230bdf84fa4" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+        <definition>struct reader* parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <briefdescription>
+<para>Unique ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="84" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="reader_8h_1a0f161b5da6c8c55afe84fce625db9a2f" compoundref="reader_8c" startline="30" endline="35">tag_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An RFID identification. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="24">
+        <label>tag</label>
+        <link refid="structtag"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>reader</label>
+        <link refid="structreader"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" line="82" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/reader.h" bodystart="82" bodyend="85"/>
+    <listofallmembers>
+      <member refid="structtag_1aecb3b0d045ada529257a2fbf8f829599" prot="public" virt="non-virtual"><scope>tag</scope><name>id</name></member>
+      <member refid="structtag_1a049b05dbb9640019aa443230bdf84fa4" prot="public" virt="non-virtual"><scope>tag</scope><name>parent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

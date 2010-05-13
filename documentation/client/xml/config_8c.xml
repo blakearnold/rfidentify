@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="config_8c" kind="file">
+    <compoundname>config.c</compoundname>
+    <includes refid="config_8h" local="yes">config.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="173">
+        <label>stdlib.h</label>
+      </node>
+      <node id="168">
+        <label>client/config.c</label>
+        <link refid="config.c"/>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="172">
+        <label>string.h</label>
+      </node>
+      <node id="171">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="config_8c_1ad72dbcf6d0153db1b8d8a58001feed83" prot="public" static="no">
+        <name>DEBUG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Whether to print out debug messages to STDOUT. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="16" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="16" bodyend="-1"/>
+        <referencedby refid="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" compoundref="config_8c" startline="37" endline="42">debug</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="config_8c_1a271d8f7f52be750e5c744a394ec71344" prot="public" static="no">
+        <name>WARN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Whether to print out warning messages to STDOUT. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="19" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="19" bodyend="-1"/>
+        <referencedby refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" compoundref="config_8c" startline="25" endline="31">warn</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void warn</definition>
+        <argsstring>(const char *warning)</argsstring>
+        <name>warn</name>
+        <param>
+          <type>const char *</type>
+          <declname>warning</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prints the given warning message to STDOUT if defined. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>warning</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="25" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="25" bodyend="31"/>
+        <references refid="config_8c_1a271d8f7f52be750e5c744a394ec71344" compoundref="config_8c" startline="19">WARN</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void debug</definition>
+        <argsstring>(const char *debug)</argsstring>
+        <name>debug</name>
+        <param>
+          <type>const char *</type>
+          <declname>debug</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prints the given debug message to STDOUT if defined. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debug</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="37" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="37" bodyend="42"/>
+        <references refid="config_8c_1ad72dbcf6d0153db1b8d8a58001feed83" compoundref="config_8c" startline="16">DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="config_8c_1a54a4b949509d289e47841a725146ce4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* config_get</definition>
+        <argsstring>(const char *filename, const char *key)</argsstring>
+        <name>config_get</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Get a value from a configuration file identified by a filename. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a file, and key, return the first matching config value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The config file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of which the value to find. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A newly allocated string, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="50" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="50" bodyend="69"/>
+        <references refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" compoundref="config_8c" startline="78" endline="144">config_get_all</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" compoundref="config_8c" startline="25" endline="31">warn</references>
+        <referencedby refid="client_8h_1aeb76476d4872310249ea0634068eff67" compoundref="client_8c" startline="35" endline="71">read_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* config_get_all</definition>
+        <argsstring>(const char *filename, const char *key)</argsstring>
+        <name>config_get_all</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Gets all relevant values from a configuration file identifed by a filename. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a filename and key, return all matching config values. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filename of the configuration file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to which to match configuration definitions. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A newly allocated list of newly allocated values, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" line="78" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c" bodystart="78" bodyend="144"/>
+        <references refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" compoundref="list_8c" startline="497" endline="518">list_append</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" compoundref="config_8c" startline="25" endline="31">warn</references>
+        <referencedby refid="config_8h_1a54a4b949509d289e47841a725146ce4e" compoundref="config_8c" startline="50" endline="69">config_get</referencedby>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="config_8h" kindref="compound">config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="config_8c_1ad72dbcf6d0153db1b8d8a58001feed83" refkind="member"><highlight class="preprocessor">#define<sp/>DEBUG<sp/>1</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="19" refid="config_8c_1a271d8f7f52be750e5c744a394ec71344" refkind="member"><highlight class="preprocessor">#define<sp/>WARN<sp/>1</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="25" refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kindref="member">warn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*warning)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="config_8c_1a271d8f7f52be750e5c744a394ec71344" kindref="member" tooltip="Whether to print out warning messages to STDOUT.">WARN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>warning);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" kindref="member">debug</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="config_8c_1ae2c8e182ea3feb9d9a5525a2fc8a24ff" kindref="member">debug</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="config_8c_1ad72dbcf6d0153db1b8d8a58001feed83" kindref="member" tooltip="Whether to print out debug messages to STDOUT.">DEBUG</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Debug:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>debug);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="config_8h_1a54a4b949509d289e47841a725146ce4e" refkind="member"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="config_8c_1a54a4b949509d289e47841a725146ce4e" kindref="member" tooltip="Get a value from a configuration file identified by a filename.">config_get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*<sp/>l;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>l<sp/>=<sp/><ref refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" kindref="member" tooltip="Gets all relevant values from a configuration file identifed by a filename.">config_get_all</ref>(filename,<sp/>key);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>l)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kindref="member">warn</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>read<sp/>config<sp/>file.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>value<sp/>=<sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(l);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" kindref="member">list_is_empty</ref>(l))<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>free(<ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(l));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(l);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="config_8h_1a52d0c5748deeda66a4f4fceb3ce34bbe" refkind="member"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="config_8c_1a52d0c5748deeda66a4f4fceb3ce34bbe" kindref="member" tooltip="Gets all relevant values from a configuration file identifed by a filename.">config_get_all</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[1024];</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>FILE<sp/>*fp;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*l;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>fp<sp/>=<sp/>fopen(filename,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>fp<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kindref="member">warn</ref>(</highlight><highlight class="stringliteral">&quot;unable<sp/>to<sp/>open<sp/>config<sp/>file.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>l<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>l<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kindref="member">warn</ref>(</highlight><highlight class="stringliteral">&quot;memory<sp/>exhausted.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(fp);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!feof(fp))<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fgets(buffer,<sp/>1023,<sp/>fp))<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buffer[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strstr(buffer,<sp/>key))<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>fragment1[1024]<sp/>=<sp/>{<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>fragment2[1024]<sp/>=<sp/>{<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>buffer;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p++;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*p<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strncpy(fragment1,<sp/>buffer,<sp/>p<sp/>-<sp/>buffer);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fragment1[p<sp/>-<sp/>buffer]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strncmp(fragment1,<sp/>key,<sp/>strlen(key))<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*(p<sp/>+<sp/>1)<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>len<sp/>=<sp/>strlen(p)<sp/>-<sp/>2;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(len<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strncpy(fragment2,<sp/>p<sp/>+<sp/>1,<sp/>strlen(p)<sp/>-<sp/>2);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fragment2[strlen(p<sp/>-<sp/>2)]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>strdup(fragment2);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="config_8c_1ad79878a80cca3cda8edf3032bb2f1791" kindref="member">warn</ref>(</highlight><highlight class="stringliteral">&quot;memory<sp/>exhausted.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose(fp);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1a850cbe26f09f8f3f8e090cdd7aa5a6a2" kindref="member">list_append</ref>(l,<sp/>value);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>fclose(fp);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/config.c"/>
+  </compounddef>
+</doxygen>

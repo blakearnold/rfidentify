@@ -1,0 +1,127 @@
+.TH "client/rfid_reader_handler.c" 3 "13 May 2010" "Version 1.0" "RFIDentify Client" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client/rfid_reader_handler.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'client.h'\fP
+.br
+\fC#include <string.h>\fP
+.br
+\fC#include <errno.h>\fP
+.br
+\fC#include <stdio.h>\fP
+.br
+\fC#include <stdlib.h>\fP
+.br
+\fC#include <curl/curl.h>\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSLEEP_BTWN_POLL\fP   1"
+.br
+.RI "\fIAmount of time in seconds between polls to RFID reader. \fP"
+.ti -1c
+.RI "#define \fBSLEEP_BTWN_SEARCH\fP   1"
+.br
+.RI "\fIAmount of time in seconds between polls to USB for RFID reader. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBreader_handle_tag\fP (const char *\fBtag\fP, struct \fBclient_config\fP *config)"
+.br
+.ti -1c
+.RI "int \fBreader_poll_loop\fP (struct \fBreader\fP *\fBreader\fP, struct \fBclient_config\fP *config)"
+.br
+.ti -1c
+.RI "void * \fBreader_function\fP (void *args)"
+.br
+.RI "\fIRFID reading loop which polls for identifications. Look for \fBrfid_reader_handler.c\fP. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The RFID reader is discovered, initialized, and polled every few seconds. Upon reading a tag, a query is made to a server.
+.PP
+\fBAuthor:\fP
+.RS 4
+Willi Ballenthin 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Spring, 2010 
+.RE
+.PP
+
+.PP
+Definition in file \fBrfid_reader_handler.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "void* reader_function (void * args)"
+.PP
+RFID reading loop which polls for identifications. Look for \fBrfid_reader_handler.c\fP. PThread. Initializes an RFID device, if it exists, and begins a tag reading loop. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBSLEEP_BTWN_SEARCH\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargs\fP struct \fBclient_config\fP - The current configuration of the client. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Should not return, if so, error.  abstract RFID differences from this implementation 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file rfid_reader_handler.c.
+.SS "int reader_handle_tag (const char * tag, struct \fBclient_config\fP * config)"This function is invoked as a callback upon the reading of a tag. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItag\fP A string containing the tag id. 
+.br
+\fIconfig\fP The current configuration of the client. 
+.br
+\fI0\fP on ok, negative integer otherwise. 
+.RE
+.PP
+
+.PP
+Definition at line 34 of file rfid_reader_handler.c.
+.SS "int reader_poll_loop (struct \fBreader\fP * reader, struct \fBclient_config\fP * config)"Repeatedly queries the device for RFID tags. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBSLEEP_BTWN_POLL\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreader\fP The RFID reading device. 
+.br
+\fIconfig\fP The current configuration of the client. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Well it shouldnt. If it does, there's an error. 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file rfid_reader_handler.c.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RFIDentify Client from the source code.

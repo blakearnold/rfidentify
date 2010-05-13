@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$config_8h.html#a54a4b949509d289e47841a725146ce4e" title="Get a value from a configuration file identified by a filename." alt="" coords="184,5,264,35"/>
+<area shape="rect" href="$client_8h.html#abafd8197d150530827f5ab09c47c28c3" title="Configures static servers from a configuration file." alt="" coords="155,59,293,88"/>
+<area shape="rect" href="$client_8h.html#aeb76476d4872310249ea0634068eff67" title="Configures a client given a configuration file." alt="" coords="341,32,429,61"/>
+</map>

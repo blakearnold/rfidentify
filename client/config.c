@@ -1,3 +1,9 @@
+/**
+ * 
+ * @file config.c
+ * @author Willi Ballenthin
+ * @date Spring, 2010
+ */
 
 
 #include "config.h"
@@ -6,9 +12,16 @@
 #include <string.h>
 #include <stdlib.h>
 
+/// Whether to print out debug messages to STDOUT
 #define DEBUG 1
+
+/// Whether to print out warning messages to STDOUT
 #define WARN 1
 
+/**
+ * Prints the given warning message to STDOUT if defined.
+ * @param warning The message to print.
+ */ 
 void warn(const char *warning) {
   if (WARN) {
     printf("Warning: %s\n", warning);
@@ -17,6 +30,10 @@ void warn(const char *warning) {
   return;
 }
 
+/**
+ * Prints the given debug message to STDOUT if defined.
+ * @param debug The message to print.
+ */ 
 void debug(const char *debug) {
   if (DEBUG) {
     printf("Debug: %s\n", debug);
@@ -24,6 +41,12 @@ void debug(const char *debug) {
   return;
 }
 
+/**
+ * Given a file, and key, return the first matching config value.
+ * @param filename The config file.
+ * @param key The key of which the value to find.
+ * @return A newly allocated string, or NULL on failure.
+ */
 char *config_get(const char* filename, const char* key) {
   list * l;
   char *value;
@@ -46,6 +69,12 @@ char *config_get(const char* filename, const char* key) {
 }
 
 
+/**
+ * Given a filename and key, return all matching config values.
+ * @param filename The filename of the configuration file.
+ * @param key The key to which to match configuration definitions.
+ * @return A newly allocated list of newly allocated values, or NULL on failure.
+ */
 list *config_get_all(const char* filename, const char* key) {
   char buffer[1024];
   FILE *fp;
@@ -113,11 +142,4 @@ list *config_get_all(const char* filename, const char* key) {
   fclose(fp);
   return l;
 }
-
-
-
-
-
-
-
 

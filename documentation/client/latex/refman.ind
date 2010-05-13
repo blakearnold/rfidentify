@@ -1,0 +1,300 @@
+\begin{theindex}
+
+  \item {avahi\_\discretionary {-}{}{}callback\_\discretionary {-}{}{}params}, 
+		\hyperpage{7}
+  \item {avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}
+    \subitem {avahi\_\discretionary {-}{}{}function}, \hyperpage{16}
+    \subitem {browse\_\discretionary {-}{}{}callback}, \hyperpage{17}
+    \subitem {client\_\discretionary {-}{}{}callback}, \hyperpage{18}
+    \subitem {resolve\_\discretionary {-}{}{}callback}, \hyperpage{18}
+  \item {avahi\_\discretionary {-}{}{}function}
+    \subitem {avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{16}
+    \subitem {client.h}, \hyperpage{26}
+
+  \indexspace
+
+  \item {browse\_\discretionary {-}{}{}callback}
+    \subitem {avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{17}
+
+  \indexspace
+
+  \item {client.c}
+    \subitem {read\_\discretionary {-}{}{}config}, \hyperpage{21}
+    \subitem {read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}, 
+		\hyperpage{22}
+  \item {client.h}
+    \subitem {avahi\_\discretionary {-}{}{}function}, \hyperpage{26}
+    \subitem {read\_\discretionary {-}{}{}config}, \hyperpage{27}
+    \subitem {read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}, 
+		\hyperpage{28}
+    \subitem {reader\_\discretionary {-}{}{}function}, \hyperpage{30}
+  \item {client/avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{15}
+  \item {client/client.c}, \hyperpage{20}
+  \item {client/client.h}, \hyperpage{25}
+  \item {client/config.c}, \hyperpage{31}
+  \item {client/config.h}, \hyperpage{35}
+  \item {client/list.c}, \hyperpage{38}
+  \item {client/list.h}, \hyperpage{57}
+  \item {client/reader.c}, \hyperpage{76}
+  \item {client/reader.h}, \hyperpage{79}
+  \item {client/rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{83}
+  \item {client/string\_\discretionary {-}{}{}utils.c}, \hyperpage{87}
+  \item {client\_\discretionary {-}{}{}callback}
+    \subitem {avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{18}
+  \item {client\_\discretionary {-}{}{}config}, \hyperpage{9}
+  \item {config.c}
+    \subitem {config\_\discretionary {-}{}{}get}, \hyperpage{32}
+    \subitem {config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}, 
+		\hyperpage{32}
+    \subitem {debug}, \hyperpage{33}
+    \subitem {warn}, \hyperpage{33}
+  \item {config.h}
+    \subitem {config\_\discretionary {-}{}{}get}, \hyperpage{36}
+    \subitem {config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}, 
+		\hyperpage{36}
+  \item {config\_\discretionary {-}{}{}get}
+    \subitem {config.c}, \hyperpage{32}
+    \subitem {config.h}, \hyperpage{36}
+  \item {config\_\discretionary {-}{}{}get\_\discretionary {-}{}{}all}
+    \subitem {config.c}, \hyperpage{32}
+    \subitem {config.h}, \hyperpage{36}
+
+  \indexspace
+
+  \item {debug}
+    \subitem {config.c}, \hyperpage{33}
+
+  \indexspace
+
+  \item {find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}
+    \subitem {reader.c}, \hyperpage{77}
+    \subitem {reader.h}, \hyperpage{81}
+
+  \indexspace
+
+  \item {list}, \hyperpage{10}
+    \subitem {list.h}, \hyperpage{59}
+  \item {list.c}
+    \subitem {list\_\discretionary {-}{}{}append}, \hyperpage{39}
+    \subitem {list\_\discretionary {-}{}{}array}, \hyperpage{39}
+    \subitem {list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}, 
+		\hyperpage{40}
+    \subitem {list\_\discretionary {-}{}{}car}, \hyperpage{40}
+    \subitem {list\_\discretionary {-}{}{}cdr}, \hyperpage{41}
+    \subitem {list\_\discretionary {-}{}{}cons}, \hyperpage{42}
+    \subitem {list\_\discretionary {-}{}{}create}, \hyperpage{43}
+    \subitem {list\_\discretionary {-}{}{}destroy}, \hyperpage{44}
+    \subitem {list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}, 
+		\hyperpage{45}
+    \subitem {list\_\discretionary {-}{}{}filter}, \hyperpage{45}
+    \subitem {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}, 
+		\hyperpage{46}
+    \subitem {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}, 
+		\hyperpage{46}
+    \subitem {list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}, 
+		\hyperpage{46}
+    \subitem {list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null}, 
+		\hyperpage{47}
+    \subitem {list\_\discretionary {-}{}{}map}, \hyperpage{48}
+    \subitem {list\_\discretionary {-}{}{}nth}, \hyperpage{49}
+    \subitem {list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom}, 
+		\hyperpage{49}
+    \subitem {list\_\discretionary {-}{}{}pop}, \hyperpage{50}
+    \subitem {list\_\discretionary {-}{}{}push}, \hyperpage{51}
+    \subitem {list\_\discretionary {-}{}{}remove}, \hyperpage{52}
+    \subitem {list\_\discretionary {-}{}{}reverse}, \hyperpage{52}
+    \subitem {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}, 
+		\hyperpage{53}
+    \subitem {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}, 
+		\hyperpage{54}
+    \subitem {list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}, 
+		\hyperpage{54}
+    \subitem {list\_\discretionary {-}{}{}size}, \hyperpage{55}
+    \subitem {null\_\discretionary {-}{}{}list}, \hyperpage{55}
+  \item {list.h}
+    \subitem {list}, \hyperpage{59}
+    \subitem {list\_\discretionary {-}{}{}append}, \hyperpage{59}
+    \subitem {list\_\discretionary {-}{}{}array}, \hyperpage{60}
+    \subitem {list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}, 
+		\hyperpage{60}
+    \subitem {list\_\discretionary {-}{}{}car}, \hyperpage{61}
+    \subitem {list\_\discretionary {-}{}{}cdr}, \hyperpage{62}
+    \subitem {list\_\discretionary {-}{}{}cons}, \hyperpage{63}
+    \subitem {list\_\discretionary {-}{}{}create}, \hyperpage{64}
+    \subitem {list\_\discretionary {-}{}{}destroy}, \hyperpage{65}
+    \subitem {list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}, 
+		\hyperpage{66}
+    \subitem {list\_\discretionary {-}{}{}filter}, \hyperpage{66}
+    \subitem {list\_\discretionary {-}{}{}foreach}, \hyperpage{58}
+    \subitem {list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry}, 
+		\hyperpage{58}
+    \subitem {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}, 
+		\hyperpage{67}
+    \subitem {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}, 
+		\hyperpage{67}
+    \subitem {list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}, 
+		\hyperpage{67}
+    \subitem {list\_\discretionary {-}{}{}map}, \hyperpage{68}
+    \subitem {list\_\discretionary {-}{}{}nth}, \hyperpage{69}
+    \subitem {list\_\discretionary {-}{}{}pop}, \hyperpage{69}
+    \subitem {list\_\discretionary {-}{}{}push}, \hyperpage{70}
+    \subitem {list\_\discretionary {-}{}{}remove}, \hyperpage{71}
+    \subitem {list\_\discretionary {-}{}{}reverse}, \hyperpage{72}
+    \subitem {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}, 
+		\hyperpage{72}
+    \subitem {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}, 
+		\hyperpage{73}
+    \subitem {list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}, 
+		\hyperpage{74}
+    \subitem {list\_\discretionary {-}{}{}size}, \hyperpage{74}
+    \subitem {null\_\discretionary {-}{}{}list}, \hyperpage{75}
+  \item {list\_\discretionary {-}{}{}append}
+    \subitem {list.c}, \hyperpage{39}
+    \subitem {list.h}, \hyperpage{59}
+  \item {list\_\discretionary {-}{}{}array}
+    \subitem {list.c}, \hyperpage{39}
+    \subitem {list.h}, \hyperpage{60}
+  \item {list\_\discretionary {-}{}{}atom\_\discretionary {-}{}{}destroy}
+    \subitem {list.c}, \hyperpage{40}
+    \subitem {list.h}, \hyperpage{60}
+  \item {list\_\discretionary {-}{}{}car}
+    \subitem {list.c}, \hyperpage{40}
+    \subitem {list.h}, \hyperpage{61}
+  \item {list\_\discretionary {-}{}{}cdr}
+    \subitem {list.c}, \hyperpage{41}
+    \subitem {list.h}, \hyperpage{62}
+  \item {list\_\discretionary {-}{}{}cons}
+    \subitem {list.c}, \hyperpage{42}
+    \subitem {list.h}, \hyperpage{63}
+  \item {list\_\discretionary {-}{}{}create}
+    \subitem {list.c}, \hyperpage{43}
+    \subitem {list.h}, \hyperpage{64}
+  \item {list\_\discretionary {-}{}{}destroy}
+    \subitem {list.c}, \hyperpage{44}
+    \subitem {list.h}, \hyperpage{65}
+  \item {list\_\discretionary {-}{}{}destroy\_\discretionary {-}{}{}deep}
+    \subitem {list.c}, \hyperpage{45}
+    \subitem {list.h}, \hyperpage{66}
+  \item {list\_\discretionary {-}{}{}filter}
+    \subitem {list.c}, \hyperpage{45}
+    \subitem {list.h}, \hyperpage{66}
+  \item {list\_\discretionary {-}{}{}foreach}
+    \subitem {list.h}, \hyperpage{58}
+  \item {list\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}entry}
+    \subitem {list.h}, \hyperpage{58}
+  \item {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}int}
+    \subitem {list.c}, \hyperpage{46}
+    \subitem {list.h}, \hyperpage{67}
+  \item {list\_\discretionary {-}{}{}index\_\discretionary {-}{}{}of\_\discretionary {-}{}{}str}
+    \subitem {list.c}, \hyperpage{46}
+    \subitem {list.h}, \hyperpage{67}
+  \item {list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}empty}
+    \subitem {list.c}, \hyperpage{46}
+    \subitem {list.h}, \hyperpage{67}
+  \item {list\_\discretionary {-}{}{}is\_\discretionary {-}{}{}null}
+    \subitem {list.c}, \hyperpage{47}
+  \item {list\_\discretionary {-}{}{}map}
+    \subitem {list.c}, \hyperpage{48}
+    \subitem {list.h}, \hyperpage{68}
+  \item {list\_\discretionary {-}{}{}nth}
+    \subitem {list.c}, \hyperpage{49}
+    \subitem {list.h}, \hyperpage{69}
+  \item {list\_\discretionary {-}{}{}nth\_\discretionary {-}{}{}atom}
+    \subitem {list.c}, \hyperpage{49}
+  \item {list\_\discretionary {-}{}{}pop}
+    \subitem {list.c}, \hyperpage{50}
+    \subitem {list.h}, \hyperpage{69}
+  \item {list\_\discretionary {-}{}{}push}
+    \subitem {list.c}, \hyperpage{51}
+    \subitem {list.h}, \hyperpage{70}
+  \item {list\_\discretionary {-}{}{}remove}
+    \subitem {list.c}, \hyperpage{52}
+    \subitem {list.h}, \hyperpage{71}
+  \item {list\_\discretionary {-}{}{}reverse}
+    \subitem {list.c}, \hyperpage{52}
+    \subitem {list.h}, \hyperpage{72}
+  \item {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}car}
+    \subitem {list.c}, \hyperpage{53}
+    \subitem {list.h}, \hyperpage{72}
+  \item {list\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cdr}
+    \subitem {list.c}, \hyperpage{54}
+    \subitem {list.h}, \hyperpage{73}
+  \item {list\_\discretionary {-}{}{}simple\_\discretionary {-}{}{}free\_\discretionary {-}{}{}fn}
+    \subitem {list.c}, \hyperpage{54}
+    \subitem {list.h}, \hyperpage{74}
+  \item {list\_\discretionary {-}{}{}size}
+    \subitem {list.c}, \hyperpage{55}
+    \subitem {list.h}, \hyperpage{74}
+  \item {lock}
+    \subitem {rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info}, 
+		\hyperpage{12}
+
+  \indexspace
+
+  \item {null\_\discretionary {-}{}{}list}
+    \subitem {list.c}, \hyperpage{55}
+    \subitem {list.h}, \hyperpage{75}
+
+  \indexspace
+
+  \item {read\_\discretionary {-}{}{}config}
+    \subitem {client.c}, \hyperpage{21}
+    \subitem {client.h}, \hyperpage{27}
+  \item {read\_\discretionary {-}{}{}config\_\discretionary {-}{}{}servers}
+    \subitem {client.c}, \hyperpage{22}
+    \subitem {client.h}, \hyperpage{28}
+  \item {reader}, \hyperpage{11}
+  \item {reader.c}
+    \subitem {find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}, 
+		\hyperpage{77}
+  \item {reader.h}
+    \subitem {find\_\discretionary {-}{}{}all\_\discretionary {-}{}{}readers}, 
+		\hyperpage{81}
+  \item {reader\_\discretionary {-}{}{}function}
+    \subitem {client.h}, \hyperpage{30}
+    \subitem {rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{84}
+  \item {reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag}
+    \subitem {rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{85}
+  \item {reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop}
+    \subitem {rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{85}
+  \item {resolve\_\discretionary {-}{}{}callback}
+    \subitem {avahi\_\discretionary {-}{}{}dns\_\discretionary {-}{}{}handler.c}, 
+		\hyperpage{18}
+  \item {rfid\_\discretionary {-}{}{}reader\_\discretionary {-}{}{}handler.c}
+    \subitem {reader\_\discretionary {-}{}{}function}, \hyperpage{84}
+    \subitem {reader\_\discretionary {-}{}{}handle\_\discretionary {-}{}{}tag}, 
+		\hyperpage{85}
+    \subitem {reader\_\discretionary {-}{}{}poll\_\discretionary {-}{}{}loop}, 
+		\hyperpage{85}
+  \item {rfid\_\discretionary {-}{}{}server\_\discretionary {-}{}{}info}, 
+		\hyperpage{12}
+    \subitem {lock}, \hyperpage{12}
+
+  \indexspace
+
+  \item {string\_\discretionary {-}{}{}join}
+    \subitem {string\_\discretionary {-}{}{}utils.c}, \hyperpage{87}
+  \item {string\_\discretionary {-}{}{}split}
+    \subitem {string\_\discretionary {-}{}{}utils.c}, \hyperpage{88}
+  \item {string\_\discretionary {-}{}{}utils.c}
+    \subitem {string\_\discretionary {-}{}{}join}, \hyperpage{87}
+    \subitem {string\_\discretionary {-}{}{}split}, \hyperpage{88}
+
+  \indexspace
+
+  \item {tag}, \hyperpage{13}
+
+  \indexspace
+
+  \item {warn}
+    \subitem {config.c}, \hyperpage{33}
+
+\end{theindex}

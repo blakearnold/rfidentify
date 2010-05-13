@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="rfid__reader__handler_8c" kind="file">
+    <compoundname>rfid_reader_handler.c</compoundname>
+    <includes refid="client_8h" local="yes">client.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">curl/curl.h</includes>
+    <incdepgraph>
+      <node id="216">
+        <label>reader.h</label>
+        <link refid="reader_8h"/>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="220">
+        <label>avahi-common/simple-watch.h</label>
+      </node>
+      <node id="225">
+        <label>stdlib.h</label>
+      </node>
+      <node id="223">
+        <label>errno.h</label>
+      </node>
+      <node id="214">
+        <label>client/rfid_reader_handler.c</label>
+        <link refid="rfid_reader_handler.c"/>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
+        <label>avahi-client/client.h</label>
+      </node>
+      <node id="226">
+        <label>curl/curl.h</label>
+      </node>
+      <node id="215">
+        <label>client.h</label>
+        <link refid="client_8h"/>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
+        </childnode>
+      </node>
+      <node id="221">
+        <label>pthread.h</label>
+      </node>
+      <node id="217">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="222">
+        <label>string.h</label>
+      </node>
+      <node id="218">
+        <label>ftdi.h</label>
+      </node>
+      <node id="224">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" prot="public" static="no">
+        <name>SLEEP_BTWN_POLL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Amount of time in seconds between polls to RFID reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" line="22" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" bodystart="22" bodyend="-1"/>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" prot="public" static="no">
+        <name>SLEEP_BTWN_SEARCH</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Amount of time in seconds between polls to USB for RFID reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" line="25" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" bodystart="25" bodyend="-1"/>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_handle_tag</definition>
+        <argsstring>(const char *tag, struct client_config *config)</argsstring>
+        <name>reader_handle_tag</name>
+        <param>
+          <type>const char *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structclient__config" kindref="compound">client_config</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is invoked as a callback upon the reading of a tag. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string containing the tag id. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current configuration of the client. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on ok, negative integer otherwise. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" line="35" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" bodystart="34" bodyend="110"/>
+        <references refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" compoundref="client_8h" startline="36">client_config::action</references>
+        <references refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" compoundref="client_8h" startline="37">client_config::last_tag</references>
+        <references refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" compoundref="list_8h" startline="91">list_foreach_entry</references>
+        <references refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" compoundref="client_8h" startline="25">rfid_server_info::lock</references>
+        <references refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" compoundref="client_8h" startline="39">client_config::lock</references>
+        <references refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" compoundref="client_8h" startline="27">rfid_server_info::port</references>
+        <references refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" compoundref="client_8h" startline="38">client_config::servers</references>
+        <references refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" compoundref="client_8h" startline="26">rfid_server_info::url</references>
+        <referencedby refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int reader_poll_loop</definition>
+        <argsstring>(struct reader *reader, struct client_config *config)</argsstring>
+        <name>reader_poll_loop</name>
+        <param>
+          <type>struct <ref refid="structreader" kindref="compound">reader</ref> *</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structclient__config" kindref="compound">client_config</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Repeatedly queries the device for RFID tags. <simplesect kind="see"><para><ref refid="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" kindref="member">SLEEP_BTWN_POLL</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The RFID reading device. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current configuration of the client. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Well it shouldnt. If it does, there&apos;s an error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" line="120" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" bodystart="119" bodyend="153"/>
+        <references refid="reader_8h_1ab2577f390f8e87c4d6c16d9fb5854d2f" compoundref="reader_8h" startline="15">EDEVERR</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <references refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" compoundref="rfid__reader__handler_8c" startline="34" endline="110">reader_handle_tag</references>
+        <references refid="reader_8c_1acb4c72f1fe61a87135140e51d12e5b43" compoundref="reader_8c" startline="355" endline="386">reader_poll15693</references>
+        <references refid="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" compoundref="rfid__reader__handler_8c" startline="22">SLEEP_BTWN_POLL</references>
+        <referencedby refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" compoundref="rfid__reader__handler_8c" startline="164" endline="215">reader_function</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* reader_function</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>reader_function</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>RFID reading loop which polls for identifications. Look for <ref refid="rfid__reader__handler_8c" kindref="compound">rfid_reader_handler.c</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>PThread. Initializes an RFID device, if it exists, and begins a tag reading loop. <simplesect kind="see"><para><ref refid="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" kindref="member">SLEEP_BTWN_SEARCH</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct <ref refid="structclient__config" kindref="compound">client_config</ref> - The current configuration of the client. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Should not return, if so, error.  abstract RFID differences from this implementation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" line="164" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c" bodystart="164" bodyend="215"/>
+        <references refid="reader_8h_1a1ceb0e81b845fdcd1b8371e92229a13b" compoundref="reader_8h" startline="18">BEEP</references>
+        <references refid="reader_8c_1a44b115e0bf4e92f6bfe2dcff067e49f5" compoundref="reader_8c" startline="40" endline="71">find_all_readers</references>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" compoundref="list_8c" startline="242" endline="257">list_destroy</references>
+        <references refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" compoundref="list_8c" startline="569" endline="593">list_pop</references>
+        <references refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" compoundref="list_8c" startline="104" endline="124">list_size</references>
+        <references refid="reader_8c_1a439267aa086867cfa328252e98372fff" compoundref="reader_8c" startline="73" endline="121">reader_connect</references>
+        <references refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" compoundref="rfid__reader__handler_8c" startline="119" endline="153">reader_poll_loop</references>
+        <references refid="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" compoundref="rfid__reader__handler_8c" startline="25">SLEEP_BTWN_SEARCH</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The RFID reader is discovered, initialized, and polled every few seconds. Upon reading a tag, a query is made to a server.</para><para><simplesect kind="author"><para>Willi Ballenthin </para></simplesect>
+<simplesect kind="date"><para>Spring, 2010 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;curl/curl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" refkind="member"><highlight class="preprocessor">#define<sp/>SLEEP_BTWN_POLL<sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="25" refid="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" refkind="member"><highlight class="preprocessor">#define<sp/>SLEEP_BTWN_SEARCH<sp/>1</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="34" refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" kindref="member">reader_handle_tag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*config)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>CURL<sp/><sp/><sp/><sp/>*curl;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>CURLcode<sp/>res;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*action;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*target;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>size;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/><sp/><sp/><sp/>*temp;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*server_info;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>action<sp/>=<sp/>config-&gt;<ref refid="structclient__config_1ab84ac38acfafb6eeb2246cd64935348d" kindref="member" tooltip="Server REST action.">action</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>tag<sp/>has<sp/>already<sp/>been<sp/>read,<sp/>dont<sp/>do<sp/>anything</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>pthread_mutex_lock(&amp;(config-&gt;<ref refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications, especially last_tag.">lock</ref>));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref><sp/>&amp;&amp;<sp/>strcmp(config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref>,<sp/>tag)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(config-&gt;<ref refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications, especially last_tag.">lock</ref>));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>free(config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref><sp/>=<sp/>strdup(tag);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>config-&gt;<ref refid="structclient__config_1a2963f5361ea992a1320576a9690b85e1" kindref="member" tooltip="Last tag encountered by reader.">last_tag</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(config-&gt;<ref refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications, especially last_tag.">lock</ref>));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-ENOMEM;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>pthread_mutex_unlock(&amp;(config-&gt;<ref refid="structclient__config_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications, especially last_tag.">lock</ref>));</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;tag:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>tag);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>otherwise<sp/>notify<sp/>each<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="list_8h_1ace8d99da5f3e4a9ac595791be1ad5819" kindref="member">list_foreach_entry</ref>(config-&gt;<ref refid="structclient__config_1a868bc61b634e17a030f7adf4723a8052" kindref="member" tooltip="List of rfid_server_info structures.">servers</ref>,<sp/>temp,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structrfid__server__info" kindref="compound" tooltip="Defines a relevant configuration of an RFID server.">rfid_server_info</ref><sp/>*,<sp/>server_info)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>there<sp/>is<sp/>no<sp/>destination,<sp/>we<sp/>cant<sp/>do<sp/>anything</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref><sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compose<sp/>target<sp/>url</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/>=<sp/>strlen(server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref>)<sp/>+<sp/>strlen(tag)<sp/>+<sp/>strlen(action)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>target<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<sp/>*<sp/>size<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>target)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>));</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>target[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>strcpy(target,<sp/>server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;to<sp/>server<sp/>url:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>server_info-&gt;<ref refid="structrfid__server__info_1ab135e5154c1828bef226a3df98ee3333" kindref="member" tooltip="RFID server url.">url</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(target,<sp/>action);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(target,<sp/>tag);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;query<sp/>to<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>target);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>curl<sp/>=<sp/>curl_easy_init();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>curl)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(target);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>));</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_easy_setopt(curl,<sp/>CURLOPT_URL,<sp/>target);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_easy_setopt(curl,<sp/>CURLOPT_PORT,<sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal">)server_info-&gt;<ref refid="structrfid__server__info_1a8e0798404bf2cf5dabb84c5ba9a4f236" kindref="member" tooltip="RFID server port.">port</ref>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>curl_easy_perform(curl);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_easy_cleanup(curl);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>free(target);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;(server_info-&gt;<ref refid="structrfid__server__info_1a0abaf4b5d42c4e5d19190035fade3599" kindref="member" tooltip="Protects modifications across threads.">lock</ref>));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>foreach<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" kindref="member">reader_poll_loop</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*config)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*tags;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>tags<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>tags)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ENOMEM;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_tags<sp/>=<sp/><ref refid="reader_8c_1acb4c72f1fe61a87135140e51d12e5b43" kindref="member" tooltip="Causes the reader to poll for and ISO15693 tag.">reader_poll15693</ref>(reader,<sp/>tags);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_tags<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error<sp/>polling<sp/>reader\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(tags);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="reader_8h_1ab2577f390f8e87c4d6c16d9fb5854d2f" kindref="member" tooltip="Device error.">EDEVERR</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(tags)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;No<sp/>tags<sp/>found\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(tags)<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtag" kindref="compound" tooltip="An RFID identification.">tag</ref><sp/>*t;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(tags);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="rfid__reader__handler_8c_1ad9624ed15307fa324f34f6a06bf11751" kindref="member">reader_handle_tag</ref>(t-&gt;id,<sp/>config))<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>tag<sp/>handler<sp/>failed.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(t-&gt;id);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(t);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(<ref refid="rfid__reader__handler_8c_1a4d68e50d06ddc5319c4978a0dd35fa82" kindref="member" tooltip="Amount of time in seconds between polls to RFID reader.">SLEEP_BTWN_POLL</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="rfid__reader__handler_8c_1a2fe5f2e559b4f539c687ab4121a4a7be" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="client_8h_1a2fe5f2e559b4f539c687ab4121a4a7be" kindref="member" tooltip="RFID reading loop which polls for identifications. Look for rfid_reader_handler.c...">reader_function</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*args)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><ref refid="structlist" kindref="compound">list</ref><sp/>*readers;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref><sp/>*<ref refid="structreader" kindref="compound" tooltip="Completely identifies a currently connected RFID reader.">reader</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclient__config" kindref="compound" tooltip="Defines a client configuration context.">client_config</ref><sp/>*config;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>config<sp/>=<sp/>args;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>readers<sp/>=<sp/><ref refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" kindref="member">list_create</ref>();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>readers)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Memory<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(<ref refid="reader_8c_1a44b115e0bf4e92f6bfe2dcff067e49f5" kindref="member" tooltip="Returns a list of all connected readers.">find_all_readers</ref>(readers))<sp/>==<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>spin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(<ref refid="rfid__reader__handler_8c_1a82be151f29c7660d364ab0cc5f97a3af" kindref="member" tooltip="Amount of time in seconds between polls to USB for RFID reader.">SLEEP_BTWN_SEARCH</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(readers)<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>Found<sp/>more<sp/>than<sp/>one<sp/>reader.<sp/>Found<sp/>%d<sp/>readers.\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(readers));</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>reader<sp/>=<sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(readers);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="reader_8c_1a439267aa086867cfa328252e98372fff" kindref="member" tooltip="Connects to a given reader.">reader_connect</ref>(reader,<sp/><ref refid="reader_8h_1a1ceb0e81b845fdcd1b8371e92229a13b" kindref="member" tooltip="True.">BEEP</ref>)<sp/>!=<sp/>RC_SUCCESS)<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>connect<sp/>to<sp/>reader.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>free(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>free(reader);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(readers)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;List<sp/>of<sp/>readers<sp/>exhausted.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>bad</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>reader<sp/>=<sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(readers);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Connected<sp/>to<sp/>reader.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="list_8c_1a6b2f0bae5223fb66771708236b2a99ef" kindref="member">list_size</ref>(readers)<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">reader<sp/>*r<sp/>=<sp/><ref refid="list_8c_1a35885fd30f031789e0844bb693b0b8fc" kindref="member">list_pop</ref>(readers);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>free(r-&gt;ftdic);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>free(r);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><ref refid="list_8c_1ac32ad3e6f4af784d86b011c190aad38b" kindref="member">list_destroy</ref>(readers);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><ref refid="rfid__reader__handler_8c_1ad7e398d96716aecafb8fdad3c4d64f32" kindref="member">reader_poll_loop</ref>(reader,<sp/>config);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>get<sp/>here<sp/>on<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>free(reader-&gt;ftdic);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>free(reader);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>pthread_exit(NULL);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/rfid_reader_handler.c"/>
+  </compounddef>
+</doxygen>

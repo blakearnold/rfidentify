@@ -1,0 +1,66 @@
+\hypertarget{structrfid__server__info}{
+\section{rfid\_\-server\_\-info Struct Reference}
+\label{structrfid__server__info}\index{rfid\_\-server\_\-info@{rfid\_\-server\_\-info}}
+}
+
+
+Defines a relevant configuration of an RFID server.  
+
+
+
+
+{\ttfamily \#include $<$client.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+pthread\_\-mutex\_\-t \hyperlink{structrfid__server__info_a0abaf4b5d42c4e5d19190035fade3599}{lock}
+\begin{DoxyCompactList}\small\item\em Protects modifications across threads. \item\end{DoxyCompactList}\item 
+\hypertarget{structrfid__server__info_ab135e5154c1828bef226a3df98ee3333}{
+char $\ast$ \hyperlink{structrfid__server__info_ab135e5154c1828bef226a3df98ee3333}{url}}
+\label{structrfid__server__info_ab135e5154c1828bef226a3df98ee3333}
+
+\begin{DoxyCompactList}\small\item\em RFID server url. \item\end{DoxyCompactList}\item 
+\hypertarget{structrfid__server__info_a8e0798404bf2cf5dabb84c5ba9a4f236}{
+uint16\_\-t \hyperlink{structrfid__server__info_a8e0798404bf2cf5dabb84c5ba9a4f236}{port}}
+\label{structrfid__server__info_a8e0798404bf2cf5dabb84c5ba9a4f236}
+
+\begin{DoxyCompactList}\small\item\em RFID server port. \item\end{DoxyCompactList}\item 
+\hypertarget{structrfid__server__info_a546501ce6bc6047dd53694411b4aa185}{
+int \hyperlink{structrfid__server__info_a546501ce6bc6047dd53694411b4aa185}{stable}}
+\label{structrfid__server__info_a546501ce6bc6047dd53694411b4aa185}
+
+\begin{DoxyCompactList}\small\item\em True if the URL will not change. Eg. false if it may be modified by mDNS. \item\end{DoxyCompactList}\item 
+\hypertarget{structrfid__server__info_a5ac083a645d964373f022d03df4849c8}{
+char $\ast$ \hyperlink{structrfid__server__info_a5ac083a645d964373f022d03df4849c8}{name}}
+\label{structrfid__server__info_a5ac083a645d964373f022d03df4849c8}
+
+\begin{DoxyCompactList}\small\item\em Unique name of the given server. Provided by mDNS. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a relevant configuration of an RFID server. 
+
+Definition at line 20 of file client.h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structrfid__server__info_a0abaf4b5d42c4e5d19190035fade3599}{
+\index{rfid\_\-server\_\-info@{rfid\_\-server\_\-info}!lock@{lock}}
+\index{lock@{lock}!rfid_server_info@{rfid\_\-server\_\-info}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf lock}}}
+\label{structrfid__server__info_a0abaf4b5d42c4e5d19190035fade3599}
+
+
+Protects modifications across threads. 
+
+As the url may be updated at any time, we must lock it before modification or reading. 
+
+Definition at line 25 of file client.h.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+client/\hyperlink{client_8h}{client.h}\end{DoxyCompactItemize}

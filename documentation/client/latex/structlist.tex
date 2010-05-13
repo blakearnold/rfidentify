@@ -1,0 +1,65 @@
+\hypertarget{structlist}{
+\section{list Struct Reference}
+\label{structlist}\index{list@{list}}
+}
+
+
+{\ttfamily \#include $<$list.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structlist_a670d4dd718e4fd0fbb7dfbab5c72dcfb}{
+void $\ast$ {\bfseries car}}
+\label{structlist_a670d4dd718e4fd0fbb7dfbab5c72dcfb}
+
+\item 
+\hypertarget{structlist_abb8280ac99531815a51430b637495ee7}{
+void $\ast$ {\bfseries cdr}}
+\label{structlist_abb8280ac99531815a51430b637495ee7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+standardization:
+
+a list ends with a cell that looks like:
+
+
+\begin{DoxyCode}
+     +---+---+   
+---> | v | 0 |   
+     +---+---+   
+\end{DoxyCode}
+
+
+and empty list then looks like:
+
+
+\begin{DoxyCode}
++---+---+   
+| 0 | 0 |   
++---+---+   
+\end{DoxyCode}
+
+
+it should look like this:
+
+
+\begin{DoxyCode}
+0
+\end{DoxyCode}
+
+
+but this doesnt work, because we would need to be able to modify the pointers but of course they are passed by value...
+
+so this implementation needs to be careful on edge cases, checking when there are fewer than 2 elements and whatnot 
+
+Definition at line 53 of file list.h.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+client/\hyperlink{list_8h}{list.h}\end{DoxyCompactItemize}

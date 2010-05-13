@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.3">
+  <compounddef id="string__utils_8h" kind="file">
+    <compoundname>string_utils.h</compoundname>
+    <includes refid="list_8h" local="yes">list.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includedby refid="string__utils_8c" local="yes">client/string_utils.c</includedby>
+    <incdepgraph>
+      <node id="236">
+        <label>stdlib.h</label>
+      </node>
+      <node id="234">
+        <label>client/string_utils.h</label>
+        <link refid="string_utils.h"/>
+        <childnode refid="235" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+      </node>
+      <node id="235">
+        <label>list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="237">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="239">
+        <label>client/string_utils.c</label>
+        <link refid="string__utils_8c"/>
+      </node>
+      <node id="238">
+        <label>client/string_utils.h</label>
+        <link refid="string_utils.h"/>
+        <childnode refid="239" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="string__utils_8h_1a19468c87f5110a5ec489664a7344d443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+        <definition>list* string_split</definition>
+        <argsstring>(char *str, char *delim)</argsstring>
+        <name>string_split</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Given a string an set of delimiting characters, return a list of string.</para><para>split a string into a list of new substrings delimited by some set of characters the resulting list should be deep freed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to split. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A set of characters, each of which should cause a split. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New list containing the fragments, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.h" line="12" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" bodystart="66" bodyend="93"/>
+        <references refid="list_8c_1a3dc5b8dea5507c3b0a37fde8c1fcae54" compoundref="list_8c" startline="23" endline="35">list_create</references>
+        <references refid="list_8c_1aa3b494560b4f94df133d4604265235db" compoundref="list_8c" startline="263" endline="277">list_destroy_deep</references>
+        <references refid="list_8c_1ac678bd305e69ff31bb9644b5cfabac0b" compoundref="list_8c" startline="535" endline="559">list_push</references>
+        <references refid="list_8c_1a07588b386f603af6db91bedcfb338a4b" compoundref="list_8c" startline="163" endline="216">list_reverse</references>
+        <referencedby refid="client_8h_1abafd8197d150530827f5ab09c47c28c3" compoundref="client_8c" startline="79" endline="172">read_config_servers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="string__utils_8h_1a97015c4a9a9434c30072270f322b48ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* string_join</definition>
+        <argsstring>(list *strings, char *glue)</argsstring>
+        <name>string_join</name>
+        <param>
+          <type><ref refid="structlist" kindref="compound">list</ref> *</type>
+          <declname>strings</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>glue</declname>
+        </param>
+        <briefdescription>
+<para>Given a list of strings, return a string glued together by GLUE. </para>        </briefdescription>
+        <detaileddescription>
+<para>Given a string an set of delimiting characters, return a list of string. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>strings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of strings to join. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>glue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string to be used as glue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new string composed of the parts provided in the list glued together by the join string, or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.h" line="16" bodyfile="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.c" bodystart="18" bodyend="56"/>
+        <references refid="list_8c_1a0ab7b4e1a37506b807bf20ae6698c533" compoundref="list_8c" startline="41" endline="45">list_car</references>
+        <references refid="list_8c_1a22e64ee163ef21c6d59de59f83f8b269" compoundref="list_8c" startline="50" endline="54">list_cdr</references>
+        <references refid="list_8c_1aeeb96d95e199da5b6816f6eb7c49d0f0" compoundref="list_8c" startline="96" endline="99">list_is_empty</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_STRING_UTILS_H_</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_STRING_UTILS_H_</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="list_8h" kindref="compound">list.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="structlist" kindref="compound">list</ref><sp/>*<ref refid="string__utils_8c_1ad53f748f94f536ae4e1290a3ff1ac501" kindref="member">string_split</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delim);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="string__utils_8c_1a97015c4a9a9434c30072270f322b48ec" kindref="member" tooltip="Given a list of strings, return a string glued together by GLUE.">string_join</ref>(<ref refid="structlist" kindref="compound">list</ref><sp/>*strings,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*glue);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>define</highlight></codeline>
+    </programlisting>
+    <location file="/home/willi/Dropbox/Columbia/Research/src/rfidentify/client/string_utils.h"/>
+  </compounddef>
+</doxygen>
