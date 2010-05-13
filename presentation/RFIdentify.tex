@@ -1,0 +1,156 @@
+%
+%
+%
+% example_uwtr.tex
+% J. Bilmes
+
+
+\documentclass{article}
+\usepackage{times,rfidentify}
+
+
+\title{RFIdentify: Speaker Presence Sensing}
+\author{Blake Arnold, Willi Ballenthin\\
+{\tt\{baa2121,wrb2102\}@columbia.edu}\\
+\\
+Internet Real-Time Lab, Columbia University\\
+New York, NY 10027\\
+% Place other locations here if you need them by uncommenting
+% the following lines.
+%\\
+%Atomic Computer \& Engineering Facility \\
+%Las Vegas NV, 034343\\
+}
+
+
+
+% Change to the current month of the series
+\reportmonth{Fall}
+% Change to the current year of the series
+\reportyear{2010}
+
+\begin{document}
+
+% This first line makes the cover page, which prints the TR number.
+\makecover
+% This second line makes the title portion of the first page.
+\maketitle
+
+\begin{abstract}
+
+Designing a location aware system to allow large conferences to work seamlessly has been a problem in the past. There have been past try's at trying to create a location aware network and many successful implementations. But none of these successes has yet to allow an instantaneous notification of presence.
+
+\end{abstract}
+
+
+\section{Introduction} 
+
+Location aware hardware is slowly gaining ground in the past few years. The hardware has continued to grow from Sonar to GPS to cellphone triangulation. The main motivation for this technology is ease of use from the user side. New services have been created to help third parties track users of such devices as means of recommendations or alerts.
+
+This technology can be useful during a large conference with numerous speakers. Keeping track of which speakers are currently presenting is a daunting task. It requires constantly looking at a time and the speaker order while also keeping track of any changes to the speaker order.
+
+In this paper, we show how location aware hardware can be used to allow better speaker recognition during a conference. Are main goal is to alert the attendees when new speakers start to present. This allows the attendee to determine when a speaker of interest begins his/her talk.
+
+Past designs to create a speaker aware system have been different in the past.
+
+
+\section{Related Work}
+
+\begin{enumerate}
+\item F8 Conference
+Facebook Presence for all attendees as well as speakers.
+
+\item Marc Petit-Huguenin
+Original designer for microphone RFID system
+\end{enumerate}
+
+\section{Outline}
+ 
+Outline of the rest of the paper: "The remainder of the paper is organized as follows. In Section 2, we introduce ..Section 3 describes ... Finally, we describe future work in Section 5." [Note that Section is capitalized. Also, vary your expression between "section" being the subject of the sentence, as in "Section 2 discusses ..." and "In Section, we discuss ...".] 
+
+Body of paper 
+\section{Problem}
+
+\section{Approach}
+	By using an RFID reader near the presenter location, the speaker can effectively be identified. 
+	\subsection{Server}
+	
+	\begin{enumerate}
+	
+	\item	Dependencies
+	\end{enumerate}
+	
+	\subsection{Client}
+	
+	\begin{enumerate}
+	
+	\item	Dependencies
+	
+		
+	\item	Configure Handling
+		
+	\item	Avahi Loop
+		
+	\item	Reader Loop
+	
+	\end{enumerate}
+
+
+\section{Technologies}
+The Client and server were implementing using open source software and other well known libraries to create a well tested code base.
+\subsection{Server}
+
+	\begin{enumerate}
+	\item	Apache
+	Server core implementation for handling client requests. The httpcore.jar used in the implementation handles low level functionality of client handling from opening ports to passing the requests onto higher level HTTP request handlers.
+		
+	\item	TextMarks
+	
+	\item SIMPLE
+	SIP message passing implementation. Used to alert a presence server that a current speaker is presenting.
+	
+	
+
+\end{enumerate}
+
+
+
+\subsection{Client}
+
+\begin{enumerate}
+\item avahi/mDNS
+DESCRIPTION
+\item pthreads
+
+\item cURL
+DESCRIPTION
+\end{enumerate}
+
+
+\subsection{Hardware}
+\begin{enumerate}
+\item DLP
+
+\item FTDI/Big Reader
+
+\end{enumerate}
+		
+		
+		
+
+	
+
+		
+
+
+
+\section{Evaluation}
+How does it really work in practice? Provide real or simulated performance metrics, end-user studies, mention external technology adoptors, if any, etc. 
+Related work, if not done at the beginning 
+\section{Summary and Future Work}
+often repeats the main result 
+\section{Acknowledgements}
+\section{Bibliography} 
+http://www.facebook.com/presence/
+
+\end{document}
