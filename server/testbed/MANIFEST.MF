@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: . ./properties
+Main-Class: edu.columbia.cs.irt.rfidentify.Startup
+
