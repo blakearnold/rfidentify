@@ -72,28 +72,38 @@
 	  In Section 4, we introduce the use cases of the new software and hardware combination. In Section 5 describes are strategy and design of the new system with further details in Section 6. Finally, we describe future work in Section 7."
 \section{Problem}
 
+Following IETF presentations remotely requires a lot of work by the end user. They must download the pdf of the slides, determine who is speaking by a XMPP message and then listen to the audio feed through a video stream program. The system has a heavy reliance on humans inputting data, such as the current speaking, uploading slides and speaking into the microphone. All these things elements can lead to human error and a bad experience by the end user.
+
 \section{Approach}
-	By using an RFID reader near the presenter location, the speaker can effectively be identified. The use of a RFID tag can raise security concerns
-	from the users. RFID readers have been shown to be be able to read tags from few meters away.
-	\subsection{Server}
+	By using an RFID reader near the presenter location, the speaker can effectively be identified. This eliminates the need for human interaction to send out the name of the 
+	current speaker. 
 	
+	The use of a RFID tag can raise security concerns from the users. RFID readers have been shown to be be able to read tags from few meters away.
+	This can be alleviated with use of a shielding device that blocks RFID frequencies from being intercepted by unwanted readers. Another strategy is to 
+	have low frequency card that only have an unique ID associated with the card. A database would then store the information of the card holder.
+	 If anyone reads the card, they will not be able to gather any useful information about the person.
+	 
+	\subsection{Server}
+	The server Stores a database of RFID tag ID numbers associated with each presenter. The database allows quick access to the speakers information, as well as other
+	information such as their email address or the location of their presentation.
 	\begin{enumerate}
 		
 		\item	Dependencies
+		The Server requires a network to receive incoming presence responses from RFID readers.
 	\end{enumerate}
 	
 	\subsection{Client}
 	
 		\begin{enumerate}
 		
-			\item	Dependencies
+			\item	 { \bf Dependencies } -
 			
 				
-			\item	Configure Handling
+			\item	 { \bf Configure Handling } -
 				
-			\item	Avahi Loop
+			\item	 { \bf Avahi Loop } -
 				
-			\item	Reader Loop
+			\item	 { \bf  Reader Loop }- 
 		
 		\end{enumerate}
 
@@ -103,13 +113,12 @@
 	\subsection{Server}
 	
 		\begin{enumerate}
-		\item	Apache
+		\item	{\bf Apache } -
 		Server core implementation for handling client requests. The httpcore.jar used in the implementation
 		 handles low level functionality of client handling from opening ports to passing the requests onto higher level HTTP request handlers.
 			
-		\item	TextMarks
-		
-		\item SIMPLE
+	
+		\item { \bf SIMPLE } - 
 		SIP message passing implementation. Used to alert a presence server that a current speaker is presenting.
 		
 		
@@ -121,33 +130,31 @@
 	\subsection{Client}
 	
 		\begin{enumerate}
-		\item avahi/mDNS
+		\item  { \bf avahi/mDNS } -
 		DESCRIPTION
-		\item pthreads
+		\item  { \bf pthreads } -
 
-		\item cURL
+		\item  { \bf cURL } -
 		DESCRIPTION
 		\end{enumerate}
 
 
 	\subsection{Hardware}
 		\begin{enumerate}
-		\item DLP
+		\item  { \bf DLP } -
 
-		\item FTDI/Big Reader
+		\item  { \bf FTDI/Big Reader } -
 
 		\end{enumerate}
 		
-		
-
-\section{Future Works}
-	Create code for SenseEverything 
 
 	
-	\section{Summary and Future Work}
+\section{Summary and Future Work}
+Create code for SenseEverything 
+
 	often repeats the main result 
-	\section{Acknowledgements}
-	\section{Bibliography} 
+\section{Acknowledgements}
+\section{Bibliography} 
 	http://www.facebook.com/presence/
 
 \end{document}
