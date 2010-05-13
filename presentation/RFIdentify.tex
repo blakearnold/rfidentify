@@ -22,7 +22,7 @@
 	}
 
 	
-	\reportmonth{Fall}
+	\reportmonth{Spring}
 	\reportyear{2010}
 
 \begin{document}
@@ -40,22 +40,29 @@
 
 \section{Introduction} 
 	
-	Location aware hardware is slowly gaining ground in the past few years. The hardware 
-	has continued to grow from Sonar to GPS to cellphone triangulation. 
-	The main motivation for this technology is ease of use from the user side. New services
-	 have been created to help third parties track users of such devices as means of recommendations or alerts.
+	Location aware hardware has been slowly gaining ground over the past few years. The hardware 
+	has ranged from Sonar to GPS to cellphone triangulation while prices have decreased.  
+        Recently, social networks have become a major motivation in the consumer sector for location
+        aware technology, driving innovation with respect to ease of use.
+        New services have been created to track users of such devices as means of providing relevant
+        recommendations and alerts.
 
-	This technology can be useful during a large conference with numerous speakers.
-	 Keeping track of which speakers are currently presenting is a daunting task. It requires
-	  constantly looking at a time and the speaker order while also keeping track of any changes
-	   to the speaker order.
+	This technology can be used effectively during a large conference with numerous speakers.
+	Keeping track of which speakers are currently presenting is a daunting task for an attendee. 
+        It usually requires constant attention to simultaneous schedules and vigilance when tracking
+        updates to the order.
 
-	In this paper, we show how location aware hardware can be used to allow 
-	better speaker recognition during a conference. Are main goal is to alert the 
-	attendees when new speakers start to present. This allows the attendee to determine 
-	when a speaker of interest begins his/her talk.
+	In this paper, we demonstrate a location aware hardware system providing easy and effective 
+        speaker identification and notification targetted at large conferences.
+        The main goal of \textit{RFIDentify} is to alert interested  
+	attendees when new speakers begin their presentations, while remaining unobtrusive to the 
+        presenter.
 
-	Past designs to create a speaker aware system have been different in the past.
+        This system remains unique with respect to previously deployed approaches.  Particularly,
+        RFIDentify is implemented with an eye towards event oriented frameworks.  It is our hope
+        that RFIDentify might act as a prime example of varied technologies integrated into platforms
+        such as SECE (Sense Everything, Control Everything).
+
 
 
 \section{Related Work}
@@ -69,83 +76,162 @@
 	\end{enumerate}
 
 \section{Outline}
-	  In Section 4, we introduce the use cases of the new software and hardware combination. In Section 5 describes are strategy and design of the new system with further details in Section 6. Finally, we describe future work in Section 7."
-\section{Problem}
+	  In Section 4, we introduce the use cases of the new software and hardware combination. 
+          In Section 5 describes are strategy and design of the new system with further details in Section 6. 
+          Finally, we describe future work in Section 7.
 
-Following IETF presentations remotely requires a lot of work by the end user. They must download the pdf of the slides, determine who is speaking by a XMPP message and then listen to the audio feed through a video stream program. The system has a heavy reliance on humans inputting data, such as the current speaking, uploading slides and speaking into the microphone. All these things elements can lead to human error and a bad experience by the end user.
+\section{Problem}
+          Following IETF presentations remotely requires a lot of work by the end user. 
+          They must download the slides in a variety of formats (such as PDF, DOCX, or PPT), 
+          determine who is speaking by an XMPP message and then, perhaps, listen to the audio feed 
+          through a video streaming program. 
+          The system has a heavy reliance on data entered by humans, such as the current speaking, 
+          uploading slides and speaking into the microphone. 
+          Human entered data is a common source of error, and often leads to a poor experience on the side of the end user.
 
 \section{Approach}
-	By using an RFID reader near the presenter location, the speaker can effectively be identified. This eliminates the need for human interaction to send out the name of the 
-	current speaker. 
-	
-	The use of a RFID tag can raise security concerns from the users. RFID readers have been shown to be be able to read tags from few meters away.
-	This can be alleviated with use of a shielding device that blocks RFID frequencies from being intercepted by unwanted readers. Another strategy is to 
-	have low frequency card that only have an unique ID associated with the card. A database would then store the information of the card holder.
-	 If anyone reads the card, they will not be able to gather any useful information about the person.
+	By using an RFID reader near the presenter location, the speaker can effectively be identified. 
+        This eliminates the need for human interaction to send out the name of the current speaker. 
+        Identification information can then be distributed through established communication channels, 
+        such as HTTP or Text Message.  By providing an extensible platform for distribution, all
+        participants of a large conference can receive relevant alerts regarding the talks in which 
+        they are interested. 
+
+
+	The RFIDentify platform is initially provided as a set of \textit{client/server} programs.  The \textit{client}
+        refers to a device handling RFID hardware. We envision it to be a small device
+        running an embedded version of Linux, perhaps attached to the microphone stand on the stage.
+        This client will communicate with the \textit{server}, which is tasked with performing some 
+        action in response to each new identification.  For example, the server may display a new set of 
+        slides upon the recognition of a new speaker, or dispatch text messages to all conference attendees.
+
+
+        \subsection{Concerns}
+	The use of a RFID tag can raise security concerns from the users. 
+        RFID readers have been shown to be be able to discover tags from few meters away.
+	This can be alleviated with use of a shielding device that blocks RFID frequencies from being 
+        intercepted by unwanted readers. 
+        Another strategy is to 	have low frequency card that only have an unique ID associated with 
+        the card. 
+        A database would then store the information of the card holder.
+	If anyone reads the card, they will not be able to gather any useful information about the person.
+        We take the latter approach when considering the design of the RFIDentify system.
 	 
-	\subsection{Server}
-	The server Stores a database of RFID tag ID numbers associated with each presenter. The database allows quick access to the speakers information, as well as other
-	information such as their email address or the location of their presentation.
+        \subsection{Server}
+	The server Stores a database of RFID tag ID numbers associated with each presenter. 
+        The database allows quick access to the speaker's contact information,
+        such as their email address or the location of their presentation.
+        It would be possible (and encouraged!) to further extend this database to track other 
+        personal information.  As an example, the ID cards might also serve as meal tickets,
+        which could be swiped at the checkout counter of participating conference restaurants.
+        An \textit{available_meals} attribute could be appended to the database, and linked by primary key.
+
+
+        \subsubsection{Dependencies}
 	\begin{enumerate}
 		
-		\item	Dependencies
-		The Server requires a network to receive incoming presence responses from RFID readers.
+		\item	\textit{Network}.
+		  The Server requires a network connection to receive incoming presence responses from RFID readers.
+                
+                \item   \textit{Java}.
+                  The Server is implemented and packaged as a Java Archive, targetting all major platforms.
+
 	\end{enumerate}
 	
 	\subsection{Client}
-	
-		\begin{enumerate}
-		
-			\item	 { \bf Dependencies } -
-			
-				
-			\item	 { \bf Configure Handling } -
-				
-			\item	 { \bf Avahi Loop } -
-				
-			\item	 { \bf  Reader Loop }- 
-		
-		\end{enumerate}
+
+        \subsubsection{Dependencies}
+        \begin{enumerate}
+          \item \textit{Linux 2.6}
+            The client software targets the Linux operating system. 
+            In particular, the RFIDentify client targets embedded Linux systems with limited resources.
+
+          \item \textit{RFID reader}. 
+            The client must be connected to a RFID device capable of collecting the unique ID of each card. 
+            Supporting libraries are also required to drive this specific hardware.
+
+          \item \textit{WiFi connection}.
+            It is envisioned that the client runs on a small and mobile device, connected to its server
+            via a wireless connection. Service discovery is included, so further network configuration is not
+            necessary.
+
+          \item \textit{Shared Libraries}.
+            The client executable relies upon a few common shared libraries: PThreads, cURL, and Avahi.
+
+        \end{enumerate}
+        
+        \subsubsection{Service Discovery}
+        The RFIDentify system employs mDNS service discovery to coordinate client/server communication. 
+        RFIDentify servers emit particular service notifications, which are recorded by clients.  When an
+        RFID tag is identified, a client will automatically notify each server via an HTTP GET request.
+        In other words, the system ``just works'' out of the box.
+
+	\subsubsection{Configuration}
+        Management of settings specific to unique clients can be accomplished through a configuration file.
+        By default, this file is to be found in the current executing directory, with the filename ``.rfid_client.conf''.
+        Additional hardcoded servers can be specified, for example. mDNS settings are also available for 
+        modification.
+
+
+        \subsubsection{Implementation}
+        The client is implemented in the C, targetting the Linux platform.  It is compiled in to a single 
+        binary file, to be executed suitable permissions (particularly accessing USB or similar devices).
+        After setup, the becomes multi-threaded with two main loops. One loop interfaces with a standard
+        Avahi mDNS stack, and updates available server information.  As RFIDentify servers are added or 
+        removed from the network, this loop ensures that only reachable servers receive identification events.
+        The second loop handles RFID hardware interfaces, and periodically polls for new identifications.
+        When an event occurs, a callback handler is invoked. The current implementation employs the 
+        cURL HTTP library to pass the newly encountered ID to all available servers.
 
 
 \section{Technologies}
-	The Client and server were implementing using open source software and other well known libraries to create a well tested code base.
+	The client and server are implementing using a number of open source toolkits and software.
+        By reusing public code and APIs, the implementation limits possible bugs, and is forced to comply
+        with standard design patterns.
+
 	\subsection{Server}
 	
 		\begin{enumerate}
-		\item	{\bf Apache } -
+		\item	\textbf { Apache } -
 		Server core implementation for handling client requests. The httpcore.jar used in the implementation
 		 handles low level functionality of client handling from opening ports to passing the requests onto higher level HTTP request handlers.
 			
 	
-		\item { \bf SIMPLE } - 
+		\item  \textbf {SIMPLE } - 
 		SIP message passing implementation. Used to alert a presence server that a current speaker is presenting.
-		
-		
 		
 		\end{enumerate}
 
 		
 
 	\subsection{Client}
-	
-		\begin{enumerate}
-		\item  { \bf avahi/mDNS } -
-		DESCRIPTION
-		\item  { \bf pthreads } -
+	\begin{enumerate}
+		\item	\textbf { Avahi (mDNS) } -
+                  ``Avahi is a free Zeroconf implementation, including a system for multicast DNS/DNS-SD service discovery.
+                  It allows programs to publish and discover services and hosts running on a local network 
+                  with no specific configuration.''
+                  %wikipedia
 
-		\item  { \bf cURL } -
-		DESCRIPTION
-		\end{enumerate}
+		\item	\textbf { PThreads (POSIX Threads) } -
+                  ``Pthreads is a POSIX standard for threads defined in \textit{POSIX.1c}. 
+                  Implementations of the API are available on many Unix-like POSIX systems such as 
+                  FreeBSD, NetBSD, GNU/Linux, Mac OS X and Solaris.''
+                  %wikipedia
+
+		\item	\textbf { cURL } -
+                  ``cURL is an easy-to-use client-side URL transfer library supporting 
+                  FTP, FTPS, HTTP, HTTPS, SCP, and other formats.''
+                  %wikipedia
+	\end{enumerate}
 
 
 	\subsection{Hardware}
-		\begin{enumerate}
+	\begin{enumerate}
 		\item  { \bf DLP } -
 
 		\item  { \bf FTDI/Big Reader } -
 
-		\end{enumerate}
+	\end{enumerate}
 		
 
 	
