@@ -165,7 +165,7 @@ int main(int argc, char **argv) {
   pthread_t avahi_thread;
   struct client_config client_config;
   
-  if (  read_config(&client_config, ".rfid_client_config")) {
+  if (  read_config(&client_config, ".rfid_client.conf")) {
     return -1;
   }
   
