@@ -38,7 +38,7 @@ int read_config(struct client_config *client_config, const char *filename) {
   client_config->config_file = strdup(filename);
   client_config->last_tag    = NULL;
 
-  pthread_mutex_init(&(client_config.lock), NULL);		
+  pthread_mutex_init(&(client_config->lock), NULL);		
 
   if ( ! client_config->config_file) {
     printf("Error: memory exhausted.\n");
@@ -118,7 +118,6 @@ list *read_config_servers(struct client_config *client_config) {
       }
       server_info->port     = port;
       server_info->stable   = 1;
-      server_info->last_tag = NULL;
 
       server_info->name     = strdup("server_from_config");
       if ( ! server_info->name ) {
@@ -132,7 +131,6 @@ list *read_config_servers(struct client_config *client_config) {
       server_info->url      = strdup(list_nth(fragments, 0));
       server_info->port     = 80;
       server_info->stable   = 1;
-      server_info->last_tag = NULL;
 	    
       server_info->name     = strdup("server_from_config");
       if ( ! server_info->name ) {
@@ -164,7 +162,7 @@ list *read_config_servers(struct client_config *client_config) {
     // TODO memory error here
     //void *p = list_pop(fragments);
     //free(p);
-    list_pop(fragments);
+    list_pop(l);
   }
   list_destroy(l);
 
