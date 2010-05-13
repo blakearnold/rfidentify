@@ -5,20 +5,16 @@
 
 
 \documentclass{article}
-\usepackage{times, rfidentify}
+\usepackage{times, RFIdentify}
 
 	
-	\title{RFIdentify: Speaker Presence Sensing}
-	\author{Blake Arnold, Willi Ballenthin\\
-	{\tt\{baa2121,wrb2102\}@columbia.edu}\\
-	\\
-	Internet Real-Time Lab, Columbia University\\
-	New York, NY 10027\\
-	% Place other locations here if you need them by uncommenting
-	% the following lines.
-	%\\
-	%Atomic Computer \& Engineering Facility \\
-	%Las Vegas NV, 034343\\
+	\title{RFIDentify: Speaker Presence Sensing}
+	\author{Blake Arnold, Willi Ballenthin
+	{\tt\{baa2121,wrb2102\}@columbia.edu}
+	
+	Internet Real-Time Lab, Columbia University
+	New York, NY 10027
+
 	}
 
 	
@@ -68,13 +64,24 @@
 \section{Related Work}
 	
 	\begin{enumerate}
-	\item {\bf F8 Conference} - 
-	Facebook Presence for all attendees as well as speakers.
+	\item \textbf{F8 Conference} - 
+          The f8 Developer Conference was held by Facebook in San Francisco on Wednesday April 21. 
+          Founder and CEO, Mark Zuckerberg, announced changes for platform developers. 
+          Provided to each attendee of the event was a token containing an RFID chip.  
+          By tapping the token at various points throughout the venue, attendees could share
+          their activities, tag themselves in photos, and connect to other attendees.
+          RFIDentify looks to provide similar functionality, with particular emphasis of
+          open and independent distribution of event notifications.
 
-	\item {\bf Marc Petit-Huguenin} - 
-	Original designer for microphone RFID system
-	\end{enumerate}
-
+	\item \textbf{ Marc Petit-Huguenin} - 
+	  Marc Petit-Huguenin has described the inefficiencies of IETF meetings with regard
+          to presenter identification, and proposes solutions involving RFID readers. He is
+          particularly concerned with the privacy of such systems, and has gone to lengths
+          to design custom RFID readers and card holders. The RFIDentify project aims to 
+          incorporate his considerations and hardware reader into its goals.
+          % http://blog.marc.petit-huguenin.org/2010/02/rfid-reader-for-ietf-meeting.html 
+        \end{enumerate}
+        
 \section{Outline}
 	  In Section 4, we introduce the use cases of the new software and hardware combination. 
           In Section 5 describes are strategy and design of the new system with further details in Section 6. 
@@ -124,40 +131,37 @@
         It would be possible (and encouraged!) to further extend this database to track other 
         personal information.  As an example, the ID cards might also serve as meal tickets,
         which could be swiped at the checkout counter of participating conference restaurants.
-        An \textit{available_meals} attribute could be appended to the database, and linked by primary key.
+        An \textit{available-meals} attribute could be appended to the database, and linked by primary key.
 
 
         \subsubsection{Dependencies}
 	\begin{enumerate}
-		
-		\item	\textit{Network}.
-		  The Server requires a network connection to receive incoming presence responses from RFID readers.
+	 \item	\textbf{Network} - 
+	   The Server requires a network connection to receive incoming presence responses from RFID readers.
                 
-                \item   \textit{Java}.
-                  The Server is implemented and packaged as a Java Archive, targetting all major platforms.
-
+         \item \textbf{Java} -
+           The Server is implemented and packaged as a Java Archive, targetting all major platforms.
 	\end{enumerate}
 	
 	\subsection{Client}
 
         \subsubsection{Dependencies}
         \begin{enumerate}
-          \item \textit{Linux 2.6}
+          \item \textbf{Linux 2.6} - 
             The client software targets the Linux operating system. 
             In particular, the RFIDentify client targets embedded Linux systems with limited resources.
 
-          \item \textit{RFID reader}. 
+          \item \textbf{RFID reader} - 
             The client must be connected to a RFID device capable of collecting the unique ID of each card. 
             Supporting libraries are also required to drive this specific hardware.
 
-          \item \textit{WiFi connection}.
+          \item \textbf{WiFi connection} - 
             It is envisioned that the client runs on a small and mobile device, connected to its server
             via a wireless connection. Service discovery is included, so further network configuration is not
             necessary.
 
-          \item \textit{Shared Libraries}.
+          \item \textbf{Shared Libraries} - 
             The client executable relies upon a few common shared libraries: PThreads, cURL, and Avahi.
-
         \end{enumerate}
         
         \subsubsection{Service Discovery}
@@ -168,7 +172,7 @@
 
 	\subsubsection{Configuration}
         Management of settings specific to unique clients can be accomplished through a configuration file.
-        By default, this file is to be found in the current executing directory, with the filename ``.rfid_client.conf''.
+        By default, this file is to be found in the current executing directory, with the filename ``.rfid\_client.conf''.
         Additional hardcoded servers can be specified, for example. mDNS settings are also available for 
         modification.
 
@@ -191,46 +195,52 @@
 
 	\subsection{Server}
 	
-		\begin{enumerate}
-		\item	\textbf { Apache } -
-		Server core implementation for handling client requests. The httpcore.jar used in the implementation
-		 handles low level functionality of client handling from opening ports to passing the requests onto higher level HTTP request handlers.
+	\begin{enumerate}
+	 \item	\textbf { Apache } -
+	   Server core implementation for handling client requests. The httpcore.jar used in the implementation
+	   handles low level functionality of client handling from opening ports to passing the requests onto 
+           higher level HTTP request handlers.
 			
 	
-		\item  \textbf {SIMPLE } - 
-		SIP message passing implementation. Used to alert a presence server that a current speaker is presenting.
-		
-		\end{enumerate}
-
-		
-
-	\subsection{Client}
-	\begin{enumerate}
-		\item	\textbf { Avahi (mDNS) } -
-                  ``Avahi is a free Zeroconf implementation, including a system for multicast DNS/DNS-SD service discovery.
-                  It allows programs to publish and discover services and hosts running on a local network 
-                  with no specific configuration.''
-                  %wikipedia
-
-		\item	\textbf { PThreads (POSIX Threads) } -
-                  ``Pthreads is a POSIX standard for threads defined in \textit{POSIX.1c}. 
-                  Implementations of the API are available on many Unix-like POSIX systems such as 
-                  FreeBSD, NetBSD, GNU/Linux, Mac OS X and Solaris.''
-                  %wikipedia
-
-		\item	\textbf { cURL } -
-                  ``cURL is an easy-to-use client-side URL transfer library supporting 
-                  FTP, FTPS, HTTP, HTTPS, SCP, and other formats.''
-                  %wikipedia
+	 \item  \textbf {SIMPLE } - 
+	   SIP message passing implementation. Used to alert a presence server that a current speaker is presenting.
 	\end{enumerate}
 
 
+	\subsection{Client}
+	\begin{enumerate}
+		\item	\textbf { Avahi } -
+                  Avahi is a free Zeroconf implementation, including a system for multicast DNS/DNS-SD service discovery.
+                  It allows programs to publish and discover services and hosts running on a local network 
+                  with no specific configuration.
+                  %wikipedia
+
+		\item	\textbf { PThreads } -
+                  Pthreads is a POSIX standard for threads defined in \textit{POSIX.1c}. 
+                  Implementations of the API are available on many Unix-like POSIX systems such as 
+                  FreeBSD, NetBSD, GNU/Linux, Mac OS X and Solaris.
+                  %wikipedia
+
+		\item	\textbf { cURL } -
+                  cURL is an easy-to-use client-side URL transfer library supporting 
+                  FTP, FTPS, HTTP, HTTPS, SCP, and other formats.
+                  %wikipedia
+	\end{enumerate}
+
 	\subsection{Hardware}
 	\begin{enumerate}
-		\item  { \bf DLP } -
+		\item  { \bf DLP RFID1} -
+                  The DLP-RFID1 RFID Reader/Writer is an inexpensive RFID device targetting the 13.56 MHz frequency.
+                  It communicates via a USB connection and FTDI protocol. However, the device specific commands
+                  have not been released to the public.  For the purposes of the RFIDentify project, the RFID poll
+                  command was reverse engineered through a binary analysis of the Microsoft Windows dynamic link library.
+                  The DLP RFID1 is fully supported for RFIDentify.
 
 		\item  { \bf FTDI/Big Reader } -
-
+                  The FTDI/Big Reader (term coined for this project) was developed by 
+                  Marc Petit-Huguenin to address inefficiencies at IETF conferences.  The RFID
+                  reader communicates via a serial protocol. The current implementation does
+                  not yet fully support this RFID reader.
 	\end{enumerate}
 		
 
