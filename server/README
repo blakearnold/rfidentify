@@ -1,0 +1,20 @@
+This is the server side of rfidentify
+
+the bounjour service requires apple java bindings
+
+The properties folder has properties files for different setting for the server.
+Before starting to let users register, comment out the "test mode" in database.properties
+
+
+to get bonjour to compile on linux
+
+Here is how to install and setup the required libraries:
+
+Download the source code from Apples Bonjour site
+Change to the mDNSPosix directory and open the Makefile
+Find the line with JDK = /usr/jdk and adjust it to your settings (e.g. JDK = /usr)
+Find the line with LD = ld -shared and change it to LD = gcc -shared if you are using gcc 4.1.
+Save the Makefile.
+Make the files with make os=linux Java
+Install the files with sudo make os=linux install
+Copy the Java related files to the extensions directory of the JRE. For example sudo cp build/prod/* /usr/lib/jvm/java-6-sun/jre/lib/ext/
