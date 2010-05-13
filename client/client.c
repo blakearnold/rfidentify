@@ -38,7 +38,7 @@ int read_config(struct client_config *client_config, const char *filename) {
   client_config->config_file = strdup(filename);
   client_config->last_tag    = NULL;
 
-  pthread_mutex_init(&(client_config.lock), NULL);		
+  pthread_mutex_init(&(client_config->lock), NULL);		
 
   if ( ! client_config->config_file) {
     printf("Error: memory exhausted.\n");

@@ -1,3 +1,10 @@
+/**
+ * @file string_utils.h
+ * 
+ * @author Willi Ballenthin
+ * @date Spring, 2010
+ */
+
 #ifndef _STRING_UTILS_H_
 #define _STRING_UTILS_H_
 

@@ -1,4 +1,4 @@
-all: client avahi-publish
+all: client 
 
 
 list.o: list.h list.c
